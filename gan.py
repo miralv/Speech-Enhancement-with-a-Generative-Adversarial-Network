@@ -1,10 +1,11 @@
 def build_discriminator():
     # Build discriminator
+    return 0
 
 
 def build_generator():
     # Build generator
-
+    return 0
 
 
 
