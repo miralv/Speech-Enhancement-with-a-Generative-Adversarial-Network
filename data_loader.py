@@ -39,8 +39,8 @@ class DataLoader():
             audios_A.append(audio_A)
             audios_B.append(audio_B)
 
-        audios_A = np.array(audios_A)/127.5 - 1.
-        audios_B = np.array(audios_B)/127.5 - 1.
+        #audios_A = np.array(audios_A)/127.5 - 1.
+        #audios_B = np.array(audios_B)/127.5 - 1.
 
         return audios_A, audios_B
 
