@@ -4,34 +4,50 @@ from pathlib import Path
 import glob
 import scipy.io.wavfile
 
-def getAudio():
+def getAudio(audioPath, noisePath):
     """ Generate training data for use in the DNN
 
+
+    # Arguments
+        audioPath: path to folder where the speech files are located 
+        noisePath: path to folder where the noise files are located
+        
     # Returns
         audioFiles: vector with all audio files
         noiseFiles: vector with all noise files
     """
 
     # Want to have a nested list with one element per audio file
-    # Iterate through the different groups in Module 1
     
-    # BURDE ALT DOWNSAMPLES OGSÅ MED EN GANG?
-
+    #SHOULD WE DOWNSAMPLE HERE?
+    #ANTAR JA!
+    
     # Load clean audio
     audioFiles = []
-    for i in range(1,13):
+    for i in range(1,10):
         #Inside group i 
-        filename = "./sennheiser_1/part_1/group_" + str(i) + "/p1_g" + str(i) + "_m"
-        for file in glob.glob(filename + "*.wav"):
+        path = audioPath + "/part_1/group_0" + str(i) + "/p1_g0" + str(i) + "_m"
+        for file in glob.glob(path + "*.wav"):
             _, audio = scipy.io.wavfile.read(file)
             audioFiles.append(audio)
        
     
     # Load noise files    
-    #noiseFiles = []
-    #for file in glob.glob(noiseFolder + "*.wav"):
-    #    _, noise = scipy.io.wavfile.read(file)
-    #    noiseFiles.append(noise)
+    noiseFiles = []
+    for file in glob.glob(noisePath + "/*.wav"):
+        _, noise = scipy.io.wavfile.read(file)
+        noiseFiles.append(noise)
  
 
-    return audioFiles
+    return audioFiles, noiseFiles
+
+
+def getPaths(audioPath,noisePath):
+    """Returns audio paths and noise paths"""
+
+    audioPaths = glob.glob(audioPath + "/*/*/p1_g*_m" + "*.wav")       
+    # Load noise files    
+    noisePaths = glob.glob(noisePath + "/*.wav")
+
+    return audioPaths,noisePaths
+

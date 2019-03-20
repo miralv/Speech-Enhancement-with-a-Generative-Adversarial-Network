@@ -5,7 +5,7 @@ import glob
 import scipy.io.wavfile
 
 from preprocessing import preprocessing
-from tools import stackMatrix, idealRatioMask, findSNRfactor
+from tools import *
 
 def generateAudioFromFile(windowLength,q,N,batchSize,SNRdB, audioFolder, noiseFolder):
     """ Generate training data for use in the DNN

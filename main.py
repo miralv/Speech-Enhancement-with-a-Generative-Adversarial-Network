@@ -16,17 +16,17 @@ from keras.optimizers import RMSprop
 from keras import regularizers
 
 # Set the path to the current working directory
-path = Path("C:/Users/Mira/source/repos/Prosjektoppgave DNN for Speech Enhancement")
-os.chdir(path)
+#path = Path("C:/Users/Mira/source/repos/Prosjektoppgave DNN for Speech Enhancement")
+#os.chdir(path)
 
-from recoverSignal import recoverSignal
-from preprocessing import preprocessing
-from preprocessingWithGenerator import  generateAudioFromFile
-from tools import scaleUp,stackMatrix
-from generateTestData import generateTestData
-from getData import getAudio
+#from recoverSignal import recoverSignal
+#from preprocessing import preprocessing
+#from preprocessingWithGenerator import  generateAudioFromFile
+#from tools import scaleUp,stackMatrix
+#from generateTestData import generateTestData
+from getData import getAudio,getPaths
 
-
+"""
 ## Define variables
 windowLength = 256              # Number of samples in each window
 N = 16                          # The audioFiles are of type intN
@@ -46,11 +46,15 @@ noiseFileValidation = "C:/Users/Mira/Documents/NTNU1819/Prosjektoppgave/Audio/No
 
 # Specify where to store the obtained results
 filePathSave = Path("C:/Users/Mira/Documents/NTNU1819/Prosjektoppgave/Mixed/Simplified")
-
+"""
 
 # Test getData
+audioPath = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1"
+noisePath = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech"
+#my_audio = getAudio(audioPath, noisePath)
+#a_paths,n_paths = getPaths(audioPath,noisePath)
 
-my_audio = getAudio()
+
 
 """
 

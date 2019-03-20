@@ -5,10 +5,13 @@ import numpy as np
 import os
 import matplotlib.pyplot as plt
 from tools import *
+from getData import getPaths
 
 class DataLoader():
     def __init__(self, dataset_name):
         self.dataset_name = dataset_name
+        self.audio_path = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1"
+        self.noise_path = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech"
 
     # Not in use yet
     def load_data(self, batch_size=1, is_testing=False):
@@ -45,31 +48,28 @@ class DataLoader():
         return audios_A, audios_B
 
     def load_batch(self, batch_size=1, is_testing=False, SNRdB=5):
+        audioPath = self.audio_path 
+        noisePath=self.noise_path
         data_type = "train" if not is_testing else "val"
-        cwd = os.getcwd()
-        # Collect all train or validation paths in the variable path
-        # TODO: Change paths
-        audio_paths = glob(cwd + "/pix2pix/datasets/" + '{}/{}/*'.format(self.dataset_name, data_type))
-        #self.n_batches = int(len(path) / batch_size)
-        noise_paths = []
+        audio_paths,noise_paths = getPaths(audioPath,noisePath)
 
-
+        audios_A, audios_B = [], []
         audios, noises = [],[]
         
         # TODO: Include sliding windows during training.
         while True:
             # 1 batch of Mixed, Clean
-            audios_A, audios_B = [], []
 
-            for audio_path in audio_paths:
-                f_audio, audio_orig = scipy.io.wavfile.read(audio_path)
+            #if we want to extract only one batch, let
+            audio_batch = np.random.choice(audio_paths,batch_size)
+            noise_batch = np.random.choice(noise_paths,batch_size)
+            for audio_i, noise_i in zip(audio_batch,noise_batch):
+                f_audio, audio_orig = scipy.io.wavfile.read(audio_i)
                 # Downsample the audio to 16 kHz and scale it to [-1,1]
                 audio = preprocess(audio_orig)
                 audio = audio[0:( len(audio) - len(audio)%windowLength)]
 
-                # Draw a random noise file
-                noise_path = np.random.choice(noise_paths)
-                f_noise, noise_orig = scipy.io.wavfile.read(noise_path)
+                f_noise, noise_orig = scipy.io.wavfile.read(noise_i)
                 # Downsample the noise to 16 kHz and scale it to [-1,1]
                 noise = downsample(noise_orig,noise=1)
                 # Make the noise file have the same length as the audio file
@@ -87,14 +87,11 @@ class DataLoader():
                 audios.append(mixed)
                 noises.append(clean)
 
-            
-            # Draw a random audio file and a random part from it
-            for (i in range(batch_size)):
-                audioIndex = random.randint(0,len(audios))
-                startIndex = random.randint(0,len(audios[audioIndex])-batch_size)
-
-                audios_A.append(audio[audioIndex][startIndex:startIndex+batch_size])
-                audios_B.append(noise[audioIndex][startIndex:startIndex+batch_size])
+            # Draw a random part from each 
+            for i in range(batch_size):
+                startIndex = random.randint(0,len(audios[i])-batch_size)
+                audios_A.append(audio[i][startIndex:startIndex+batch_size])
+                audios_B.append(noise[i][startIndex:startIndex+batch_size])
                 
             yield audios_A, audios_B
 
