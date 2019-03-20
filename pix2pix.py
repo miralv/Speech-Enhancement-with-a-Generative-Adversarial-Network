@@ -194,8 +194,8 @@ class Pix2Pix():
                                                                         elapsed_time))
 
                 # If at save interval => save generated image samples
-                if batch_i % sample_interval == 0:
-                    self.sample_images(epoch, batch_i)
+                #if batch_i % sample_interval == 0:
+                #    self.sample_images(epoch, batch_i)
 
     def sample_images(self, epoch, batch_i):
         os.makedirs('images/%s' % self.dataset_name, exist_ok=True)

@@ -10,12 +10,12 @@ class DataLoader():
     def __init__(self, dataset_name):
         self.dataset_name = dataset_name
 
+    # Not in use yet
     def load_data(self, batch_size=1, is_testing=False):
         data_type = "train" if not is_testing else "test"
         #path = glob('./datasets/%s/%s/*' % (self.dataset_name, data_type))
         cwd = os.getcwd()
         path = glob(cwd + "/pix2pix/datasets/" + '{}/{}/*'.format(self.dataset_name, data_type))
-
 
         batch_images = np.random.choice(path, size=batch_size)
 
@@ -61,7 +61,6 @@ class DataLoader():
             # 1 batch of Mixed, Clean
             audios_A, audios_B = [], []
 
-            #batch = path[i*batch_size:(i+1)*batch_size]
             for audio_path in audio_paths:
                 f_audio, audio_orig = scipy.io.wavfile.read(audio_path)
                 # Downsample the audio to 16 kHz and scale it to [-1,1]
@@ -88,11 +87,7 @@ class DataLoader():
                 audios.append(mixed)
                 noises.append(clean)
 
-            #audios_A = np.array(audios_A)/127.5 - 1.
-            #audios_B = np.array(audios_B)/127.5 - 1.
-            # Yields a list where audios_A is mixed audio
-            # audios_B is corresponding clean audio
-
+            
             # Draw a random audio file and a random part from it
             for (i in range(batch_size)):
                 audioIndex = random.randint(0,len(audios))
