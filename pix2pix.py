@@ -127,6 +127,7 @@ class Pix2Pix():
 
             return G
     def build_discriminator(self):
+        # TODO: Fix bugs
         audio_in_clean = Input(shape=self.audio_shape, name = 'in_clean')
         audio_in_mixed = Input(shape=self.audio_shape, name = 'in_mixed')
 
@@ -159,6 +160,7 @@ class Pix2Pix():
         start_time = datetime.datetime.now()
 
         # Adversarial loss ground truths
+        # TODO: Change something here
         valid = np.ones((batch_size,) + self.disc_patch)
         fake = np.zeros((batch_size,) + self.disc_patch)
 
@@ -198,7 +200,7 @@ class Pix2Pix():
                 #    self.sample_images(epoch, batch_i)
 
     def sample_images(self, epoch, batch_i):
-        os.makedirs('images/%s' % self.dataset_name, exist_ok=True)
+        """s.makedirs('images/%s' % self.dataset_name, exist_ok=True)
         r, c = 3, 3
 
         audios_A, audios_B = self.data_loader.load_data(batch_size=3, is_testing=True)
@@ -219,7 +221,7 @@ class Pix2Pix():
                 axs[i,j].axis('off')
                 cnt += 1
         fig.savefig("images/%s/%d_%d.png" % (self.dataset_name, epoch, batch_i))
-        plt.close()
+        plt.close()"""
 
 
 if __name__ == '__main__':

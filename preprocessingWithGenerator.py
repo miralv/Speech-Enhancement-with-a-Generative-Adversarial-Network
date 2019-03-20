@@ -27,6 +27,7 @@ def generateAudioFromFile(windowLength,q,N,batchSize,SNRdB, audioFolder, noiseFo
         
     """
     
+    """
     L = int(np.floor(windowLength/2))
 
     # Load clean audio
@@ -89,3 +90,4 @@ def generateAudioFromFile(windowLength,q,N,batchSize,SNRdB, audioFolder, noiseFo
         x = mixed[startIndex:startIndex+batchSize,:]
         xStacked = stackMatrix(x)    
         yield xStacked,y
+"""

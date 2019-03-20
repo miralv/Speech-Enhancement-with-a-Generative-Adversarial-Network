@@ -3,6 +3,7 @@ import scipy.io.wavfile
 from glob import glob
 import numpy as np
 import os
+import random
 import matplotlib.pyplot as plt
 from tools import *
 from getData import getPaths
@@ -12,6 +13,7 @@ class DataLoader():
         self.dataset_name = dataset_name
         self.audio_path = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1"
         self.noise_path = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech"
+        self.window_length = 16384
 
     # Not in use yet
     def load_data(self, batch_size=1, is_testing=False):
@@ -50,11 +52,11 @@ class DataLoader():
     def load_batch(self, batch_size=1, is_testing=False, SNRdB=5):
         audioPath = self.audio_path 
         noisePath=self.noise_path
-        data_type = "train" if not is_testing else "val"
+        #data_type = "train" if not is_testing else "val"
         audio_paths,noise_paths = getPaths(audioPath,noisePath)
 
         audios_A, audios_B = [], []
-        audios, noises = [],[]
+        mixed_files, clean_files = [],[]
         
         # TODO: Include sliding windows during training.
         while True:
@@ -67,11 +69,11 @@ class DataLoader():
                 f_audio, audio_orig = scipy.io.wavfile.read(audio_i)
                 # Downsample the audio to 16 kHz and scale it to [-1,1]
                 audio = preprocess(audio_orig)
-                audio = audio[0:( len(audio) - len(audio)%windowLength)]
+                audio = audio[0:( len(audio) - len(audio)%self.window_length)]
 
                 f_noise, noise_orig = scipy.io.wavfile.read(noise_i)
                 # Downsample the noise to 16 kHz and scale it to [-1,1]
-                noise = downsample(noise_orig,noise=1)
+                noise = preprocess(noise_orig,noise=1)
                 # Make the noise file have the same length as the audio file
                 noise = extendVector(noise,len(audio))                
                             
@@ -84,14 +86,14 @@ class DataLoader():
                 if max_val>1:
                     mixed = mixed/max_val
 
-                audios.append(mixed)
-                noises.append(clean)
+                clean_files.append(audio)
+                mixed_files.append(mixed)
 
             # Draw a random part from each 
             for i in range(batch_size):
-                startIndex = random.randint(0,len(audios[i])-batch_size)
-                audios_A.append(audio[i][startIndex:startIndex+batch_size])
-                audios_B.append(noise[i][startIndex:startIndex+batch_size])
+                startIndex = random.randint(0,len(clean_files[i])-batch_size)
+                audios_A.append(clean_files[i][startIndex:startIndex+batch_size])
+                audios_B.append(mixed_files[i][startIndex:startIndex+batch_size])
                 
             yield audios_A, audios_B
 
