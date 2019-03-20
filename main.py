@@ -24,6 +24,7 @@ from preprocessing import preprocessing
 from preprocessingWithGenerator import  generateAudioFromFile
 from tools import scaleUp,stackMatrix
 from generateTestData import generateTestData
+from getData import getAudio
 
 
 ## Define variables
@@ -46,7 +47,12 @@ noiseFileValidation = "C:/Users/Mira/Documents/NTNU1819/Prosjektoppgave/Audio/No
 # Specify where to store the obtained results
 filePathSave = Path("C:/Users/Mira/Documents/NTNU1819/Prosjektoppgave/Mixed/Simplified")
 
-    
+
+# Test getData
+
+my_audio = getAudio()
+
+"""
 
 ## DNN
 # Specify the dimensions of input layer and output layer
@@ -150,4 +156,4 @@ ax2.set_title("IRM")
 im1.set_clim(0,1)
 im2.set_clim(0,1)
 plt.savefig(savePathPlot)
-plt.show()
+plt.show()"""
