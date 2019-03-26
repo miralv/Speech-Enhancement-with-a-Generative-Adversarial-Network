@@ -2,8 +2,9 @@ from __future__ import print_function, division
 import scipy
 import tensorflow
 
+import keras
 from keras.datasets import mnist
-from keras.layers import Input, Dense, Reshape, Flatten, Dropout, Concatenate
+from keras.layers import Input, Dense, Reshape, Flatten, Dropout#, Concatenate
 from keras.layers import BatchNormalization, Activation, PReLU, Conv2DTranspose
 from keras.layers.advanced_activations import LeakyReLU
 from keras.layers.convolutional import UpSampling1D, Conv1D
@@ -27,11 +28,9 @@ class Pix2Pix():
         self.dataset_name = 'NB Tale'
         self.data_loader = DataLoader(dataset_name=self.dataset_name)
 
-        # Calculate output shape of D (PatchGAN)
-        #patch = int(self.audio_rows / 2**4)
-        #self.disc_patch = (patch, patch, 1)
 
         # Opts (kan evt flyttes til main)
+        self.z_dim = (8,1024)
         self.filter_length = 31
         self.strides = 2
         self.padding = 'same'
@@ -43,34 +42,38 @@ class Pix2Pix():
 
         optimizer = Adam(0.0002, 0.5)
 
-        # Build and compile the discriminator
+        # Build  the discriminator and generator
         self.discriminator = self.build_discriminator()
+        self.generator = self.build_generator()
+
+
         self.discriminator.compile(loss='mse',
             optimizer=optimizer,
             metrics=['accuracy'])
-
-        #-------------------------
-        # Construct Computational
-        #   Graph of Generator
-        #-------------------------
-
-        # Build the generator
-        self.generator = self.build_generator()
+        
+        self.generator.compile(loss='mse',
+           optimizer=optimizer,
+           metrics=['accuracy'])
 
         # Input images and their conditioning images
-        audio_A = Input(shape=self.audio_shape)
-        audio_B = Input(shape=self.audio_shape)
+        audio_clean = Input(shape=self.audio_shape)
+        audio_mixed = Input(shape=self.audio_shape)
 
         # By conditioning on B generate a fake version of A
-        fake_A = self.generator(audio_B)
+        z = Input(self.z_dim, name="noise_input")
+        G_out = self.generator([audio_clean,z])
+        valid = self.discriminator([G_out,audio_mixed])
+
 
         # For the combined model we will only train the generator
         self.discriminator.trainable = False
 
-        # Discriminators determines validity of translated images / condition pairs
-        valid = self.discriminator([fake_A, audio_B])
 
-        self.combined = Model(inputs=[audio_A, audio_B], outputs=[valid, fake_A])
+        # Discriminators determines validity of translated images / condition pairs
+        valid = self.discriminator([G_out, audio_mixed])
+
+        # TODO: ER HER NÅ
+        self.combined = Model(inputs=[audio_clean, audio_mixed], outputs=[valid, G_out])
         self.combined.compile(loss=['mse', 'mae'],
                               loss_weights=[1, 100],
                               optimizer=optimizer)
@@ -79,6 +82,8 @@ class Pix2Pix():
         """Inspired by the SEGAN setup"""
 
         skips = []
+        audio_in = Input(shape=self.audio_shape)
+        encoder_out = audio_in
 
         # Define the encoder
         for layer, numkernels in enumerate(self.generator_num_kernels_enc):
@@ -88,50 +93,58 @@ class Pix2Pix():
             if layer < len(self.generator_num_kernels_enc)-1:
                 skips.append(encoder_out)
 
-            #Apply PReLU
-            encoder_out = PReLU(alpha_initializer = 'zero', weigths=None)(encoder_out)
+            # Apply PReLU
+            encoder_out = PReLU(alpha_initializer = 'zero', weights=None)(encoder_out)
         
         
         # Add intermediate noise layer (why?)
-        z_dim = (8,1024)
+        #z_dim = (8,1024)
+        z_rows = int(self.audio_window_length/(self.strides**len(self.generator_num_kernels_enc)))
+        z_cols = self.generator_num_kernels_enc[-1]        
+        z_dim = (z_rows,z_cols)
         z = Input(shape = z_dim ,name = 'noise_input')
-        decoder_out = Concatenate([encoder_out,z]) 
+        decoder_out = keras.layers.concatenate([encoder_out,z]) 
 
         # Define the decoder
-        for layer, numkernels in enumerate(self.generator_num_kernels_dec):
+        n_rows = z_rows
+        n_cols = decoder_out.get_shape().as_list()[-1]
+        for layer, numkernels_dec in enumerate(self.generator_num_kernels_dec):
             dim_in = decoder_out.get_shape().as_list()
             # The conv2dtranspose needs 3D input
             new_shape = (dim_in[1],1, dim_in[2])
             decoder_out = Reshape(new_shape)(decoder_out)   
-            decoder_out = Conv2DTranspose(self.generator_num_kernels_dec,[self.filter_length,1],strides=[strides,1],padding = self.padding, use_bias = self.use_bias)(decoder_out)
+            decoder_out = Conv2DTranspose(numkernels_dec,[self.filter_length,1],strides=[self.strides,1],padding = self.padding, use_bias = self.use_bias)(decoder_out)
             # Reshape back to 2D
-            n_rows = strides*z_dim[0]
-            n_cols = self.discriminator_num_kernels
+            n_rows = self.strides*n_rows
+            n_cols = numkernels_dec
             decoder_out.set_shape([None, n_rows,1,n_cols])
             new_shape = (n_rows,n_cols)
 
-            decoder_out = Reshape(new_shape)(decoder_out)
+            if layer == (len(self.generator_num_kernels_dec) -1):
+                decoder_out = Reshape(new_shape, name = "g_output")(decoder_out)
+            else:
+                decoder_out = Reshape(new_shape)(decoder_out)
 
-            # PRelu
-            decoder_out = PReLU(alpha_initializer = 'zero', weights=None)(decoder_out)
-            # Skip connections
-            skip_ = skips[-(layer+1)]
-            decoder_out = Concatenate([decoder_out,skip_])
+            if layer < (len(self.generator_num_kernels_dec) -1):
+                # PRelu
+                decoder_out = PReLU(alpha_initializer = 'zero', weights=None)(decoder_out)
+                # Skip connections
+                skip_ = skips[-(layer+1)]
+                decoder_out = keras.layers.concatenate([decoder_out,skip_])
 
-            # Create the model 
-            G = Model(inputs = [self.audio_shape], outputs = [decoder_out])
+        # Create the model 
+        G = Model(inputs = [audio_in, z], outputs = [decoder_out])
 
+        # Show summary
+        G.summary()
 
-            # Show summary
-            G.summary()
-
-            return G
+        return G
     def build_discriminator(self):
         # TODO: Fix bugs
         audio_in_clean = Input(shape=self.audio_shape, name = 'in_clean')
         audio_in_mixed = Input(shape=self.audio_shape, name = 'in_mixed')
 
-        discriminator_out = Concatenate([audio_in_clean,audio_in_mixed])
+        discriminator_out = keras.layers.concatenate([audio_in_clean,audio_in_mixed])
 
         for layer, numkernels in enumerate(self.discriminator_num_kernels):
             discriminator_out = Conv1D(numkernels,self.filter_length,strides=self.strides,padding=self.padding,use_bias=self.use_bias)(discriminator_out)
@@ -141,6 +154,8 @@ class Pix2Pix():
             # Apply LeakyReLU
             discriminator_out = LeakyReLU(alpha = 0.3)(discriminator_out)
         
+
+
         discriminator_out = Conv1D(1, 1, padding=self.padding, use_bias=self.use_bias, 
                     name='logits_conv')(discriminator_out)
         discriminator_out = Flatten()(discriminator_out)
@@ -206,7 +221,7 @@ class Pix2Pix():
         audios_A, audios_B = self.data_loader.load_data(batch_size=3, is_testing=True)
         fake_A = self.generator.predict(audios_B)
 
-        gen_audios = np.Concatenate([audios_B, fake_A, audios_A])
+        gen_audios = np.keras.layers.concatenate([audios_B, fake_A, audios_A])
 
         # Rescale images 0 - 1
         gen_audios = 0.5 * gen_audios + 0.5
@@ -234,4 +249,4 @@ if __name__ == '__main__':
     '''
 
     gan = Pix2Pix()
-    gan.train(epochs=1, batch_size=1, sample_interval=200)
+#    gan.train(epochs=1, batch_size=1, sample_interval=200)
