@@ -298,8 +298,8 @@ if __name__ == '__main__':
     audios_mixed = np.expand_dims(mixed,axis=2)
 
     # Condition on B and generate a translated version
-    noise_input = np.random.normal(0,1,(batch_size,self.z_dim[0],self.z_dim[1]))
-    G_out = self.generator.predict([audios_mixed,noise_input])
+    #noise_input = np.random.normal(0,1,(batch_size,self.z_dim[0],self.z_dim[1]))
+    #G_out = self.generator.predict([audios_mixed,noise_input])
 
 
     ## Save for listening

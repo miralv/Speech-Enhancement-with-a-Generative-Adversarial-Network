@@ -17,6 +17,7 @@ class DataLoader():
 
     # Not in use yet
     def load_data(self, batch_size=1, is_testing=False):
+        """
         data_type = "train" if not is_testing else "test"
         #path = glob('./datasets/%s/%s/*' % (self.dataset_name, data_type))
         cwd = os.getcwd()
@@ -48,6 +49,8 @@ class DataLoader():
         #audios_mixed = np.array(audios_mixed)/127.5 - 1.
 
         return audios_clean, audios_mixed
+        """
+        return 0
 
     def load_batch(self, batch_size=1, n_batches=20, is_testing=False, SNRdB=5):
         audioPath = self.audio_path 

@@ -1,4 +1,4 @@
-import numpy as np
+"""import numpy as np
 from pathlib import Path
 import glob
 import scipy.io.wavfile
@@ -9,7 +9,7 @@ from tools import stackMatrix, idealRatioMask,findSNRfactor
 from recoverSignal import recoverSignalStandard
 
 def generateTestData(windowLength,q,N,SNRdB, audioFolder, noiseFile, filePathSave, save): 
-    """ Generate test data or validation data and store the before versions of 
+     Generate test data or validation data and store the before versions of 
     clean speech, noise and mixed speech
 
 
@@ -30,7 +30,6 @@ def generateTestData(windowLength,q,N,SNRdB, audioFolder, noiseFile, filePathSav
         y: analytical IRM
         mixedPhase: mixed phase saved for reconstruction
         
-    """
 
 
     L = int(np.floor(windowLength/2))
@@ -108,3 +107,4 @@ def generateTestData(windowLength,q,N,SNRdB, audioFolder, noiseFile, filePathSav
         scipy.io.wavfile.write(filePathSaveMixed,16000,data=MixedBefore)
         
     return [x,xStacked,y,mixedPhase]
+    """
