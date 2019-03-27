@@ -17,6 +17,8 @@ from data_loader import DataLoader
 import numpy as np
 import os
 
+from tools import *
+
 class Pix2Pix():
     def __init__(self):
         # Input shape
@@ -62,18 +64,17 @@ class Pix2Pix():
         # By conditioning on B generate a fake version of A
         z = Input(self.z_dim, name="noise_input")
         G_out = self.generator([audio_clean,z])
-        valid = self.discriminator([G_out,audio_mixed])
-
+        
 
         # For the combined model we will only train the generator
         self.discriminator.trainable = False
 
 
         # Discriminators determines validity of translated images / condition pairs
-        valid = self.discriminator([G_out, audio_mixed])
+        D_out = self.discriminator([G_out, audio_mixed])
 
         # TODO: ER HER NÅ
-        self.combined = Model(inputs=[audio_clean, audio_mixed], outputs=[valid, G_out])
+        self.combined = Model(inputs=[audio_clean, audio_mixed,z], outputs=[D_out, G_out])
         self.combined.compile(loss=['mse', 'mae'],
                               loss_weights=[1, 100],
                               optimizer=optimizer)
@@ -170,42 +171,45 @@ class Pix2Pix():
 
         return D
 
-    def train(self, epochs, batch_size=1, sample_interval=50):
-
+    def train(self, epochs, batch_size=2, n_batches=20, sample_interval=50):
+        # forste mål er å få kjørbar kode. kan gjøre mer dyptgående endringer etter hvert.
         start_time = datetime.datetime.now()
 
         # Adversarial loss ground truths
-        # TODO: Change something here
-        valid = np.ones((batch_size,) + self.disc_patch)
-        fake = np.zeros((batch_size,) + self.disc_patch)
+        valid = np.ones((batch_size,1))
+        fake = np.zeros((batch_size,1))
 
         for epoch in range(epochs):
-            for batch_i, (audios_A, audios_B) in enumerate(self.data_loader.load_batch(batch_size)):
-                print("hellooo")
+            for batch_i, (audios_clean, audios_mixed) in enumerate(self.data_loader.load_batch(batch_size,n_batches=n_batches)):
                 # ---------------------
                 #  Train Discriminator
                 # ---------------------
 
+                # Need to get G's input in the correct shape
+                audios_clean = np.expand_dims(audios_clean,axis=2)
+                audios_mixed = np.expand_dims(audios_mixed,axis=2)
+
                 # Condition on B and generate a translated version
-                fake_A = self.generator.predict(audios_B)
+                noise_input = np.random.normal(0,1,(batch_size,self.z_dim[0],self.z_dim[1]))
+                G_out = self.generator.predict([audios_mixed,noise_input])
 
                 # Train the discriminators (original images = real / generated = Fake)
-                d_loss_real = self.discriminator.train_on_batch([audios_A, audios_B], valid)
-                d_loss_fake = self.discriminator.train_on_batch([fake_A, audios_B], fake)
+                d_loss_real = self.discriminator.train_on_batch([audios_clean, audios_mixed], valid)
+                d_loss_fake = self.discriminator.train_on_batch([G_out, audios_mixed], fake)
                 d_loss = 0.5 * np.add(d_loss_real, d_loss_fake)
 
                 # -----------------
                 #  Train Generator
                 # -----------------
 
-                # Train the generators
-                g_loss = self.combined.train_on_batch([audios_A, audios_B], [valid, audios_A])
+                # Train the generator
+                # TODO: Make sure that this line is correct
+                g_loss = self.combined.train_on_batch([audios_clean, audios_mixed,noise_input], [valid, audios_clean])
 
                 elapsed_time = datetime.datetime.now() - start_time
-                print("hey there")
                 # Plot the progress
-                print ("[Epoch %d/%d] [Batch %d/%d] [D loss: %f, acc: %3d%%] [G loss: %f] time: %s" % (epoch, epochs,
-                                                                        batch_i, self.data_loader.n_batches,
+                print ("[Epoch %d/%d] [Batch %d/%d] [D loss: %f, acc: %3d%%] [G loss: %f] time: %s" % (epoch+1, epochs,
+                                                                        batch_i+1, n_batches,
                                                                         d_loss[0], 100*d_loss[1],
                                                                         g_loss[0],
                                                                         elapsed_time))
@@ -218,10 +222,10 @@ class Pix2Pix():
         """s.makedirs('images/%s' % self.dataset_name, exist_ok=True)
         r, c = 3, 3
 
-        audios_A, audios_B = self.data_loader.load_data(batch_size=3, is_testing=True)
-        fake_A = self.generator.predict(audios_B)
+        audios_clean, audios_mixed = self.data_loader.load_data(batch_size=3, is_testing=True)
+        G_out = self.generator.predict(audios_mixed)
 
-        gen_audios = np.keras.layers.concatenate([audios_B, fake_A, audios_A])
+        gen_audios = np.keras.layers.concatenate([audios_mixed, G_out, audios_clean])
 
         # Rescale images 0 - 1
         gen_audios = 0.5 * gen_audios + 0.5
@@ -239,6 +243,35 @@ class Pix2Pix():
         plt.close()"""
 
 
+
+def prepare_test(audio_path,noise_path,window_length=16384,SNRdB=5, z_dim = (8,1024)):
+    f_audio, audio_orig = scipy.io.wavfile.read(audio_path)
+    # Downsample the audio to 16 kHz and scale it to [-1,1]
+    audio = preprocess(audio_orig,f_audio)
+    audio = audio[0:( len(audio) - len(audio)%window_length)]
+
+    f_noise, noise_orig = scipy.io.wavfile.read(noise_path)
+    # Downsample the noise to 16 kHz and scale it to [-1,1]
+    noise = preprocess(noise_orig, f_noise)
+    # Make the noise file have the same length as the audio file
+    noise = extendVector(noise,len(audio))                
+                
+    # Obtain desired SNR in mixed
+    SNR_factor = findSNRfactor(audio,noise,SNRdB)
+    mixed = audio + SNR_factor*noise
+
+    # Rescale to obtiain values in [-1,1]
+    max_val = np.max(np.abs(mixed))
+    if max_val>1:
+        mixed = mixed/max_val
+
+
+
+    # Sample random noise variables
+    z = np.random.normal(0,1,(len(mixed),z_dim[0],z_dim[1]))
+
+    return audio,mixed,z
+
 if __name__ == '__main__':
     '''Jeg prøver:
     config = tensorflow.ConfigProto(intra_op_parallelism_threads=0, 
@@ -249,4 +282,43 @@ if __name__ == '__main__':
     '''
 
     gan = Pix2Pix()
-#    gan.train(epochs=1, batch_size=1, sample_interval=200)
+    gan.train(epochs=1, batch_size=1, n_batches = 1)
+
+    # Test the model 
+
+    # For now:
+    clean_path = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/group_01/p1_g01_f1_1_t-a0001.wav"
+    noise_path = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech/n1.wav"
+
+    clean,mixed,z = prepare_test(clean_path,noise_path)
+
+    # Expand dims
+    # Need to get G's input in the correct shape    
+    audios_clean = np.expand_dims(clean,axis=2)
+    audios_mixed = np.expand_dims(mixed,axis=2)
+
+    # Condition on B and generate a translated version
+    noise_input = np.random.normal(0,1,(batch_size,self.z_dim[0],self.z_dim[1]))
+    G_out = self.generator.predict([audios_mixed,noise_input])
+
+
+    ## Save for listening
+    cwd = os.getcwd()
+    print(cwd)
+
+    if not os.path.exists("./results"):
+        os.makedirs("./results")
+
+
+
+    
+    # v = "clean.wav"
+    # savePath = filePathSave / v
+    # scipy.io.wavfile.write(savePath,16000,data=recovered)
+
+
+    # v = "enhanced.wav"
+    # savePath = filePathSave / v
+    # scipy.io.wavfile.write(savePath,16000,data=trueIRM)
+
+
