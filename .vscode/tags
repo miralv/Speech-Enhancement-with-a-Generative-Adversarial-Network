@@ -1,0 +1,77 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Hanning	../preprocessing.py	/^def Hanning(y,windowLength):$/;"	kind:function	line:42
+N	../main.py	/^N = 16                          # The audioFiles are of type intN$/;"	kind:variable	line:31
+Nepochs	../main.py	/^Nepochs = 20                    # The number of epochs$/;"	kind:variable	line:34
+SNRdB	../main.py	/^SNRdB = 5                       # Speech to noise ratio in decibels$/;"	kind:variable	line:33
+audioFolderTest	../main.py	/^audioFolderTest = "C:\/Users\/Mira\/Documents\/NTNU1819\/Prosjektoppgave\/Audio\/Speech\/Test\/"$/;"	kind:variable	line:40
+audioFolderTrain	../main.py	/^audioFolderTrain = "C:\/Users\/Mira\/Documents\/NTNU1819\/Prosjektoppgave\/Audio\/Speech\/Train\/"$/;"	kind:variable	line:39
+audioFolderValidation	../main.py	/^audioFolderValidation = "C:\/Users\/Mira\/Documents\/NTNU1819\/Prosjektoppgave\/Audio\/Speech\/Validate\/"$/;"	kind:variable	line:41
+batchSizes	../main.py	/^batchSizes = [4,16,64,128,256]  # Batch sizes compared in main$/;"	kind:variable	line:36
+colors	../main.py	/^colors = cm.rainbow(np.linspace(0, 1, len(batchSizes)))$/;"	kind:variable	line:75
+epoch_errors_train	../main.py	/^epoch_errors_train = np.zeros((len(batchSizes),3))$/;"	kind:variable	line:85
+epoch_errors_validate	../main.py	/^epoch_errors_validate = np.zeros((len(batchSizes),3))$/;"	kind:variable	line:86
+epochs	../main.py	/^                        epochs=Nepochs,$/;"	kind:variable	line:95
+fig2	../main.py	/^fig2 = plt.subplots(1,1)$/;"	kind:variable	line:76
+filePathSave	../main.py	/^filePathSave = Path("C:\/Users\/Mira\/Documents\/NTNU1819\/Prosjektoppgave\/Mixed\/Simplified")$/;"	kind:variable	line:47
+findRMS	../tools.py	/^def findRMS(vector):$/;"	kind:function	line:124
+findSNRfactor	../tools.py	/^def findSNRfactor(cleanAudio,noise,SNRdB):$/;"	kind:function	line:100
+generateAudioFromFile	../getData.py	/^def generateAudioFromFile(audioFolder, noiseFolder):$/;"	kind:function	line:7
+generateAudioFromFile	../preprocessingWithGenerator.py	/^def generateAudioFromFile(windowLength,q,N,batchSize,SNRdB, audioFolder, noiseFolder):$/;"	kind:function	line:10
+generateTestData	../generateTestData.py	/^def generateTestData(windowLength,q,N,SNRdB, audioFolder, noiseFile, filePathSave, save): $/;"	kind:function	line:11
+generateTestData.py	../generateTestData.py	1;"	kind:file	line:1
+getData.py	../getData.py	1;"	kind:file	line:1
+history	../main.py	/^    history = model.fit_generator(generateAudioFromFile(windowLength,q,N,batchSize,SNRdB,audioFolderTrain,noiseFolderTrain), $/;"	kind:variable	line:92
+idealRatioMask	../tools.py	/^def idealRatioMask(cleanAudioMatrix,noiseMatrix,beta):$/;"	kind:function	line:138
+im1	../main.py	/^im1 = ax1.imshow(predictedY.transpose())$/;"	kind:variable	line:140
+im2	../main.py	/^im2 = ax2.imshow(yTest.transpose())$/;"	kind:variable	line:142
+indexes	../main.py	/^indexes = [0, 9,19]$/;"	kind:variable	line:88
+inputDim	../main.py	/^inputDim = int((windowLength\/2+1)*5)$/;"	kind:variable	line:53
+loss	../main.py	/^              loss='mse')$/;"	kind:variable	line:68
+main.py	../main.py	1;"	kind:file	line:1
+mapToVector	../tools.py	/^def mapToVector(matrix):$/;"	kind:function	line:83
+model	../main.py	/^model = Sequential()$/;"	kind:variable	line:57
+msg	../readFromFile.py	/^msg = "Hello everybody."$/;"	kind:variable	line:7
+noiseFileTest	../main.py	/^noiseFileTest = "C:\/Users\/Mira\/Documents\/NTNU1819\/Prosjektoppgave\/Audio\/Noise\/Test\/n78.wav"$/;"	kind:variable	line:43
+noiseFileValidation	../main.py	/^noiseFileValidation = "C:\/Users\/Mira\/Documents\/NTNU1819\/Prosjektoppgave\/Audio\/Noise\/Validate\/n77.wav"$/;"	kind:variable	line:44
+noiseFolderTrain	../main.py	/^noiseFolderTrain = "C:\/Users\/Mira\/Documents\/NTNU1819\/Prosjektoppgave\/Audio\/Noise\/Train\/"$/;"	kind:variable	line:42
+outputDim	../main.py	/^outputDim = int(windowLength\/2+1)$/;"	kind:variable	line:54
+overlapAdd	../recoverSignal.py	/^def overlapAdd(windowArray):$/;"	kind:function	line:107
+path	../main.py	/^path = Path("C:\/Users\/Mira\/source\/repos\/Prosjektoppgave DNN for Speech Enhancement")$/;"	kind:variable	line:19
+predictedY	../main.py	/^predictedY = model.predict(xTestStacked,batch_size=batchSize,verbose=0)$/;"	kind:variable	line:122
+preprocessing	../preprocessing.py	/^def preprocessing(rawAudio,q,N,windowLength,noise):$/;"	kind:function	line:7
+preprocessing.py	../preprocessing.py	1;"	kind:file	line:1
+preprocessingWithGenerator.py	../preprocessingWithGenerator.py	1;"	kind:file	line:1
+q	../main.py	/^q = 3                           # Downsampling factor for the clean audio files$/;"	kind:variable	line:32
+readFromFile.py	../readFromFile.py	1;"	kind:file	line:1
+recoverSignal	../recoverSignal.py	/^def recoverSignal(origX,mask,windowLength,mixedPhase,N):$/;"	kind:function	line:4
+recoverSignal.py	../recoverSignal.py	1;"	kind:file	line:1
+recoverSignalStandard	../recoverSignal.py	/^def recoverSignalStandard(origX,windowLength,mixedPhase,N):$/;"	kind:function	line:57
+recovered	../main.py	/^recovered = recoverSignal(xTest,predictedY,windowLength,mixedPhase,N) # Recovered where the predicted IRM is applied$/;"	kind:variable	line:123
+s	../main.py	/^s = "IRM comparison.pdf"$/;"	kind:variable	line:137
+savePath	../main.py	/^savePath = filePathSave \/ v$/;"	kind:variable	line:110
+savePath	../main.py	/^savePath = filePathSave \/ v$/;"	kind:variable	line:129
+savePath	../main.py	/^savePath = filePathSave \/ v$/;"	kind:variable	line:132
+savePathPlot	../main.py	/^savePathPlot = filePathSave \/ s$/;"	kind:variable	line:138
+scaleDown	../tools.py	/^def scaleDown(a,N):$/;"	kind:function	line:3
+scaleUp	../tools.py	/^def scaleUp(a,N):$/;"	kind:function	line:22
+stackMatrix	../tools.py	/^def stackMatrix(matrix):$/;"	kind:function	line:43
+stepsPerEpoch	../main.py	/^stepsPerEpoch = 20              # Number of steps (batches of samples yielded from generator) per epoch$/;"	kind:variable	line:35
+steps_per_epoch	../main.py	/^                        steps_per_epoch=stepsPerEpoch, $/;"	kind:variable	line:94
+testPath	../main.py	/^testPath = filePathSave\/ "testErrors.txt"$/;"	kind:variable	line:116
+test_errors	../main.py	/^test_errors = np.zeros(len(batchSizes))$/;"	kind:variable	line:87
+tools.py	../tools.py	1;"	kind:file	line:1
+trainPath	../main.py	/^trainPath = filePathSave\/ "trainingErrors.txt"$/;"	kind:variable	line:114
+trueIRM	../main.py	/^trueIRM = recoverSignal(xTest,yTest,windowLength,mixedPhase,N) # Recovered where the analytical IRM is applied$/;"	kind:variable	line:124
+v	../main.py	/^v = "analytical IRM.wav"$/;"	kind:variable	line:131
+v	../main.py	/^v = "enhanced.wav"$/;"	kind:variable	line:128
+v	../main.py	/^v = "history.pdf"$/;"	kind:variable	line:109
+validatePath	../main.py	/^validatePath = filePathSave\/ "validateErrors.txt"$/;"	kind:variable	line:115
+validation_data	../main.py	/^                        validation_data=(xValStacked,yVal),$/;"	kind:variable	line:93
+verbose	../main.py	/^                        verbose=0)$/;"	kind:variable	line:96
+windowLength	../main.py	/^windowLength = 256              # Number of samples in each window$/;"	kind:variable	line:30
+x_values	../main.py	/^x_values = np.arange(1,21,1) # For plotting$/;"	kind:variable	line:89
