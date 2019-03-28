@@ -120,7 +120,8 @@ def main():
 
             ## Train generator 
             # Keras expect a list of arrays > must reformat clean_audio
-            [G_loss, G_D_loss, G_l1_loss] = GAN.train_on_batch(x=[clean_audio, noisy_audio, noise_input], y={'model_1': real_D, 'model_2': clean_audio[:,:,0]}) #usikker på siste outputparameter
+            # TODO: Fix input such that it is on correct form
+            [G_loss, G_D_loss, G_l1_loss] = GAN.train_on_batch(x=[clean_audio, noisy_audio, noise_input], y={'model_1': real_D, 'model_2': clean_audio.reshape(20,1,16384)}) #usikker på siste outputparameter
 
             # Print progress
             elapsed_time = datetime.datetime.now() - start_time
