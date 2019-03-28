@@ -141,7 +141,6 @@ class Pix2Pix():
 
         return G
     def build_discriminator(self):
-        # TODO: Fix bugs
         audio_in_clean = Input(shape=self.audio_shape, name = 'in_clean')
         audio_in_mixed = Input(shape=self.audio_shape, name = 'in_mixed')
 
