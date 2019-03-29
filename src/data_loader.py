@@ -11,6 +11,8 @@ from getData import getPaths
 # Should it be a class or just a function?
 
 def load_batch(options):
+    """ Used for loading random batches of data during training
+    """
     audio_path = options['audio_path']
     noise_path = options['noise_path']
     batch_size = options['batch_size']
@@ -63,4 +65,39 @@ def load_batch(options):
 
         # Yield a batch size of random samples with the wanted snr
         yield clean_audio_batch, mixed_audio_batch
+
+
+def prepare_test(options):
+    """For a start, the test is just 1 audio clip, maybe with different noises?
+    """
+    audio_path = options['audio_path_test']
+    noise_path = options['noise_path_test']
+    snr_db = options['snr_db']
+    window_length = options['window_length']
+    z_dim = options['z_dim']
+
+    f_audio, audio_orig = scipy.io.wavfile.read(audio_path)
+    audio = preprocess(audio_orig,f_audio)
+    audio = audio[:(len(audio) - len(audio)%window_length)]
+
+    f_noise, noise_orig = scipy.io.wavfile.read(noise_path)
+    noise = preprocess(noise_orig, f_noise)
+    noise = extendVector(noise, len(audio))
+
+
+    # Obtain desired snr-level
+    snr_factor = findSNRfactor(audio, noise, snr_db)
+    mixed = audio + snr_factor*noise
+
+    # Make sure that the values are still in [-1,1]
+    max_val = np.max(np.abs(mixed))
+    if max_val > 1:
+        mixed = mixed/max_val
+    
+    # Gir det mening å ha denne her, eller burde den ha ligget i main?
+    z = np.random.normal(0,1,(len(mixed),z_dim[0],z_dim[1]))
+
+    # Yield a batch size of random samples with the wanted snr
+    return audio, mixed,z
+
 

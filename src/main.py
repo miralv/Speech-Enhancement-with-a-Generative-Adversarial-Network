@@ -98,9 +98,9 @@ def main():
 
     start_time = datetime.datetime.now()
     # The real class labels for the discriminator inputs
-    real_D = np.ones((batch_size, 1)) # For input pairs (clean, noisy)
+    real_D = np.ones((batch_size, 1))  # For input pairs (clean, noisy)
     fake_D = np.zeros((batch_size, 1)) # For input pairs (enhanced, noisy)
-    valid_G = np.array([1]*batch_size) # Need different format on this one (why?)
+    valid_G = np.array([1]*batch_size) # To compute the mse-loss
 
     for epoch in range(1, n_epochs+1):
         for batch_i, (clean_audio, noisy_audio) in enumerate(load_batch(options)):
@@ -126,8 +126,52 @@ def main():
 
             # Print progress
             elapsed_time = datetime.datetime.now() - start_time
-            print("[Epoch %d/%d] [Batch %d/%d] [D real loss: %f] [D fake loss: %f] [G loss: %f] [G_D loss: %f] [G_L1 loss: %f] [Exec. time: %s]" % (epoch, n_epochs, batch_i, steps_per_epoch, D_loss_real, D_loss_fake, G_loss, G_D_loss, G_l1_loss, elapsed_time))
-            
+            print("[Epoch %d/%d] [Batch %d/%d] [D loss: %f] [D real loss: %f] [D fake loss: %f] [G loss: %f] [G_D loss: %f] [G_L1 loss: %f] [Exec. time: %s]" % (epoch, n_epochs, batch_i + 1, steps_per_epoch, D_loss, D_loss_real, D_loss_fake, G_loss, G_D_loss, G_l1_loss, elapsed_time))
+
+
+
+
+
+
+        """ Testing
+        # Test the model 
+
+        # For now:
+        clean_path = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/group_01/p1_g01_f1_1_t-a0001.wav"
+        noise_path = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech/n1.wav"
+
+        clean,mixed,z = prepare_test(clean_path,noise_path)
+
+        # Expand dims
+        # Need to get G's input in the correct shape    
+        audios_clean = np.expand_dims(clean,axis=2)
+        audios_mixed = np.expand_dims(mixed,axis=2)
+
+        # Condition on B and generate a translated version
+        #noise_input = np.random.normal(0,1,(batch_size,self.z_dim[0],self.z_dim[1]))
+        #G_out = self.generator.predict([audios_mixed,noise_input])
+
+
+        ## Save for listening
+        cwd = os.getcwd()
+        print(cwd)
+
+        if not os.path.exists("./results"):
+            os.makedirs("./results")
+
+
+
+        
+        # v = "clean.wav"
+        # savePath = filePathSave / v
+        # scipy.io.wavfile.write(savePath,16000,data=recovered)
+
+
+        # v = "enhanced.wav"
+        # savePath = filePathSave / v
+        # scipy.io.wavfile.write(savePath,16000,data=trueIRM)
+        """
+
             
     return 0
 
