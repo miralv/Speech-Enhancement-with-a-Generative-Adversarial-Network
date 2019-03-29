@@ -68,6 +68,7 @@ def main():
 
 
     ## Set up the combined model
+    # TODO: Må de individuelle modellene kompileres i main?
     D.trainable = False
     audio_shape = (options['window_length'], options['feat_dim'])    
     z_dim = options['z_dim']
@@ -99,7 +100,7 @@ def main():
     # The real class labels for the discriminator inputs
     real_D = np.ones((batch_size, 1)) # For input pairs (clean, noisy)
     fake_D = np.zeros((batch_size, 1)) # For input pairs (enhanced, noisy)
-
+    valid_G = np.array([1]*batch_size) # Need different format on this one (why?)
 
     for epoch in range(1, n_epochs+1):
         for batch_i, (clean_audio, noisy_audio) in enumerate(load_batch(options)):
@@ -121,11 +122,11 @@ def main():
             ## Train generator 
             # Keras expect a list of arrays > must reformat clean_audio
             # TODO: Fix input such that it is on correct form
-            [G_loss, G_D_loss, G_l1_loss] = GAN.train_on_batch(x=[clean_audio, noisy_audio, noise_input], y={'model_1': real_D, 'model_2': clean_audio.reshape(20,1,16384)}) #usikker på siste outputparameter
+            [G_loss, G_D_loss, G_l1_loss] = GAN.train_on_batch(x=[clean_audio, noisy_audio, noise_input], y={'model_1': clean_audio, 'model_2': valid_G}) 
 
             # Print progress
             elapsed_time = datetime.datetime.now() - start_time
-            print("[Epoch %d/%d] [Batch %d/%d] [D real loss: %f] [D fake loss: %f] [G loss: %f] [G_D loss: %f] [G_L1 loss: %f] [Exec. time: %f]" % (epoch, n_epochs, batch_i, steps_per_epoch, D_loss_real, D_loss_fake, G_loss, G_D_loss, G_l1_loss, elapsed_time))
+            print("[Epoch %d/%d] [Batch %d/%d] [D real loss: %f] [D fake loss: %f] [G loss: %f] [G_D loss: %f] [G_L1 loss: %f] [Exec. time: %s]" % (epoch, n_epochs, batch_i, steps_per_epoch, D_loss_real, D_loss_fake, G_loss, G_D_loss, G_l1_loss, elapsed_time))
             
             
     return 0
