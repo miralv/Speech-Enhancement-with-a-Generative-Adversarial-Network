@@ -11,12 +11,12 @@ from getData import getPaths
 # Should it be a class or just a function?
 
 def load_batch(options):
-    """ Used for loading random batches of data during training
+    """ Used for loading an epoch's random batches of data during training
     """
     audio_path = options['audio_path']
     noise_path = options['noise_path']
     batch_size = options['batch_size']
-    n_epochs = options['n_epochs']
+    n_batches = options['steps_per_epoch']
     snr_db = options['snr_db']
     window_length = options['window_length']
 
@@ -25,7 +25,7 @@ def load_batch(options):
     # TODO: Include sliding windows during training.
 
 
-    for i in range(n_epochs):
+    for i in range(n_batches):
         # Extract randomly n=batch_size audio paths and noise paths
         audio_batch = np.random.choice(audio_paths, batch_size)
         noise_batch = np.random.choice(noise_paths, batch_size)
@@ -95,9 +95,12 @@ def prepare_test(options):
         mixed = mixed/max_val
     
     # Gir det mening å ha denne her, eller burde den ha ligget i main?
-    z = np.random.normal(0,1,(len(mixed),z_dim[0],z_dim[1]))
+    n_windows = int(np.ceil(len(mixed)/window_length))
+    z = np.random.normal(0,1,(n_windows,z_dim[0],z_dim[1]))
+    
+    #(0, 1, (batch_size, z_dim[0], z_dim[1]))
 
     # Yield a batch size of random samples with the wanted snr
-    return audio, mixed,z
+    return audio, mixed,z, max_val
 
 

@@ -18,7 +18,8 @@ import os
 
 from discriminator import discriminator
 from generator import generator
-from data_loader import load_batch
+from data_loader import load_batch, prepare_test
+from tools import *
 
 def main():
     """
@@ -46,11 +47,11 @@ def main():
     options['audio_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1"
     options['noise_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech"
     options['batch_size'] = 20
-    options['steps_per_epoch'] = 20
-    options['n_epochs'] = 20 
+    options['steps_per_epoch'] = 10
+    options['n_epochs'] = 5
     options['snr_db'] = 5
+    options['sample_rate'] = 16000
     
-
 
 
     ## Set up the individual models
@@ -106,7 +107,7 @@ def main():
         for batch_i, (clean_audio, noisy_audio) in enumerate(load_batch(options)):
             ## Train discriminator
             # Get G's input in correct shape
-            clean_audio = np.expand_dims(clean_audio, axis=2)
+            clean_audio = np.expand_dims(clean_audio, axis=2) #dim -> (batchsize,windowsize,1)
             noisy_audio = np.expand_dims(noisy_audio, axis=2)
 
             # Get G's enhanced audio
@@ -121,7 +122,6 @@ def main():
 
             ## Train generator 
             # Keras expect a list of arrays > must reformat clean_audio
-            # TODO: Fix input such that it is on correct form
             [G_loss, G_D_loss, G_l1_loss] = GAN.train_on_batch(x=[clean_audio, noisy_audio, noise_input], y={'model_1': clean_audio, 'model_2': valid_G}) 
 
             # Print progress
@@ -133,44 +133,55 @@ def main():
 
 
 
-        """ Testing
-        # Test the model 
+    # Test the model 
 
-        # For now:
-        clean_path = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/group_01/p1_g01_f1_1_t-a0001.wav"
-        noise_path = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech/n1.wav"
+    # For now:
+    options['audio_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/group_01/p1_g01_f1_1_t-a0001.wav"
+    options['noise_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech/n1.wav"
+    clean,mixed,z,scaling_factor = prepare_test(options)
 
-        clean,mixed,z = prepare_test(clean_path,noise_path)
+    # Expand dims
+    # Need to get G's input in the correct shape
+    # First, get it into form (n_windows, window_length)
+    # Thereafter (n_windows, window_length,1)
+    clean = slice_vector(clean, options)
+    mixed = slice_vector(mixed, options)
+    audios_clean = np.expand_dims(clean, axis=2)
+    audios_mixed = np.expand_dims(mixed, axis=2)
 
-        # Expand dims
-        # Need to get G's input in the correct shape    
-        audios_clean = np.expand_dims(clean,axis=2)
-        audios_mixed = np.expand_dims(mixed,axis=2)
-
-        # Condition on B and generate a translated version
-        #noise_input = np.random.normal(0,1,(batch_size,self.z_dim[0],self.z_dim[1]))
-        #G_out = self.generator.predict([audios_mixed,noise_input])
-
-
-        ## Save for listening
-        cwd = os.getcwd()
-        print(cwd)
-
-        if not os.path.exists("./results"):
-            os.makedirs("./results")
+    # Condition on B and generate a translated version
+    # TODO: Verify that the dimensions are correct.
+    # Now we send in (8, window_length,1) & (8, 8, 1024)
+    G_out = G.predict([audios_mixed, z]) #Må jeg ha train = false?
 
 
+    # Postprocess = upscale from [-1,1] to int16
+    clean = postprocess(clean)
+    mixed = postprocess(mixed)
+    G_enhanced = postprocess(G_out)
 
-        
-        # v = "clean.wav"
-        # savePath = filePathSave / v
-        # scipy.io.wavfile.write(savePath,16000,data=recovered)
+    ## Save for listening
+    cwd = os.getcwd()
+    print(cwd)
+
+    if not os.path.exists("./results"):
+        os.makedirs("./results")
 
 
-        # v = "enhanced.wav"
-        # savePath = filePathSave / v
-        # scipy.io.wavfile.write(savePath,16000,data=trueIRM)
-        """
+    # Want to save clean, enhanced and mixed.
+    if scaling_factor > 1:
+        clean = np.divide(clean, scaling_factor)
+        mixed = np.divide(mixed, scaling_factor)
+
+    sr = options['sample_rate']
+    path_audio = "./results/clean.wav"
+    path_noisy = "./results/noisy.wav"
+    path_enhanced = "./results/enhanced.wav"
+    saveAudio(clean, path_audio, sr)
+    saveAudio(mixed, path_noisy, sr)
+    saveAudio(G_enhanced, path_enhanced, sr)
+    
+
 
             
     return 0
