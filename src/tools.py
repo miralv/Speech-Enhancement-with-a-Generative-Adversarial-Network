@@ -154,7 +154,7 @@ def slice_vector(vector, options, overlap=0.0):
     return sliced.astype('float64')
 
 
-def postprocess(audio):
+def postprocess(audio, coeff=0):
     """ Rescale and  map back to 1d
     """
 
@@ -181,6 +181,10 @@ def postprocess(audio):
     # Scale up
     recovered = scaleUp(vectorized)
 
+    # De emph
+    if coeff > 0:
+        recovered = de_emph(recovered, coeff=coeff) 
+
     return recovered
 
 
@@ -196,3 +200,30 @@ def write_log(callback, names, logs, batch_no):
         summary_value.tag = name
         callback.writer.add_summary(summary, batch_no)
         callback.writer.flush()
+
+
+def pre_emph(x, coeff=0.95):
+    """
+    Apply pre_emph on 2d data
+    """
+    x0 = tensorflow.reshape(x[0],[1,])
+    diff = x[1:] - coeff*x[:-1]
+    concat = tensorflow.concat(0,x0,diff)
+    return concat
+
+
+
+def de_emph(y, coeff=0.95):
+    """
+    Apply de_emph on test data: works only on 1d data
+    """
+    if coeff <= 0:
+        return y
+
+    x = np.zeros(y.shape[0], dtype = np.float64)
+    x[0] = y[0]
+    for i in range(1, y.shape[0], 1):
+        x[i] = coeff * x[i - 1] + y[i]
+    
+    return x
+

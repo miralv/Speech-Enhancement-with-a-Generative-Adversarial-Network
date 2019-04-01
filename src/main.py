@@ -49,8 +49,8 @@ def main():
     # Some additional parameters needed in the training process
     options['audio_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1"
     options['noise_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech"
-    options['batch_size'] = 20
-    options['steps_per_epoch'] = 10
+    options['batch_size'] = 5
+    options['steps_per_epoch'] = 5
     options['n_epochs'] = 5
     options['snr_db'] = 5
     options['sample_rate'] = 16000
@@ -92,6 +92,9 @@ def main():
     print(GAN.metrics_names)
 
     # Tensorboard
+    if not os.path.exists("./logs"):
+        os.makedirs("./logs")
+    
     log_path = "./logs"
     callback = TensorBoard(log_path)
     callback.set_model(GAN)
@@ -159,8 +162,6 @@ def main():
     audios_mixed = np.expand_dims(mixed, axis=2)
 
     # Condition on B and generate a translated version
-    # TODO: Verify that the dimensions are correct.
-    # Now we send in (8, window_length,1) & (8, 8, 1024)
     G_out = G.predict([audios_mixed, z]) #Må jeg ha train = false?
 
 
