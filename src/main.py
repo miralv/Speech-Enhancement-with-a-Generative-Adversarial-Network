@@ -2,6 +2,7 @@ from __future__ import print_function, division
 import scipy
 import tensorflow
 
+
 import keras
 from keras.datasets import mnist
 from keras.layers import Input, Dense, Reshape, Flatten, Dropout#, Concatenate
@@ -10,6 +11,8 @@ from keras.layers.advanced_activations import LeakyReLU
 from keras.layers.convolutional import UpSampling1D, Conv1D
 from keras.models import Sequential, Model
 from keras.optimizers import Adam
+from keras.callbacks import TensorBoard
+
 import datetime
 import matplotlib.pyplot as plt
 import sys
@@ -51,7 +54,6 @@ def main():
     options['n_epochs'] = 5
     options['snr_db'] = 5
     options['sample_rate'] = 16000
-    
 
 
     ## Set up the individual models
@@ -89,7 +91,11 @@ def main():
                 loss_weights={'model_1': 100, 'model_2': 1})
     print(GAN.metrics_names)
 
-
+    # Tensorboard
+    log_path = "./logs"
+    callback = TensorBoard(log_path)
+    callback.set_model(GAN)
+    train_names = ['G_loss', 'G_adv_loss', 'G_l1Loss']
     
     ## Model training
     n_epochs = options['n_epochs']
@@ -129,9 +135,12 @@ def main():
             print("[Epoch %d/%d] [Batch %d/%d] [D loss: %f] [D real loss: %f] [D fake loss: %f] [G loss: %f] [G_D loss: %f] [G_L1 loss: %f] [Exec. time: %s]" % (epoch, n_epochs, batch_i + 1, steps_per_epoch, D_loss, D_loss_real, D_loss_fake, G_loss, G_D_loss, G_l1_loss, elapsed_time))
 
 
+            logs = [G_loss, G_D_loss, G_l1_loss]
+            write_log(callback, train_names, logs, epoch)
 
 
 
+    # Want to plot training progress
 
     # Test the model 
 

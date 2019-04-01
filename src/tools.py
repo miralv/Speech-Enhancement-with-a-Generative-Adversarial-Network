@@ -2,6 +2,7 @@ import numpy as np
 from scipy.signal import decimate
 import scipy.io.wavfile
 import resampy
+import tensorflow
 #import librosa
 
 def scaleDown(a, N=16):
@@ -185,3 +186,13 @@ def postprocess(audio):
 
 def saveAudio(audio, path,sr):
     scipy.io.wavfile.write(path, sr, data=audio)
+
+
+def write_log(callback, names, logs, batch_no):
+    for name, value in zip(names, logs):
+        summary = tensorflow.Summary()
+        summary_value = summary.value.add()
+        summary_value.simple_value = value
+        summary_value.tag = name
+        callback.writer.add_summary(summary, batch_no)
+        callback.writer.flush()
