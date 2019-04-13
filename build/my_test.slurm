@@ -7,7 +7,7 @@
 #SBATCH --output=gan_first_try.out
 
 
-HOMEDIR=${SLURM_SUBMIT_DIR/..} ### 
+HOMEDIR=${SLURM_SUBMIT_DIR/../src} ### 
 cd ${HOMEDIR}
 
 
@@ -17,7 +17,7 @@ module load goolfc/2017b
 module load TensorFlow/1.7.0-Python-3.6.3
 module load cuDNN/7
 
-source venv/bin/activate
+source /home/miralv/Master/v_env/master_virtualenv/bin/activate
 
 
 nice python main.py
