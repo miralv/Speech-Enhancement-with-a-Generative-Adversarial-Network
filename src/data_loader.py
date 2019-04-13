@@ -19,6 +19,7 @@ def load_batch(options):
     n_batches = options['steps_per_epoch']
     snr_db = options['snr_db']
     window_length = options['window_length']
+    pre_emph_const = options['pre_emph']
 
     audio_paths, noise_paths = getPaths(audio_path,noise_path)
 
@@ -60,8 +61,8 @@ def load_batch(options):
             
             # Draw a random part
             start_index = random.randint(0,len(mixed)-window_length)
-            clean_audio_batch[j,:] = pre_emph(audio[start_index: start_index + window_length])
-            mixed_audio_batch[j,:] = pre_emph(noise[start_index: start_index + window_length])
+            clean_audio_batch[j,:] = pre_emph(audio[start_index: start_index + window_length],pre_emph_const)
+            mixed_audio_batch[j,:] = pre_emph(noise[start_index: start_index + window_length],pre_emph_const)
 
         # Yield a batch size of random samples with the wanted snr
         yield clean_audio_batch, mixed_audio_batch

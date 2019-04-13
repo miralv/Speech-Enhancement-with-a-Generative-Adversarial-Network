@@ -45,6 +45,7 @@ def main():
     options['show_summary'] = False
     options['learning_rate'] = 0.0002
     options['g_l1loss'] = 100.
+    options['pre_emph'] = 0.95
 
     # Some additional parameters needed in the training process
     options['audio_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1"
@@ -168,7 +169,7 @@ def main():
     # Postprocess = upscale from [-1,1] to int16
     clean = postprocess(clean)
     mixed = postprocess(mixed)
-    G_enhanced = postprocess(G_out)
+    G_enhanced = postprocess(G_out,coeff = 'pre_emph')
 
     ## Save for listening
     cwd = os.getcwd()
