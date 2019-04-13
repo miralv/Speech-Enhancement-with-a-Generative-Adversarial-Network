@@ -2,7 +2,7 @@ import numpy as np
 from scipy.signal import decimate
 import scipy.io.wavfile
 import resampy
-import tensorflow
+import tensorflow as tf
 #import librosa
 
 def scaleDown(a, N=16):
@@ -194,7 +194,7 @@ def saveAudio(audio, path,sr):
 
 def write_log(callback, names, logs, batch_no):
     for name, value in zip(names, logs):
-        summary = tensorflow.Summary()
+        summary = tf.Summary()
         summary_value = summary.value.add()
         summary_value.simple_value = value
         summary_value.tag = name
@@ -204,12 +204,16 @@ def write_log(callback, names, logs, batch_no):
 
 def pre_emph(x, coeff=0.95):
     """
-    Apply pre_emph on 2d data
+    Apply pre_emph on 2d data (batch size x window length)
     """
-    x0 = tensorflow.reshape(x[0],[1,])
-    diff = x[1:] - coeff*x[:-1]
-    concat = tensorflow.concat(0,x0,diff)
-    return concat
+    #x0 = tf.reshape(x[0],[1,])
+    x0 = x[:,0]
+    x0 = np.expand_dims(x0, axis = 1)
+    diff = x[:,1:] - coeff * x[:,:-1]
+    x_pre_emph = np.concatenate((x0,diff),axis=1)
+    #diff = x[1:] - coeff*x[:-1]
+    #concat = tf.concat(0,x0,diff)
+    return x_pre_emph#concat
 
 
 
@@ -220,10 +224,12 @@ def de_emph(y, coeff=0.95):
     if coeff <= 0:
         return y
 
-    x = np.zeros(y.shape[0], dtype = np.float64)
+    x = np.zeros(shape = (y.shape[0] ,)) # Default is np.float64
     x[0] = y[0]
     for i in range(1, y.shape[0], 1):
         x[i] = coeff * x[i - 1] + y[i]
     
     return x
 
+
+        

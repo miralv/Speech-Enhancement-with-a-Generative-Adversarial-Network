@@ -1,6 +1,7 @@
 from __future__ import print_function, division
 import scipy
 import tensorflow
+from tensorflow.python.client import device_lib
 
 
 import keras
@@ -31,6 +32,7 @@ def main():
     """
     # Parameters specified for the construction of the generator and discriminator
     options = {}
+    options['Idun'] = True # Set to true when running on Idun, s.t. the audio path and noise path get correct
     options['window_length'] = 16384
     options['feat_dim'] = 1
     options['z_dim'] = (8, 1024) # Dimensions for the latent noise variable 
@@ -48,13 +50,26 @@ def main():
     options['pre_emph'] = 0.95
 
     # Some additional parameters needed in the training process
-    options['audio_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1"
-    options['noise_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech"
-    options['batch_size'] = 5
-    options['steps_per_epoch'] = 5
+    if options['Idun']:
+        options['audio_path'] = "/home/miralv/Master/Audio/sennheiser_1"
+        options['noise_path'] = "/home/miralv/Master/Audio/Nonspeech"
+    else:
+        options['audio_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1"
+        options['noise_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech"
+
+
+
+    options['batch_size'] = 20
+    options['steps_per_epoch'] = 10
     options['n_epochs'] = 5
     options['snr_db'] = 5
     options['sample_rate'] = 16000
+
+
+    # Print visible devices
+    print("Print local devices:\n")
+    print(device_lib.list_local_devices())
+    print ("\n\n")
 
 
     ## Set up the individual models
@@ -169,7 +184,7 @@ def main():
     # Postprocess = upscale from [-1,1] to int16
     clean = postprocess(clean)
     mixed = postprocess(mixed)
-    G_enhanced = postprocess(G_out,coeff = 'pre_emph')
+    G_enhanced = postprocess(G_out,coeff = options['pre_emph'])
 
     ## Save for listening
     cwd = os.getcwd()

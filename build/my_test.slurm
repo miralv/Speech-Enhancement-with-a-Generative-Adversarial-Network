@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#SBATCH --nodes=1
+#SBATCH --gres=gpu:1 
+#SBATCH --time=00:15:00 
+#SBATCH --partition=EPICALL 
+#SBATCH --job-name="GAN for SE"
+#SBATCH --output=gan_first_try.out
+
+
+HOMEDIR=${SLURM_SUBMIT_DIR/..} ### 
+cd ${HOMEDIR}
+
+
+module purge
+module load GCC/6.4.0-2.28  CUDA/9.0.176  OpenMPI$
+module load goolfc/2017b
+module load TensorFlow/1.7.0-Python-3.6.3
+module load cuDNN/7
+
+source venv/bin/activate
+
+
+nice python main.py
