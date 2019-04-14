@@ -15,7 +15,10 @@ from keras.optimizers import Adam
 from keras.callbacks import TensorBoard
 
 import datetime
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
+#import matplotlib
+#matplotlib.use('agg')
+#import matplotlib.pyplot as plt
 import sys
 import numpy as np
 import os
@@ -59,9 +62,9 @@ def main():
 
 
 
-    options['batch_size'] = 20
-    options['steps_per_epoch'] = 10
-    options['n_epochs'] = 5
+    options['batch_size'] = 5
+    options['steps_per_epoch'] = 5
+    options['n_epochs'] = 1
     options['snr_db'] = 5
     options['sample_rate'] = 16000
 
