@@ -65,6 +65,7 @@ def main():
     options['snr_db'] = 5
     options['sample_rate'] = 16000
 
+    print("Options are set.\n\n")
 
     # Print visible devices
     print("Print local devices:\n")
@@ -73,14 +74,18 @@ def main():
 
 
     ## Set up the individual models
+    print("Setting up individual models\n")
     G = generator(options)
+    print("G finished\n")
     D = discriminator(options)
+    print("D finished\n\n")
 
     # Specify optimizer
     optimizer = Adam(lr=options['learning_rate'])
 
 
     # Compile the individual models
+    print("Compile the individual models\n")
     D.compile(loss='mse', optimizer=optimizer)
     G.compile(loss='mae', optimizer=optimizer)
 
@@ -98,7 +103,8 @@ def main():
     # Prepare outputs
     G_out = G([noisy_audio_in, z])
     D_out = D([G_out, noisy_audio_in])
-
+    
+    print("Set up the combined model\n")
     GAN = Model(inputs=[clean_audio_in, noisy_audio_in, z], outputs=[D_out, G_out])
     GAN.summary()
     #TODO: Check that the losses become correct with the model syntax
@@ -107,14 +113,14 @@ def main():
                 loss_weights={'model_1': 100, 'model_2': 1})
     print(GAN.metrics_names)
 
-    # Tensorboard
-    if not os.path.exists("./logs"):
-        os.makedirs("./logs")
+    # # Tensorboard
+    # if not os.path.exists("./logs"):
+    #     os.makedirs("./logs")
     
-    log_path = "./logs"
-    callback = TensorBoard(log_path)
-    callback.set_model(GAN)
-    train_names = ['G_loss', 'G_adv_loss', 'G_l1Loss']
+    # log_path = "./logs"
+    # callback = TensorBoard(log_path)
+    # callback.set_model(GAN)
+    # train_names = ['G_loss', 'G_adv_loss', 'G_l1Loss']
     
     ## Model training
     n_epochs = options['n_epochs']
@@ -127,6 +133,9 @@ def main():
     real_D = np.ones((batch_size, 1))  # For input pairs (clean, noisy)
     fake_D = np.zeros((batch_size, 1)) # For input pairs (enhanced, noisy)
     valid_G = np.array([1]*batch_size) # To compute the mse-loss
+
+
+    print("Begin training\n")
 
     for epoch in range(1, n_epochs+1):
         for batch_i, (clean_audio, noisy_audio) in enumerate(load_batch(options)):
@@ -154,8 +163,8 @@ def main():
             print("[Epoch %d/%d] [Batch %d/%d] [D loss: %f] [D real loss: %f] [D fake loss: %f] [G loss: %f] [G_D loss: %f] [G_L1 loss: %f] [Exec. time: %s]" % (epoch, n_epochs, batch_i + 1, steps_per_epoch, D_loss, D_loss_real, D_loss_fake, G_loss, G_D_loss, G_l1_loss, elapsed_time))
 
 
-            logs = [G_loss, G_D_loss, G_l1_loss]
-            write_log(callback, train_names, logs, epoch)
+            # logs = [G_loss, G_D_loss, G_l1_loss]
+            # write_log(callback, train_names, logs, epoch)
 
 
 
@@ -163,49 +172,49 @@ def main():
 
     # Test the model 
 
-    # For now:
-    options['audio_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/group_01/p1_g01_f1_1_t-a0001.wav"
-    options['noise_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech/n1.wav"
-    clean,mixed,z,scaling_factor = prepare_test(options)
+    # # For now:
+    # options['audio_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/group_01/p1_g01_f1_1_t-a0001.wav"
+    # options['noise_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech/n1.wav"
+    # clean,mixed,z,scaling_factor = prepare_test(options)
 
-    # Expand dims
-    # Need to get G's input in the correct shape
-    # First, get it into form (n_windows, window_length)
-    # Thereafter (n_windows, window_length,1)
-    clean = slice_vector(clean, options)
-    mixed = slice_vector(mixed, options)
-    audios_clean = np.expand_dims(clean, axis=2)
-    audios_mixed = np.expand_dims(mixed, axis=2)
+    # # Expand dims
+    # # Need to get G's input in the correct shape
+    # # First, get it into form (n_windows, window_length)
+    # # Thereafter (n_windows, window_length,1)
+    # clean = slice_vector(clean, options)
+    # mixed = slice_vector(mixed, options)
+    # audios_clean = np.expand_dims(clean, axis=2)
+    # audios_mixed = np.expand_dims(mixed, axis=2)
 
-    # Condition on B and generate a translated version
-    G_out = G.predict([audios_mixed, z]) #Må jeg ha train = false?
-
-
-    # Postprocess = upscale from [-1,1] to int16
-    clean = postprocess(clean)
-    mixed = postprocess(mixed)
-    G_enhanced = postprocess(G_out,coeff = options['pre_emph'])
-
-    ## Save for listening
-    cwd = os.getcwd()
-    print(cwd)
-
-    if not os.path.exists("./results"):
-        os.makedirs("./results")
+    # # Condition on B and generate a translated version
+    # G_out = G.predict([audios_mixed, z]) #Må jeg ha train = false?
 
 
-    # Want to save clean, enhanced and mixed.
-    if scaling_factor > 1:
-        clean = np.divide(clean, scaling_factor)
-        mixed = np.divide(mixed, scaling_factor)
+    # # Postprocess = upscale from [-1,1] to int16
+    # clean = postprocess(clean)
+    # mixed = postprocess(mixed)
+    # G_enhanced = postprocess(G_out,coeff = options['pre_emph'])
 
-    sr = options['sample_rate']
-    path_audio = "./results/clean.wav"
-    path_noisy = "./results/noisy.wav"
-    path_enhanced = "./results/enhanced.wav"
-    saveAudio(clean, path_audio, sr)
-    saveAudio(mixed, path_noisy, sr)
-    saveAudio(G_enhanced, path_enhanced, sr)
+    # ## Save for listening
+    # cwd = os.getcwd()
+    # print(cwd)
+
+    # if not os.path.exists("./results"):
+    #     os.makedirs("./results")
+
+
+    # # Want to save clean, enhanced and mixed.
+    # if scaling_factor > 1:
+    #     clean = np.divide(clean, scaling_factor)
+    #     mixed = np.divide(mixed, scaling_factor)
+
+    # sr = options['sample_rate']
+    # path_audio = "./results/clean.wav"
+    # path_noisy = "./results/noisy.wav"
+    # path_enhanced = "./results/enhanced.wav"
+    # saveAudio(clean, path_audio, sr)
+    # saveAudio(mixed, path_noisy, sr)
+    # saveAudio(G_enhanced, path_enhanced, sr)
     
 
 
