@@ -4,7 +4,7 @@ from glob import glob
 import numpy as np
 import os
 import random
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from tools import *
 from getData import getPaths
 
