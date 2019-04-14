@@ -9,10 +9,10 @@
 
 HOMEDIR=${SLURM_SUBMIT_DIR/../src} ### 
 cd ${HOMEDIR}
-
+echo $HOMEDIR
 
 module purge
-module load GCC/6.4.0-2.28  CUDA/9.0.176  OpenMPI$
+module load GCC/6.4.0-2.28  CUDA/9.0.176  OpenMPI
 module load goolfc/2017b
 module load TensorFlow/1.7.0-Python-3.6.3
 module load cuDNN/7
