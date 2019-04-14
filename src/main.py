@@ -1,5 +1,5 @@
 from __future__ import print_function, division
-#import scipy
+import scipy
 import tensorflow
 from tensorflow.python.client import device_lib
 
