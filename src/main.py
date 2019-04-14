@@ -16,6 +16,9 @@ from keras.callbacks import TensorBoard
 
 import datetime
 #import matplotlib.pyplot as plt
+#import matplotlib
+#matplotlib.use('agg')
+#import matplotlib.pyplot as plt
 import sys
 import numpy as np
 import os
@@ -32,85 +35,85 @@ def main():
     """
     print("Hello world")
     # Parameters specified for the construction of the generator and discriminator
-    # options = {}
-    # options['Idun'] = False # Set to true when running on Idun, s.t. the audio path and noise path get correct
-    # options['window_length'] = 16384
-    # options['feat_dim'] = 1
-    # options['z_dim'] = (8, 1024) # Dimensions for the latent noise variable 
-    # options['filter_length'] = 31
-    # options['strides'] = 2
-    # options['padding'] = 'same'
-    # options['use_bias'] = True
-    # options['generator_encoder_num_kernels'] = [16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 1024]
-    # options['generator_decoder_num_kernels'] = options['generator_encoder_num_kernels'][:-1][::-1] + [1]
-    # options['discriminator_num_kernels'] = [16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 1024]
-    # options['alpha'] = 0.3 # alpha in LeakyReLU
-    # options['show_summary'] = False
-    # options['learning_rate'] = 0.0002
-    # options['g_l1loss'] = 100.
-    # options['pre_emph'] = 0.95
+    options = {}
+    options['Idun'] = True # Set to true when running on Idun, s.t. the audio path and noise path get correct
+    options['window_length'] = 16384
+    options['feat_dim'] = 1
+    options['z_dim'] = (8, 1024) # Dimensions for the latent noise variable 
+    options['filter_length'] = 31
+    options['strides'] = 2
+    options['padding'] = 'same'
+    options['use_bias'] = True
+    options['generator_encoder_num_kernels'] = [16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 1024]
+    options['generator_decoder_num_kernels'] = options['generator_encoder_num_kernels'][:-1][::-1] + [1]
+    options['discriminator_num_kernels'] = [16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 1024]
+    options['alpha'] = 0.3 # alpha in LeakyReLU
+    options['show_summary'] = False
+    options['learning_rate'] = 0.0002
+    options['g_l1loss'] = 100.
+    options['pre_emph'] = 0.95
 
-    # # Some additional parameters needed in the training process
-    # if options['Idun']:
-    #     options['audio_path'] = "/home/miralv/Master/Audio/sennheiser_1"
-    #     options['noise_path'] = "/home/miralv/Master/Audio/Nonspeech"
-    # else:
-    #     options['audio_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1"
-    #     options['noise_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech"
-
-
-
-    # options['batch_size'] = 20
-    # options['steps_per_epoch'] = 10
-    # options['n_epochs'] = 5
-    # options['snr_db'] = 5
-    # options['sample_rate'] = 16000
-
-
-    # # Print visible devices
-    # print("Print local devices:\n")
-    # print(device_lib.list_local_devices())
-    # print ("\n\n")
-
-
-    # ## Set up the individual models
-    # G = generator(options)
-    # D = discriminator(options)
-
-    # # Specify optimizer
-    # optimizer = Adam(lr=options['learning_rate'])
-
-
-    # # Compile the individual models
-    # D.compile(loss='mse', optimizer=optimizer)
-    # G.compile(loss='mae', optimizer=optimizer)
+    # Some additional parameters needed in the training process
+    if options['Idun']:
+        options['audio_path'] = "/home/miralv/Master/Audio/sennheiser_1"
+        options['noise_path'] = "/home/miralv/Master/Audio/Nonspeech"
+    else:
+        options['audio_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1"
+        options['noise_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech"
 
 
 
-    # ## Set up the combined model
-    # # TODO: Må de individuelle modellene kompileres i main?
-    # D.trainable = False
-    # audio_shape = (options['window_length'], options['feat_dim'])    
-    # z_dim = options['z_dim']
-    # # Prepare inputs
-    # clean_audio_in = Input(shape=audio_shape, name='in_clean')
-    # noisy_audio_in = Input(shape=audio_shape, name='in_noisy')
-    # z = Input(shape=z_dim, name='noise_input')
-    # # Prepare outputs
-    # G_out = G([noisy_audio_in, z])
-    # D_out = D([G_out, noisy_audio_in])
+    options['batch_size'] = 5
+    options['steps_per_epoch'] = 5
+    options['n_epochs'] = 1
+    options['snr_db'] = 5
+    options['sample_rate'] = 16000
 
-    # GAN = Model(inputs=[clean_audio_in, noisy_audio_in, z], outputs=[D_out, G_out])
-    # GAN.summary()
-    # #TODO: Check that the losses become correct with the model syntax
-    # GAN.compile(optimizer=optimizer,
-    #             loss={'model_1': 'mae', 'model_2': 'mse'},
-    #             loss_weights={'model_1': 100, 'model_2': 1})
-    # print(GAN.metrics_names)
 
-    # # Tensorboard
-    # if not os.path.exists("./logs"):
-    #     os.makedirs("./logs")
+    # Print visible devices
+    print("Print local devices:\n")
+    print(device_lib.list_local_devices())
+    print ("\n\n")
+
+
+    ## Set up the individual models
+    G = generator(options)
+    D = discriminator(options)
+
+    # Specify optimizer
+    optimizer = Adam(lr=options['learning_rate'])
+
+
+    # Compile the individual models
+    D.compile(loss='mse', optimizer=optimizer)
+    G.compile(loss='mae', optimizer=optimizer)
+
+
+
+    ## Set up the combined model
+    # TODO: Må de individuelle modellene kompileres i main?
+    D.trainable = False
+    audio_shape = (options['window_length'], options['feat_dim'])    
+    z_dim = options['z_dim']
+    # Prepare inputs
+    clean_audio_in = Input(shape=audio_shape, name='in_clean')
+    noisy_audio_in = Input(shape=audio_shape, name='in_noisy')
+    z = Input(shape=z_dim, name='noise_input')
+    # Prepare outputs
+    G_out = G([noisy_audio_in, z])
+    D_out = D([G_out, noisy_audio_in])
+
+    GAN = Model(inputs=[clean_audio_in, noisy_audio_in, z], outputs=[D_out, G_out])
+    GAN.summary()
+    #TODO: Check that the losses become correct with the model syntax
+    GAN.compile(optimizer=optimizer,
+                loss={'model_1': 'mae', 'model_2': 'mse'},
+                loss_weights={'model_1': 100, 'model_2': 1})
+    print(GAN.metrics_names)
+
+    # Tensorboard
+    if not os.path.exists("./logs"):
+        os.makedirs("./logs")
     
     # log_path = "./logs"
     # callback = TensorBoard(log_path)
