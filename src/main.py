@@ -70,10 +70,10 @@ def main():
 
     print("Options are set.\n\n")
 
-    # Print visible devices
-    print("Print local devices:\n")
-    print(device_lib.list_local_devices())
-    print ("\n\n")
+    # # Print visible devices
+    # print("Print local devices:\n")
+    # print(device_lib.list_local_devices())
+    # print ("\n\n")
 
 
     ## Set up the individual models
@@ -146,6 +146,8 @@ def main():
             # Get G's input in correct shape
             clean_audio = np.expand_dims(clean_audio, axis=2) #dim -> (batchsize,windowsize,1)
             noisy_audio = np.expand_dims(noisy_audio, axis=2)
+
+            # Har testet, Idun kommer seg hit. (men ikke lenger?)
 
             # Get G's enhanced audio
             noise_input = np.random.normal(0, 1, (batch_size, z_dim[0], z_dim[1])) #z
