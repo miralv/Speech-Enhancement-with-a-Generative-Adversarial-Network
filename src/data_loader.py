@@ -13,6 +13,7 @@ from getData import getPaths
 def load_batch(options):
     """ Used for loading an epoch's random batches of data during training
     """
+
     audio_path = options['audio_path']
     noise_path = options['noise_path']
     batch_size = options['batch_size']
@@ -21,6 +22,7 @@ def load_batch(options):
     window_length = options['window_length']
     pre_emph_const = options['pre_emph']
 
+    # Get all paths in the training set
     audio_paths, noise_paths = getPaths(audio_path,noise_path)
 
     # TODO: Include sliding windows during training.

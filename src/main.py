@@ -2,6 +2,7 @@ from __future__ import print_function, division
 import scipy
 import tensorflow
 from tensorflow.python.client import device_lib
+import glob
 
 
 import keras
@@ -13,7 +14,6 @@ from keras.layers.convolutional import UpSampling1D, Conv1D
 from keras.models import Sequential, Model
 from keras.optimizers import Adam
 from keras.callbacks import TensorBoard
-
 import datetime
 #import matplotlib.pyplot as plt
 #import matplotlib
@@ -33,9 +33,14 @@ def main():
      Specify the specific structure of the discriminator and the generator,
      based on the architecture used in SEGAN.
     """
+    # Need some flags too. (like, train, test, save load)
+    TEST = True
+
     # Parameters specified for the construction of the generator and discriminator
     options = {}
-    options['Idun'] = True # Set to true when running on Idun, s.t. the audio path and noise path get correct
+    options['Idun'] = False # Set to true when running on Idun, s.t. the audio path and noise path get correct
+    options['save_model'] = False
+    options['load_model'] = True
     options['window_length'] = 16384
     options['feat_dim'] = 1
     options['z_dim'] = (8, 1024) # Dimensions for the latent noise variable 
@@ -52,18 +57,18 @@ def main():
     options['g_l1loss'] = 100.
     options['pre_emph'] = 0.95
 
-    # Some additional parameters needed in the training process
+    # Training path
     if options['Idun']:
-        options['audio_path'] = "/home/miralv/Master/Audio/sennheiser_1"
-        options['noise_path'] = "/home/miralv/Master/Audio/Nonspeech"
+        options['audio_path'] = "/home/miralv/Master/Audio/sennheiser_1/part_1//Train"
+        options['noise_path'] = "/home/miralv/Master/Audio/Nonspeech/Train"
     else:
-        options['audio_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1"
-        options['noise_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech"
+        options['audio_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1//Train"
+        options['noise_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech/Train" # /Train or /Validate or /Test
 
 
 
-    options['batch_size'] = 5
-    options['steps_per_epoch'] = 5
+    options['batch_size'] = 1
+    options['steps_per_epoch'] = 1
     options['n_epochs'] = 1
     options['snr_db'] = 5
     options['sample_rate'] = 16000
@@ -77,7 +82,7 @@ def main():
 
 
     ## Set up the individual models
-    print("Setting up individual models\n")
+    print("Setting up individual models:\n")
     G = generator(options)
     print("G finished\n")
     D = discriminator(options)
@@ -114,16 +119,23 @@ def main():
     GAN.compile(optimizer=optimizer,
                 loss={'model_1': 'mae', 'model_2': 'mse'},
                 loss_weights={'model_1': 100, 'model_2': 1})
-    print(GAN.metrics_names)
+    # print(GAN.metrics_names)
 
-    # # Tensorboard
-    # if not os.path.exists("./logs"):
-    #     os.makedirs("./logs")
+    # Tensorboard
+    if not os.path.exists("./logs"):
+        os.makedirs("./logs")
     
-    # log_path = "./logs"
-    # callback = TensorBoard(log_path)
-    # callback.set_model(GAN)
-    # train_names = ['G_loss', 'G_adv_loss', 'G_l1Loss']
+    # Write log manually for now
+    log_file_path="./logs/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    f = open(log_file_path,"w+")
+    f.write("G_loss  G_D_loss  G_l1_loss\n")
+
+    # tensorboard_callback = keras.callbacks.TensorBoard(log_dir=logdir)
+
+    log_path = "./logs"
+    callback = TensorBoard(log_path)
+    callback.set_model(GAN)
+    train_names = ['G_loss', 'G_adv_loss', 'G_l1Loss']
     
     ## Model training
     n_epochs = options['n_epochs']
@@ -167,64 +179,83 @@ def main():
             elapsed_time = datetime.datetime.now() - start_time
             print("[Epoch %d/%d] [Batch %d/%d] [D loss: %f] [D real loss: %f] [D fake loss: %f] [G loss: %f] [G_D loss: %f] [G_L1 loss: %f] [Exec. time: %s]" % (epoch, n_epochs, batch_i + 1, steps_per_epoch, D_loss, D_loss_real, D_loss_fake, G_loss, G_D_loss, G_l1_loss, elapsed_time))
 
+            if (batch_i == (steps_per_epoch -1)):
+                f.write("%f %f %f\n" % (G_loss, G_D_loss, G_l1_loss))
+                logs = [G_loss, G_D_loss, G_l1_loss]
+                write_log(callback, train_names, logs, epoch)
 
-            # logs = [G_loss, G_D_loss, G_l1_loss]
-            # write_log(callback, train_names, logs, epoch)
-
-
+    f.close()
+    print("Training finished.\n")
 
     # Want to plot training progress
 
     # Test the model 
+    # Will do test with different types of noise, and a female and a male voice with all three types. 
 
-    # # For now:
-    # options['audio_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/group_01/p1_g01_f1_1_t-a0001.wav"
-    # options['noise_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech/n1.wav"
-    # clean,mixed,z,scaling_factor = prepare_test(options)
-
-    # # Expand dims
-    # # Need to get G's input in the correct shape
-    # # First, get it into form (n_windows, window_length)
-    # # Thereafter (n_windows, window_length,1)
-    # clean = slice_vector(clean, options)
-    # mixed = slice_vector(mixed, options)
-    # audios_clean = np.expand_dims(clean, axis=2)
-    # audios_mixed = np.expand_dims(mixed, axis=2)
-
-    # # Condition on B and generate a translated version
-    # G_out = G.predict([audios_mixed, z]) #Må jeg ha train = false?
+    # For now: Testpath:
+    if options['Idun']:
+        options['audio_path_test'] = "/home/miralv/Master/Audio/sennheiser_1/part_1/Test/group_12/p1_g12_m1_1_t-a0001.wav"
+        options['noise_path_test'] = "/home/miralv/Master/Audio/Nonspeech/Test"
+    else:
+        options['audio_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1//Test/group_12/p1_g12_m1_1_t-a0001.wav"
+        options['noise_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech/Test" # /Train or /Validate or /Test
 
 
-    # # Postprocess = upscale from [-1,1] to int16
-    # clean = postprocess(clean)
-    # mixed = postprocess(mixed)
-    # G_enhanced = postprocess(G_out,coeff = options['pre_emph'])
+    if TEST:
+        print("Test the model on unseen noises and voices.\n\n")
+        noise_list = glob.glob(options['noise_path_test'] + "/*.wav")
+        for noise_path in noise_list:
+            options['noise_path_test'] = noise_path
+            clean,mixed,z,scaling_factor = prepare_test(options)
 
-    # ## Save for listening
-    # cwd = os.getcwd()
-    # print(cwd)
+            # Expand dims
+            # Need to get G's input in the correct shape
+            # First, get it into form (n_windows, window_length)
+            # Thereafter (n_windows, window_length,1)
+            clean = slice_vector(clean, options)
+            mixed = slice_vector(mixed, options)
+            audios_clean = np.expand_dims(clean, axis=2)
+            audios_mixed = np.expand_dims(mixed, axis=2)
 
-    # if not os.path.exists("./results"):
-    #     os.makedirs("./results")
+            # Condition on B and generate a translated version
+            G_out = G.predict([audios_mixed, z]) #Må jeg ha train = false?
 
 
-    # # Want to save clean, enhanced and mixed.
-    # if scaling_factor > 1:
-    #     clean = np.divide(clean, scaling_factor)
-    #     mixed = np.divide(mixed, scaling_factor)
+            # Postprocess = upscale from [-1,1] to int16
+            clean = postprocess(clean)
+            mixed = postprocess(mixed)
+            G_enhanced = postprocess(G_out,coeff = options['pre_emph'])
 
-    # sr = options['sample_rate']
-    # path_audio = "./results/clean.wav"
-    # path_noisy = "./results/noisy.wav"
-    # path_enhanced = "./results/enhanced.wav"
-    # saveAudio(clean, path_audio, sr)
-    # saveAudio(mixed, path_noisy, sr)
-    # saveAudio(G_enhanced, path_enhanced, sr)
+            ## Save for listening
+            cwd = os.getcwd()
+            print(cwd)
+
+            if not os.path.exists("./results"):
+                os.makedirs("./results")
+
+
+            # Want to save clean, enhanced and mixed.
+            if scaling_factor > 1:
+                clean = np.divide(clean, scaling_factor)
+                mixed = np.divide(mixed, scaling_factor)
+
+            sr = options['sample_rate']
+            path_audio = "./results/clean.wav"
+            path_noisy = "./results/noisy_%s.wav" % (noise_path[-7:-4])
+            path_enhanced = "./results/enhanced_%s.wav" % (noise_path[-7:-4])
+            #saveAudio(clean, path_audio, sr) per nå er det samme fil hver gang
+            saveAudio(mixed, path_noisy, sr)
+            saveAudio(G_enhanced, path_enhanced, sr)
     
+    modeldir = cwd
+    if options['save_model']:
+        model_json = G.to_json()
+        with open(modeldir + "/Gmodel.json", "w") as json_file:
+            json_file.write(model_json)
+        G.save_weights(modeldir + "/Gmodel.h5")
+        print ("Model saved to " + modeldir)
 
-
-    return 0
 
 
 if __name__ == '__main__':
-    res = main()
+    main()

@@ -193,7 +193,6 @@ def saveAudio(audio, path,sr):
 
 
 def write_log(callback, names, logs, batch_no):
-    """
     for name, value in zip(names, logs):
         summary = tf.Summary()
         summary_value = summary.value.add()
@@ -201,7 +200,8 @@ def write_log(callback, names, logs, batch_no):
         summary_value.tag = name
         callback.writer.add_summary(summary, batch_no)
         callback.writer.flush()
-    """
+
+
 
 def pre_emph(x, coeff=0.95):
     """
