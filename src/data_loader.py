@@ -78,6 +78,7 @@ def prepare_test(options):
     snr_db = options['snr_db']
     window_length = options['window_length']
     z_dim = options['z_dim']
+    pre_emph_const = options['pre_emph']
 
     f_audio, audio_orig = scipy.io.wavfile.read(audio_path)
     audio = preprocess(audio_orig,f_audio)
@@ -103,7 +104,11 @@ def prepare_test(options):
     
     #(0, 1, (batch_size, z_dim[0], z_dim[1]))
 
-    # Yield a batch size of random samples with the wanted snr
-    return audio, mixed,z, max_val
+    # Slice to get it on format nwindows x windowlength
+    audio = slice_vector(audio, options)
+    mixed = slice_vector(mixed, options)
+
+
+    return pre_emph(audio,pre_emph_const), pre_emph(mixed, pre_emph_const), z, max_val
 
 

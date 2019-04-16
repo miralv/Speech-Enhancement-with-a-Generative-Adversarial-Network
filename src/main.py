@@ -35,6 +35,7 @@ def main():
     """
     # Need some flags too. (like, train, test, save load)
     TEST = True
+    TRAIN = False
 
     # Parameters specified for the construction of the generator and discriminator
     options = {}
@@ -80,112 +81,111 @@ def main():
     # print(device_lib.list_local_devices())
     # print ("\n\n")
 
+    if TRAIN:
+        ## Set up the individual models
+        print("Setting up individual models:\n")
+        G = generator(options)
+        print("G finished\n")
+        D = discriminator(options)
+        print("D finished\n\n")
 
-    ## Set up the individual models
-    print("Setting up individual models:\n")
-    G = generator(options)
-    print("G finished\n")
-    D = discriminator(options)
-    print("D finished\n\n")
-
-    # Specify optimizer
-    optimizer = Adam(lr=options['learning_rate'])
-
-
-    # Compile the individual models
-    print("Compile the individual models\n")
-    D.compile(loss='mse', optimizer=optimizer)
-    G.compile(loss='mae', optimizer=optimizer)
+        # Specify optimizer
+        optimizer = Adam(lr=options['learning_rate'])
 
 
-
-    ## Set up the combined model
-    # TODO: Må de individuelle modellene kompileres i main?
-    D.trainable = False
-    audio_shape = (options['window_length'], options['feat_dim'])    
-    z_dim = options['z_dim']
-    # Prepare inputs
-    clean_audio_in = Input(shape=audio_shape, name='in_clean')
-    noisy_audio_in = Input(shape=audio_shape, name='in_noisy')
-    z = Input(shape=z_dim, name='noise_input')
-    # Prepare outputs
-    G_out = G([noisy_audio_in, z])
-    D_out = D([G_out, noisy_audio_in])
-    
-    print("Set up the combined model\n")
-    GAN = Model(inputs=[clean_audio_in, noisy_audio_in, z], outputs=[D_out, G_out])
-    GAN.summary()
-    #TODO: Check that the losses become correct with the model syntax
-    GAN.compile(optimizer=optimizer,
-                loss={'model_1': 'mae', 'model_2': 'mse'},
-                loss_weights={'model_1': 100, 'model_2': 1})
-    # print(GAN.metrics_names)
-
-    # Tensorboard
-    if not os.path.exists("./logs"):
-        os.makedirs("./logs")
-    
-    # Write log manually for now
-    log_file_path="./logs/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-    f = open(log_file_path,"w+")
-    f.write("G_loss  G_D_loss  G_l1_loss\n")
-
-    # tensorboard_callback = keras.callbacks.TensorBoard(log_dir=logdir)
-
-    log_path = "./logs"
-    callback = TensorBoard(log_path)
-    callback.set_model(GAN)
-    train_names = ['G_loss', 'G_adv_loss', 'G_l1Loss']
-    
-    ## Model training
-    n_epochs = options['n_epochs']
-    steps_per_epoch = options['steps_per_epoch']
-    batch_size = options['batch_size']        
+        # Compile the individual models
+        print("Compile the individual models\n")
+        D.compile(loss='mse', optimizer=optimizer)
+        G.compile(loss='mae', optimizer=optimizer)
 
 
-    start_time = datetime.datetime.now()
-    # The real class labels for the discriminator inputs
-    real_D = np.ones((batch_size, 1))  # For input pairs (clean, noisy)
-    fake_D = np.zeros((batch_size, 1)) # For input pairs (enhanced, noisy)
-    valid_G = np.array([1]*batch_size) # To compute the mse-loss
+
+        ## Set up the combined model
+        # TODO: Må de individuelle modellene kompileres i main?
+        D.trainable = False
+        audio_shape = (options['window_length'], options['feat_dim'])    
+        z_dim = options['z_dim']
+        # Prepare inputs
+        clean_audio_in = Input(shape=audio_shape, name='in_clean')
+        noisy_audio_in = Input(shape=audio_shape, name='in_noisy')
+        z = Input(shape=z_dim, name='noise_input')
+        # Prepare outputs
+        G_out = G([noisy_audio_in, z])
+        D_out = D([G_out, noisy_audio_in])
+        
+        print("Set up the combined model\n")
+        GAN = Model(inputs=[clean_audio_in, noisy_audio_in, z], outputs=[D_out, G_out])
+        GAN.summary()
+        #TODO: Check that the losses become correct with the model syntax
+        GAN.compile(optimizer=optimizer,
+                    loss={'model_1': 'mae', 'model_2': 'mse'},
+                    loss_weights={'model_1': 100, 'model_2': 1})
+        # print(GAN.metrics_names)
+
+        # Tensorboard
+        if not os.path.exists("./logs"):
+            os.makedirs("./logs")
+        
+        # Write log manually for now
+        log_file_path="./logs/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+        f = open(log_file_path,"w+")
+        f.write("G_loss  G_D_loss  G_l1_loss\n")
+
+        # tensorboard_callback = keras.callbacks.TensorBoard(log_dir=logdir)
+
+        log_path = "./logs"
+        callback = TensorBoard(log_path)
+        callback.set_model(GAN)
+        train_names = ['G_loss', 'G_adv_loss', 'G_l1Loss']
+        
+        ## Model training
+        n_epochs = options['n_epochs']
+        steps_per_epoch = options['steps_per_epoch']
+        batch_size = options['batch_size']        
 
 
-    print("Begin training\n")
+        start_time = datetime.datetime.now()
+        # The real class labels for the discriminator inputs
+        real_D = np.ones((batch_size, 1))  # For input pairs (clean, noisy)
+        fake_D = np.zeros((batch_size, 1)) # For input pairs (enhanced, noisy)
+        valid_G = np.array([1]*batch_size) # To compute the mse-loss
 
-    for epoch in range(1, n_epochs+1):
-        for batch_i, (clean_audio, noisy_audio) in enumerate(load_batch(options)):
-            ## Train discriminator
-            # Get G's input in correct shape
-            clean_audio = np.expand_dims(clean_audio, axis=2) #dim -> (batchsize,windowsize,1)
-            noisy_audio = np.expand_dims(noisy_audio, axis=2)
+        print("Begin training\n")
 
-            # Har testet, Idun kommer seg hit. (men ikke lenger?)
+        for epoch in range(1, n_epochs+1):
+            for batch_i, (clean_audio, noisy_audio) in enumerate(load_batch(options)):
+                ## Train discriminator
+                # Get G's input in correct shape
+                clean_audio = np.expand_dims(clean_audio, axis=2) #dim -> (batchsize,windowsize,1)
+                noisy_audio = np.expand_dims(noisy_audio, axis=2)
 
-            # Get G's enhanced audio
-            noise_input = np.random.normal(0, 1, (batch_size, z_dim[0], z_dim[1])) #z
-            G_enhanced = G.predict([noisy_audio, noise_input])
+                # Har testet, Idun kommer seg hit. (men ikke lenger?)
 
-            # Comput the discriminator's loss
-            D_loss_real = D.train_on_batch(x=[clean_audio, noisy_audio], y=real_D)
-            D_loss_fake = D.train_on_batch(x=[G_enhanced, noisy_audio], y=fake_D)
-            D_loss = np.add(D_loss_real, D_loss_fake)/2.0
+                # Get G's enhanced audio
+                noise_input = np.random.normal(0, 1, (batch_size, z_dim[0], z_dim[1])) #z
+                G_enhanced = G.predict([noisy_audio, noise_input])
+
+                # Comput the discriminator's loss
+                D_loss_real = D.train_on_batch(x=[clean_audio, noisy_audio], y=real_D)
+                D_loss_fake = D.train_on_batch(x=[G_enhanced, noisy_audio], y=fake_D)
+                D_loss = np.add(D_loss_real, D_loss_fake)/2.0
 
 
-            ## Train generator 
-            # Keras expect a list of arrays > must reformat clean_audio
-            [G_loss, G_D_loss, G_l1_loss] = GAN.train_on_batch(x=[clean_audio, noisy_audio, noise_input], y={'model_1': clean_audio, 'model_2': valid_G}) 
+                ## Train generator 
+                # Keras expect a list of arrays > must reformat clean_audio
+                [G_loss, G_D_loss, G_l1_loss] = GAN.train_on_batch(x=[clean_audio, noisy_audio, noise_input], y={'model_1': clean_audio, 'model_2': valid_G}) 
 
-            # Print progress
-            elapsed_time = datetime.datetime.now() - start_time
-            print("[Epoch %d/%d] [Batch %d/%d] [D loss: %f] [D real loss: %f] [D fake loss: %f] [G loss: %f] [G_D loss: %f] [G_L1 loss: %f] [Exec. time: %s]" % (epoch, n_epochs, batch_i + 1, steps_per_epoch, D_loss, D_loss_real, D_loss_fake, G_loss, G_D_loss, G_l1_loss, elapsed_time))
+                # Print progress
+                elapsed_time = datetime.datetime.now() - start_time
+                print("[Epoch %d/%d] [Batch %d/%d] [D loss: %f] [D real loss: %f] [D fake loss: %f] [G loss: %f] [G_D loss: %f] [G_L1 loss: %f] [Exec. time: %s]" % (epoch, n_epochs, batch_i + 1, steps_per_epoch, D_loss, D_loss_real, D_loss_fake, G_loss, G_D_loss, G_l1_loss, elapsed_time))
 
-            if (batch_i == (steps_per_epoch -1)):
-                f.write("%f %f %f\n" % (G_loss, G_D_loss, G_l1_loss))
-                logs = [G_loss, G_D_loss, G_l1_loss]
-                write_log(callback, train_names, logs, epoch)
+                if (batch_i == (steps_per_epoch -1)):
+                    f.write("%f %f %f\n" % (G_loss, G_D_loss, G_l1_loss))
+                    logs = [G_loss, G_D_loss, G_l1_loss]
+                    write_log(callback, train_names, logs, epoch)
 
-    f.close()
-    print("Training finished.\n")
+        f.close()
+        print("Training finished.\n")
 
     # Want to plot training progress
 
@@ -208,23 +208,22 @@ def main():
             options['noise_path_test'] = noise_path
             clean,mixed,z,scaling_factor = prepare_test(options)
 
-            # Expand dims
-            # Need to get G's input in the correct shape
-            # First, get it into form (n_windows, window_length)
-            # Thereafter (n_windows, window_length,1)
-            clean = slice_vector(clean, options)
-            mixed = slice_vector(mixed, options)
-            audios_clean = np.expand_dims(clean, axis=2)
-            audios_mixed = np.expand_dims(mixed, axis=2)
+            # # Expand dims
+            # # Need to get G's input in the correct shape
+            # # First, get it into form (n_windows, window_length)
+            # # Thereafter (n_windows, window_length,1)
+            
+            # audios_clean = np.expand_dims(clean, axis=2)
+            # audios_mixed = np.expand_dims(mixed, axis=2)
 
-            # Condition on B and generate a translated version
-            G_out = G.predict([audios_mixed, z]) #Må jeg ha train = false?
+            # # Condition on B and generate a translated version
+            # G_out = G.predict([audios_mixed, z]) #Må jeg ha train = false?
 
 
             # Postprocess = upscale from [-1,1] to int16
-            clean = postprocess(clean)
-            mixed = postprocess(mixed)
-            G_enhanced = postprocess(G_out,coeff = options['pre_emph'])
+            clean = postprocess(clean, coeff = options['pre_emph'])
+            mixed = postprocess(mixed, coeff = options['pre_emph'])
+            # G_enhanced = postprocess(G_out,coeff = options['pre_emph'])
 
             ## Save for listening
             cwd = os.getcwd()
@@ -234,7 +233,8 @@ def main():
                 os.makedirs("./results")
 
 
-            # Want to save clean, enhanced and mixed.
+            # Want to save clean, enhanced and mixed. 
+            # Per nå er dette dobbelt opp. Det  vil aldri være scaling factor > 1 her.
             if scaling_factor > 1:
                 clean = np.divide(clean, scaling_factor)
                 mixed = np.divide(mixed, scaling_factor)
@@ -242,10 +242,10 @@ def main():
             sr = options['sample_rate']
             path_audio = "./results/clean.wav"
             path_noisy = "./results/noisy_%s.wav" % (noise_path[-7:-4])
-            path_enhanced = "./results/enhanced_%s.wav" % (noise_path[-7:-4])
-            #saveAudio(clean, path_audio, sr) per nå er det samme fil hver gang
+            # path_enhanced = "./results/enhanced_%s.wav" % (noise_path[-7:-4])
+            saveAudio(clean, path_audio, sr) #per nå er det samme fil hver gang
             saveAudio(mixed, path_noisy, sr)
-            saveAudio(G_enhanced, path_enhanced, sr)
+            # saveAudio(G_enhanced, path_enhanced, sr)
     
     modeldir = cwd
     if options['save_model']:
