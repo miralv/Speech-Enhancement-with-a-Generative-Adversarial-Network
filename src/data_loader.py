@@ -13,6 +13,7 @@ from getData import getPaths
 def load_batch(options):
     """ Used for loading an epoch's random batches of data during training
     """
+
     audio_path = options['audio_path']
     noise_path = options['noise_path']
     batch_size = options['batch_size']
@@ -21,6 +22,7 @@ def load_batch(options):
     window_length = options['window_length']
     pre_emph_const = options['pre_emph']
 
+    # Get all paths in the training set
     audio_paths, noise_paths = getPaths(audio_path,noise_path)
 
     # TODO: Include sliding windows during training.
@@ -76,6 +78,7 @@ def prepare_test(options):
     snr_db = options['snr_db']
     window_length = options['window_length']
     z_dim = options['z_dim']
+    pre_emph_const = options['pre_emph']
 
     f_audio, audio_orig = scipy.io.wavfile.read(audio_path)
     audio = preprocess(audio_orig,f_audio)
@@ -101,7 +104,11 @@ def prepare_test(options):
     
     #(0, 1, (batch_size, z_dim[0], z_dim[1]))
 
-    # Yield a batch size of random samples with the wanted snr
-    return audio, mixed,z, max_val
+    # Slice to get it on format nwindows x windowlength
+    audio = slice_vector(audio, options)
+    mixed = slice_vector(mixed, options)
+
+
+    return pre_emph(audio,pre_emph_const), pre_emph(mixed, pre_emph_const), z, max_val
 
 

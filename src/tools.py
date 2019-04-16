@@ -174,6 +174,11 @@ def postprocess(audio, coeff=0):
     #This is sufficient as long as overlap = 0.
     vectorized = np.reshape(audio, (-1))
 
+    # De emph
+    if coeff > 0:
+        vectorized = de_emph(vectorized, coeff=coeff) 
+
+
     max_value = np.max(abs(vectorized))
     if (np.max(abs(audio))>1):
         vectorized = np.divide(vectorized,max_value)
@@ -181,9 +186,6 @@ def postprocess(audio, coeff=0):
     # Scale up
     recovered = scaleUp(vectorized)
 
-    # De emph
-    if coeff > 0:
-        recovered = de_emph(recovered, coeff=coeff) 
 
     return recovered
 
@@ -193,7 +195,6 @@ def saveAudio(audio, path,sr):
 
 
 def write_log(callback, names, logs, batch_no):
-    """
     for name, value in zip(names, logs):
         summary = tf.Summary()
         summary_value = summary.value.add()
@@ -201,7 +202,8 @@ def write_log(callback, names, logs, batch_no):
         summary_value.tag = name
         callback.writer.add_summary(summary, batch_no)
         callback.writer.flush()
-    """
+
+
 
 def pre_emph(x, coeff=0.95):
     """
