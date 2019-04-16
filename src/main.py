@@ -35,7 +35,7 @@ def main():
     """
     # Need some flags too. (like, train, test, save load)
     TEST = True
-    TRAIN = False
+    TRAIN = True
 
     # Parameters specified for the construction of the generator and discriminator
     options = {}
@@ -68,9 +68,9 @@ def main():
 
 
 
-    options['batch_size'] = 1
-    options['steps_per_epoch'] = 1
-    options['n_epochs'] = 1
+    options['batch_size'] = 20
+    options['steps_per_epoch'] = 10
+    options['n_epochs'] = 10
     options['snr_db'] = 5
     options['sample_rate'] = 16000
 
@@ -208,22 +208,22 @@ def main():
             options['noise_path_test'] = noise_path
             clean,mixed,z,scaling_factor = prepare_test(options)
 
-            # # Expand dims
-            # # Need to get G's input in the correct shape
-            # # First, get it into form (n_windows, window_length)
-            # # Thereafter (n_windows, window_length,1)
+            # Expand dims
+            # Need to get G's input in the correct shape
+            # First, get it into form (n_windows, window_length)
+            # Thereafter (n_windows, window_length,1)
             
-            # audios_clean = np.expand_dims(clean, axis=2)
-            # audios_mixed = np.expand_dims(mixed, axis=2)
+            audios_clean = np.expand_dims(clean, axis=2)
+            audios_mixed = np.expand_dims(mixed, axis=2)
 
-            # # Condition on B and generate a translated version
-            # G_out = G.predict([audios_mixed, z]) #Må jeg ha train = false?
+            # Condition on B and generate a translated version
+            G_out = G.predict([audios_mixed, z]) #Må jeg ha train = false?
 
 
             # Postprocess = upscale from [-1,1] to int16
             clean = postprocess(clean, coeff = options['pre_emph'])
             mixed = postprocess(mixed, coeff = options['pre_emph'])
-            # G_enhanced = postprocess(G_out,coeff = options['pre_emph'])
+            G_enhanced = postprocess(G_out,coeff = options['pre_emph'])
 
             ## Save for listening
             cwd = os.getcwd()
@@ -242,10 +242,10 @@ def main():
             sr = options['sample_rate']
             path_audio = "./results/clean.wav"
             path_noisy = "./results/noisy_%s.wav" % (noise_path[-7:-4])
-            # path_enhanced = "./results/enhanced_%s.wav" % (noise_path[-7:-4])
+            path_enhanced = "./results/enhanced_%s.wav" % (noise_path[-7:-4])
             saveAudio(clean, path_audio, sr) #per nå er det samme fil hver gang
             saveAudio(mixed, path_noisy, sr)
-            # saveAudio(G_enhanced, path_enhanced, sr)
+            saveAudio(G_enhanced, path_enhanced, sr)
     
     modeldir = cwd
     if options['save_model']:
