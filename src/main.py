@@ -14,6 +14,7 @@ from keras.layers.convolutional import UpSampling1D, Conv1D
 from keras.models import Sequential, Model
 from keras.optimizers import Adam
 from keras.callbacks import TensorBoard
+from keras.models import model_from_json
 import datetime
 #import matplotlib.pyplot as plt
 #import matplotlib
@@ -21,6 +22,7 @@ import datetime
 #import matplotlib.pyplot as plt
 import sys
 import numpy as np
+import h5py
 import os
 
 from discriminator import discriminator
@@ -35,7 +37,7 @@ def main():
     """
     # Need some flags too. (like, train, test, save load)
     TEST = True
-    TRAIN = True
+    TRAIN = False
 
     # Parameters specified for the construction of the generator and discriminator
     options = {}
@@ -68,9 +70,9 @@ def main():
 
 
 
-    options['batch_size'] = 20
-    options['steps_per_epoch'] = 10
-    options['n_epochs'] = 10
+    options['batch_size'] = 1
+    options['steps_per_epoch'] = 1
+    options['n_epochs'] = 1
     options['snr_db'] = 5
     options['sample_rate'] = 16000
 
@@ -81,6 +83,10 @@ def main():
     # print(device_lib.list_local_devices())
     # print ("\n\n")
 
+    # Specify optimizer (Needed also if we choose not to train)
+    optimizer = Adam(lr=options['learning_rate'])
+
+
     if TRAIN:
         ## Set up the individual models
         print("Setting up individual models:\n")
@@ -88,10 +94,6 @@ def main():
         print("G finished\n")
         D = discriminator(options)
         print("D finished\n\n")
-
-        # Specify optimizer
-        optimizer = Adam(lr=options['learning_rate'])
-
 
         # Compile the individual models
         print("Compile the individual models\n")
@@ -204,6 +206,18 @@ def main():
     if TEST:
         print("Test the model on unseen noises and voices.\n\n")
         noise_list = glob.glob(options['noise_path_test'] + "/*.wav")
+
+
+        if options['load_model']:
+            print("Loading saved model\n")
+            modeldir = os.getcwd()
+            json_file = open(modeldir + "/Gmodel.json", "r")
+            loaded_model_json = json_file.read()
+            json_file.close()
+            G = model_from_json(loaded_model_json)
+            G.compile(loss='mean_squared_error', optimizer=optimizer)
+            G.load_weights(modeldir + "/Gmodel.h5")
+
         for noise_path in noise_list:
             options['noise_path_test'] = noise_path
             clean,mixed,z,scaling_factor = prepare_test(options)
@@ -212,7 +226,7 @@ def main():
             # Need to get G's input in the correct shape
             # First, get it into form (n_windows, window_length)
             # Thereafter (n_windows, window_length,1)
-            
+
             audios_clean = np.expand_dims(clean, axis=2)
             audios_mixed = np.expand_dims(mixed, axis=2)
 
@@ -227,7 +241,7 @@ def main():
 
             ## Save for listening
             cwd = os.getcwd()
-            print(cwd)
+            #print(cwd)
 
             if not os.path.exists("./results"):
                 os.makedirs("./results")
