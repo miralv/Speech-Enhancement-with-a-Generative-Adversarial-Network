@@ -30,20 +30,42 @@ from generator import generator
 from data_loader import load_batch, prepare_test
 from tools import *
 
+
+def test_audio(audio_path,path_save):
+    """ Scale up enhanced audio
+    """
+    f_audio, audio_orig = scipy.io.wavfile.read(audio_path)
+    # Looks like the mixed file usually have a maximum around 0.7 when scaled
+    max_wanted = (2**15 -1)*0.7
+    max_now = np.max(audio_orig)
+    scale_factor =  max_wanted/max_now
+    audio_scaled = audio_orig*scale_factor
+
+    saveAudio(audio_scaled, path_save, sr=16000)
+
+
+
+
+
 def main():
     """
      Specify the specific structure of the discriminator and the generator,
      based on the architecture used in SEGAN.
     """
+    # test_path = "/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/enhanced_n16.wav"
+    # test_save = "/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/enhanced_n16_v2.wav"
+    # test_audio(test_path,test_save)
+
+
     # Need some flags too. (like, train, test, save load)
     TEST = True
-    TRAIN = False
+    TRAIN = True
 
     # Parameters specified for the construction of the generator and discriminator
     options = {}
     options['Idun'] = False # Set to true when running on Idun, s.t. the audio path and noise path get correct
     options['save_model'] = False
-    options['load_model'] = True
+    options['load_model'] = False
     options['window_length'] = 16384
     options['feat_dim'] = 1
     options['z_dim'] = (8, 1024) # Dimensions for the latent noise variable 
@@ -70,9 +92,9 @@ def main():
 
 
 
-    options['batch_size'] = 1
-    options['steps_per_epoch'] = 1
-    options['n_epochs'] = 1
+    options['batch_size'] = 40
+    options['steps_per_epoch'] = 10
+    options['n_epochs'] = 20
     options['snr_db'] = 5
     options['sample_rate'] = 16000
 
