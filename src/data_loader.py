@@ -44,27 +44,36 @@ def load_batch(options):
             """
 
             f_audio, audio_orig = scipy.io.wavfile.read(audio_i)
+            
             audio = preprocess(audio_orig,f_audio)
             audio = audio[:(len(audio) - len(audio)%window_length)]
 
             f_noise, noise_orig = scipy.io.wavfile.read(noise_i)
             noise = preprocess(noise_orig, f_noise)
-            noise = extendVector(noise, len(audio))
+            # Increase the possible extractions from noise
+            if len(noise)< window_length:
+                noise = extendVector(noise, 2*window_length)
 
 
+            # Draw a random part from noise and audio and add them
+            start_index_audio = random.randint(0,len(audio)-window_length)
+            start_index_noise = random.randint(0,len(noise)-window_length)
             # Obtain desired snr-level
-            snr_factor = findSNRfactor(audio, noise, snr_db)
-            mixed = audio + snr_factor*noise
+            snr_factor = findSNRfactor(audio_orig, noise_orig, snr_db)
+            clean_i = audio[start_index_audio: start_index_audio + window_length]
+            mixed_i = clean_i + snr_factor*noise[start_index_noise: start_index_noise + window_length]
 
             # Make sure that the values are still in [-1,1]
-            max_val = np.max(np.abs(mixed))
+            #TODO: Er det nødvendig å gjøre dette her? Holder det å gjøre det når lyden skal lyttes til? Altså for test sett reconstruction?
+            max_val = np.max(np.abs(mixed_i))
             if max_val > 1:
-                mixed = mixed/max_val
+                mixed_i = mixed_i/max_val
+                clean_i = clean_i/max_val
+
+            clean_audio_batch[j,:] = clean_i
+            mixed_audio_batch[j,:] = mixed_i
+
             
-            # Draw a random part
-            start_index = random.randint(0,len(mixed)-window_length)
-            clean_audio_batch[j,:] = audio[start_index: start_index + window_length]
-            mixed_audio_batch[j,:] = noise[start_index: start_index + window_length]
 
         # Yield a batch size of random samples with the wanted snr
         yield pre_emph(clean_audio_batch, pre_emph_const), pre_emph(mixed_audio_batch, pre_emph_const)
