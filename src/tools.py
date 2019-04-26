@@ -182,12 +182,12 @@ def postprocess(audio, coeff=0):
     max_value = np.max(abs(vectorized))
     if (np.max(abs(audio))>1):
         vectorized = np.divide(vectorized,max_value)
-    
+
     # Scale up
     recovered = scaleUp(vectorized)
 
-
-    return recovered
+    # Return the max_value such that the mixed and clean audio can be scaled accordingly.
+    return recovered, max_value
 
 
 def saveAudio(audio, path,sr):

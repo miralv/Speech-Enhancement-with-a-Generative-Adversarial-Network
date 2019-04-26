@@ -220,24 +220,26 @@ def main():
 
         for noise_path in noise_list:
             options['noise_path_test'] = noise_path
-            clean,mixed,z,scaling_factor = prepare_test(options)
+            clean,mixed,z,_ = prepare_test(options)
 
             # Expand dims
             # Need to get G's input in the correct shape
             # First, get it into form (n_windows, window_length)
             # Thereafter (n_windows, window_length,1)
 
-            audios_clean = np.expand_dims(clean, axis=2)
+            # audios_clean = np.expand_dims(clean, axis=2)
             audios_mixed = np.expand_dims(mixed, axis=2)
 
             # Condition on B and generate a translated version
-            G_out = G.predict([audios_mixed, z]) #Må jeg ha train = false?
+            G_out = G.predict([audios_mixed, z]) 
 
 
             # Postprocess = upscale from [-1,1] to int16
-            clean = postprocess(clean, coeff = options['pre_emph'])
-            mixed = postprocess(mixed, coeff = options['pre_emph'])
-            G_enhanced = postprocess(G_out,coeff = options['pre_emph'])
+            clean,scale_1 = postprocess(clean, coeff = options['pre_emph'])
+            mixed,scale_2 = postprocess(mixed, coeff = options['pre_emph'])
+            G_enhanced,g_scale = postprocess(G_out,coeff = options['pre_emph'])
+            print("Was clean, mixed or enhanced scaled?")
+            print("%f %f %f" % (scale_1, scale_2,g_scale))
 
             ## Save for listening
             cwd = os.getcwd()
@@ -249,9 +251,9 @@ def main():
 
             # Want to save clean, enhanced and mixed. 
             # Per nå er dette dobbelt opp. Det  vil aldri være scaling factor > 1 her.
-            if scaling_factor > 1:
-                clean = np.divide(clean, scaling_factor)
-                mixed = np.divide(mixed, scaling_factor)
+            # if scaling_factor > 1:
+            #     clean = np.divide(clean, scaling_factor)
+            #     mixed = np.divide(mixed, scaling_factor) har allerede skjedd i prepare test
 
             sr = options['sample_rate']
             path_audio = "./results/clean.wav"

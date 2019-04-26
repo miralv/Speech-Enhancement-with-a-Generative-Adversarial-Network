@@ -46,7 +46,8 @@ def generator(options):
 
     ## Define the intermediate noise layer z
     z_dim = options['z_dim']
-    z = Input(shape=z_dim, name='noise_input')
+    # z = Input(shape=z_dim, name='noise_input')
+    z = Input(shape=z_dim)
     
     ## Define the decoder
     decoder_out = keras.layers.concatenate([encoder_out,z])
@@ -69,7 +70,9 @@ def generator(options):
         new_shape = (n_rows, n_cols)
 
         if layer_i == (num_layers-1):
-            decoder_out = Reshape(new_shape, name='G_out')(decoder_out)
+            # decoder_out = Reshape(new_shape, name='G_out')(decoder_out)
+            decoder_out = Reshape(new_shape)(decoder_out)
+
         else:
             decoder_out = Reshape(new_shape)(decoder_out)
 

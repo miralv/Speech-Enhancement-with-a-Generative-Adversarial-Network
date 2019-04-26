@@ -74,7 +74,6 @@ def load_batch(options):
             mixed_audio_batch[j,:] = mixed_i
 
             
-
         # Yield a batch size of random samples with the wanted snr
         yield pre_emph(clean_audio_batch, pre_emph_const), pre_emph(mixed_audio_batch, pre_emph_const)
 
@@ -99,15 +98,16 @@ def prepare_test(options):
 
 
     # Obtain desired snr-level
-    snr_factor = findSNRfactor(audio, noise, snr_db)
+    snr_factor = findSNRfactor(audio_orig, noise_orig, snr_db)
     mixed = audio + snr_factor*noise
 
     # Make sure that the values are still in [-1,1]
     max_val = np.max(np.abs(mixed))
     if max_val > 1:
         mixed = mixed/max_val
+        audio = audio/max_val
     
-    # Gir det mening å ha denne her, eller burde den ha ligget i main?
+    #TODO: Gir det mening å ha denne her, eller burde den ha ligget i main?
     n_windows = int(np.ceil(len(mixed)/window_length))
     z = np.random.normal(0,1,(n_windows,z_dim[0],z_dim[1]))
     
