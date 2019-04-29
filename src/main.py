@@ -73,6 +73,7 @@ def main():
     options['strides'] = 2
     options['padding'] = 'same'
     options['use_bias'] = True
+    options['initializer_std_dev'] = 0.02
     options['generator_encoder_num_kernels'] = [16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 1024]
     options['generator_decoder_num_kernels'] = options['generator_encoder_num_kernels'][:-1][::-1] + [1]
     options['discriminator_num_kernels'] = [16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 1024]
@@ -92,8 +93,8 @@ def main():
 
 
 
-    options['batch_size'] = 40
-    options['steps_per_epoch'] = 10
+    options['batch_size'] = 32
+    options['steps_per_epoch'] = 8
     options['n_epochs'] = 20
     options['snr_db'] = 5
     options['sample_rate'] = 16000
@@ -123,7 +124,6 @@ def main():
         G.compile(loss='mae', optimizer=optimizer)
 
 
-
         ## Set up the combined model
         # TODO: Må de individuelle modellene kompileres i main?
         D.trainable = False
@@ -143,7 +143,7 @@ def main():
         #TODO: Check that the losses become correct with the model syntax
         GAN.compile(optimizer=optimizer,
                     loss={'model_1': 'mae', 'model_2': 'mse'},
-                    loss_weights={'model_1': 100, 'model_2': 1})
+                    loss_weights={'model_1': 500, 'model_2': 1})
         # print(GAN.metrics_names)
 
         # Tensorboard

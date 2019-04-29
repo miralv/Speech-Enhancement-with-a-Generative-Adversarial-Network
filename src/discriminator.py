@@ -1,6 +1,6 @@
 from __future__ import print_function, division
 import scipy
-import tensorflow
+import tensorflow as tf
 
 import keras
 from keras.datasets import mnist
@@ -23,6 +23,7 @@ def discriminator(options):
     padding = options['padding']
     use_bias = options['use_bias']
     alpha = options['alpha']
+    std_dev = options['initializer_std_dev']
     show_summary = options['show_summary']
 
     ## Define the discriminator's input and output
@@ -36,14 +37,14 @@ def discriminator(options):
 
     for num_kernels in discriminator_num_kernels:
         # Add convolution layer
-        discriminator_out = Conv1D(num_kernels, filter_length, strides=strides, padding=padding, use_bias=use_bias)(discriminator_out)
+        discriminator_out = Conv1D(num_kernels, filter_length, strides=strides, padding=padding, use_bias=use_bias, init=tf.truncated_normal_initializer(stddev=std_dev))(discriminator_out)
 
         # Apply batch normalization
         discriminator_out = BatchNormalization()(discriminator_out)
         # Apply LeakyReLU
         discriminator_out = LeakyReLU(alpha=alpha)(discriminator_out)
     # discriminator_out = Conv1D(1, 1, padding=padding, use_bias=use_bias, name='logits_convolution')(discriminator_out)
-    discriminator_out = Conv1D(1, 1, padding=padding, use_bias=use_bias)(discriminator_out)
+    discriminator_out = Conv1D(1, 1, padding=padding, use_bias=use_bias, init=tf.truncated_normal_initializer(stddev=std_dev))(discriminator_out)
     discriminator_out = Flatten()(discriminator_out)
     # discriminator_out = Dense(1, activation='linear', name='D_output')(discriminator_out)
     discriminator_out = Dense(1, activation='linear')(discriminator_out)
