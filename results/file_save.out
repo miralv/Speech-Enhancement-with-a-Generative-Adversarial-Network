@@ -1,0 +1,36 @@
+Calculate PESQ score:
+file_name, score:
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/enhanced_n16.wav:
+Prediction : PESQ_MOS = 2.589
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/enhanced_n17.wav:
+Prediction : PESQ_MOS = 2.456
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/enhanced_n28.wav:
+Prediction : PESQ_MOS = 2.621
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/enhanced_n29.wav:
+Prediction : PESQ_MOS = 2.644
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/enhanced_n68.wav:
+Prediction : PESQ_MOS = 2.515
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/enhanced_n69.wav:
+Prediction : PESQ_MOS = 2.355
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/enhanced_n77.wav:
+Prediction : PESQ_MOS = 2.510
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/enhanced_n78.wav:
+Prediction : PESQ_MOS = 2.461
+
+
+Noisy files:/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_n16.wav:
+Prediction : PESQ_MOS = 2.045
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_n17.wav:
+Prediction : PESQ_MOS = 1.951
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_n28.wav:
+Prediction : PESQ_MOS = 2.191
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_n29.wav:
+Prediction : PESQ_MOS = 2.056
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_n68.wav:
+Prediction : PESQ_MOS = 1.779
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_n69.wav:
+Prediction : PESQ_MOS = 1.809
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_n77.wav:
+Prediction : PESQ_MOS = 2.238
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_n78.wav:
+Prediction : PESQ_MOS = 2.253

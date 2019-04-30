@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Run a bash script that calculates the pesq score for the files in the results folder
+
+
+echo Calculate PESQ score
+
+clean_file="./clean.wav"
+path_pesq="/home/shomec/m/miralv/Masteroppgave/P862/Software/source"
+
+for noisy_file in "./enhanced_*.wav"
+do
+  echo ${noisy_file}
+  {path_pesq}/PESQ +16000 ${clean_file} ${noisy_file}
+done
+
+
+
+

@@ -64,7 +64,7 @@ def main():
     # Parameters specified for the construction of the generator and discriminator
     options = {}
     options['Idun'] = False # Set to true when running on Idun, s.t. the audio path and noise path get correct
-    options['save_model'] = True
+    options['save_model'] = False
     options['load_model'] = False
     options['window_length'] = 16384
     options['feat_dim'] = 1
@@ -89,7 +89,7 @@ def main():
         options['noise_path'] = "/home/miralv/Master/Audio/Nonspeech/Train"
     else:
         options['audio_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1//Train"
-        options['noise_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech/Train" # /Train or /Validate or /Test
+        options['noise_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Train" # /Train or /Validate or /Test
 
 
 
@@ -111,8 +111,8 @@ def main():
     # optimizer = keras.optimizers.RMSprop(lr=options['learning_rate'])
 
     # NB! i Segan er det definert to optimizere; en for d og en for g!!!
-    optimizer_D = keras.optimizers.RMSprop(lr=options['learning_rate'])
-    optimizer_G = keras.optimizers.RMSprop(lr=options['learning_rate'])
+    optimizer_D = Adam(lr=options['learning_rate'])
+    optimizer_G = Adam(lr=options['learning_rate'])
 
     if TRAIN:
         ## Set up the individual models
@@ -145,7 +145,7 @@ def main():
         GAN = Model(inputs=[clean_audio_in, noisy_audio_in, z], outputs=[D_out, G_out])
         GAN.summary()
         #TODO: Check that the losses become correct with the model syntax
-        GAN.compile(optimizer=optimizer,
+        GAN.compile(optimizer=optimizer_G,
                     loss={'model_1': 'mae', 'model_2': 'mse'},
                     loss_weights={'model_1': 500, 'model_2': 1})
         # print(GAN.metrics_names)
@@ -207,10 +207,10 @@ def main():
                 elapsed_time = datetime.datetime.now() - start_time
                 print("[Epoch %d/%d] [Batch %d/%d] [D loss: %f] [D real loss: %f] [D fake loss: %f] [G loss: %f] [G_D loss: %f] [G_L1 loss: %f] [Exec. time: %s]" % (epoch, n_epochs, batch_i + 1, steps_per_epoch, D_loss, D_loss_real, D_loss_fake, G_loss, G_D_loss, G_l1_loss, elapsed_time))
 
-                if (batch_i == (steps_per_epoch -1)):
-                    f.write("%f %f %f\n" % (G_loss, G_D_loss, G_l1_loss))
-                    logs = [G_loss, G_D_loss, G_l1_loss]
-                    write_log(callback, train_names, logs, epoch)
+                # if (batch_i == (steps_per_epoch -1)):
+                f.write("%f %f %f\n" % (G_loss, G_D_loss, G_l1_loss))
+                logs = [G_loss, G_D_loss, G_l1_loss]
+                write_log(callback, train_names, logs, epoch)
 
         f.close()
         print("Training finished.\n")
@@ -226,7 +226,7 @@ def main():
         options['noise_path_test'] = "/home/miralv/Master/Audio/Nonspeech/Test"
     else:
         options['audio_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1//Test/group_12/p1_g12_m1_1_t-a0001.wav"
-        options['noise_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech/Test" # /Train or /Validate or /Test
+        options['noise_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test" # /Train or /Validate or /Test
 
 
     if TEST:
@@ -241,7 +241,7 @@ def main():
             loaded_model_json = json_file.read()
             json_file.close()
             G = model_from_json(loaded_model_json)
-            G.compile(loss='mean_squared_error', optimizer=optimizer)
+            G.compile(loss='mean_squared_error', optimizer=optimizer_G)
             G.load_weights(modeldir + "/Gmodel.h5")
 
         for noise_path in noise_list:
