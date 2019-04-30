@@ -36,7 +36,7 @@ def generator(options):
 
     for layer_i, num_kernels in enumerate(generator_encoder_num_kernels):
         # Add convolution layer
-        encoder_out = Conv1D(num_kernels, filter_length, strides=strides, padding=padding, use_bias=use_bias, init=tf.truncated_normal_initializer(stddev=std_dev))(encoder_out)
+        encoder_out = Conv1D(num_kernels, filter_length, strides=strides, padding=padding, use_bias=use_bias, kernel_initializer=tf.truncated_normal_initializer(stddev=std_dev))(encoder_out)
 
         # Add skip connections
         if layer_i < num_layers -1:
@@ -62,7 +62,7 @@ def generator(options):
         # Need to transform the data to be in 3D, as conv2dtranspose need 3D input
         new_shape = (shape_in[1],1, shape_in[2])
         decoder_out = Reshape(new_shape)(decoder_out)   
-        decoder_out = Conv2DTranspose(num_kernels, [filter_length, 1], strides=[strides, 1], padding=padding, use_bias=use_bias, init=tf.truncated_normal_initializer(stddev=std_dev))(decoder_out)
+        decoder_out = Conv2DTranspose(num_kernels, [filter_length, 1], strides=[strides, 1], padding=padding, use_bias=use_bias, kernel_initializer=tf.truncated_normal_initializer(stddev=std_dev))(decoder_out)
         
         # Reshape back to 2D
         n_rows = strides*n_rows

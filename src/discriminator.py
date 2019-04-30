@@ -37,14 +37,13 @@ def discriminator(options):
 
     for num_kernels in discriminator_num_kernels:
         # Add convolution layer
-        discriminator_out = Conv1D(num_kernels, filter_length, strides=strides, padding=padding, use_bias=use_bias, init=tf.truncated_normal_initializer(stddev=std_dev))(discriminator_out)
-
+        discriminator_out = Conv1D(num_kernels, filter_length, strides=strides, padding=padding, use_bias=use_bias, kernel_initializer=tf.truncated_normal_initializer(stddev=std_dev))(discriminator_out)
         # Apply batch normalization
         discriminator_out = BatchNormalization()(discriminator_out)
         # Apply LeakyReLU
         discriminator_out = LeakyReLU(alpha=alpha)(discriminator_out)
     # discriminator_out = Conv1D(1, 1, padding=padding, use_bias=use_bias, name='logits_convolution')(discriminator_out)
-    discriminator_out = Conv1D(1, 1, padding=padding, use_bias=use_bias, init=tf.truncated_normal_initializer(stddev=std_dev))(discriminator_out)
+    discriminator_out = Conv1D(1, 1, padding=padding, use_bias=use_bias, kernel_initializer=tf.truncated_normal_initializer(stddev=std_dev))(discriminator_out)
     discriminator_out = Flatten()(discriminator_out)
     # discriminator_out = Dense(1, activation='linear', name='D_output')(discriminator_out)
     discriminator_out = Dense(1, activation='linear')(discriminator_out)

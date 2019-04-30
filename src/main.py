@@ -64,7 +64,7 @@ def main():
     # Parameters specified for the construction of the generator and discriminator
     options = {}
     options['Idun'] = False # Set to true when running on Idun, s.t. the audio path and noise path get correct
-    options['save_model'] = False
+    options['save_model'] = True
     options['load_model'] = False
     options['window_length'] = 16384
     options['feat_dim'] = 1
@@ -93,7 +93,7 @@ def main():
 
 
 
-    options['batch_size'] = 32
+    options['batch_size'] = 32 
     options['steps_per_epoch'] = 8
     options['n_epochs'] = 20
     options['snr_db'] = 5
@@ -107,8 +107,12 @@ def main():
     # print ("\n\n")
 
     # Specify optimizer (Needed also if we choose not to train)
-    optimizer = Adam(lr=options['learning_rate'])
+    # optimizer = Adam(lr=options['learning_rate'])
+    # optimizer = keras.optimizers.RMSprop(lr=options['learning_rate'])
 
+    # NB! i Segan er det definert to optimizere; en for d og en for g!!!
+    optimizer_D = keras.optimizers.RMSprop(lr=options['learning_rate'])
+    optimizer_G = keras.optimizers.RMSprop(lr=options['learning_rate'])
 
     if TRAIN:
         ## Set up the individual models
@@ -120,8 +124,8 @@ def main():
 
         # Compile the individual models
         print("Compile the individual models\n")
-        D.compile(loss='mse', optimizer=optimizer)
-        G.compile(loss='mae', optimizer=optimizer)
+        D.compile(loss='mse', optimizer=optimizer_D)
+        G.compile(loss='mae', optimizer=optimizer_G)
 
 
         ## Set up the combined model
