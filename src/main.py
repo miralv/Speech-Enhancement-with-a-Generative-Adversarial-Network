@@ -93,8 +93,8 @@ def main():
 
 
 
-    options['batch_size'] = 32 
-    options['steps_per_epoch'] = 8
+    options['batch_size'] = 64
+    options['steps_per_epoch'] = 20
     options['n_epochs'] = 20
     options['snr_db'] = 5
     options['sample_rate'] = 16000
@@ -111,8 +111,8 @@ def main():
     # optimizer = keras.optimizers.RMSprop(lr=options['learning_rate'])
 
     # NB! i Segan er det definert to optimizere; en for d og en for g!!!
-    optimizer_D = Adam(lr=options['learning_rate'])
-    optimizer_G = Adam(lr=options['learning_rate'])
+    optimizer_D = keras.optimizers.RMSprop(lr=options['learning_rate'])
+    optimizer_G = keras.optimizers.RMSprop(lr=options['learning_rate'])
 
     if TRAIN:
         ## Set up the individual models

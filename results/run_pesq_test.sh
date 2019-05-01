@@ -2,7 +2,7 @@
 
 # Run a bash script that calculates the pesq score for the files in the results folder
 
-file_save="./file_save.out"
+file_save="./file_save_01.05.19.out"
 
 echo Calculate PESQ score: >> ${file_save}
 echo file_name, score: >> ${file_save}
@@ -19,7 +19,7 @@ done
 
 
 
-printf "\n\nNoisy files:" >> ${file_save}
+printf "\n\nNoisy files:\n" >> ${file_save}
 
 
 for noisy_file in /home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_*.wav
