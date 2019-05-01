@@ -1,4 +1,4 @@
-# Deep Learning for Speech Separation
+# Speech Enhancement with a Generative Adversarial Network
 
 Use a generative adversarial network (GAN) to enhance audiofiles.
 
