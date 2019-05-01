@@ -20,14 +20,15 @@ len(noise_p)
 len(audio_p)
 45000
 
-save_path_audio = "/home/shomec/m/miralv/Masteroppgave/Code/figure_audio.pdf"
-p = plt.figure(figsize=(20,5))
+#save_path_audio = "/home/shomec/m/miralv/Masteroppgave/Code/figure_audio.pdf"
+plt.figure(1,figsize=(20,5))
 plt.plot(audio_p[25000:25000+40000],color='black')
-plt.savefig(save_path_audio)
+plt.savefig("figure_audio.pdf",format="pdf")
 #plt.show()
 
 save_path_noise = "/home/shomec/m/miralv/Masteroppgave/Code/figure_noise.pdf"
 plt.figure(figsize=(20,5))
 plt.plot(noise_p[0:40000], color='black')
-plt.savefig()
+plt.savefig("figure_noise.pdf", format="pdf")
+
 plt.show()
