@@ -64,7 +64,7 @@ def main():
     # Parameters specified for the construction of the generator and discriminator
     options = {}
     options['Idun'] = False # Set to true when running on Idun, s.t. the audio path and noise path get correct
-    options['save_model'] = False
+    options['save_model'] = True
     options['load_model'] = False
     options['window_length'] = 16384
     options['feat_dim'] = 1
@@ -93,9 +93,9 @@ def main():
 
 
 
-    options['batch_size'] = 64
+    options['batch_size'] = 32 #def:64
     options['steps_per_epoch'] = 20
-    options['n_epochs'] = 20
+    options['n_epochs'] = 40
     options['snr_db'] = 5
     options['sample_rate'] = 16000
 
@@ -191,7 +191,10 @@ def main():
 
                 # Get G's enhanced audio
                 noise_input = np.random.normal(0, 1, (batch_size, z_dim[0], z_dim[1])) #z
-                G_enhanced = G.predict([noisy_audio, noise_input])
+                G_enhanced = G.predict([noisy_audio, noise_input]) # Idea: Scale up enhanced output, since its magnitude generally is lower then sthe clean's magnitude
+                # G_amp = findRMS(G_enhanced)
+                # clean_amph = findRMS(clean_audio)
+                # factor_try = findRMS(clean_audio)/findRMS(G_enhanced)
 
                 # Comput the discriminator's loss
                 D_loss_real = D.train_on_batch(x=[clean_audio, noisy_audio], y=real_D)
@@ -225,7 +228,8 @@ def main():
         options['audio_path_test'] = "/home/miralv/Master/Audio/sennheiser_1/part_1/Test/group_12/p1_g12_m1_1_t-a0001.wav"
         options['noise_path_test'] = "/home/miralv/Master/Audio/Nonspeech/Test"
     else:
-        options['audio_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1//Test/group_12/p1_g12_m1_1_t-a0001.wav"
+        # options['audio_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/group_12/p1_g12_m1_1_t-a0001.wav"
+        options['audio_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/group_12/p1_g12_f1_1_t-a0001.wav"
         options['noise_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test" # /Train or /Validate or /Test
 
 
@@ -283,12 +287,21 @@ def main():
 
             sr = options['sample_rate']
             path_audio = "./results/clean.wav"
-            path_noisy = "./results/noisy_%s.wav" % (noise_path[-7:-4])
-            path_enhanced = "./results/enhanced_%s.wav" % (noise_path[-7:-4])
+            # path_noisy = "./results/noisy_%s.wav" % (noise_path[-7:-4])
+            # path_enhanced = "./results/enhanced_" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S") + "_%s.wav" % (noise_path[-7:-4])
+            if noise_path[-7]=='n':
+                path_enhanced = "./results/enhanced_" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S") + "_%s.wav" % (noise_path[-7:-4])
+                path_noisy = "./results/noisy_%s.wav" % (noise_path[-7:-4])
+            else:
+                path_enhanced = "./results/enhanced_" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S") + "_%s.wav" % (noise_path[-16:-4])
+                path_noisy = "./results/noisy_" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S") + "%s.wav" % (noise_path[-16:-4]) 
+
+
             saveAudio(clean, path_audio, sr) #per nå er det samme fil hver gang
             saveAudio(mixed, path_noisy, sr)
             saveAudio(G_enhanced, path_enhanced, sr)
     
+
     modeldir = cwd
     if options['save_model']:
         model_json = G.to_json()

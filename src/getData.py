@@ -45,7 +45,7 @@ def getAudio(audioPath, noisePath):
 def getPaths(audioPath,noisePath):
     """Returns audio paths and noise paths"""
 
-    audioPaths = glob.glob(audioPath + "/*/p1_g*_m" + "*.wav")       
+    audioPaths = glob.glob(audioPath + "/*/p1_g*_" + "*.wav")       
     # Load noise files    
     noisePaths = glob.glob(noisePath + "/*.wav")
 
