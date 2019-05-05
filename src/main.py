@@ -80,7 +80,7 @@ def main():
     options['alpha'] = 0.3 # alpha in LeakyReLU
     options['show_summary'] = False
     options['learning_rate'] = 0.0002
-    options['g_l1loss'] = 100.
+    options['g_l1loss'] = 1000. # Just testing 
     options['pre_emph'] = 0.95
 
     # Training path
