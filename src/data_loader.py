@@ -25,7 +25,8 @@ def load_batch(options):
     noise_path = options['noise_path']
     batch_size = options['batch_size']
     n_batches = options['steps_per_epoch']
-    snr_db = options['snr_db']
+    # snr_db = options['snr_db']
+    snr_dbs = options['snr_dbs_train']
     window_length = options['window_length']
     pre_emph_const = options['pre_emph']
 
@@ -66,6 +67,7 @@ def load_batch(options):
             start_index_audio = random.randint(0,len(audio)-window_length)
             start_index_noise = random.randint(0,len(noise)-window_length)
             # Obtain desired snr-level
+            snr_db = np.random.choice(snr_dbs)
             snr_factor = findSNRfactor(audio_orig, noise_orig, snr_db)
             clean_i = audio[start_index_audio: start_index_audio + window_length]
             mixed_i = clean_i + snr_factor*noise[start_index_noise: start_index_noise + window_length]

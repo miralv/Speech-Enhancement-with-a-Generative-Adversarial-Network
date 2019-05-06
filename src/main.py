@@ -59,9 +59,9 @@ def main():
 
     # Need some flags too. (like, train, test, save load)
     TEST = True
-    TRAIN = False
-    SAVE = False
-    LOAD = True
+    TRAIN = True
+    SAVE = True
+    LOAD = False
 
     # Parameters specified for the construction of the generator and discriminator
     options = {}
@@ -122,12 +122,12 @@ def main():
         ## Set up the individual models
         print("Setting up individual models:\n")
         G = generator(options)
-        print("G finished\n")
+        print("G finished.\n")
         D = discriminator(options)
-        print("D finished\n\n")
+        print("D finished.\n\n")
 
         # Compile the individual models
-        print("Compile the individual models\n")
+        print("Compile the individual models.\n")
         D.compile(loss='mse', optimizer=optimizer_D)
         G.compile(loss='mae', optimizer=optimizer_G)
 
@@ -145,7 +145,7 @@ def main():
         G_out = G([noisy_audio_in, z])
         D_out = D([G_out, noisy_audio_in])
         
-        print("Set up the combined model\n")
+        print("Set up the combined model.\n")
         GAN = Model(inputs=[clean_audio_in, noisy_audio_in, z], outputs=[D_out, G_out])
         GAN.summary()
         #TODO: Check that the losses become correct with the model syntax
@@ -182,7 +182,7 @@ def main():
         fake_D = np.zeros((batch_size, 1)) # For input pairs (enhanced, noisy)
         valid_G = np.array([1]*batch_size) # To compute the mse-loss
 
-        print("Begin training\n")
+        print("Begin training.\n")
 
         for epoch in range(1, n_epochs+1):
             for batch_i, (clean_audio, noisy_audio) in enumerate(load_batch(options)):
@@ -249,6 +249,8 @@ def main():
             G = model_from_json(loaded_model_json)
             G.compile(loss='mean_squared_error', optimizer=optimizer_G)
             G.load_weights(modeldir + "/Gmodel.h5")
+
+
         SNR_dBs = options['snr_dbs_test']
         for speech_path in speech_list:
             options['audio_path_test'] = speech_path
@@ -284,24 +286,26 @@ def main():
 
                     # Want to save clean, enhanced and mixed. 
                     sr = options['sample_rate']
-                    path_audio = "./results/clean.wav"
                     # path_noisy = "./results/noisy_%s.wav" % (noise_path[-7:-4])
                     # path_enhanced = "./results/enhanced_" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S") + "_%s.wav" % (noise_path[-7:-4])
                     if noise_path[-7]=='n':
                         path_enhanced = "./results/enhanced_%s_%s_snr_%d.wav" % (speech_path[-16:-4],noise_path[-7:-4], snr_db)# sentence id, noise id, snr_db
                         path_noisy = "./results/noisy_%s_%s_snr_%d.wav" % (speech_path[-16:-4],noise_path[-7:-4], snr_db)
+                        path_clean = "./results/clean_%s_%s_snr_%d.wav" % (speech_path[-16:-4],noise_path[-7:-4], snr_db)
+
                     else:
                         path_enhanced = "./results/enhanced_%s_%s_snr_%d.wav" % (speech_path[-16:-4], noise_path[-16:-4], snr_db)
                         path_noisy = "./results/noisy_%s_%s_snr_%d.wav" % (speech_path[-16:-4], noise_path[-16:-4], snr_db)
+                        path_clean = "./results/clean_%s_%s_snr_%d.wav" % (speech_path[-16:-4], noise_path[-16:-4], snr_db)
 
-
-                    saveAudio(clean_res, path_audio, sr) #per nå er det samme fil hver gang
+                    # Because pesq is testing corresponding clean, noisy and enhanced, must clean be stored similarly
+                    saveAudio(clean_res, path_clean, sr) #per nå er det samme fil hver gang
                     saveAudio(mixed_res, path_noisy, sr)
                     saveAudio(G_enhanced, path_enhanced, sr)
     
 
-    modeldir = cwd
     if SAVE and not LOAD:
+        modeldir = cwd
         model_json = G.to_json()
         with open(modeldir + "/Gmodel.json", "w") as json_file:
             json_file.write(model_json)
