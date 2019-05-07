@@ -8,25 +8,27 @@ echo Calculate PESQ score: >> ${file_save}
 echo file_name, score: >> ${file_save}
 echo Enhanced files: >> ${file_save}
 
-clean_file="./clean.wav"
 path_pesq="/home/shomec/m/miralv/Masteroppgave/P862/Software/source"
 #/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/
 
-for noisy_file in /home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/enhanced_*_snr_*.wav
+# start with the clean base
+for clean_file in /home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/clean_*_snr_*.wav
 do
+  noisy_file=${clean_file}
+  noisy_file=${clean_file/clean/noisy}
+
   echo -e ${noisy_file}: >> ${file_save}
   ${path_pesq}/PESQ +16000 ${clean_file} ${noisy_file} | grep 'Prediction : PESQ_MOS' >> ${file_save} 
-done
 
 
+  enhanced_file=${clean_file}
+  enhanced_file=${clean_file/clean/enhanced}
 
-
-printf "\n\nNoisy files:\n" >> ${file_save}
-
-
-for noisy_file in /home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_*snr_*.wav
-do
   echo -e ${noisy_file}: >> ${file_save}
-  ${path_pesq}/PESQ +16000 ${clean_file} ${noisy_file} | grep 'Prediction : PESQ_MOS' >> ${file_save} 
+  ${path_pesq}/PESQ +16000 ${clean_file} ${enhanced_file} | grep 'Prediction : PESQ_MOS' >> ${file_save} 
+
+
+
 done
+
 
