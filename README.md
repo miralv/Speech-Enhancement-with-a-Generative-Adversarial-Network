@@ -1,6 +1,6 @@
 # Speech Enhancement with a Generative Adversarial Network
 
-Use a generative adversarial network (GAN) to enhance audiofiles.
+Use a generative adversarial network (GAN) to enhance speech signals.
 
 
 The work is inspired by the following repositories:
