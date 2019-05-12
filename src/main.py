@@ -85,6 +85,7 @@ def main():
     options['learning_rate'] = 0.0002
     options['g_l1loss'] = 100. 
     options['pre_emph'] = 0.95
+    options['z_in_use'] = False # Use latent noise z in generator?
 
     # Training path
     if options['Idun']:
@@ -96,10 +97,9 @@ def main():
 
 
 
-    options['batch_size'] = 200 #64
-    options['steps_per_epoch'] = 10
-    options['n_epochs'] = 20
-    # options['snr_db'] = 5
+    options['batch_size'] = 1#200 #64
+    options['steps_per_epoch'] = 1#10
+    options['n_epochs'] = 1#20
     options['snr_dbs_train'] = [0,10,15] # It seems that the algorithm is performing best on low snrs
     options['snr_dbs_test'] = [0,5,10,15]
     options['sample_rate'] = 16000
@@ -108,10 +108,6 @@ def main():
     options['noise_list_sample_test'] = ["/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/n77.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/PCAFETER_16k_ch01.wav"]
     print("Options are set.\n\n")
 
-    # # Print visible devices
-    # print("Print local devices:\n")
-    # print(device_lib.list_local_devices())
-    # print ("\n\n")
 
     # Specify optimizer (Needed also if we choose not to train)
     # optimizer = Adam(lr=options['learning_rate'])
@@ -147,17 +143,24 @@ def main():
         # TODO: Må de individuelle modellene kompileres i main?
         D.trainable = False
         audio_shape = (options['window_length'], options['feat_dim'])    
-        z_dim = options['z_dim']
+
         # Prepare inputs
         clean_audio_in = Input(shape=audio_shape, name='in_clean')
         noisy_audio_in = Input(shape=audio_shape, name='in_noisy')
-        z = Input(shape=z_dim, name='noise_input')
-        # Prepare outputs
-        G_out = G([noisy_audio_in, z])
+        if options['z_in_use']:
+            z_dim = options['z_dim']
+            z = Input(shape=z_dim, name='noise_input')
+            G_out = G([noisy_audio_in, z])
+        else:
+            G_out = G([noisy_audio_in])
         D_out = D([G_out, noisy_audio_in])
         
         print("Set up the combined model.\n")
-        GAN = Model(inputs=[clean_audio_in, noisy_audio_in, z], outputs=[D_out, G_out])
+        if options['z_in_use']:
+            GAN = Model(inputs=[clean_audio_in, noisy_audio_in, z], outputs=[D_out, G_out])
+        else:
+            GAN = Model(inputs=[clean_audio_in, noisy_audio_in], outputs=[D_out, G_out])
+
         GAN.summary()
         #TODO: Check that the losses become correct with the model syntax
         GAN.compile(optimizer=optimizer_G,
@@ -205,8 +208,12 @@ def main():
                 # Har testet, Idun kommer seg hit. (men ikke lenger?)
 
                 # Get G's enhanced audio
-                noise_input = np.random.normal(0, 1, (batch_size, z_dim[0], z_dim[1])) #z
-                G_enhanced = G.predict([noisy_audio, noise_input]) # Idea: Scale up enhanced output, since its magnitude generally is lower then sthe clean's magnitude
+                if options['z_in_use']:
+                    noise_input = np.random.normal(0, 1, (batch_size, z_dim[0], z_dim[1])) #z
+                    G_enhanced = G.predict([noisy_audio, noise_input]) # Idea: Scale up enhanced output, since its magnitude generally is lower then sthe clean's magnitude
+                else:
+                    G_enhanced = G.predict([noisy_audio]) # Idea: Scale up enhanced output, since its magnitude generally is lower then sthe clean's magnitude
+               
                 # G_amp = findRMS(G_enhanced)
                 # clean_amph = findRMS(clean_audio)
                 # factor_try = findRMS(clean_audio)/findRMS(G_enhanced)
@@ -219,7 +226,11 @@ def main():
 
                 ## Train generator 
                 # Keras expect a list of arrays > must reformat clean_audio
-                [G_loss, G_D_loss, G_l1_loss] = GAN.train_on_batch(x=[clean_audio, noisy_audio, noise_input], y={'model_1': clean_audio, 'model_2': valid_G}) 
+                if options['z_in_use']:
+                    [G_loss, G_D_loss, G_l1_loss] = GAN.train_on_batch(x=[clean_audio, noisy_audio, noise_input], y={'model_1': clean_audio, 'model_2': valid_G}) 
+                else:
+                    [G_loss, G_D_loss, G_l1_loss] = GAN.train_on_batch(x=[clean_audio, noisy_audio], y={'model_1': clean_audio, 'model_2': valid_G}) 
+
 
                 # Print progress
                 elapsed_time = datetime.datetime.now() - start_time
@@ -284,7 +295,11 @@ def main():
                     audios_mixed = np.expand_dims(mixed[i], axis=2)
 
                     # Condition on B and generate a translated version
-                    G_out = G.predict([audios_mixed, z[i]]) #meand [i,:,:]
+                    if options['z_in_use']:
+                        G_out = G.predict([audios_mixed, z[i]]) #meand [i,:,:]
+                    else:
+                        G_out = G.predict([audios_mixed]) #meand [i,:,:]
+
 
 
                     # Postprocess = upscale from [-1,1] to int16
@@ -345,7 +360,11 @@ def run_sample_test(options, speech_list, noise_list, G, epoch):
                 audios_mixed = np.expand_dims(mixed[i], axis=2)
 
                 # Condition on B and generate a translated version
-                G_out = G.predict([audios_mixed, z[i]]) 
+                if options['z_in_use']:
+                    G_out = G.predict([audios_mixed, z[i]]) 
+                else:
+                    G_out = G.predict([audios_mixed]) 
+
 
                 # Postprocess = upscale from [-1,1] to int16
                 clean_res,_ = postprocess(clean[i,:,:], coeff = options['pre_emph'])
