@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib
 import scipy
 import scipy.io.wavfile
 import resampy
@@ -36,6 +37,7 @@ to_matrix_file = "pesq_results_table.csv"
 # Summer antall hvor det har skjedd en forbedring
 mat = np.loadtxt(to_matrix_file, delimiter=' ', skiprows=1, usecols=[0,2,3,4])
 names = np.loadtxt(to_matrix_file,dtype='str',delimiter=' ',skiprows=1,usecols=1)
+names[-17]
 improved = sum(mat[:,2]-mat[:,3]<0)
 # Percentage that has an improvement:
 print(" Fraction that has an improvement after enhancement: %f of %d files." %(improved/mat.shape[0], mat.shape[0]))
@@ -72,8 +74,9 @@ for i in range(4):
 # plt.legend(loc = "center right")
 # plt.show()
 
-
-x = np.arange(-0.5,4.75, 0.25)
+x_width = 0.125
+x = np.arange(-0.5,4.5 + x_width, x_width)
+#x = np.arange(-0.5,4.75, 0.25)
 x # må summere antall som er i hver del.
 number_in_each_bar_noisy = np.zeros(len(x)-1)
 number_in_each_bar_enhanced = np.zeros(len(x)-1)
@@ -92,18 +95,31 @@ number_in_each_bar_enhanced
 number_in_each_bar_noisy
 4.5-0.125
 -0.5+0.125
-x_bar = np.arange(-0.375,4.5,0.25)
+x_bar = np.arange(-0.5+x_width/2,4.5,x_width)
 x_bar
 number_in_each_bar_noisy
 len(x_bar)
 len(number_in_each_bar_noisy)
 plt.figure(1)
-plt.bar(x_bar,number_in_each_bar_noisy)
+p1 = plt.bar(x_bar,number_in_each_bar_noisy, width=x_width,color='red',alpha=0.6)
 #plt.show()
-plt.bar(x_bar,number_in_each_bar_enhanced)
+p2 = plt.bar(x_bar,number_in_each_bar_enhanced, width=x_width, alpha=0.6)
+plt.legend((p1[0], p2[0]), ('Noisy', 'Enhanced'))
 plt.show()
-
+# Gjennomsnitt:
+np.mean(mat[:,2])
+np.mean(mat[:,3])
 number_in_each_bar_noisy
+
+# Kan plotte før minus etter
+diff = mat[:,2] - mat[:,3]
+val = np.min(diff)
+diff== val
+diff[-17]
+val
+p3 = plt.plot(diff,'o')
+plt.legend( (p3),("PESQ_noisy - PESQ_enhanced"))
+plt.show()
 
 
 # plt.figure(1,figsize=(20,5))
