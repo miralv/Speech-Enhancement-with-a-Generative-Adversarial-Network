@@ -16,10 +16,6 @@ from keras.optimizers import Adam
 from keras.callbacks import TensorBoard
 from keras.models import model_from_json
 import datetime
-#import matplotlib.pyplot as plt
-#import matplotlib
-#matplotlib.use('agg')
-#import matplotlib.pyplot as plt
 import sys
 import numpy as np
 import h5py
@@ -42,8 +38,6 @@ def test_audio(audio_path,path_save):
     audio_scaled = audio_orig*scale_factor
 
     saveAudio(audio_scaled, path_save, sr=16000)
-
-
 
 
 
