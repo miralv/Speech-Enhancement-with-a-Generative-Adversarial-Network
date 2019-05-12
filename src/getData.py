@@ -50,4 +50,3 @@ def getPaths(audioPath,noisePath):
     noisePaths = glob.glob(noisePath + "/*.wav")
 
     return audioPaths,noisePaths
-
