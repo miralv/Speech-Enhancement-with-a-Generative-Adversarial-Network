@@ -45,11 +45,11 @@ def load_batch(options):
 
             f_audio, audio_orig = scipy.io.wavfile.read(audio_i)
             
-            audio = preprocess(audio_orig,f_audio)
+            audio = preprocess_dataloader(audio_orig,f_audio)
             audio = audio[:(len(audio) - len(audio)%window_length)]
 
             f_noise, noise_orig = scipy.io.wavfile.read(noise_i)
-            noise = preprocess(noise_orig, f_noise)
+            noise = preprocess_dataloader(noise_orig, f_noise)
             # Increase the possible extractions from noise
             if len(noise)< window_length:
                 noise = extendVector(noise, 2*window_length)
@@ -60,8 +60,9 @@ def load_batch(options):
             start_index_noise = random.randint(0,len(noise)-window_length)
             # Obtain desired snr-level
             snr_factor = findSNRfactor(audio_orig, noise_orig, snr_db)
-            clean_i = audio[start_index_audio: start_index_audio + window_length]
-            mixed_i = clean_i + snr_factor*noise[start_index_noise: start_index_noise + window_length]
+            # Scale and construct input windows
+            clean_i = scaleDown(audio[start_index_audio: start_index_audio + window_length])
+            mixed_i = clean_i + snr_factor*scaleDown(noise[start_index_noise: start_index_noise + window_length])
 
             # Make sure that the values are still in [-1,1]
             #TODO: Er det nødvendig å gjøre dette her? Holder det å gjøre det når lyden skal lyttes til? Altså for test sett reconstruction?

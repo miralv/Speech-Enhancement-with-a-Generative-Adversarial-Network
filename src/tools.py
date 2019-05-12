@@ -94,7 +94,7 @@ def extendVector(vector, length):
 
 
 def preprocess(rawAudio, origSr):
-    """ Downsample and scale
+    """ Downsample and scale.
 
     # Arguments
         rawAudio: audio file
@@ -112,6 +112,26 @@ def preprocess(rawAudio, origSr):
     y = scaleDown(yd)
 
     return y
+
+def preprocess_dataloader(rawAudio, origSr):
+    """ Downsample and scale.
+
+    # Arguments
+        rawAudio: audio file
+        origSr: original sample rate
+
+    # Returns
+        Downsampled audio
+    """
+
+    # Target sample rate
+    # TODO: listen to downsampled audio. check which filter is applied.
+
+    targetSr = 16000
+    yd = resampy.resample(rawAudio,origSr,targetSr)
+
+    return yd
+
 
     # # Downsample
     # if noise !=1:
