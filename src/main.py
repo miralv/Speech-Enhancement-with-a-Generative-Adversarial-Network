@@ -60,12 +60,15 @@ def main():
     # Need some flags too. (like, train, test, save load)
     TEST = True
     TRAIN = True
+    SAVE = True
+    LOAD = False
+    SAMPLE_TESTING = True # Run a sample enhancement at a specified epoch frequency
 
     # Parameters specified for the construction of the generator and discriminator
     options = {}
     options['Idun'] = False # Set to true when running on Idun, s.t. the audio path and noise path get correct
-    options['save_model'] = True
-    options['load_model'] = False
+    # options['save_model'] = False
+    # options['load_model'] = True
     options['window_length'] = 16384
     options['feat_dim'] = 1
     options['z_dim'] = (8, 1024) # Dimensions for the latent noise variable 
@@ -80,25 +83,29 @@ def main():
     options['alpha'] = 0.3 # alpha in LeakyReLU
     options['show_summary'] = False
     options['learning_rate'] = 0.0002
-    options['g_l1loss'] = 1000. # Just testing 
+    options['g_l1loss'] = 100. 
     options['pre_emph'] = 0.95
 
     # Training path
     if options['Idun']:
-        options['audio_path'] = "/home/miralv/Master/Audio/sennheiser_1/part_1//Train"
+        options['audio_path'] = "/home/miralv/Master/Audio/sennheiser_1/part_1/Train"
         options['noise_path'] = "/home/miralv/Master/Audio/Nonspeech/Train"
     else:
-        options['audio_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1//Train"
+        options['audio_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Train"
         options['noise_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Train" # /Train or /Validate or /Test
 
 
 
-    options['batch_size'] = 32 #def:64
-    options['steps_per_epoch'] = 20
-    options['n_epochs'] = 40
-    options['snr_db'] = 5
+    options['batch_size'] = 200 #64
+    options['steps_per_epoch'] = 10
+    options['n_epochs'] = 20
+    # options['snr_db'] = 5
+    options['snr_dbs_train'] = [0,10,15] # It seems that the algorithm is performing best on low snrs
+    options['snr_dbs_test'] = [0,5,10,15]
     options['sample_rate'] = 16000
-
+    options['test_frequency'] = 5 # Every nth epoch, run a sample enhancement
+    options['speech_list_sample_test'] = ["/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/Selected/p1_g12_m1_3_t-c1151.wav"]#, "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/Selected/p1_g12_f2_4_x-c2161.wav"]
+    options['noise_list_sample_test'] = ["/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/n77.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/PCAFETER_16k_ch01.wav"]
     print("Options are set.\n\n")
 
     # # Print visible devices
@@ -115,15 +122,23 @@ def main():
     optimizer_G = keras.optimizers.RMSprop(lr=options['learning_rate'])
 
     if TRAIN:
+        if SAMPLE_TESTING:
+            test_frequency = options['test_frequency']
+            speech_list_sample_test = options['speech_list_sample_test'] 
+            noise_list_sample_test = options['noise_list_sample_test']
+
+
+
+
         ## Set up the individual models
         print("Setting up individual models:\n")
         G = generator(options)
-        print("G finished\n")
+        print("G finished.\n")
         D = discriminator(options)
-        print("D finished\n\n")
+        print("D finished.\n\n")
 
         # Compile the individual models
-        print("Compile the individual models\n")
+        print("Compile the individual models.\n")
         D.compile(loss='mse', optimizer=optimizer_D)
         G.compile(loss='mae', optimizer=optimizer_G)
 
@@ -141,7 +156,7 @@ def main():
         G_out = G([noisy_audio_in, z])
         D_out = D([G_out, noisy_audio_in])
         
-        print("Set up the combined model\n")
+        print("Set up the combined model.\n")
         GAN = Model(inputs=[clean_audio_in, noisy_audio_in, z], outputs=[D_out, G_out])
         GAN.summary()
         #TODO: Check that the losses become correct with the model syntax
@@ -178,7 +193,7 @@ def main():
         fake_D = np.zeros((batch_size, 1)) # For input pairs (enhanced, noisy)
         valid_G = np.array([1]*batch_size) # To compute the mse-loss
 
-        print("Begin training\n")
+        print("Begin training.\n")
 
         for epoch in range(1, n_epochs+1):
             for batch_i, (clean_audio, noisy_audio) in enumerate(load_batch(options)):
@@ -215,30 +230,34 @@ def main():
                 logs = [G_loss, G_D_loss, G_l1_loss]
                 write_log(callback, train_names, logs, epoch)
 
+                if SAMPLE_TESTING and epoch % test_frequency == 0:
+                    # do a sample test
+                    run_sample_test(options, speech_list_sample_test, noise_list_sample_test, G, epoch)
+
+                # Run a sample test every nth epoch
+
         f.close()
         print("Training finished.\n")
 
     # Want to plot training progress
 
     # Test the model 
-    # Will do test with different types of noise, and a female and a male voice with all three types. 
-
-    # For now: Testpath:
-    if options['Idun']:
-        options['audio_path_test'] = "/home/miralv/Master/Audio/sennheiser_1/part_1/Test/group_12/p1_g12_m1_1_t-a0001.wav"
-        options['noise_path_test'] = "/home/miralv/Master/Audio/Nonspeech/Test"
-    else:
-        # options['audio_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/group_12/p1_g12_m1_1_t-a0001.wav"
-        options['audio_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/group_12/p1_g12_f1_1_t-a0001.wav"
-        options['noise_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test" # /Train or /Validate or /Test
-
+    # Update testing. For now, update only for running locally.
 
     if TEST:
+        if options['Idun']:
+            options['audio_path_test'] = "/home/miralv/Master/Audio/sennheiser_1/part_1/Test/group_12/p1_g12_m1_1_t-a0001.wav"
+            options['noise_path_test'] = "/home/miralv/Master/Audio/Nonspeech/Test"
+        else:
+            # options['audio_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/group_12/p1_g12_m1_1_t-a0001.wav"
+            options['audio_folder_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/Selected"
+            options['noise_folder_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test" # /Train or /Validate or /Test
+
         print("Test the model on unseen noises and voices.\n\n")
-        noise_list = glob.glob(options['noise_path_test'] + "/*.wav")
+        noise_list = glob.glob(options['noise_folder_test'] + "/*.wav")
+        speech_list = glob.glob(options['audio_folder_test'] + "/*-c*.wav") # Want only the unique sentences
 
-
-        if options['load_model']:
+        if LOAD:
             print("Loading saved model\n")
             modeldir = os.getcwd()
             json_file = open(modeldir + "/Gmodel.json", "r")
@@ -248,67 +267,113 @@ def main():
             G.compile(loss='mean_squared_error', optimizer=optimizer_G)
             G.load_weights(modeldir + "/Gmodel.h5")
 
-        for noise_path in noise_list:
-            options['noise_path_test'] = noise_path
-            clean,mixed,z,_ = prepare_test(options)
 
-            # Expand dims
-            # Need to get G's input in the correct shape
-            # First, get it into form (n_windows, window_length)
-            # Thereafter (n_windows, window_length,1)
+        SNR_dBs = options['snr_dbs_test']
+        for speech_path in speech_list:
+            options['audio_path_test'] = speech_path
+            for noise_path in noise_list:
+                options['noise_path_test'] = noise_path
+                clean, mixed, z = prepare_test(options) #(snr_dbs, nwindows, windowlength)
+                for i,snr_db in enumerate(SNR_dBs):
+                    # Expand dims
+                    # Need to get G's input in the correct shape
+                    # First, get it into form (n_windows, window_length)
+                    # Thereafter (n_windows, window_length,1)
 
-            # audios_clean = np.expand_dims(clean, axis=2)
-            audios_mixed = np.expand_dims(mixed, axis=2)
+                    # audios_clean = np.expand_dims(clean, axis=2)
+                    audios_mixed = np.expand_dims(mixed[i], axis=2)
 
-            # Condition on B and generate a translated version
-            G_out = G.predict([audios_mixed, z]) 
-
-
-            # Postprocess = upscale from [-1,1] to int16
-            clean,scale_1 = postprocess(clean, coeff = options['pre_emph'])
-            mixed,scale_2 = postprocess(mixed, coeff = options['pre_emph'])
-            G_enhanced,g_scale = postprocess(G_out,coeff = options['pre_emph'])
-            print("Was clean, mixed or enhanced scaled?")
-            print("%f %f %f" % (scale_1, scale_2,g_scale))
-
-            ## Save for listening
-            cwd = os.getcwd()
-            #print(cwd)
-
-            if not os.path.exists("./results"):
-                os.makedirs("./results")
+                    # Condition on B and generate a translated version
+                    G_out = G.predict([audios_mixed, z[i]]) #meand [i,:,:]
 
 
-            # Want to save clean, enhanced and mixed. 
-            # Per nå er dette dobbelt opp. Det  vil aldri være scaling factor > 1 her.
-            # if scaling_factor > 1:
-            #     clean = np.divide(clean, scaling_factor)
-            #     mixed = np.divide(mixed, scaling_factor) har allerede skjedd i prepare test
+                    # Postprocess = upscale from [-1,1] to int16
+                    clean_res,_ = postprocess(clean[i,:,:], coeff = options['pre_emph'])
+                    mixed_res,_ = postprocess(mixed[i,:,:], coeff = options['pre_emph'])
+                    G_enhanced,_ = postprocess(G_out,coeff = options['pre_emph'])
+                    # print("Was clean, mixed or enhanced scaled?")
+                    # print("%f %f %f" % (scale_1, scale_2,g_scale))
 
-            sr = options['sample_rate']
-            path_audio = "./results/clean.wav"
-            # path_noisy = "./results/noisy_%s.wav" % (noise_path[-7:-4])
-            # path_enhanced = "./results/enhanced_" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S") + "_%s.wav" % (noise_path[-7:-4])
-            if noise_path[-7]=='n':
-                path_enhanced = "./results/enhanced_" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S") + "_%s.wav" % (noise_path[-7:-4])
-                path_noisy = "./results/noisy_%s.wav" % (noise_path[-7:-4])
-            else:
-                path_enhanced = "./results/enhanced_" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S") + "_%s.wav" % (noise_path[-16:-4])
-                path_noisy = "./results/noisy_" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S") + "%s.wav" % (noise_path[-16:-4]) 
+                    ## Save for listening
+                    cwd = os.getcwd()
+                    #print(cwd)
 
+                    if not os.path.exists("./results"):
+                        os.makedirs("./results")
 
-            saveAudio(clean, path_audio, sr) #per nå er det samme fil hver gang
-            saveAudio(mixed, path_noisy, sr)
-            saveAudio(G_enhanced, path_enhanced, sr)
+                    # Want to save clean, enhanced and mixed. 
+                    sr = options['sample_rate']
+                    # path_noisy = "./results/noisy_%s.wav" % (noise_path[-7:-4])
+                    # path_enhanced = "./results/enhanced_" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S") + "_%s.wav" % (noise_path[-7:-4])
+                    if noise_path[-7]=='n':
+                        path_enhanced = "./results/enhanced_%s_%s_snr_%d.wav" % (speech_path[-16:-4],noise_path[-7:-4], snr_db)# sentence id, noise id, snr_db
+                        path_noisy = "./results/noisy_%s_%s_snr_%d.wav" % (speech_path[-16:-4],noise_path[-7:-4], snr_db)
+                        path_clean = "./results/clean_%s_%s_snr_%d.wav" % (speech_path[-16:-4],noise_path[-7:-4], snr_db)
+
+                    else:
+                        path_enhanced = "./results/enhanced_%s_%s_snr_%d.wav" % (speech_path[-16:-4], noise_path[-16:-4], snr_db)
+                        path_noisy = "./results/noisy_%s_%s_snr_%d.wav" % (speech_path[-16:-4], noise_path[-16:-4], snr_db)
+                        path_clean = "./results/clean_%s_%s_snr_%d.wav" % (speech_path[-16:-4], noise_path[-16:-4], snr_db)
+
+                    # Because pesq is testing corresponding clean, noisy and enhanced, must clean be stored similarly
+                    saveAudio(clean_res, path_clean, sr) #per nå er det samme fil hver gang
+                    saveAudio(mixed_res, path_noisy, sr)
+                    saveAudio(G_enhanced, path_enhanced, sr)
     
 
-    modeldir = cwd
-    if options['save_model']:
+    if SAVE and not LOAD:
+        modeldir = cwd
         model_json = G.to_json()
         with open(modeldir + "/Gmodel.json", "w") as json_file:
             json_file.write(model_json)
         G.save_weights(modeldir + "/Gmodel.h5")
         print ("Model saved to " + modeldir)
+
+
+
+# Holder med to speech files
+# og et par typer noise
+
+def run_sample_test(options, speech_list, noise_list, G, epoch):
+    SNR_dBs = options['snr_dbs_test']
+    for speech_path in speech_list:
+        options['audio_path_test'] = speech_path
+        for noise_path in noise_list:
+            options['noise_path_test'] = noise_path
+            clean, mixed, z = prepare_test(options) #(snr_dbs, nwindows, windowlength)
+            for i,snr_db in enumerate(SNR_dBs):
+                audios_mixed = np.expand_dims(mixed[i], axis=2)
+
+                # Condition on B and generate a translated version
+                G_out = G.predict([audios_mixed, z[i]]) 
+
+                # Postprocess = upscale from [-1,1] to int16
+                clean_res,_ = postprocess(clean[i,:,:], coeff = options['pre_emph'])
+                mixed_res,_ = postprocess(mixed[i,:,:], coeff = options['pre_emph'])
+                G_enhanced,_ = postprocess(G_out,coeff = options['pre_emph'])
+
+                ## Save for listening
+                if not os.path.exists("./results_test_sample"):
+                    os.makedirs("./results_test_sample")
+
+                # Want to save clean, enhanced and mixed. 
+                sr = options['sample_rate']
+    
+                if noise_path[-7]=='n':
+                    path_enhanced = "./results_test_sample/epoch_%d_enhanced_%s_%s_snr_%d.wav" % (epoch, speech_path[-16:-4],noise_path[-7:-4], snr_db)# sentence id, noise id, snr_db
+                    path_noisy = "./results_test_sample/epoch_%d_noisy_%s_%s_snr_%d.wav" % (epoch, speech_path[-16:-4],noise_path[-7:-4], snr_db)
+                    path_clean = "./results_test_sample/epoch_%d_clean_%s_%s_snr_%d.wav" % (epoch, speech_path[-16:-4],noise_path[-7:-4], snr_db)
+
+                else:
+                    path_enhanced = "./results_test_sample/epoch_%d_enhanced_%s_%s_snr_%d.wav" % (epoch, speech_path[-16:-4], noise_path[-16:-4], snr_db)
+                    path_noisy = "./results_test_sample/epoch_%d_noisy_%s_%s_snr_%d.wav" % (epoch, speech_path[-16:-4], noise_path[-16:-4], snr_db)
+                    path_clean = "./results_test_sample/epoch_%d_clean_%s_%s_snr_%d.wav" % (epoch, speech_path[-16:-4], noise_path[-16:-4], snr_db)
+
+                # Because pesq is testing corresponding clean, noisy and enhanced, must clean be stored similarly
+                saveAudio(clean_res, path_clean, sr) 
+                saveAudio(mixed_res, path_noisy, sr)
+                saveAudio(G_enhanced, path_enhanced, sr)
+
 
 
 

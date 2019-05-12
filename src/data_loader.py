@@ -8,17 +8,25 @@ import random
 from tools import *
 from getData import getPaths
 
-# Should it be a class or just a function?
 
 def load_batch(options):
     """ Used for loading an epoch's random batches of data during training
+
+    # Arguments
+        options: specified in main()
+
+    # Returns
+        A batch of noise, speech and latent noise z
+
     """
+
 
     audio_path = options['audio_path']
     noise_path = options['noise_path']
     batch_size = options['batch_size']
     n_batches = options['steps_per_epoch']
-    snr_db = options['snr_db']
+    # snr_db = options['snr_db']
+    snr_dbs = options['snr_dbs_train']
     window_length = options['window_length']
     pre_emph_const = options['pre_emph']
 
@@ -59,6 +67,7 @@ def load_batch(options):
             start_index_audio = random.randint(0,len(audio)-window_length)
             start_index_noise = random.randint(0,len(noise)-window_length)
             # Obtain desired snr-level
+            snr_db = np.random.choice(snr_dbs)
             snr_factor = findSNRfactor(audio_orig, noise_orig, snr_db)
             clean_i = audio[start_index_audio: start_index_audio + window_length]
             mixed_i = clean_i + snr_factor*noise[start_index_noise: start_index_noise + window_length]
@@ -79,11 +88,19 @@ def load_batch(options):
 
 
 def prepare_test(options):
-    """For a start, the test is just 1 audio clip, maybe with different noises?
+    """ Used for loading the test set corresponding to given speech file and noise file, for all snr dbs wanted.
+
+    # Arguments
+        options: specified in main()
+
+    # Returns
+        The full test set for specified speech and noise file
+
     """
+
     audio_path = options['audio_path_test']
     noise_path = options['noise_path_test']
-    snr_db = options['snr_db']
+    snr_dbs = options['snr_dbs_test']
     window_length = options['window_length']
     z_dim = options['z_dim']
     pre_emph_const = options['pre_emph']
@@ -97,27 +114,40 @@ def prepare_test(options):
     noise = extendVector(noise, len(audio))
 
 
-    # Obtain desired snr-level
-    snr_factor = findSNRfactor(audio_orig, noise_orig, snr_db)
-    mixed = audio + snr_factor*noise
+    # mixed = np.zeros(shape =(len(snr_dbs),len(audio))) # Each row will contain mixed for corresponding snr
+    # speech = np.zeros(shape =(len(snr_dbs),len(audio))) # Each row will contain mixed for corresponding snr
 
-    # Make sure that the values are still in [-1,1]
-    max_val = np.max(np.abs(mixed))
-    if max_val > 1:
+   # Prepare to get it on format len(snr_dbs) x nwindows x windowlength
+    n_windows = int(np.ceil(len(audio)/window_length))
+    speech_ready = np.zeros(shape=(len(snr_dbs), n_windows, window_length))
+    mixed_ready = np.zeros(shape=(len(snr_dbs), n_windows, window_length))
+
+    # Obtain desired snr-level
+    # snr_factors = np.zeros((len(snr_dbs),1))
+    for i,snr_db in enumerate(snr_dbs):
+        snr_factor = findSNRfactor(audio_orig, noise_orig, snr_db)
+        mixed = audio + snr_factor*noise
+
+        # Make sure that the values are still in [-1,1]
+        max_val = np.max(np.abs(mixed))
+        if max_val < 1:
+            max_val = 1.0
         mixed = mixed/max_val
-        audio = audio/max_val
-    
+        speech = audio/max_val
+
+        # Slice vectors to get it on format nwindows x window length
+        speech = slice_vector(speech, options)
+        mixed = slice_vector(mixed, options)
+        # Insert into output matrix
+        speech_ready[i,:,:] = pre_emph(speech, pre_emph_const)
+        mixed_ready[i,:,:] = pre_emph(mixed, pre_emph_const)
+
+
+
     #TODO: Gir det mening å ha denne her, eller burde den ha ligget i main?
-    n_windows = int(np.ceil(len(mixed)/window_length))
-    z = np.random.normal(0,1,(n_windows,z_dim[0],z_dim[1]))
-    
+    # Nå har z også snr-dbs på første aksen. deretter n_windows, z_dim0, z_dim1
+    z = np.random.normal(0,1,(len(snr_dbs),n_windows,z_dim[0],z_dim[1]))
     #(0, 1, (batch_size, z_dim[0], z_dim[1]))
 
-    # Slice to get it on format nwindows x windowlength
-    audio = slice_vector(audio, options)
-    mixed = slice_vector(mixed, options)
-
-
-    return pre_emph(audio,pre_emph_const), pre_emph(mixed, pre_emph_const), z, max_val
-
-
+ 
+    return speech_ready, mixed_ready, z
