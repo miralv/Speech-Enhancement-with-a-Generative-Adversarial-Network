@@ -1,7 +1,7 @@
 from __future__ import print_function, division
 import scipy
 import tensorflow
-from tensorflow.python.client import device_lib
+# from tensorflow.python.client import device_lib
 import glob
 
 
@@ -56,7 +56,7 @@ def main():
     TRAIN = True
     SAVE = True
     LOAD = False
-    SAMPLE_TESTING = True # Run a sample enhancement at a specified epoch frequency
+    SAMPLE_TESTING = False # Run a sample enhancement at a specified epoch frequency
 
     # Parameters specified for the construction of the generator and discriminator
     options = {}
@@ -91,9 +91,9 @@ def main():
 
 
 
-    options['batch_size'] = 1#200 #64
-    options['steps_per_epoch'] = 1#10
-    options['n_epochs'] = 1#20
+    options['batch_size'] = 200 #64
+    options['steps_per_epoch'] = 10
+    options['n_epochs'] = 20
     options['snr_dbs_train'] = [0,10,15] # It seems that the algorithm is performing best on low snrs
     options['snr_dbs_test'] = [0,5,10,15]
     options['sample_rate'] = 16000
