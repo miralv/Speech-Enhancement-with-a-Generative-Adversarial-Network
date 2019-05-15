@@ -106,11 +106,18 @@ read_pesq_results(file_read, file_save)
 snrs = [0,5,10,15]
 find_statistics(file_save,snrs,True)
 
-
-
 # Want to compare no_z with with_z
 file_plot_with_z = "pesq_results_table.csv"
 find_statistics(file_plot_with_z, snrs, True)
+
+
+
+""" Organize results from matlab script0 
+"""
+stoi_folder_no_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results.csv"
+pesq_matlab_folder_no_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results.csv"
+find_statistics(pesq_matlab_folder_no_z, snrs, True)
+
 
 
 # # Gjennomsnitt:

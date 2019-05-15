@@ -91,13 +91,13 @@ def main():
 
 
 
-    options['batch_size'] = 200 #64
-    options['steps_per_epoch'] = 10
-    options['n_epochs'] = 20
-    options['snr_dbs_train'] = [0,10,15] # It seems that the algorithm is performing best on low snrs
+    options['batch_size'] = 400             # 200 # Ser at SEGAN har brukt en effective batch size of 400. Will try that.
+    options['steps_per_epoch'] = 1000       # 10 # SEGAN itererte gjennom hele datasettet i hver epoch
+    options['n_epochs'] = 80                # 20 Ser at SEGAN har brukt 86
+    options['snr_dbs_train'] = [0,10,15]    # It seems that the algorithm is performing best on low snrs
     options['snr_dbs_test'] = [0,5,10,15]
     options['sample_rate'] = 16000
-    options['test_frequency'] = 5 # Every nth epoch, run a sample enhancement
+    options['test_frequency'] = 5           # Every nth epoch, run a sample enhancement
     options['speech_list_sample_test'] = ["/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/Selected/p1_g12_m1_3_t-c1151.wav"]#, "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/Selected/p1_g12_f2_4_x-c2161.wav"]
     options['noise_list_sample_test'] = ["/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/n77.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/PCAFETER_16k_ch01.wav"]
     print("Options are set.\n\n")
