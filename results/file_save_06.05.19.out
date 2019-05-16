@@ -8498,3 +8498,2566 @@ Prediction : PESQ_MOS = 3.238
 Prediction : PESQ_MOS = 3.358
 /home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_WAY_16k_ch01_snr_5.wav:
 Prediction : PESQ_MOS = 3.164
+Calculate PESQ score:
+file_name, score:
+Enhanced files:
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_ARK_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.571
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_ARK_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.736
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_ARK_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.339
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_ARK_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.087
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_ARK_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.640
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_ARK_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.186
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_ARK_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.004
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_ARK_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.940
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_CAR_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.404
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_CAR_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.113
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_CAR_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.953
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_CAR_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.216
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_CAR_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 4.125
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_CAR_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.220
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_CAR_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.715
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_CAR_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.177
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_HEN_16k.ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.311
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_HEN_16k.ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.584
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_HEN_16k.ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.046
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_HEN_16k.ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.984
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_HEN_16k.ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.469
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_HEN_16k.ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.130
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_HEN_16k.ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.687
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_HEN_16k.ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.788
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_ING_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.195
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_ING_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.142
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_ING_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.952
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_ING_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.696
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_ING_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.248
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_ING_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.996
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_ING_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.597
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_ING_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.391
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n16_snr_0.wav:
+Prediction : PESQ_MOS = 1.726
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n16_snr_0.wav:
+Prediction : PESQ_MOS = 1.732
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n16_snr_10.wav:
+Prediction : PESQ_MOS = 2.086
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n16_snr_10.wav:
+Prediction : PESQ_MOS = 2.302
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n16_snr_15.wav:
+Prediction : PESQ_MOS = 2.465
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n16_snr_15.wav:
+Prediction : PESQ_MOS = 2.606
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n16_snr_5.wav:
+Prediction : PESQ_MOS = 1.830
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n16_snr_5.wav:
+Prediction : PESQ_MOS = 1.997
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n17_snr_0.wav:
+Prediction : PESQ_MOS = 1.472
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n17_snr_0.wav:
+Prediction : PESQ_MOS = 1.548
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n17_snr_10.wav:
+Prediction : PESQ_MOS = 1.902
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n17_snr_10.wav:
+Prediction : PESQ_MOS = 2.225
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n17_snr_15.wav:
+Prediction : PESQ_MOS = 2.303
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n17_snr_15.wav:
+Prediction : PESQ_MOS = 2.517
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n17_snr_5.wav:
+Prediction : PESQ_MOS = 1.604
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n17_snr_5.wav:
+Prediction : PESQ_MOS = 1.914
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n28_snr_0.wav:
+Prediction : PESQ_MOS = 1.717
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n28_snr_0.wav:
+Prediction : PESQ_MOS = 1.810
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n28_snr_10.wav:
+Prediction : PESQ_MOS = 2.207
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n28_snr_10.wav:
+Prediction : PESQ_MOS = 2.556
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n28_snr_15.wav:
+Prediction : PESQ_MOS = 2.585
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n28_snr_15.wav:
+Prediction : PESQ_MOS = 2.825
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n28_snr_5.wav:
+Prediction : PESQ_MOS = 1.907
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n28_snr_5.wav:
+Prediction : PESQ_MOS = 2.154
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n29_snr_0.wav:
+Prediction : PESQ_MOS = 1.486
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n29_snr_0.wav:
+Prediction : PESQ_MOS = 2.072
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n29_snr_10.wav:
+Prediction : PESQ_MOS = 2.270
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n29_snr_10.wav:
+Prediction : PESQ_MOS = 2.663
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n29_snr_15.wav:
+Prediction : PESQ_MOS = 2.668
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n29_snr_15.wav:
+Prediction : PESQ_MOS = 2.856
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n29_snr_5.wav:
+Prediction : PESQ_MOS = 1.844
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n29_snr_5.wav:
+Prediction : PESQ_MOS = 2.429
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n68_snr_0.wav:
+Prediction : PESQ_MOS = 1.367
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n68_snr_0.wav:
+Prediction : PESQ_MOS = 1.882
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n68_snr_10.wav:
+Prediction : PESQ_MOS = 2.129
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n68_snr_10.wav:
+Prediction : PESQ_MOS = 2.523
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n68_snr_15.wav:
+Prediction : PESQ_MOS = 2.518
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n68_snr_15.wav:
+Prediction : PESQ_MOS = 2.726
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n68_snr_5.wav:
+Prediction : PESQ_MOS = 1.730
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n68_snr_5.wav:
+Prediction : PESQ_MOS = 2.252
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n69_snr_0.wav:
+Prediction : PESQ_MOS = 1.233
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n69_snr_0.wav:
+Prediction : PESQ_MOS = 1.676
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n69_snr_10.wav:
+Prediction : PESQ_MOS = 1.821
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n69_snr_10.wav:
+Prediction : PESQ_MOS = 2.257
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n69_snr_15.wav:
+Prediction : PESQ_MOS = 2.217
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n69_snr_15.wav:
+Prediction : PESQ_MOS = 2.526
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n69_snr_5.wav:
+Prediction : PESQ_MOS = 1.454
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n69_snr_5.wav:
+Prediction : PESQ_MOS = 1.970
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n77_snr_0.wav:
+Prediction : PESQ_MOS = 1.718
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n77_snr_0.wav:
+Prediction : PESQ_MOS = 1.590
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n77_snr_10.wav:
+Prediction : PESQ_MOS = 2.237
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n77_snr_10.wav:
+Prediction : PESQ_MOS = 2.229
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n77_snr_15.wav:
+Prediction : PESQ_MOS = 2.601
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n77_snr_15.wav:
+Prediction : PESQ_MOS = 2.551
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n77_snr_5.wav:
+Prediction : PESQ_MOS = 1.936
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n77_snr_5.wav:
+Prediction : PESQ_MOS = 1.919
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n78_snr_0.wav:
+Prediction : PESQ_MOS = 1.837
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n78_snr_0.wav:
+Prediction : PESQ_MOS = 1.790
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n78_snr_10.wav:
+Prediction : PESQ_MOS = 2.400
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n78_snr_10.wav:
+Prediction : PESQ_MOS = 2.370
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n78_snr_15.wav:
+Prediction : PESQ_MOS = 2.771
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n78_snr_15.wav:
+Prediction : PESQ_MOS = 2.695
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n78_snr_5.wav:
+Prediction : PESQ_MOS = 2.083
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_n78_snr_5.wav:
+Prediction : PESQ_MOS = 2.024
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_STATION_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.653
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_STATION_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.006
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_STATION_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.576
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_STATION_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.702
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_STATION_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.010
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_STATION_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.941
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_STATION_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.116
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_STATION_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.376
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_STO_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.367
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_STO_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.602
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_STO_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.130
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_STO_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.368
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_STO_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.595
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_STO_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.715
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_STO_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 1.705
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_STO_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 1.952
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_TER_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.872
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_TER_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.164
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_TER_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.704
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_TER_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.785
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_TER_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.099
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_TER_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.021
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_TER_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.271
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_TER_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.506
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_WAY_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.146
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_WAY_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.038
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_WAY_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.718
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_WAY_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.197
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_WAY_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.902
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_WAY_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.212
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_WAY_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.481
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c0987_WAY_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.142
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_ARK_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.319
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_ARK_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.685
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_ARK_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.958
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_ARK_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.086
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_ARK_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.218
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_ARK_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.237
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_ARK_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.664
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_ARK_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.907
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_CAR_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.151
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_CAR_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.169
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_CAR_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.799
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_CAR_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.394
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_CAR_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 4.058
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_CAR_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.437
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_CAR_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.498
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_CAR_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.293
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_HEN_16k.ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.189
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_HEN_16k.ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.529
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_HEN_16k.ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.866
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_HEN_16k.ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.950
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_HEN_16k.ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.122
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_HEN_16k.ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.170
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_HEN_16k.ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.546
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_HEN_16k.ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.730
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_ING_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.214
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_ING_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.085
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_ING_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.845
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_ING_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.943
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_ING_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.113
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_ING_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.134
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_ING_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.557
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_ING_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.630
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n16_snr_0.wav:
+Prediction : PESQ_MOS = 1.707
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n16_snr_0.wav:
+Prediction : PESQ_MOS = 1.920
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n16_snr_10.wav:
+Prediction : PESQ_MOS = 2.113
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n16_snr_10.wav:
+Prediction : PESQ_MOS = 2.406
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n16_snr_15.wav:
+Prediction : PESQ_MOS = 2.386
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n16_snr_15.wav:
+Prediction : PESQ_MOS = 2.670
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n16_snr_5.wav:
+Prediction : PESQ_MOS = 1.888
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n16_snr_5.wav:
+Prediction : PESQ_MOS = 2.146
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n17_snr_0.wav:
+Prediction : PESQ_MOS = 1.301
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n17_snr_0.wav:
+Prediction : PESQ_MOS = 1.795
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n17_snr_10.wav:
+Prediction : PESQ_MOS = 2.049
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n17_snr_10.wav:
+Prediction : PESQ_MOS = 2.355
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n17_snr_15.wav:
+Prediction : PESQ_MOS = 2.343
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n17_snr_15.wav:
+Prediction : PESQ_MOS = 2.588
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n17_snr_5.wav:
+Prediction : PESQ_MOS = 1.792
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n17_snr_5.wav:
+Prediction : PESQ_MOS = 2.088
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n28_snr_0.wav:
+Prediction : PESQ_MOS = 1.871
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n28_snr_0.wav:
+Prediction : PESQ_MOS = 2.085
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n28_snr_10.wav:
+Prediction : PESQ_MOS = 2.316
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n28_snr_10.wav:
+Prediction : PESQ_MOS = 2.637
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n28_snr_15.wav:
+Prediction : PESQ_MOS = 2.607
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n28_snr_15.wav:
+Prediction : PESQ_MOS = 2.891
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n28_snr_5.wav:
+Prediction : PESQ_MOS = 2.068
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n28_snr_5.wav:
+Prediction : PESQ_MOS = 2.369
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n29_snr_0.wav:
+Prediction : PESQ_MOS = 1.220
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n29_snr_0.wav:
+Prediction : PESQ_MOS = 2.097
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n29_snr_10.wav:
+Prediction : PESQ_MOS = 2.283
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n29_snr_10.wav:
+Prediction : PESQ_MOS = 2.596
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n29_snr_15.wav:
+Prediction : PESQ_MOS = 2.581
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n29_snr_15.wav:
+Prediction : PESQ_MOS = 2.820
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n29_snr_5.wav:
+Prediction : PESQ_MOS = 1.984
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n29_snr_5.wav:
+Prediction : PESQ_MOS = 2.357
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n68_snr_0.wav:
+Prediction : PESQ_MOS = 1.312
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n68_snr_0.wav:
+Prediction : PESQ_MOS = 1.891
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n68_snr_10.wav:
+Prediction : PESQ_MOS = 1.980
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n68_snr_10.wav:
+Prediction : PESQ_MOS = 2.468
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n68_snr_15.wav:
+Prediction : PESQ_MOS = 2.352
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n68_snr_15.wav:
+Prediction : PESQ_MOS = 2.683
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n68_snr_5.wav:
+Prediction : PESQ_MOS = 1.656
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n68_snr_5.wav:
+Prediction : PESQ_MOS = 2.205
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n69_snr_0.wav:
+Prediction : PESQ_MOS = 1.459
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n69_snr_0.wav:
+Prediction : PESQ_MOS = 1.831
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n69_snr_10.wav:
+Prediction : PESQ_MOS = 1.884
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n69_snr_10.wav:
+Prediction : PESQ_MOS = 2.307
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n69_snr_15.wav:
+Prediction : PESQ_MOS = 2.217
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n69_snr_15.wav:
+Prediction : PESQ_MOS = 2.544
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n69_snr_5.wav:
+Prediction : PESQ_MOS = 1.610
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n69_snr_5.wav:
+Prediction : PESQ_MOS = 2.057
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n77_snr_0.wav:
+Prediction : PESQ_MOS = 3.183
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n77_snr_0.wav:
+Prediction : PESQ_MOS = 1.671
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n77_snr_10.wav:
+Prediction : PESQ_MOS = 2.127
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n77_snr_10.wav:
+Prediction : PESQ_MOS = 2.330
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n77_snr_15.wav:
+Prediction : PESQ_MOS = 2.455
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n77_snr_15.wav:
+Prediction : PESQ_MOS = 2.676
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n77_snr_5.wav:
+Prediction : PESQ_MOS = 1.870
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n77_snr_5.wav:
+Prediction : PESQ_MOS = 1.983
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n78_snr_0.wav:
+Prediction : PESQ_MOS = 1.358
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n78_snr_0.wav:
+Prediction : PESQ_MOS = 1.805
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n78_snr_10.wav:
+Prediction : PESQ_MOS = 2.244
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n78_snr_10.wav:
+Prediction : PESQ_MOS = 2.418
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n78_snr_15.wav:
+Prediction : PESQ_MOS = 2.559
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n78_snr_15.wav:
+Prediction : PESQ_MOS = 2.741
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n78_snr_5.wav:
+Prediction : PESQ_MOS = 1.977
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_n78_snr_5.wav:
+Prediction : PESQ_MOS = 2.066
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_STATION_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.740
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_STATION_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.128
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_STATION_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.452
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_STATION_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.725
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_STATION_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.775
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_STATION_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.965
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_STATION_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.112
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_STATION_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.435
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_STO_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.495
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_STO_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.703
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_STO_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.125
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_STO_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.341
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_STO_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.467
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_STO_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.715
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_STO_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 1.791
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_STO_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 1.966
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_TER_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.871
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_TER_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.192
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_TER_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.523
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_TER_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.801
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_TER_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.805
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_TER_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.042
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_TER_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.191
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_TER_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.526
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_WAY_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.170
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_WAY_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.100
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_WAY_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.657
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_WAY_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.361
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_WAY_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.791
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_WAY_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.427
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_WAY_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.454
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1319_WAY_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.266
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_ARK_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.302
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_ARK_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.793
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_ARK_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.059
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_ARK_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.243
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_ARK_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.350
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_ARK_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.346
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_ARK_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.708
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_ARK_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.065
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_CAR_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.356
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_CAR_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.242
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_CAR_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.860
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_CAR_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.371
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_CAR_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 4.053
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_CAR_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.387
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_CAR_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.629
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_CAR_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.329
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_HEN_16k.ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.253
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_HEN_16k.ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.639
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_HEN_16k.ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.980
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_HEN_16k.ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.133
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_HEN_16k.ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.288
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_HEN_16k.ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.287
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_HEN_16k.ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.626
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_HEN_16k.ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.879
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_ING_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.025
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_ING_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.239
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_ING_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.736
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_ING_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.935
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_ING_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.049
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_ING_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.157
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_ING_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.390
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_ING_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.636
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n16_snr_0.wav:
+Prediction : PESQ_MOS = 1.655
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n16_snr_0.wav:
+Prediction : PESQ_MOS = 1.860
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n16_snr_10.wav:
+Prediction : PESQ_MOS = 2.083
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n16_snr_10.wav:
+Prediction : PESQ_MOS = 2.471
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n16_snr_15.wav:
+Prediction : PESQ_MOS = 2.407
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n16_snr_15.wav:
+Prediction : PESQ_MOS = 2.735
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n16_snr_5.wav:
+Prediction : PESQ_MOS = 1.844
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n16_snr_5.wav:
+Prediction : PESQ_MOS = 2.166
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n17_snr_0.wav:
+Prediction : PESQ_MOS = 1.613
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n17_snr_0.wav:
+Prediction : PESQ_MOS = 1.839
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n17_snr_10.wav:
+Prediction : PESQ_MOS = 2.014
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n17_snr_10.wav:
+Prediction : PESQ_MOS = 2.401
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n17_snr_15.wav:
+Prediction : PESQ_MOS = 2.312
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n17_snr_15.wav:
+Prediction : PESQ_MOS = 2.644
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n17_snr_5.wav:
+Prediction : PESQ_MOS = 1.783
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n17_snr_5.wav:
+Prediction : PESQ_MOS = 2.135
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n28_snr_0.wav:
+Prediction : PESQ_MOS = 1.810
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n28_snr_0.wav:
+Prediction : PESQ_MOS = 2.104
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n28_snr_10.wav:
+Prediction : PESQ_MOS = 2.334
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n28_snr_10.wav:
+Prediction : PESQ_MOS = 2.692
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n28_snr_15.wav:
+Prediction : PESQ_MOS = 2.643
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n28_snr_15.wav:
+Prediction : PESQ_MOS = 2.943
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n28_snr_5.wav:
+Prediction : PESQ_MOS = 2.043
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n28_snr_5.wav:
+Prediction : PESQ_MOS = 2.416
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n29_snr_0.wav:
+Prediction : PESQ_MOS = 1.741
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n29_snr_0.wav:
+Prediction : PESQ_MOS = 2.153
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n29_snr_10.wav:
+Prediction : PESQ_MOS = 2.215
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n29_snr_10.wav:
+Prediction : PESQ_MOS = 2.676
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n29_snr_15.wav:
+Prediction : PESQ_MOS = 2.497
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n29_snr_15.wav:
+Prediction : PESQ_MOS = 2.909
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n29_snr_5.wav:
+Prediction : PESQ_MOS = 1.960
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n29_snr_5.wav:
+Prediction : PESQ_MOS = 2.434
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n68_snr_0.wav:
+Prediction : PESQ_MOS = 1.512
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n68_snr_0.wav:
+Prediction : PESQ_MOS = 1.954
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n68_snr_10.wav:
+Prediction : PESQ_MOS = 2.050
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n68_snr_10.wav:
+Prediction : PESQ_MOS = 2.576
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n68_snr_15.wav:
+Prediction : PESQ_MOS = 2.424
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n68_snr_15.wav:
+Prediction : PESQ_MOS = 2.824
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n68_snr_5.wav:
+Prediction : PESQ_MOS = 1.715
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n68_snr_5.wav:
+Prediction : PESQ_MOS = 2.273
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n69_snr_0.wav:
+Prediction : PESQ_MOS = 1.427
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n69_snr_0.wav:
+Prediction : PESQ_MOS = 1.932
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n69_snr_10.wav:
+Prediction : PESQ_MOS = 2.008
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n69_snr_10.wav:
+Prediction : PESQ_MOS = 2.493
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n69_snr_15.wav:
+Prediction : PESQ_MOS = 2.388
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n69_snr_15.wav:
+Prediction : PESQ_MOS = 2.752
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n69_snr_5.wav:
+Prediction : PESQ_MOS = 1.692
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n69_snr_5.wav:
+Prediction : PESQ_MOS = 2.220
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n77_snr_0.wav:
+Prediction : PESQ_MOS = 1.810
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n77_snr_0.wav:
+Prediction : PESQ_MOS = 1.820
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n77_snr_10.wav:
+Prediction : PESQ_MOS = 2.334
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n77_snr_10.wav:
+Prediction : PESQ_MOS = 2.506
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n77_snr_15.wav:
+Prediction : PESQ_MOS = 2.676
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n77_snr_15.wav:
+Prediction : PESQ_MOS = 2.838
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n77_snr_5.wav:
+Prediction : PESQ_MOS = 2.035
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n77_snr_5.wav:
+Prediction : PESQ_MOS = 2.189
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n78_snr_0.wav:
+Prediction : PESQ_MOS = 1.793
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n78_snr_0.wav:
+Prediction : PESQ_MOS = 1.809
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n78_snr_10.wav:
+Prediction : PESQ_MOS = 2.345
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n78_snr_10.wav:
+Prediction : PESQ_MOS = 2.491
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n78_snr_15.wav:
+Prediction : PESQ_MOS = 2.671
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n78_snr_15.wav:
+Prediction : PESQ_MOS = 2.806
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n78_snr_5.wav:
+Prediction : PESQ_MOS = 2.044
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_n78_snr_5.wav:
+Prediction : PESQ_MOS = 2.193
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_STATION_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.677
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_STATION_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.126
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_STATION_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.495
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_STATION_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.798
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_STATION_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.835
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_STATION_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.053
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_STATION_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.088
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_STATION_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.514
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_STO_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.525
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_STO_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.969
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_STO_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.322
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_STO_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.684
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_STO_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.699
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_STO_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.933
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_STO_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 1.880
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_STO_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.350
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_TER_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.902
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_TER_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.276
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_TER_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.649
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_TER_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.938
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_TER_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.001
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_TER_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.184
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_TER_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.263
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_TER_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.620
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_WAY_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.054
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_WAY_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.251
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_WAY_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.575
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_WAY_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.412
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_WAY_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.744
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_WAY_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.413
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_WAY_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.322
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c1956_WAY_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.364
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_ARK_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.265
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_ARK_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.730
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_ARK_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.033
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_ARK_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.131
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_ARK_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.312
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_ARK_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.196
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_ARK_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.694
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_ARK_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.984
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_CAR_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.327
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_CAR_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.206
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_CAR_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.878
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_CAR_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.255
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_CAR_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 4.047
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_CAR_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.255
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_CAR_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.609
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_CAR_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.234
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_HEN_16k.ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.140
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_HEN_16k.ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.560
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_HEN_16k.ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.914
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_HEN_16k.ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.011
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_HEN_16k.ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.240
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_HEN_16k.ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.169
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_HEN_16k.ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.539
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_HEN_16k.ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.806
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_ING_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.959
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_ING_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.040
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_ING_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.774
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_ING_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.778
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_ING_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.130
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_ING_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.022
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_ING_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.379
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_ING_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.449
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n16_snr_0.wav:
+Prediction : PESQ_MOS = 1.602
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n16_snr_0.wav:
+Prediction : PESQ_MOS = 1.784
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n16_snr_10.wav:
+Prediction : PESQ_MOS = 2.018
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n16_snr_10.wav:
+Prediction : PESQ_MOS = 2.397
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n16_snr_15.wav:
+Prediction : PESQ_MOS = 2.349
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n16_snr_15.wav:
+Prediction : PESQ_MOS = 2.694
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n16_snr_5.wav:
+Prediction : PESQ_MOS = 1.771
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n16_snr_5.wav:
+Prediction : PESQ_MOS = 2.076
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n17_snr_0.wav:
+Prediction : PESQ_MOS = 1.426
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n17_snr_0.wav:
+Prediction : PESQ_MOS = 1.692
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n17_snr_10.wav:
+Prediction : PESQ_MOS = 1.881
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n17_snr_10.wav:
+Prediction : PESQ_MOS = 2.316
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n17_snr_15.wav:
+Prediction : PESQ_MOS = 2.225
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n17_snr_15.wav:
+Prediction : PESQ_MOS = 2.591
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n17_snr_5.wav:
+Prediction : PESQ_MOS = 1.615
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n17_snr_5.wav:
+Prediction : PESQ_MOS = 2.022
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n28_snr_0.wav:
+Prediction : PESQ_MOS = 1.679
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n28_snr_0.wav:
+Prediction : PESQ_MOS = 1.881
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n28_snr_10.wav:
+Prediction : PESQ_MOS = 2.151
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n28_snr_10.wav:
+Prediction : PESQ_MOS = 2.540
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n28_snr_15.wav:
+Prediction : PESQ_MOS = 2.497
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n28_snr_15.wav:
+Prediction : PESQ_MOS = 2.800
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n28_snr_5.wav:
+Prediction : PESQ_MOS = 1.874
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n28_snr_5.wav:
+Prediction : PESQ_MOS = 2.246
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n29_snr_0.wav:
+Prediction : PESQ_MOS = 1.368
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n29_snr_0.wav:
+Prediction : PESQ_MOS = 2.014
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n29_snr_10.wav:
+Prediction : PESQ_MOS = 2.083
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n29_snr_10.wav:
+Prediction : PESQ_MOS = 2.654
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n29_snr_15.wav:
+Prediction : PESQ_MOS = 2.444
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n29_snr_15.wav:
+Prediction : PESQ_MOS = 2.902
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n29_snr_5.wav:
+Prediction : PESQ_MOS = 1.724
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n29_snr_5.wav:
+Prediction : PESQ_MOS = 2.370
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n68_snr_0.wav:
+Prediction : PESQ_MOS = 1.303
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n68_snr_0.wav:
+Prediction : PESQ_MOS = 1.777
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n68_snr_10.wav:
+Prediction : PESQ_MOS = 1.910
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n68_snr_10.wav:
+Prediction : PESQ_MOS = 2.468
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n68_snr_15.wav:
+Prediction : PESQ_MOS = 2.309
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n68_snr_15.wav:
+Prediction : PESQ_MOS = 2.705
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n68_snr_5.wav:
+Prediction : PESQ_MOS = 1.573
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n68_snr_5.wav:
+Prediction : PESQ_MOS = 2.137
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n69_snr_0.wav:
+Prediction : PESQ_MOS = 1.384
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n69_snr_0.wav:
+Prediction : PESQ_MOS = 1.828
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n69_snr_10.wav:
+Prediction : PESQ_MOS = 1.890
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n69_snr_10.wav:
+Prediction : PESQ_MOS = 2.386
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n69_snr_15.wav:
+Prediction : PESQ_MOS = 2.254
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n69_snr_15.wav:
+Prediction : PESQ_MOS = 2.647
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n69_snr_5.wav:
+Prediction : PESQ_MOS = 1.598
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n69_snr_5.wav:
+Prediction : PESQ_MOS = 2.122
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n77_snr_0.wav:
+Prediction : PESQ_MOS = 1.528
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n77_snr_0.wav:
+Prediction : PESQ_MOS = 1.519
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n77_snr_10.wav:
+Prediction : PESQ_MOS = 2.089
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n77_snr_10.wav:
+Prediction : PESQ_MOS = 2.255
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n77_snr_15.wav:
+Prediction : PESQ_MOS = 2.441
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n77_snr_15.wav:
+Prediction : PESQ_MOS = 2.650
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n77_snr_5.wav:
+Prediction : PESQ_MOS = 1.774
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n77_snr_5.wav:
+Prediction : PESQ_MOS = 1.862
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n78_snr_0.wav:
+Prediction : PESQ_MOS = 1.580
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n78_snr_0.wav:
+Prediction : PESQ_MOS = 1.614
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n78_snr_10.wav:
+Prediction : PESQ_MOS = 2.140
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n78_snr_10.wav:
+Prediction : PESQ_MOS = 2.307
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n78_snr_15.wav:
+Prediction : PESQ_MOS = 2.485
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n78_snr_15.wav:
+Prediction : PESQ_MOS = 2.649
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n78_snr_5.wav:
+Prediction : PESQ_MOS = 1.836
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_n78_snr_5.wav:
+Prediction : PESQ_MOS = 1.941
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_STATION_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.469
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_STATION_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.935
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_STATION_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.341
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_STATION_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.681
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_STATION_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.721
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_STATION_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.975
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_STATION_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 1.900
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_STATION_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.355
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_STO_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.271
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_STO_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.687
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_STO_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.063
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_STO_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.455
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_STO_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.505
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_STO_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.771
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_STO_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 1.641
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_STO_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.096
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_TER_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.629
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_TER_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.997
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_TER_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.410
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_TER_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.726
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_TER_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.773
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_TER_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.012
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_TER_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 1.999
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_TER_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.374
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_WAY_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.005
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_WAY_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.066
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_WAY_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.484
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_WAY_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.216
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_WAY_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.663
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_WAY_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.251
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_WAY_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.251
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2025_WAY_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.169
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_ARK_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.172
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_ARK_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.731
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_ARK_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.885
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_ARK_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.237
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_ARK_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.149
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_ARK_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.409
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_ARK_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.544
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_ARK_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.006
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_CAR_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.219
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_CAR_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.376
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_CAR_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.728
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_CAR_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.485
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_CAR_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.874
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_CAR_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.513
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_CAR_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.501
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_CAR_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.442
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_HEN_16k.ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.075
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_HEN_16k.ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.614
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_HEN_16k.ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.774
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_HEN_16k.ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.131
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_HEN_16k.ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.076
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_HEN_16k.ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.371
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_HEN_16k.ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.432
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_HEN_16k.ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.873
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_ING_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.029
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_ING_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.310
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_ING_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.645
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_ING_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.922
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_ING_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.938
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_ING_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.187
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_ING_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.346
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_ING_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.597
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n16_snr_0.wav:
+Prediction : PESQ_MOS = 1.572
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n16_snr_0.wav:
+Prediction : PESQ_MOS = 1.833
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n16_snr_10.wav:
+Prediction : PESQ_MOS = 1.998
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n16_snr_10.wav:
+Prediction : PESQ_MOS = 2.459
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n16_snr_15.wav:
+Prediction : PESQ_MOS = 2.337
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n16_snr_15.wav:
+Prediction : PESQ_MOS = 2.723
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n16_snr_5.wav:
+Prediction : PESQ_MOS = 1.752
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n16_snr_5.wav:
+Prediction : PESQ_MOS = 2.163
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n17_snr_0.wav:
+Prediction : PESQ_MOS = 1.478
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n17_snr_0.wav:
+Prediction : PESQ_MOS = 1.746
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n17_snr_10.wav:
+Prediction : PESQ_MOS = 1.908
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n17_snr_10.wav:
+Prediction : PESQ_MOS = 2.413
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n17_snr_15.wav:
+Prediction : PESQ_MOS = 2.236
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n17_snr_15.wav:
+Prediction : PESQ_MOS = 2.674
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n17_snr_5.wav:
+Prediction : PESQ_MOS = 1.669
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n17_snr_5.wav:
+Prediction : PESQ_MOS = 2.112
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n28_snr_0.wav:
+Prediction : PESQ_MOS = 1.698
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n28_snr_0.wav:
+Prediction : PESQ_MOS = 2.051
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n28_snr_10.wav:
+Prediction : PESQ_MOS = 2.241
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n28_snr_10.wav:
+Prediction : PESQ_MOS = 2.717
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n28_snr_15.wav:
+Prediction : PESQ_MOS = 2.562
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n28_snr_15.wav:
+Prediction : PESQ_MOS = 2.991
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n28_snr_5.wav:
+Prediction : PESQ_MOS = 1.926
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n28_snr_5.wav:
+Prediction : PESQ_MOS = 2.412
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n29_snr_0.wav:
+Prediction : PESQ_MOS = 1.450
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n29_snr_0.wav:
+Prediction : PESQ_MOS = 1.982
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n29_snr_10.wav:
+Prediction : PESQ_MOS = 2.120
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n29_snr_10.wav:
+Prediction : PESQ_MOS = 2.652
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n29_snr_15.wav:
+Prediction : PESQ_MOS = 2.442
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n29_snr_15.wav:
+Prediction : PESQ_MOS = 2.901
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n29_snr_5.wav:
+Prediction : PESQ_MOS = 1.757
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n29_snr_5.wav:
+Prediction : PESQ_MOS = 2.354
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n68_snr_0.wav:
+Prediction : PESQ_MOS = 1.473
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n68_snr_0.wav:
+Prediction : PESQ_MOS = 2.014
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n68_snr_10.wav:
+Prediction : PESQ_MOS = 2.045
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n68_snr_10.wav:
+Prediction : PESQ_MOS = 2.583
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n68_snr_15.wav:
+Prediction : PESQ_MOS = 2.384
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n68_snr_15.wav:
+Prediction : PESQ_MOS = 2.812
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n68_snr_5.wav:
+Prediction : PESQ_MOS = 1.734
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n68_snr_5.wav:
+Prediction : PESQ_MOS = 2.318
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n69_snr_0.wav:
+Prediction : PESQ_MOS = 1.290
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n69_snr_0.wav:
+Prediction : PESQ_MOS = 1.935
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n69_snr_10.wav:
+Prediction : PESQ_MOS = 1.848
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n69_snr_10.wav:
+Prediction : PESQ_MOS = 2.480
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n69_snr_15.wav:
+Prediction : PESQ_MOS = 2.216
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n69_snr_15.wav:
+Prediction : PESQ_MOS = 2.749
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n69_snr_5.wav:
+Prediction : PESQ_MOS = 1.541
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n69_snr_5.wav:
+Prediction : PESQ_MOS = 2.211
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n77_snr_0.wav:
+Prediction : PESQ_MOS = 1.675
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n77_snr_0.wav:
+Prediction : PESQ_MOS = 1.705
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n77_snr_10.wav:
+Prediction : PESQ_MOS = 2.282
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n77_snr_10.wav:
+Prediction : PESQ_MOS = 2.410
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n77_snr_15.wav:
+Prediction : PESQ_MOS = 2.626
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n77_snr_15.wav:
+Prediction : PESQ_MOS = 2.728
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n77_snr_5.wav:
+Prediction : PESQ_MOS = 1.971
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n77_snr_5.wav:
+Prediction : PESQ_MOS = 2.081
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n78_snr_0.wav:
+Prediction : PESQ_MOS = 0.922
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n78_snr_0.wav:
+Prediction : PESQ_MOS = 1.775
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n78_snr_10.wav:
+Prediction : PESQ_MOS = 2.306
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n78_snr_10.wav:
+Prediction : PESQ_MOS = 2.413
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n78_snr_15.wav:
+Prediction : PESQ_MOS = 2.636
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n78_snr_15.wav:
+Prediction : PESQ_MOS = 2.760
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n78_snr_5.wav:
+Prediction : PESQ_MOS = 2.008
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_n78_snr_5.wav:
+Prediction : PESQ_MOS = 2.071
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_STATION_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.560
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_STATION_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.132
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_STATION_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.363
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_STATION_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.800
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_STATION_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.726
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_STATION_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.093
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_STATION_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 1.954
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_STATION_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.479
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_STO_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.392
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_STO_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.829
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_STO_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.144
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_STO_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.574
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_STO_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.541
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_STO_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.915
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_STO_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 1.736
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_STO_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.197
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_TER_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.792
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_TER_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.165
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_TER_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.529
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_TER_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.902
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_TER_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.902
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_TER_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.207
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_TER_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.150
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_TER_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.513
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_WAY_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.860
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_WAY_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.270
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_WAY_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.367
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_WAY_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.499
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_WAY_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.529
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_WAY_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.527
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_WAY_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.148
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_f2_4_x-c2161_WAY_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.415
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_ARK_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.778
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_ARK_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.040
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_ARK_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.342
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_ARK_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.361
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_ARK_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.571
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_ARK_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.462
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_ARK_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.073
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_ARK_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.245
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_CAR_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.449
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_CAR_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.415
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_CAR_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.953
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_CAR_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.494
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_CAR_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 4.110
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_CAR_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.497
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_CAR_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.733
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_CAR_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.464
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_HEN_16k.ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.483
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_HEN_16k.ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.779
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_HEN_16k.ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.100
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_HEN_16k.ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.209
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_HEN_16k.ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.332
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_HEN_16k.ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.399
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_HEN_16k.ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.792
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_HEN_16k.ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.016
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_ING_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.513
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_ING_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.367
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_ING_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.097
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_ING_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.961
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_ING_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.326
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_ING_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.225
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_ING_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.820
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_ING_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.664
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n16_snr_0.wav:
+Prediction : PESQ_MOS = 2.060
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n16_snr_0.wav:
+Prediction : PESQ_MOS = 2.080
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n16_snr_10.wav:
+Prediction : PESQ_MOS = 2.319
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n16_snr_10.wav:
+Prediction : PESQ_MOS = 2.727
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n16_snr_15.wav:
+Prediction : PESQ_MOS = 2.623
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n16_snr_15.wav:
+Prediction : PESQ_MOS = 2.974
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n16_snr_5.wav:
+Prediction : PESQ_MOS = 2.150
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n16_snr_5.wav:
+Prediction : PESQ_MOS = 2.347
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n17_snr_0.wav:
+Prediction : PESQ_MOS = 1.794
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n17_snr_0.wav:
+Prediction : PESQ_MOS = 1.964
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n17_snr_10.wav:
+Prediction : PESQ_MOS = 2.100
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n17_snr_10.wav:
+Prediction : PESQ_MOS = 2.592
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n17_snr_15.wav:
+Prediction : PESQ_MOS = 2.432
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n17_snr_15.wav:
+Prediction : PESQ_MOS = 2.844
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n17_snr_5.wav:
+Prediction : PESQ_MOS = 1.890
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n17_snr_5.wav:
+Prediction : PESQ_MOS = 2.279
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n28_snr_0.wav:
+Prediction : PESQ_MOS = 2.269
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n28_snr_0.wav:
+Prediction : PESQ_MOS = 2.516
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n28_snr_10.wav:
+Prediction : PESQ_MOS = 2.575
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n28_snr_10.wav:
+Prediction : PESQ_MOS = 3.009
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n28_snr_15.wav:
+Prediction : PESQ_MOS = 2.848
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n28_snr_15.wav:
+Prediction : PESQ_MOS = 3.162
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n28_snr_5.wav:
+Prediction : PESQ_MOS = 2.382
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n28_snr_5.wav:
+Prediction : PESQ_MOS = 2.764
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n29_snr_0.wav:
+Prediction : PESQ_MOS = 1.952
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n29_snr_0.wav:
+Prediction : PESQ_MOS = 2.232
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n29_snr_10.wav:
+Prediction : PESQ_MOS = 2.513
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n29_snr_10.wav:
+Prediction : PESQ_MOS = 2.842
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n29_snr_15.wav:
+Prediction : PESQ_MOS = 2.802
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n29_snr_15.wav:
+Prediction : PESQ_MOS = 3.040
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n29_snr_5.wav:
+Prediction : PESQ_MOS = 2.223
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n29_snr_5.wav:
+Prediction : PESQ_MOS = 2.576
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n68_snr_0.wav:
+Prediction : PESQ_MOS = 1.666
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n68_snr_0.wav:
+Prediction : PESQ_MOS = 2.191
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n68_snr_10.wav:
+Prediction : PESQ_MOS = 2.250
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n68_snr_10.wav:
+Prediction : PESQ_MOS = 2.772
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n68_snr_15.wav:
+Prediction : PESQ_MOS = 2.584
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n68_snr_15.wav:
+Prediction : PESQ_MOS = 3.017
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n68_snr_5.wav:
+Prediction : PESQ_MOS = 1.930
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n68_snr_5.wav:
+Prediction : PESQ_MOS = 2.493
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n69_snr_0.wav:
+Prediction : PESQ_MOS = 1.601
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n69_snr_0.wav:
+Prediction : PESQ_MOS = 1.973
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n69_snr_10.wav:
+Prediction : PESQ_MOS = 2.170
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n69_snr_10.wav:
+Prediction : PESQ_MOS = 2.557
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n69_snr_15.wav:
+Prediction : PESQ_MOS = 2.512
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n69_snr_15.wav:
+Prediction : PESQ_MOS = 2.859
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n69_snr_5.wav:
+Prediction : PESQ_MOS = 1.852
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n69_snr_5.wav:
+Prediction : PESQ_MOS = 2.262
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n77_snr_0.wav:
+Prediction : PESQ_MOS = 2.233
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n77_snr_0.wav:
+Prediction : PESQ_MOS = 2.360
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n77_snr_10.wav:
+Prediction : PESQ_MOS = 2.580
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n77_snr_10.wav:
+Prediction : PESQ_MOS = 2.952
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n77_snr_15.wav:
+Prediction : PESQ_MOS = 2.851
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n77_snr_15.wav:
+Prediction : PESQ_MOS = 3.252
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n77_snr_5.wav:
+Prediction : PESQ_MOS = 2.339
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n77_snr_5.wav:
+Prediction : PESQ_MOS = 2.539
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n78_snr_0.wav:
+Prediction : PESQ_MOS = 1.778
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n78_snr_0.wav:
+Prediction : PESQ_MOS = 2.452
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n78_snr_10.wav:
+Prediction : PESQ_MOS = 2.703
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n78_snr_10.wav:
+Prediction : PESQ_MOS = 3.104
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n78_snr_15.wav:
+Prediction : PESQ_MOS = 2.949
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n78_snr_15.wav:
+Prediction : PESQ_MOS = 3.299
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n78_snr_5.wav:
+Prediction : PESQ_MOS = 2.509
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_n78_snr_5.wav:
+Prediction : PESQ_MOS = 2.741
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_STATION_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.072
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_STATION_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.500
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_STATION_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.737
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_STATION_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.134
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_STATION_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.022
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_STATION_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.327
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_STATION_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.421
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_STATION_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.849
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_STO_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.902
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_STO_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.178
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_STO_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.465
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_STO_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.828
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_STO_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.758
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_STO_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.104
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_STO_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.160
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_STO_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.530
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_TER_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.310
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_TER_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.643
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_TER_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.858
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_TER_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.177
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_TER_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.120
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_TER_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.309
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_TER_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.596
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_TER_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.919
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_WAY_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.122
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_WAY_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.301
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_WAY_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.540
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_WAY_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.479
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_WAY_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.665
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_WAY_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.487
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_WAY_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.371
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1151_WAY_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.442
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_ARK_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.560
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_ARK_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.962
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_ARK_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.174
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_ARK_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.310
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_ARK_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.375
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_ARK_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.410
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_ARK_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.905
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_ARK_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.140
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_CAR_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.289
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_CAR_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.358
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_CAR_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.898
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_CAR_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.442
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_CAR_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 4.115
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_CAR_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.432
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_CAR_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.640
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_CAR_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.449
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_HEN_16k.ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.331
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_HEN_16k.ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.770
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_HEN_16k.ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.037
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_HEN_16k.ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.214
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_HEN_16k.ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.257
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_HEN_16k.ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.336
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_HEN_16k.ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.740
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_HEN_16k.ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.036
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_ING_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.564
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_ING_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.831
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_ING_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.086
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_ING_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.216
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_ING_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.291
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_ING_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.318
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_ING_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.812
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_ING_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.050
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n16_snr_0.wav:
+Prediction : PESQ_MOS = 1.866
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n16_snr_0.wav:
+Prediction : PESQ_MOS = 2.149
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n16_snr_10.wav:
+Prediction : PESQ_MOS = 2.138
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n16_snr_10.wav:
+Prediction : PESQ_MOS = 2.649
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n16_snr_15.wav:
+Prediction : PESQ_MOS = 2.439
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n16_snr_15.wav:
+Prediction : PESQ_MOS = 2.897
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n16_snr_5.wav:
+Prediction : PESQ_MOS = 1.948
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n16_snr_5.wav:
+Prediction : PESQ_MOS = 2.402
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n17_snr_0.wav:
+Prediction : PESQ_MOS = 1.802
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n17_snr_0.wav:
+Prediction : PESQ_MOS = 2.075
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n17_snr_10.wav:
+Prediction : PESQ_MOS = 2.103
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n17_snr_10.wav:
+Prediction : PESQ_MOS = 2.525
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n17_snr_15.wav:
+Prediction : PESQ_MOS = 2.420
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n17_snr_15.wav:
+Prediction : PESQ_MOS = 2.780
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n17_snr_5.wav:
+Prediction : PESQ_MOS = 1.896
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n17_snr_5.wav:
+Prediction : PESQ_MOS = 2.285
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n28_snr_0.wav:
+Prediction : PESQ_MOS = 1.992
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n28_snr_0.wav:
+Prediction : PESQ_MOS = 2.344
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n28_snr_10.wav:
+Prediction : PESQ_MOS = 2.334
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n28_snr_10.wav:
+Prediction : PESQ_MOS = 2.863
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n28_snr_15.wav:
+Prediction : PESQ_MOS = 2.617
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n28_snr_15.wav:
+Prediction : PESQ_MOS = 3.079
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n28_snr_5.wav:
+Prediction : PESQ_MOS = 2.121
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n28_snr_5.wav:
+Prediction : PESQ_MOS = 2.638
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n29_snr_0.wav:
+Prediction : PESQ_MOS = 1.768
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n29_snr_0.wav:
+Prediction : PESQ_MOS = 2.329
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n29_snr_10.wav:
+Prediction : PESQ_MOS = 2.425
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n29_snr_10.wav:
+Prediction : PESQ_MOS = 2.849
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n29_snr_15.wav:
+Prediction : PESQ_MOS = 2.763
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n29_snr_15.wav:
+Prediction : PESQ_MOS = 3.080
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n29_snr_5.wav:
+Prediction : PESQ_MOS = 2.076
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n29_snr_5.wav:
+Prediction : PESQ_MOS = 2.609
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n68_snr_0.wav:
+Prediction : PESQ_MOS = 1.445
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n68_snr_0.wav:
+Prediction : PESQ_MOS = 2.091
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n68_snr_10.wav:
+Prediction : PESQ_MOS = 2.100
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n68_snr_10.wav:
+Prediction : PESQ_MOS = 2.661
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n68_snr_15.wav:
+Prediction : PESQ_MOS = 2.480
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n68_snr_15.wav:
+Prediction : PESQ_MOS = 2.910
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n68_snr_5.wav:
+Prediction : PESQ_MOS = 1.744
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n68_snr_5.wav:
+Prediction : PESQ_MOS = 2.384
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n69_snr_0.wav:
+Prediction : PESQ_MOS = 1.387
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n69_snr_0.wav:
+Prediction : PESQ_MOS = 1.875
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n69_snr_10.wav:
+Prediction : PESQ_MOS = 1.890
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n69_snr_10.wav:
+Prediction : PESQ_MOS = 2.521
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n69_snr_15.wav:
+Prediction : PESQ_MOS = 2.278
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n69_snr_15.wav:
+Prediction : PESQ_MOS = 2.831
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n69_snr_5.wav:
+Prediction : PESQ_MOS = 1.612
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n69_snr_5.wav:
+Prediction : PESQ_MOS = 2.228
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n77_snr_0.wav:
+Prediction : PESQ_MOS = 2.076
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n77_snr_0.wav:
+Prediction : PESQ_MOS = 2.480
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n77_snr_10.wav:
+Prediction : PESQ_MOS = 2.372
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n77_snr_10.wav:
+Prediction : PESQ_MOS = 2.882
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n77_snr_15.wav:
+Prediction : PESQ_MOS = 2.672
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n77_snr_15.wav:
+Prediction : PESQ_MOS = 3.234
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n77_snr_5.wav:
+Prediction : PESQ_MOS = 2.151
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n77_snr_5.wav:
+Prediction : PESQ_MOS = 2.609
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n78_snr_0.wav:
+Prediction : PESQ_MOS = 2.116
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n78_snr_0.wav:
+Prediction : PESQ_MOS = 2.411
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n78_snr_10.wav:
+Prediction : PESQ_MOS = 2.406
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n78_snr_10.wav:
+Prediction : PESQ_MOS = 2.841
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n78_snr_15.wav:
+Prediction : PESQ_MOS = 2.674
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n78_snr_15.wav:
+Prediction : PESQ_MOS = 3.171
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n78_snr_5.wav:
+Prediction : PESQ_MOS = 2.212
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_n78_snr_5.wav:
+Prediction : PESQ_MOS = 2.633
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_STATION_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.799
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_STATION_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.423
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_STATION_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.482
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_STATION_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.997
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_STATION_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.799
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_STATION_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.216
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_STATION_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.160
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_STATION_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.733
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_STO_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.651
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_STO_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.193
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_STO_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.298
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_STO_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.817
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_STO_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.661
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_STO_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.073
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_STO_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 1.930
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_STO_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.495
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_TER_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.993
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_TER_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.576
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_TER_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.592
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_TER_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.154
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_TER_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.869
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_TER_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.324
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_TER_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.282
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_TER_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.874
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_WAY_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.058
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_WAY_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.323
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_WAY_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.514
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_WAY_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.426
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_WAY_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.686
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_WAY_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.427
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_WAY_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.338
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1375_WAY_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.390
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_ARK_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.750
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_ARK_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.980
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_ARK_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.486
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_ARK_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.384
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_ARK_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.706
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_ARK_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.484
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_ARK_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.120
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_ARK_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.239
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_CAR_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.421
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_CAR_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.391
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_CAR_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.946
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_CAR_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.505
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_CAR_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 4.187
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_CAR_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.516
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_CAR_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.735
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_CAR_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.467
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_HEN_16k.ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.320
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_HEN_16k.ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.680
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_HEN_16k.ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.050
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_HEN_16k.ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.132
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_HEN_16k.ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.376
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_HEN_16k.ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.383
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_HEN_16k.ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.701
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_HEN_16k.ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.933
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_ING_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.330
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_ING_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.581
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_ING_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.967
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_ING_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.135
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_ING_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.257
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_ING_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.371
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_ING_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.651
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_ING_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.893
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n16_snr_0.wav:
+Prediction : PESQ_MOS = 1.916
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n16_snr_0.wav:
+Prediction : PESQ_MOS = 2.210
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n16_snr_10.wav:
+Prediction : PESQ_MOS = 2.363
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n16_snr_10.wav:
+Prediction : PESQ_MOS = 2.706
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n16_snr_15.wav:
+Prediction : PESQ_MOS = 2.648
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n16_snr_15.wav:
+Prediction : PESQ_MOS = 2.984
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n16_snr_5.wav:
+Prediction : PESQ_MOS = 2.128
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n16_snr_5.wav:
+Prediction : PESQ_MOS = 2.410
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n17_snr_0.wav:
+Prediction : PESQ_MOS = 1.768
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n17_snr_0.wav:
+Prediction : PESQ_MOS = 2.072
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n17_snr_10.wav:
+Prediction : PESQ_MOS = 2.255
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n17_snr_10.wav:
+Prediction : PESQ_MOS = 2.593
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n17_snr_15.wav:
+Prediction : PESQ_MOS = 2.553
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n17_snr_15.wav:
+Prediction : PESQ_MOS = 2.872
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n17_snr_5.wav:
+Prediction : PESQ_MOS = 1.988
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n17_snr_5.wav:
+Prediction : PESQ_MOS = 2.329
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n28_snr_0.wav:
+Prediction : PESQ_MOS = 2.287
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n28_snr_0.wav:
+Prediction : PESQ_MOS = 2.509
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n28_snr_10.wav:
+Prediction : PESQ_MOS = 2.537
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n28_snr_10.wav:
+Prediction : PESQ_MOS = 2.936
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n28_snr_15.wav:
+Prediction : PESQ_MOS = 2.802
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n28_snr_15.wav:
+Prediction : PESQ_MOS = 3.125
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n28_snr_5.wav:
+Prediction : PESQ_MOS = 2.380
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n28_snr_5.wav:
+Prediction : PESQ_MOS = 2.724
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n29_snr_0.wav:
+Prediction : PESQ_MOS = 1.797
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n29_snr_0.wav:
+Prediction : PESQ_MOS = 2.204
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n29_snr_10.wav:
+Prediction : PESQ_MOS = 2.448
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n29_snr_10.wav:
+Prediction : PESQ_MOS = 2.826
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n29_snr_15.wav:
+Prediction : PESQ_MOS = 2.744
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n29_snr_15.wav:
+Prediction : PESQ_MOS = 3.061
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n29_snr_5.wav:
+Prediction : PESQ_MOS = 2.129
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n29_snr_5.wav:
+Prediction : PESQ_MOS = 2.489
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n68_snr_0.wav:
+Prediction : PESQ_MOS = 1.754
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n68_snr_0.wav:
+Prediction : PESQ_MOS = 2.065
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n68_snr_10.wav:
+Prediction : PESQ_MOS = 2.118
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n68_snr_10.wav:
+Prediction : PESQ_MOS = 2.606
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n68_snr_15.wav:
+Prediction : PESQ_MOS = 2.488
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n68_snr_15.wav:
+Prediction : PESQ_MOS = 2.911
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n68_snr_5.wav:
+Prediction : PESQ_MOS = 1.902
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n68_snr_5.wav:
+Prediction : PESQ_MOS = 2.337
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n69_snr_0.wav:
+Prediction : PESQ_MOS = 1.698
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n69_snr_0.wav:
+Prediction : PESQ_MOS = 1.999
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n69_snr_10.wav:
+Prediction : PESQ_MOS = 2.145
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n69_snr_10.wav:
+Prediction : PESQ_MOS = 2.534
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n69_snr_15.wav:
+Prediction : PESQ_MOS = 2.468
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n69_snr_15.wav:
+Prediction : PESQ_MOS = 2.789
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n69_snr_5.wav:
+Prediction : PESQ_MOS = 1.886
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n69_snr_5.wav:
+Prediction : PESQ_MOS = 2.261
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n77_snr_0.wav:
+Prediction : PESQ_MOS = 2.103
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n77_snr_0.wav:
+Prediction : PESQ_MOS = 2.379
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n77_snr_10.wav:
+Prediction : PESQ_MOS = 2.433
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n77_snr_10.wav:
+Prediction : PESQ_MOS = 2.789
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n77_snr_15.wav:
+Prediction : PESQ_MOS = 2.726
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n77_snr_15.wav:
+Prediction : PESQ_MOS = 3.154
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n77_snr_5.wav:
+Prediction : PESQ_MOS = 2.206
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n77_snr_5.wav:
+Prediction : PESQ_MOS = 2.532
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n78_snr_0.wav:
+Prediction : PESQ_MOS = 2.165
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n78_snr_0.wav:
+Prediction : PESQ_MOS = 2.382
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n78_snr_10.wav:
+Prediction : PESQ_MOS = 2.461
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n78_snr_10.wav:
+Prediction : PESQ_MOS = 2.760
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n78_snr_15.wav:
+Prediction : PESQ_MOS = 2.785
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n78_snr_15.wav:
+Prediction : PESQ_MOS = 3.176
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n78_snr_5.wav:
+Prediction : PESQ_MOS = 2.261
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_n78_snr_5.wav:
+Prediction : PESQ_MOS = 2.533
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_STATION_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.047
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_STATION_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.421
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_STATION_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.681
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_STATION_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.995
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_STATION_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.012
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_STATION_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.258
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_STATION_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.336
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_STATION_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.686
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_STO_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.851
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_STO_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.191
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_STO_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.379
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_STO_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.729
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_STO_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.699
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_STO_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.040
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_STO_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.081
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_STO_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.411
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_TER_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.163
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_TER_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.532
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_TER_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.712
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_TER_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.061
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_TER_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.038
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_TER_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.295
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_TER_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.425
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_TER_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.807
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_WAY_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.260
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_WAY_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.350
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_WAY_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.686
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_WAY_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.503
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_WAY_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.946
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_WAY_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.512
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_WAY_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.508
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1880_WAY_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.461
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_ARK_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.293
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_ARK_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.966
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_ARK_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.945
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_ARK_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.399
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_ARK_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.191
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_ARK_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.499
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_ARK_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.636
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_ARK_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.209
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_CAR_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.270
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_CAR_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.519
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_CAR_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.835
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_CAR_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.581
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_CAR_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 4.058
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_CAR_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.576
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_CAR_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.559
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_CAR_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.577
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_HEN_16k.ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.139
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_HEN_16k.ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.623
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_HEN_16k.ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.759
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_HEN_16k.ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.138
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_HEN_16k.ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.010
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_HEN_16k.ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.424
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_HEN_16k.ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.469
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_HEN_16k.ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.895
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_ING_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.134
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_ING_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.473
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_ING_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.828
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_ING_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.177
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_ING_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.157
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_ING_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.461
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_ING_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.487
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_ING_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.620
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n16_snr_0.wav:
+Prediction : PESQ_MOS = 1.967
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n16_snr_0.wav:
+Prediction : PESQ_MOS = 2.296
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n16_snr_10.wav:
+Prediction : PESQ_MOS = 2.253
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n16_snr_10.wav:
+Prediction : PESQ_MOS = 2.791
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n16_snr_15.wav:
+Prediction : PESQ_MOS = 2.484
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n16_snr_15.wav:
+Prediction : PESQ_MOS = 2.999
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n16_snr_5.wav:
+Prediction : PESQ_MOS = 2.079
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n16_snr_5.wav:
+Prediction : PESQ_MOS = 2.575
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n17_snr_0.wav:
+Prediction : PESQ_MOS = 1.828
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n17_snr_0.wav:
+Prediction : PESQ_MOS = 2.197
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n17_snr_10.wav:
+Prediction : PESQ_MOS = 2.155
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n17_snr_10.wav:
+Prediction : PESQ_MOS = 2.609
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n17_snr_15.wav:
+Prediction : PESQ_MOS = 2.391
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n17_snr_15.wav:
+Prediction : PESQ_MOS = 2.881
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n17_snr_5.wav:
+Prediction : PESQ_MOS = 1.964
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n17_snr_5.wav:
+Prediction : PESQ_MOS = 2.389
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n28_snr_0.wav:
+Prediction : PESQ_MOS = 2.094
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n28_snr_0.wav:
+Prediction : PESQ_MOS = 2.459
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n28_snr_10.wav:
+Prediction : PESQ_MOS = 2.395
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n28_snr_10.wav:
+Prediction : PESQ_MOS = 2.850
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n28_snr_15.wav:
+Prediction : PESQ_MOS = 2.628
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n28_snr_15.wav:
+Prediction : PESQ_MOS = 3.074
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n28_snr_5.wav:
+Prediction : PESQ_MOS = 2.214
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n28_snr_5.wav:
+Prediction : PESQ_MOS = 2.651
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n29_snr_0.wav:
+Prediction : PESQ_MOS = 1.615
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n29_snr_0.wav:
+Prediction : PESQ_MOS = 2.271
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n29_snr_10.wav:
+Prediction : PESQ_MOS = 2.320
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n29_snr_10.wav:
+Prediction : PESQ_MOS = 2.788
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n29_snr_15.wav:
+Prediction : PESQ_MOS = 2.625
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n29_snr_15.wav:
+Prediction : PESQ_MOS = 3.045
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n29_snr_5.wav:
+Prediction : PESQ_MOS = 1.963
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n29_snr_5.wav:
+Prediction : PESQ_MOS = 2.536
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n68_snr_0.wav:
+Prediction : PESQ_MOS = 1.403
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n68_snr_0.wav:
+Prediction : PESQ_MOS = 2.067
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n68_snr_10.wav:
+Prediction : PESQ_MOS = 2.007
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n68_snr_10.wav:
+Prediction : PESQ_MOS = 2.690
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n68_snr_15.wav:
+Prediction : PESQ_MOS = 2.383
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n68_snr_15.wav:
+Prediction : PESQ_MOS = 2.934
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n68_snr_5.wav:
+Prediction : PESQ_MOS = 1.642
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n68_snr_5.wav:
+Prediction : PESQ_MOS = 2.431
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n69_snr_0.wav:
+Prediction : PESQ_MOS = 1.475
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n69_snr_0.wav:
+Prediction : PESQ_MOS = 1.942
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n69_snr_10.wav:
+Prediction : PESQ_MOS = 1.924
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n69_snr_10.wav:
+Prediction : PESQ_MOS = 2.445
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n69_snr_15.wav:
+Prediction : PESQ_MOS = 2.260
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n69_snr_15.wav:
+Prediction : PESQ_MOS = 2.727
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n69_snr_5.wav:
+Prediction : PESQ_MOS = 1.638
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n69_snr_5.wav:
+Prediction : PESQ_MOS = 2.171
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n77_snr_0.wav:
+Prediction : PESQ_MOS = 2.109
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n77_snr_0.wav:
+Prediction : PESQ_MOS = 2.424
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n77_snr_10.wav:
+Prediction : PESQ_MOS = 2.405
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n77_snr_10.wav:
+Prediction : PESQ_MOS = 2.914
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n77_snr_15.wav:
+Prediction : PESQ_MOS = 2.641
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n77_snr_15.wav:
+Prediction : PESQ_MOS = 3.207
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n77_snr_5.wav:
+Prediction : PESQ_MOS = 2.213
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n77_snr_5.wav:
+Prediction : PESQ_MOS = 2.614
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n78_snr_0.wav:
+Prediction : PESQ_MOS = 2.139
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n78_snr_0.wav:
+Prediction : PESQ_MOS = 2.477
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n78_snr_10.wav:
+Prediction : PESQ_MOS = 2.445
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n78_snr_10.wav:
+Prediction : PESQ_MOS = 2.912
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n78_snr_15.wav:
+Prediction : PESQ_MOS = 2.659
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n78_snr_15.wav:
+Prediction : PESQ_MOS = 3.145
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n78_snr_5.wav:
+Prediction : PESQ_MOS = 2.262
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_n78_snr_5.wav:
+Prediction : PESQ_MOS = 2.657
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_STATION_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.795
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_STATION_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.464
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_STATION_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.428
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_STATION_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.979
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_STATION_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.749
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_STATION_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.204
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_STATION_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.097
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_STATION_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.695
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_STO_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.589
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_STO_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.111
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_STO_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.152
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_STO_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.744
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_STO_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.459
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_STO_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.985
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_STO_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 1.854
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_STO_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.404
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_TER_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.912
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_TER_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.483
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_TER_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.471
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_TER_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.037
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_TER_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.754
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_TER_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.253
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_TER_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.192
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_TER_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.772
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_WAY_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.091
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_WAY_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.400
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_WAY_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.490
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_WAY_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.567
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_WAY_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.697
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_WAY_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.579
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_WAY_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.291
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1982_WAY_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.500
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_ARK_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.575
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_ARK_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.869
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_ARK_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.198
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_ARK_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.257
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_ARK_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.434
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_ARK_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.400
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_ARK_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.899
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_ARK_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.115
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_CAR_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.364
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_CAR_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.460
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_CAR_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.949
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_CAR_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.465
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_CAR_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 4.121
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_CAR_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.466
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_CAR_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.673
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_CAR_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.459
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_HEN_16k.ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.275
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_HEN_16k.ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.650
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_HEN_16k.ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.007
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_HEN_16k.ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.124
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_HEN_16k.ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.252
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_HEN_16k.ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.292
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_HEN_16k.ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.664
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_HEN_16k.ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.907
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_ING_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.294
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_ING_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.653
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_ING_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.942
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_ING_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.118
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_ING_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.275
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_ING_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.271
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_ING_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.602
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_ING_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.921
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n16_snr_0.wav:
+Prediction : PESQ_MOS = 1.690
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n16_snr_0.wav:
+Prediction : PESQ_MOS = 2.052
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n16_snr_10.wav:
+Prediction : PESQ_MOS = 2.080
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n16_snr_10.wav:
+Prediction : PESQ_MOS = 2.609
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n16_snr_15.wav:
+Prediction : PESQ_MOS = 2.362
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n16_snr_15.wav:
+Prediction : PESQ_MOS = 2.891
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n16_snr_5.wav:
+Prediction : PESQ_MOS = 1.843
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n16_snr_5.wav:
+Prediction : PESQ_MOS = 2.338
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n17_snr_0.wav:
+Prediction : PESQ_MOS = 1.319
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n17_snr_0.wav:
+Prediction : PESQ_MOS = 1.954
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n17_snr_10.wav:
+Prediction : PESQ_MOS = 2.022
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n17_snr_10.wav:
+Prediction : PESQ_MOS = 2.520
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n17_snr_15.wav:
+Prediction : PESQ_MOS = 2.321
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n17_snr_15.wav:
+Prediction : PESQ_MOS = 2.768
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n17_snr_5.wav:
+Prediction : PESQ_MOS = 1.756
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n17_snr_5.wav:
+Prediction : PESQ_MOS = 2.249
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n28_snr_0.wav:
+Prediction : PESQ_MOS = 2.069
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n28_snr_0.wav:
+Prediction : PESQ_MOS = 2.396
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n28_snr_10.wav:
+Prediction : PESQ_MOS = 2.376
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n28_snr_10.wav:
+Prediction : PESQ_MOS = 2.816
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n28_snr_15.wav:
+Prediction : PESQ_MOS = 2.635
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n28_snr_15.wav:
+Prediction : PESQ_MOS = 3.038
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n28_snr_5.wav:
+Prediction : PESQ_MOS = 2.182
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n28_snr_5.wav:
+Prediction : PESQ_MOS = 2.615
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n29_snr_0.wav:
+Prediction : PESQ_MOS = 1.521
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n29_snr_0.wav:
+Prediction : PESQ_MOS = 2.099
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n29_snr_10.wav:
+Prediction : PESQ_MOS = 2.267
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n29_snr_10.wav:
+Prediction : PESQ_MOS = 2.700
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n29_snr_15.wav:
+Prediction : PESQ_MOS = 2.623
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n29_snr_15.wav:
+Prediction : PESQ_MOS = 2.942
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n29_snr_5.wav:
+Prediction : PESQ_MOS = 1.894
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n29_snr_5.wav:
+Prediction : PESQ_MOS = 2.410
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n68_snr_0.wav:
+Prediction : PESQ_MOS = 1.433
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n68_snr_0.wav:
+Prediction : PESQ_MOS = 1.906
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n68_snr_10.wav:
+Prediction : PESQ_MOS = 2.088
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n68_snr_10.wav:
+Prediction : PESQ_MOS = 2.517
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n68_snr_15.wav:
+Prediction : PESQ_MOS = 2.438
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n68_snr_15.wav:
+Prediction : PESQ_MOS = 2.810
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n68_snr_5.wav:
+Prediction : PESQ_MOS = 1.799
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n68_snr_5.wav:
+Prediction : PESQ_MOS = 2.214
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n69_snr_0.wav:
+Prediction : PESQ_MOS = 1.327
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n69_snr_0.wav:
+Prediction : PESQ_MOS = 1.905
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n69_snr_10.wav:
+Prediction : PESQ_MOS = 2.031
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n69_snr_10.wav:
+Prediction : PESQ_MOS = 2.458
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n69_snr_15.wav:
+Prediction : PESQ_MOS = 2.392
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n69_snr_15.wav:
+Prediction : PESQ_MOS = 2.718
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n69_snr_5.wav:
+Prediction : PESQ_MOS = 1.317
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n69_snr_5.wav:
+Prediction : PESQ_MOS = 2.180
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n77_snr_0.wav:
+Prediction : PESQ_MOS = 1.953
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n77_snr_0.wav:
+Prediction : PESQ_MOS = 2.204
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n77_snr_10.wav:
+Prediction : PESQ_MOS = 2.317
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n77_snr_10.wav:
+Prediction : PESQ_MOS = 2.748
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n77_snr_15.wav:
+Prediction : PESQ_MOS = 2.605
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n77_snr_15.wav:
+Prediction : PESQ_MOS = 3.084
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n77_snr_5.wav:
+Prediction : PESQ_MOS = 1.760
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n77_snr_5.wav:
+Prediction : PESQ_MOS = 2.432
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n78_snr_0.wav:
+Prediction : PESQ_MOS = 1.599
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n78_snr_0.wav:
+Prediction : PESQ_MOS = 2.287
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n78_snr_10.wav:
+Prediction : PESQ_MOS = 2.387
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n78_snr_10.wav:
+Prediction : PESQ_MOS = 2.744
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n78_snr_15.wav:
+Prediction : PESQ_MOS = 2.681
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n78_snr_15.wav:
+Prediction : PESQ_MOS = 3.101
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n78_snr_5.wav:
+Prediction : PESQ_MOS = 1.514
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_n78_snr_5.wav:
+Prediction : PESQ_MOS = 2.366
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_STATION_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.798
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_STATION_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.303
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_STATION_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.481
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_STATION_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.942
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_STATION_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.800
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_STATION_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.188
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_STATION_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.127
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_STATION_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.625
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_STO_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.962
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_STO_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.067
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_STO_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.204
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_STO_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.669
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_STO_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.572
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_STO_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.995
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_STO_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 1.884
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_STO_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.343
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_TER_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 1.957
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_TER_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 2.127
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_TER_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.534
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_TER_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 2.908
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_TER_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 2.847
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_TER_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.183
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_TER_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.239
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_TER_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 2.517
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_WAY_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.082
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_WAY_16k_ch01_snr_0.wav:
+Prediction : PESQ_MOS = 3.268
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_WAY_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.595
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_WAY_16k_ch01_snr_10.wav:
+Prediction : PESQ_MOS = 3.465
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_WAY_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.769
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_WAY_16k_ch01_snr_15.wav:
+Prediction : PESQ_MOS = 3.470
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_WAY_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.358
+/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/noisy_m1_3_t-c1987_WAY_16k_ch01_snr_5.wav:
+Prediction : PESQ_MOS = 3.386

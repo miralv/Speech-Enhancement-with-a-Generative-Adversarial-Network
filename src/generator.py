@@ -27,7 +27,7 @@ def generator(options):
     use_bias = options['use_bias']
     std_dev = options['initializer_std_dev']
     show_summary = options['show_summary']
-
+    z_in_use = options['z_in_use']
 
 
     ## Define the encoder
@@ -51,7 +51,11 @@ def generator(options):
     z = Input(shape=z_dim)
     
     ## Define the decoder
-    decoder_out = keras.layers.concatenate([encoder_out,z])
+    if z_in_use:
+        decoder_out = keras.layers.concatenate([encoder_out,z])
+    else:
+        decoder_out = encoder_out
+
     # Shape variables updated through the loop
     n_rows = z_dim[0]
     n_cols = decoder_out.get_shape().as_list()[-1]
@@ -86,7 +90,11 @@ def generator(options):
 
         
     ## Create the model graph
-    G = Model(inputs=[encoder_in,z], outputs=decoder_out)
+    if z_in_use:
+        G = Model(inputs=[encoder_in,z], outputs=decoder_out)
+    else:
+        G = Model(inputs=[encoder_in], outputs=decoder_out)
+
 
     if show_summary:
         G.summary()
