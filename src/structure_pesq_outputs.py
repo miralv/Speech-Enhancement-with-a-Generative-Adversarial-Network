@@ -230,3 +230,131 @@ find_statistics(pesq_matlab_folder_no_z, snrs, True)
 
 # counts
 # sorted
+
+
+
+
+
+
+
+
+
+""" It would be interesting to gather the results according to noise type too.
+
+
+Kan ha en egen tabell for alle demand-lydene.
+Kan også skille en til en mellom feks car, station, and restaurant/cafeteria, park og hallway.
+Guoning Hu:
+vind, 
+maskinlyd
+vann
+n16 og n17 representerer crowd noise. kan utelates, da det blir testet på filene fra demand.
+
+Tabell:
+                        SNRS
+        PESQ (før vs etter)
+
+vind                                    gjsnitt (eller gj.snittlig forbedring)
+bil
+crowd noise
+station
+park
+gjsnitt med alle
+kan ha en tilsvarende tabell med stoi
+
+
+"""
+
+
+""" Organize results from matlab script0 
+"""
+snrs = [0,5,10,15]
+stoi_folder_no_z_longrun = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_no_z_16_may.csv"
+pesq_matlab_folder_no_z_longrun = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_no_z_16_may.csv"
+find_statistics(pesq_matlab_folder_no_z_longrun, snrs, True)
+
+
+# sorter basert på 5. i split ('_')
+# 1) saml lydnavnene i en vektor. evt dictionary?
+# 2) kan lage en funksjon som henter ut data for ønsket støy og ønsket snr.
+
+def findSpecificStats(file_name_read, snrs, num_each = 10,delim = ' '):
+    """ Returns a dictionary on format
+    noise:
+    fraction improved
+    pesq_enhanced
+    pesq_noisy
+    """
+    mat = np.loadtxt(file_name_read, delimiter=delim, skiprows=1, usecols=[0,2,3,4])
+    file_names = np.loadtxt(file_name_read, dtype = str, delimiter=delim, skiprows=1, usecols=[1])
+    noise_stats = {}
+    # reduce to only noise type
+    noise_names = np.asarray(list(map(lambda x: x.split('_')[3], file_names)))
+    noise_names_no_duplicates = np.asarray(list(dict.fromkeys(noise_names)))
+    # need to remove n69 from statistics, as it was in the training set
+    noise_remove = 'n69'
+    ind_remove = noise_names_no_duplicates!=noise_remove
+    noise_names_no_duplicates = noise_names_no_duplicates[ind_remove]
+
+    indexes_improved = (mat[:,2]-mat[:,3])<0
+    averages = np.zeros((2,len(snrs))) # for storing average snr score for noisy and enhanced speech (rad 0: noisy, rad 1: enhanced)
+
+    for noise in noise_names_no_duplicates:
+        indexes_this_noise = (noise_names == noise)
+        indexes_improved_this_noise = indexes_this_noise * indexes_improved
+        this_noise_result = mat[indexes_improved_this_noise,:]
+        counts = np.zeros(len(snrs) + 1)
+        pesq_scores_noisy = np.zeros(len(snrs))
+        pesq_scores_enhanced = np.zeros(len(snrs))
+
+        # snrs = [0,5,10,15] given as input, let the last element in counts store the mean
+        # tot_each = this_noise_result.shape[0]/len(snrs)
+        for i in range(this_noise_result.shape[0]):
+            this_snr = this_noise_result[i,1]
+            ind = snrs == this_snr
+            counts[0:-1] +=ind
+            #Pesq noisy
+        
+        # Here, we are interested in all results, not only improved
+        this_noise_mat = mat[indexes_this_noise,:]
+        for i in range(this_noise_mat.shape[0]):
+            this_snr = this_noise_mat[i,1]
+            ind = snrs == this_snr
+            pesq_scores_noisy[ind] += this_noise_mat[i,2]
+            pesq_scores_enhanced[ind] += this_noise_mat[i,3]
+            averages[0,ind] += this_noise_mat[i,2]
+            averages[1,ind] += this_noise_mat[i,3]
+
+            #Pesq enhanced
+        
+        counts[-1] = np.mean(counts[0:-1])  
+        # fractions_each = counts/tot_each
+        # noise_stats[noise] = fractions_each
+        # print(num_each)
+        local_dict = {}
+        local_dict['fractions_improved'] = counts/num_each
+        local_dict['pesq_noisy'] = pesq_scores_noisy/num_each
+        local_dict['pesq_enhanced'] = pesq_scores_enhanced/num_each
+        noise_stats[noise] = local_dict
+        print(noise)
+        print(local_dict['fractions_improved'])
+        print("\n\n")
+
+    return noise_stats, averages/(num_each*len(noise_names_no_duplicates))
+
+noise_stats,averages_pesq = findSpecificStats(pesq_matlab_folder_no_z_longrun,snrs)
+stoi_stats,averages_stoi = findSpecificStats(stoi_folder_no_z_longrun,snrs)
+# s = "f2_4_x-c0987_ARK_16k_ch01_snr_0"
+# s.split('_')[3]
+
+averages_pesq
+# can make a for loop that gather statistics for each wanted noise
+noise_stats
+# want a dictionary maybe with noise, and pesq per snr
+
+
+# vil sammenlikne med kortere kjøring:
+file_comparison = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results.csv"
+noise_stats_old_pesq, avg = findSpecificStats(file_comparison,snrs, delim=',')
+avg
+

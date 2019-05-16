@@ -46,9 +46,6 @@ def main():
      Specify the specific structure of the discriminator and the generator,
      based on the architecture used in SEGAN.
     """
-    # test_path = "/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/enhanced_n16.wav"
-    # test_save = "/home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results/enhanced_n16_v2.wav"
-    # test_audio(test_path,test_save)
 
 
     # Need some flags too. (like, train, test, save load)
@@ -92,8 +89,8 @@ def main():
 
 
     options['batch_size'] = 400             # 200 # Ser at SEGAN har brukt en effective batch size of 400. Will try that.
-    options['steps_per_epoch'] = 1000       # 10 # SEGAN itererte gjennom hele datasettet i hver epoch
-    options['n_epochs'] = 80                # 20 Ser at SEGAN har brukt 86
+    options['steps_per_epoch'] = 10       # 10 # SEGAN itererte gjennom hele datasettet i hver epoch
+    options['n_epochs'] = 40                # 20 Ser at SEGAN har brukt 86
     options['snr_dbs_train'] = [0,10,15]    # It seems that the algorithm is performing best on low snrs
     options['snr_dbs_test'] = [0,5,10,15]
     options['sample_rate'] = 16000
