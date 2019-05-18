@@ -119,126 +119,6 @@ pesq_matlab_folder_no_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pes
 find_statistics(pesq_matlab_folder_no_z, snrs, True)
 
 
-
-# # Gjennomsnitt:
-# np.mean(mat[:,2])
-# np.mean(mat[:,3])
-# number_in_each_bar_noisy
-
-# # Kan plotte før minus etter
-# diff = mat[:,2] - mat[:,3]
-# val = np.min(diff)
-# diff== val
-# diff[-17]
-# val
-# p3 = plt.plot(diff,'o')
-# plt.legend( (p3),("PESQ_noisy - PESQ_enhanced"))
-# plt.show()
-
-
-# plt.figure(1,figsize=(20,5))
-# plt.plot(audio_p[25000:25000+40000],color='black')
-# plt.savefig("figure_audio.pdf",format="pdf")
-# #plt.show()
-
-# save_path_noise = "/home/shomec/m/miralv/Masteroppgave/Code/figure_noise.pdf"
-# plt.figure(figsize=(20,5))
-# plt.plot(noise_p[0:40000], color='black')
-# plt.savefig("figure_noise.pdf", format="pdf")
-
-# plt.show()
-
-
-# freq,noise = scipy.io.wavfile.read("/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/TCAR_16k_ch01.wav")
-# rms_noise = findRMS(noise)
-# np.sqrt(np.mean(np.power(noise,2,dtype='float64')))
-
-
-# freq,clean = scipy.io.wavfile.read("/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/Selected/p1_g12_m1_3_t-c1982.wav")
-# rms_clean = findRMS(clean)
-# np.sqrt(np.mean(np.power(clean,2,dtype='float64')))
-
-
-# snr_factor = findSNRfactor(clean,noise, 0)
-
-# rms_noise*snr_factor
-# rms_clean
-
-
-
-# Structure sample outputs
-# Something WRONG is happening when executing the bash script!
-# /home/shomec/m/miralv/Masteroppgave/Code/Deep-Learning-for-Speech-Separation/results_test_sample/epoch_20_clean_m1_3_t-c1151_TER_16k_ch01_snr_15.wav
-# vil kjøre pesq på disse filene. 
-
-
-
-
-
-# """ Collect PESQ results in matrix form
-# """
-# file = "results_test_sample/_pesq_results.txt"
-# # Create table with the following columns: 
-# # speaker (0 or 1) file snr pesq_noisy pesq_enhanced
-# header = "epoch file snr pesq_noisy pesq_enhanced\n"
-# f = open("pesq_results_sample_test_table.csv", mode='w')
-# f.write(header)
-# with open(file,"r") as infile:
-#     for i,line in enumerate(infile,):
-#         if i != 0 and line!= ' \n':
-#             fields = line.split(" ")
-#             name = fields[1][6:-5]
-#             pesq = float(fields[2])
-#             snr = float(name.split('_')[-1])
-#             epoch = float(fields[1].split('_')[1])
-#             if i%2: #Oddetallslinjer er noisy
-#                 line_add = "%d %s %d %f" % (epoch, name, snr, pesq)
-#                 f.write(line_add)
-#             else:
-#                 line_add = " %f\n" % (pesq)
-#                 f.write(line_add)
-
-
-# f.close()
-
-
-
-
-
-# to_matrix_file = "pesq_results_sample_test_table.csv"
-# # Summer antall hvor det har skjedd en forbedring
-# mat = np.loadtxt(to_matrix_file, delimiter=' ', skiprows=1, usecols=[0,2,3,4])
-# names = np.loadtxt(to_matrix_file,dtype='str',delimiter=' ',skiprows=1,usecols=1)
-# mat.shape
-# improved = sum(mat[:,2]-mat[:,3]<0)
-# # Percentage that has an improvement:
-# improved/mat.shape[0]
-# #numpy.loadtxt(file, dtype=<class 'float'>, delimiter=' ', skiprows=1, usecols=None, unpack=False, ndmin=0, encoding='bytes', max_rows=None)[source]
-# indexes = (mat[:,2]-mat[:,3])<0
-# sorted = np.sort(names[indexes])
-# improved_matrix = mat[indexes,:]
-
-# improved_matrix.shape
-# counts = np.zeros(4)
-# snrs = [0,5,10,15]
-# for i in range(improved_matrix.shape[0]):
-#     this_snr = improved_matrix[i,1]
-#     ind = snrs == this_snr
-#     counts +=ind
-# # Hva kjennetegner filene med improvement?
-# sum(improved_matrix[:,0]==1)
-
-# counts
-# sorted
-
-
-
-
-
-
-
-
-
 """ It would be interesting to gather the results according to noise type too.
 
 
@@ -357,4 +237,34 @@ noise_stats
 file_comparison = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results.csv"
 noise_stats_old_pesq, avg = findSpecificStats(file_comparison,snrs, delim=',')
 avg
+
+
+
+
+""" Stats from samples"""
+
+
+file_name_read = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_samples_with_z_18_may.csv"
+mat = np.loadtxt(file_name_read, delimiter=' ', skiprows=1, usecols=[0,1,3,4])
+epochs = np.array([10.,20.,30.])
+printf("Average pesq score\n")
+epoch_scores = np.zeros(len(epochs))
+for i,epoch in enumerate(epochs):
+    ind_ep = mat[:,1] == epoch
+    epoch_scores[i] = np.mean(mat[ind_ep,3])
+    print("Epcoch:%i %f" % (epoch, epoch_scores[i]))
+
+epoch_scores
+
+file_name_read = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_samples_with_z_18_may.csv"
+mat = np.loadtxt(file_name_read, delimiter=' ', skiprows=1, usecols=[0,1,3,4])
+epochs = np.array([10.,20.,30.])
+printf("Average stoi score\n")
+epoch_scores = np.zeros(len(epochs))
+for i,epoch in enumerate(epochs):
+    ind_ep = mat[:,1] == epoch
+    epoch_scores[i] = np.mean(mat[ind_ep,3])
+    print("Epcoch:%i %f" % (epoch, epoch_scores[i]))
+
+epoch_scores
 
