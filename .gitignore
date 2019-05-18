@@ -5,3 +5,5 @@ Gmodel.json
 Gmodel_success.h5
 Gmodel_success.json
 results/*.wav
+results_test_sample/*.wav
+
