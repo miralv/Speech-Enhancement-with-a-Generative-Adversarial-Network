@@ -119,6 +119,14 @@ pesq_matlab_folder_no_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pes
 find_statistics(pesq_matlab_folder_no_z, snrs, True)
 
 
+# NEW RUN; WITH Z
+stoi_folder_with_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_with_z_19_may.csv"
+pesq_matlab_folder_with_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_with_z_19_may.csv"
+find_statistics(pesq_matlab_folder_with_z, snrs, True)
+find_statistics(stoi_folder_with_z, snrs, True)
+
+
+
 """ It would be interesting to gather the results according to noise type too.
 
 
@@ -152,6 +160,15 @@ snrs = [0,5,10,15]
 stoi_folder_no_z_longrun = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_no_z_16_may.csv"
 pesq_matlab_folder_no_z_longrun = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_no_z_16_may.csv"
 find_statistics(pesq_matlab_folder_no_z_longrun, snrs, True)
+
+
+# AGAIN; NEW RUN WITH Z
+snrs = [0,5,10,15]
+stoi_folder_with_z_longrun = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_with_z_19_may.csv"
+pesq_matlab_folder_with_z_longrun = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_with_z_19_may.csv"
+find_statistics(pesq_matlab_folder_no_z_longrun, snrs, True)
+
+
 
 
 # sorter basert på 5. i split ('_')
@@ -224,6 +241,15 @@ def findSpecificStats(file_name_read, snrs, num_each = 10,delim = ' '):
 
 noise_stats,averages_pesq = findSpecificStats(pesq_matlab_folder_no_z_longrun,snrs)
 stoi_stats,averages_stoi = findSpecificStats(stoi_folder_no_z_longrun,snrs)
+
+
+
+# AGAIN; NEW RUN
+noise_stats,averages_pesq = findSpecificStats(pesq_matlab_folder_with_z_longrun,snrs)
+stoi_stats,averages_stoi = findSpecificStats(stoi_folder_with_z_longrun,snrs)
+
+
+
 # s = "f2_4_x-c0987_ARK_16k_ch01_snr_0"
 # s.split('_')[3]
 
@@ -244,10 +270,10 @@ avg
 """ Stats from samples"""
 
 
-file_name_read = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_samples_with_z_18_may.csv"
+file_name_read = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_samples_with_z_19_may.csv"
 mat = np.loadtxt(file_name_read, delimiter=' ', skiprows=1, usecols=[0,1,3,4])
-epochs = np.array([10.,20.,30.])
-printf("Average pesq score\n")
+epochs = np.arange(5.,81.,5.)
+print("Average pesq score\n")
 epoch_scores = np.zeros(len(epochs))
 for i,epoch in enumerate(epochs):
     ind_ep = mat[:,1] == epoch
@@ -256,10 +282,10 @@ for i,epoch in enumerate(epochs):
 
 epoch_scores
 
-file_name_read = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_samples_with_z_18_may.csv"
+file_name_read = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_samples_with_z_19_may.csv"
 mat = np.loadtxt(file_name_read, delimiter=' ', skiprows=1, usecols=[0,1,3,4])
-epochs = np.array([10.,20.,30.])
-printf("Average stoi score\n")
+epochs = np.arange(5.,81.,5.)
+print("Average stoi score\n")
 epoch_scores = np.zeros(len(epochs))
 for i,epoch in enumerate(epochs):
     ind_ep = mat[:,1] == epoch

@@ -87,10 +87,9 @@ def main():
         options['noise_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Train" # /Train or /Validate or /Test
 
 
-
     options['batch_size'] = 200             # 200 # Ser at SEGAN har brukt en effective batch size of 400. Will try that.
     options['steps_per_epoch'] = 10         # 10 # SEGAN itererte gjennom hele datasettet i hver epoch
-    options['n_epochs'] = 80                # 20 Ser at SEGAN har brukt 86
+    options['n_epochs'] = 40                # 20 Ser at SEGAN har brukt 86
     options['snr_dbs_train'] = [0,10,15]    # It seems that the algorithm is performing best on low snrs
     options['snr_dbs_test'] = [0,5,10,15]
     options['sample_rate'] = 16000
@@ -156,7 +155,7 @@ def main():
         #TODO: Check that the losses become correct with the model syntax
         GAN.compile(optimizer=optimizer_G,
                     loss={'model_1': 'mae', 'model_2': 'mse'},
-                    loss_weights={'model_1': 500, 'model_2': 1})
+                    loss_weights={'model_1': options['g_l1loss'], 'model_2': 1})
         # print(GAN.metrics_names)
 
         # Tensorboard
@@ -232,13 +231,13 @@ def main():
                 logs = [G_loss, G_D_loss, G_l1_loss]
                 write_log(callback, train_names, logs, epoch)
 
-                if SAMPLE_TESTING and epoch % test_frequency == 0:
+                if SAMPLE_TESTING and epoch % test_frequency == 0 and batch_i == (steps_per_epoch-1):
                     # do a sample test
-                    print("Running sample test %d." % (epoch))
+                    print("Running sample test epoch %d." % (epoch))
                     run_sample_test(options, speech_list_sample_test, noise_list_sample_test, G, epoch)
                     print("Sample test finished.")
 
-                # Run a sample test every nth epoch
+                # Run a sample test every nth epoch 
 
         f.close()
         print("Training finished.\n")
