@@ -1,13 +1,12 @@
 from __future__ import print_function, division
 import scipy
 import tensorflow
-# from tensorflow.python.client import device_lib
 import glob
 
 
 import keras
 from keras.datasets import mnist
-from keras.layers import Input, Dense, Reshape, Flatten, Dropout#, Concatenate
+from keras.layers import Input, Dense, Reshape, Flatten, Dropout
 from keras.layers import BatchNormalization, Activation, PReLU, Conv2DTranspose
 from keras.layers.advanced_activations import LeakyReLU
 from keras.layers.convolutional import UpSampling1D, Conv1D
@@ -152,11 +151,9 @@ def main():
             GAN = Model(inputs=[clean_audio_in, noisy_audio_in], outputs=[D_out, G_out])
 
         GAN.summary()
-        #TODO: Check that the losses become correct with the model syntax
         GAN.compile(optimizer=optimizer_G,
                     loss={'model_1': 'mae', 'model_2': 'mse'},
                     loss_weights={'model_1': options['g_l1loss'], 'model_2': 1})
-        # print(GAN.metrics_names)
 
         # Tensorboard
         if not os.path.exists("./logs"):
