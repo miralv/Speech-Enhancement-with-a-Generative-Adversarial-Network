@@ -32,4 +32,75 @@ tensorflow-gpu==1.13.1
 termcolor==1.1.0
 Werkzeug==0.14.1
 Python 3.6.3
-slurmstepd: error: *** JOB 260942 ON compute-2-0-2 CANCELLED AT 2019-04-14T12:40:46 ***
+Using TensorFlow backend.
+WARNING:tensorflow:From /share/apps/software/MPI/GCC-CUDA/6.4.0-2.28-9.0.176/OpenMPI/2.1.1/TensorFlow/1.7.0-Python-3.6.3/lib/python3.6/site-packages/tensorflow/python/util/deprecation.py:497: calling conv1d (from tensorflow.python.ops.nn_ops) with data_format=NHWC is deprecated and will be removed in a future version.
+Instructions for updating:
+`NHWC` for data_format is deprecated, use `NWC` instead
+WARNING:tensorflow:From /share/apps/software/MPI/GCC-CUDA/6.4.0-2.28-9.0.176/OpenMPI/2.1.1/TensorFlow/1.7.0-Python-3.6.3/lib/python3.6/site-packages/tensorflow/contrib/learn/python/learn/datasets/base.py:198: retry (from tensorflow.contrib.learn.python.learn.datasets.base) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use the retry module or similar alternatives.
+2019-05-19 19:53:11.390870: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1344] Found device 0 with properties: 
+name: Tesla P100-PCIE-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:03:00.0
+totalMemory: 15.90GiB freeMemory: 15.61GiB
+2019-05-19 19:53:11.390949: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1423] Adding visible gpu devices: 0
+2019-05-19 19:53:15.514602: I tensorflow/core/common_runtime/gpu/gpu_device.cc:911] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-05-19 19:53:15.514686: I tensorflow/core/common_runtime/gpu/gpu_device.cc:917]      0 
+2019-05-19 19:53:15.514705: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 0:   N 
+2019-05-19 19:53:15.515824: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15139 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-16GB, pci bus id: 0000:03:00.0, compute capability: 6.0)
+/lustre1/home/miralv/Master/v_env/master_virtualenv/lib/python3.6/site-packages/keras/engine/training.py:490: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+Options are set.
+
+
+Setting up individual models:
+
+G finished.
+
+D finished.
+
+
+Compile the individual models.
+
+Set up the combined model.
+
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+in_noisy (InputLayer)           (None, 16384, 1)     0                                            
+__________________________________________________________________________________________________
+noise_input (InputLayer)        (None, 8, 1024)      0                                            
+__________________________________________________________________________________________________
+model_1 (Model)                 (None, 16384, 1)     74120049    in_noisy[0][0]                   
+                                                                 noise_input[0][0]                
+__________________________________________________________________________________________________
+model_2 (Model)                 (None, 1)            24378106    model_1[1][0]                    
+                                                                 in_noisy[0][0]                   
+==================================================================================================
+Total params: 98,498,155
+Trainable params: 74,120,049
+Non-trainable params: 24,378,106
+__________________________________________________________________________________________________
+Begin training.
+
+[Epoch 1/10] [Batch 1/1] [D loss: 231.956909] [D real loss: 1.557885] [D fake loss: 462.355927] [G loss: 35.340496] [G_D loss: 34.264206] [G_L1 loss: 0.010763] [Exec. time: 0:01:40.953587]
+[Epoch 2/10] [Batch 1/1] [D loss: 45.329929] [D real loss: 38.105629] [D fake loss: 52.554230] [G loss: 9.932417] [G_D loss: 8.806326] [G_L1 loss: 0.011261] [Exec. time: 0:03:02.139754]
+[Epoch 3/10] [Batch 1/1] [D loss: 3.399495] [D real loss: 5.715109] [D fake loss: 1.083881] [G loss: 2.048467] [G_D loss: 0.994212] [G_L1 loss: 0.010543] [Exec. time: 0:04:21.767867]
+[Epoch 4/10] [Batch 1/1] [D loss: 0.851867] [D real loss: 1.030765] [D fake loss: 0.672969] [G loss: 1.823136] [G_D loss: 0.813806] [G_L1 loss: 0.010093] [Exec. time: 0:05:42.835298]
+[Epoch 5/10] [Batch 1/1] [D loss: 0.538952] [D real loss: 0.678932] [D fake loss: 0.398972] [G loss: 1.716776] [G_D loss: 0.613201] [G_L1 loss: 0.011036] [Exec. time: 0:07:06.139342]
+[Epoch 6/10] [Batch 1/1] [D loss: 0.491506] [D real loss: 0.546879] [D fake loss: 0.436132] [G loss: 1.708598] [G_D loss: 0.616234] [G_L1 loss: 0.010924] [Exec. time: 0:08:25.888098]
+[Epoch 7/10] [Batch 1/1] [D loss: 0.517488] [D real loss: 0.514770] [D fake loss: 0.520205] [G loss: 1.886703] [G_D loss: 0.839061] [G_L1 loss: 0.010476] [Exec. time: 0:09:44.058135]
+[Epoch 8/10] [Batch 1/1] [D loss: 0.721622] [D real loss: 0.671331] [D fake loss: 0.771914] [G loss: 1.898295] [G_D loss: 0.900845] [G_L1 loss: 0.009974] [Exec. time: 0:11:02.184496]
+[Epoch 9/10] [Batch 1/1] [D loss: 0.808592] [D real loss: 0.822085] [D fake loss: 0.795099] [G loss: 2.019354] [G_D loss: 1.015979] [G_L1 loss: 0.010034] [Exec. time: 0:12:19.108426]
+[Epoch 10/10] [Batch 1/1] [D loss: 1.107816] [D real loss: 0.972222] [D fake loss: 1.243409] [G loss: 2.973367] [G_D loss: 1.922361] [G_L1 loss: 0.010510] [Exec. time: 0:13:35.738885]
+Training finished.
+
+Test the model on unseen noises and voices.
+
+
+Traceback (most recent call last):
+  File "main.py", line 392, in <module>
+    main()
+  File "main.py", line 260, in main
+    noise_list = glob.glob(options['noise_folder_test'] + "/*.wav")
+KeyError: 'noise_folder_test'
