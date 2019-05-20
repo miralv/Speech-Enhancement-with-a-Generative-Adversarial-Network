@@ -56,7 +56,7 @@ def main():
 
     # Parameters specified for the construction of the generator and discriminator
     options = {}
-    options['Idun'] = False # Set to true when running on Idun, s.t. the audio path and noise path get correct
+    options['Idun'] = True # Set to true when running on Idun, s.t. the audio path and noise path get correct
     # options['save_model'] = False
     # options['load_model'] = True
     options['window_length'] = 16384
@@ -80,10 +80,15 @@ def main():
     # Training path
     if options['Idun']:
         options['audio_path'] = "/home/miralv/Master/Audio/sennheiser_1/part_1/Train"
-        options['noise_path'] = "/home/miralv/Master/Audio/Nonspeech/Train"
+        options['noise_path'] = "/home/miralv/Master/Audio/Nonspeech_v2/Train"
+        options['speech_list_sample_test'] = ["/home/miralv/Master/Audio/sennheiser_1/part_1/Test/Selected/p1_g12_m1_3_t-c1151.wav", "/home/miralv/Master/Audio/sennheiser_1/part_1/Test/Selected/p1_g12_f2_4_x-c2161.wav"]
+        options['noise_list_sample_test'] = ["/home/miralv/Master/Audio/Nonspeech_v2/Test/n77.wav", "/home/miralv/Master/Audio/Nonspeech_v2/Test/PCAFETER_16k_ch01.wav"]
+
     else:
         options['audio_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Train"
         options['noise_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Train" # /Train or /Validate or /Test
+        options['speech_list_sample_test'] = ["/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/Selected/p1_g12_m1_3_t-c1151.wav", "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/Selected/p1_g12_f2_4_x-c2161.wav"]
+        options['noise_list_sample_test'] = ["/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/n77.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/PCAFETER_16k_ch01.wav"]
 
 
     options['batch_size'] = 200             # 200 # Ser at SEGAN har brukt en effective batch size of 400. Will try that.
@@ -93,8 +98,6 @@ def main():
     options['snr_dbs_test'] = [0,5,10,15]
     options['sample_rate'] = 16000
     options['test_frequency'] = 5           # Every nth epoch, run a sample enhancement
-    options['speech_list_sample_test'] = ["/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/Selected/p1_g12_m1_3_t-c1151.wav", "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/Selected/p1_g12_f2_4_x-c2161.wav"]
-    options['noise_list_sample_test'] = ["/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/n77.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/PCAFETER_16k_ch01.wav"]
     print("Options are set.\n\n")
 
 
@@ -166,10 +169,10 @@ def main():
 
         # tensorboard_callback = keras.callbacks.TensorBoard(log_dir=logdir)
 
-        log_path = "./logs"
-        callback = TensorBoard(log_path)
-        callback.set_model(GAN)
-        train_names = ['G_loss', 'G_adv_loss', 'G_l1Loss']
+        # log_path = "./logs"
+        # callback = TensorBoard(log_path)
+        # callback.set_model(GAN)
+        # train_names = ['G_loss', 'G_adv_loss', 'G_l1Loss']
         
         ## Model training
         n_epochs = options['n_epochs']
@@ -225,8 +228,8 @@ def main():
 
                 # if (batch_i == (steps_per_epoch -1)):
                 f.write("%f %f %f\n" % (G_loss, G_D_loss, G_l1_loss))
-                logs = [G_loss, G_D_loss, G_l1_loss]
-                write_log(callback, train_names, logs, epoch)
+                # logs = [G_loss, G_D_loss, G_l1_loss]
+                # write_log(callback, train_names, logs, epoch)
 
                 if SAMPLE_TESTING and epoch % test_frequency == 0 and batch_i == (steps_per_epoch-1):
                     # do a sample test
@@ -246,8 +249,8 @@ def main():
 
     if TEST:
         if options['Idun']:
-            options['audio_path_test'] = "/home/miralv/Master/Audio/sennheiser_1/part_1/Test/group_12/p1_g12_m1_1_t-a0001.wav"
-            options['noise_path_test'] = "/home/miralv/Master/Audio/Nonspeech/Test"
+            options['audio_path_test'] = "/home/miralv/Master/Audio/sennheiser_1/part_1/Test/Selected"
+            options['noise_path_test'] = "/home/miralv/Master/Audio/Nonspeech_v2/Test"
         else:
             # options['audio_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/group_12/p1_g12_m1_1_t-a0001.wav"
             options['audio_folder_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/Selected"
@@ -357,7 +360,7 @@ def run_sample_test(options, speech_list, noise_list, G, epoch):
 
                 # Postprocess = upscale from [-1,1] to int16
                 clean_res,_ = postprocess(clean[i,:,:], coeff = options['pre_emph'])
-                mixed_res,_ = postprocess(mixed[i,:,:], coeff = options['pre_emph'])
+                # mixed_res,_ = postprocess(mixed[i,:,:], coeff = options['pre_emph'])
                 G_enhanced,_ = postprocess(G_out,coeff = options['pre_emph'])
 
                 ## Save for listening
@@ -369,12 +372,12 @@ def run_sample_test(options, speech_list, noise_list, G, epoch):
     
                 if noise_path[-7]=='n':
                     path_enhanced = "./results_test_sample/epoch_%d_enhanced_%s_%s_snr_%d.wav" % (epoch, speech_path[-16:-4],noise_path[-7:-4], snr_db)# sentence id, noise id, snr_db
-                    path_noisy = "./results_test_sample/epoch_%d_noisy_%s_%s_snr_%d.wav" % (epoch, speech_path[-16:-4],noise_path[-7:-4], snr_db)
+                    #path_noisy = "./results_test_sample/epoch_%d_noisy_%s_%s_snr_%d.wav" % (epoch, speech_path[-16:-4],noise_path[-7:-4], snr_db)
                     path_clean = "./results_test_sample/epoch_%d_clean_%s_%s_snr_%d.wav" % (epoch, speech_path[-16:-4],noise_path[-7:-4], snr_db)
 
                 else:
                     path_enhanced = "./results_test_sample/epoch_%d_enhanced_%s_%s_snr_%d.wav" % (epoch, speech_path[-16:-4], noise_path[-16:-4], snr_db)
-                    path_noisy = "./results_test_sample/epoch_%d_noisy_%s_%s_snr_%d.wav" % (epoch, speech_path[-16:-4], noise_path[-16:-4], snr_db)
+                    #path_noisy = "./results_test_sample/epoch_%d_noisy_%s_%s_snr_%d.wav" % (epoch, speech_path[-16:-4], noise_path[-16:-4], snr_db)
                     path_clean = "./results_test_sample/epoch_%d_clean_%s_%s_snr_%d.wav" % (epoch, speech_path[-16:-4], noise_path[-16:-4], snr_db)
 
                 # Because pesq is testing corresponding clean, noisy and enhanced, must clean be stored similarly
