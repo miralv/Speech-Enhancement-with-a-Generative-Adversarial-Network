@@ -95,86 +95,6 @@ def find_statistics(file_name_read, snrs, plots_wanted):
         plt.legend((p1[0], p2[0]), ('Noisy', 'Enhanced'))
         plt.show()
 
-
-# running code
-file_read = "results/_pesq_results.txt"
-file_save = "pesq_results_no_z_table.csv"
-
-# read results of the files with no z
-
-read_pesq_results(file_read, file_save)
-snrs = [0,5,10,15]
-find_statistics(file_save,snrs,True)
-
-# Want to compare no_z with with_z
-file_plot_with_z = "pesq_results_table.csv"
-find_statistics(file_plot_with_z, snrs, True)
-
-
-
-""" Organize results from matlab script0 
-"""
-stoi_folder_no_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results.csv"
-pesq_matlab_folder_no_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results.csv"
-find_statistics(pesq_matlab_folder_no_z, snrs, True)
-
-
-# NEW RUN; WITH Z
-stoi_folder_with_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_with_z_19_may.csv"
-pesq_matlab_folder_with_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_with_z_19_may.csv"
-find_statistics(pesq_matlab_folder_with_z, snrs, True)
-find_statistics(stoi_folder_with_z, snrs, True)
-
-
-
-""" It would be interesting to gather the results according to noise type too.
-
-
-Kan ha en egen tabell for alle demand-lydene.
-Kan også skille en til en mellom feks car, station, and restaurant/cafeteria, park og hallway.
-Guoning Hu:
-vind, 
-maskinlyd
-vann
-n16 og n17 representerer crowd noise. kan utelates, da det blir testet på filene fra demand.
-
-Tabell:
-                        SNRS
-        PESQ (før vs etter)
-
-vind                                    gjsnitt (eller gj.snittlig forbedring)
-bil
-crowd noise
-station
-park
-gjsnitt med alle
-kan ha en tilsvarende tabell med stoi
-
-
-"""
-
-
-""" Organize results from matlab script0 
-"""
-snrs = [0,5,10,15]
-stoi_folder_no_z_longrun = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_no_z_16_may.csv"
-pesq_matlab_folder_no_z_longrun = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_no_z_16_may.csv"
-find_statistics(pesq_matlab_folder_no_z_longrun, snrs, True)
-
-
-# AGAIN; NEW RUN WITH Z
-snrs = [0,5,10,15]
-stoi_folder_with_z_longrun = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_with_z_19_may.csv"
-pesq_matlab_folder_with_z_longrun = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_with_z_19_may.csv"
-find_statistics(pesq_matlab_folder_no_z_longrun, snrs, True)
-
-
-
-
-# sorter basert på 5. i split ('_')
-# 1) saml lydnavnene i en vektor. evt dictionary?
-# 2) kan lage en funksjon som henter ut data for ønsket støy og ønsket snr.
-
 def findSpecificStats(file_name_read, snrs, num_each = 10,delim = ' '):
     """ Returns a dictionary on format
     noise:
@@ -239,58 +159,117 @@ def findSpecificStats(file_name_read, snrs, num_each = 10,delim = ' '):
 
     return noise_stats, averages/(num_each*len(noise_names_no_duplicates))
 
-noise_stats,averages_pesq = findSpecificStats(pesq_matlab_folder_no_z_longrun,snrs)
-stoi_stats,averages_stoi = findSpecificStats(stoi_folder_no_z_longrun,snrs)
+
+
+# running code
+file_read = "results/_pesq_results.txt"
+file_save = "pesq_results_no_z_table.csv"
+
+# read results of the files with no z
+
+read_pesq_results(file_read, file_save)
+snrs = [0,5,10,15]
+find_statistics(file_save,snrs,True)
+
+# Want to compare no_z with with_z
+file_plot_with_z = "pesq_results_table.csv"
+find_statistics(file_plot_with_z, snrs, True)
+
+
+""" Organize results from matlab scripts 
+"""
+stoi_folder_no_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results.csv"
+pesq_matlab_folder_no_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results.csv"
+find_statistics(pesq_matlab_folder_no_z, snrs, True)
 
 
 
-# AGAIN; NEW RUN
-noise_stats,averages_pesq = findSpecificStats(pesq_matlab_folder_with_z_longrun,snrs)
-stoi_stats,averages_stoi = findSpecificStats(stoi_folder_with_z_longrun,snrs)
 
 
-
-# s = "f2_4_x-c0987_ARK_16k_ch01_snr_0"
-# s.split('_')[3]
-
-averages_pesq
-# can make a for loop that gather statistics for each wanted noise
-noise_stats
-# want a dictionary maybe with noise, and pesq per snr
+""" It would be interesting to gather the results according to noise type too.
 
 
-# vil sammenlikne med kortere kjøring:
-file_comparison = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results.csv"
-noise_stats_old_pesq, avg = findSpecificStats(file_comparison,snrs, delim=',')
-avg
+Kan ha en egen tabell for alle demand-lydene.
+Kan også skille en til en mellom feks car, station, and restaurant/cafeteria, park og hallway.
+Guoning Hu:
+vind, 
+maskinlyd
+vann
+n16 og n17 representerer crowd noise. kan utelates, da det blir testet på filene fra demand.
+
+Tabell:
+                        SNRS
+        PESQ (før vs etter)
+
+vind                                    gjsnitt (eller gj.snittlig forbedring)
+bil
+crowd noise
+station
+park
+gjsnitt med alle
+kan ha en tilsvarende tabell med stoi
 
 
+"""
+
+
+""" Organize results from matlab script0 
+"""
+snrs = [0,5,10,15]
+stoi_folder_no_z_longrun = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_no_z_16_may.csv"
+pesq_matlab_folder_no_z_longrun = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_no_z_16_may.csv"
+find_statistics(pesq_matlab_folder_no_z_longrun, snrs, True)
+
+find_sample_stats(file_name_read,epochs,"PESQ", snrs)
 
 
 """ Stats from samples"""
+epochs = np.arange(5.,41.,5.)
+file_name_read = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_samples_with_z_21_may.csv"
+def find_sample_stats(file_name_read,epochs, type_test,snrs):
+    mat = np.loadtxt(file_name_read, delimiter=' ', skiprows=1, usecols=[0,1,3,4])
+    print("Average %s score\n" % (type_test))
+    for snr in snrs: print(snr, end='')
+    print(" ")
+    epoch_scores = np.zeros((len(epochs),len(snrs)))
+    for i,epoch in enumerate(epochs):
+        print("Epcoch:%i" % (epoch), end='')
+        for j,snr in enumerate(snrs):
+            ind_ep = (mat[:,1] == epoch) * (mat[:,2] == snr)
+            epoch_scores[i,j] = np.mean(mat[ind_ep,3])
+            print(" %f" % ( epoch_scores[i,j]), end='')
+        print(" ")
+    plt.plot(epochs,epoch_scores)
+    plt.legend(snrs)
+    plt.xlabel("Epoch")
+    plt.ylabel(type_test)
+    plt.show()
 
 
-file_name_read = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_samples_with_z_19_may.csv"
-mat = np.loadtxt(file_name_read, delimiter=' ', skiprows=1, usecols=[0,1,3,4])
-epochs = np.arange(5.,81.,5.)
-print("Average pesq score\n")
-epoch_scores = np.zeros(len(epochs))
-for i,epoch in enumerate(epochs):
-    ind_ep = mat[:,1] == epoch
-    epoch_scores[i] = np.mean(mat[ind_ep,3])
-    print("Epcoch:%i %f" % (epoch, epoch_scores[i]))
 
-epoch_scores
+""" Sammenlikn sample results and ordinary results for a run with and withoug adam"""
 
-file_name_read = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_samples_with_z_19_may.csv"
-mat = np.loadtxt(file_name_read, delimiter=' ', skiprows=1, usecols=[0,1,3,4])
-epochs = np.arange(5.,81.,5.)
-print("Average stoi score\n")
-epoch_scores = np.zeros(len(epochs))
-for i,epoch in enumerate(epochs):
-    ind_ep = mat[:,1] == epoch
-    epoch_scores[i] = np.mean(mat[ind_ep,3])
-    print("Epcoch:%i %f" % (epoch, epoch_scores[i]))
 
-epoch_scores
 
+adam_pesq = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_with_z_adam.csv"
+adam_stoi = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_with_z_adam.csv"
+adam_sample_pesq = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_samples_with_z_adam.csv"
+adam_sample_stoi = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_samples_with_z_adam.csv"
+
+
+find_sample_stats(adam_sample_pesq, epochs, "PESQ", snrs)
+find_sample_stats(adam_sample_stoi, epochs, "STOI", snrs)
+find_statistics(adam_pesq, snrs, True)
+find_statistics(adam_stoi, snrs, True)
+findSpecificStats(adam_pesq, snrs)
+findSpecificStats(adam_stoi, snrs)
+
+
+# old run, same config, but ooptimizer rmsprop
+stoi_folder_with_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_with_z_22_may.csv"
+pesq_matlab_folder_with_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_with_z_22_may.csv"
+find_statistics(pesq_matlab_folder_with_z, snrs, True)
+find_statistics(stoi_folder_with_z, snrs, True)
+find_sample_stats(stoi_folder_with_z,epochs,"STOI",snrs)
+find_sample_stats(pesq_matlab_folder_with_z,epochs,"PESQ",snrs)
+noise_stats,averages_pesq = findSpecificStats(pesq_matlab_folder_with_z,snrs)

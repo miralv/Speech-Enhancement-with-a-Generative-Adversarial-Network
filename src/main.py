@@ -77,23 +77,23 @@ def main():
     options['pre_emph'] = 0.95
     options['z_in_use'] = True # Use latent noise z in generator?
 
-    # Training path
+    # Training paths specified for local machine and the super computer Idun
     if options['Idun']:
         options['audio_path'] = "/home/miralv/Master/Audio/sennheiser_1/part_1/Train"
         options['noise_path'] = "/home/miralv/Master/Audio/Nonspeech_v2/Train"
         options['speech_list_sample_test'] = ["/home/miralv/Master/Audio/sennheiser_1/part_1/Test/Selected/p1_g12_m1_3_t-c1151.wav", "/home/miralv/Master/Audio/sennheiser_1/part_1/Test/Selected/p1_g12_f2_4_x-c2161.wav"]
-        options['noise_list_sample_test'] = ["/home/miralv/Master/Audio/Nonspeech_v2/Test/n77.wav", "/home/miralv/Master/Audio/Nonspeech_v2/Test/PCAFETER_16k_ch01.wav"]
+        options['noise_list_sample_test'] = ["/home/miralv/Master/Audio/Nonspeech_v2/Test/n77.wav", "/home/miralv/Master/Audio/Nonspeech_v2/Test/PCAFETER_16k_ch01.wav", "/home/miralv/Master/Audio/Nonspeech_v2/Test/PSTATION_16k_ch01.wav" , "/home/miralv/Master/Audio/Nonspeech_v2/Test/STRAFFIC_16k_ch01.wav" , "/home/miralv/Master/Audio/Nonspeech_v2/Test/DKITCHEN_16k_ch01.wav"]
 
     else:
         options['audio_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Train"
-        options['noise_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Train" # /Train or /Validate or /Test
+        options['noise_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Train" 
         options['speech_list_sample_test'] = ["/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/Selected/p1_g12_m1_3_t-c1151.wav", "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/Selected/p1_g12_f2_4_x-c2161.wav"]
-        options['noise_list_sample_test'] = ["/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/n77.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/PCAFETER_16k_ch01.wav"]
+        options['noise_list_sample_test'] = ["/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/n77.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/PCAFETER_16k_ch01.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/PSTATION_16k_ch01.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/STRAFFIC_16k_ch01.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/DKITCHEN_16k_ch01.wav"]
 
 
     options['batch_size'] = 200             # 200 # Ser at SEGAN har brukt en effective batch size of 400. Will try that.
     options['steps_per_epoch'] = 10         # 10 # SEGAN itererte gjennom hele datasettet i hver epoch
-    options['n_epochs'] = 40                # 20 Ser at SEGAN har brukt 86
+    options['n_epochs'] = 80                # 20 Ser at SEGAN har brukt 86
     options['snr_dbs_train'] = [0,10,15]    # It seems that the algorithm is performing best on low snrs
     options['snr_dbs_test'] = [0,5,10,15]
     options['sample_rate'] = 16000
