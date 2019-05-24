@@ -110,8 +110,8 @@ plt.show()
 
 
 
-def loss_d_lsgan(items, a, b):
-    return list(map(lambda x: 0.5*np.power(x-b,2) + 0.5*np.power(x-a,2) ,items))
+def loss_d_lsgan(items, a, b, isreal_indicator=1.0):
+    return list(map(lambda x: isreal_indicator*0.5*np.power(x-b,2) + (1.0-isreal_indicator)*0.5*np.power(x-a,2) ,items))
 
 def loss_g_lsgan(items, c):
     return list(map(lambda x: 0.5*np.power(x-c,2),items))
@@ -121,27 +121,54 @@ def loss_g_gan(items):
     return np.log(1-items)
 
 
-def loss_d_gan(items):
-    return np.log(1-items) + np.log(items)
+def loss_d_gan(items, isreal_indicator=1.0):
+    return isreal_indicator*np.log(1-items) + (1.0 - isreal_indicator )*np.log(items)
 
 
-
+colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
 
 c =1
 b = 1
 a = 0
 """ Plot the discriminators' loss functions"""
-x0 = -15
-x1 = 15
+x0 = -3
+x1 = 4
 x = np.arange(x0,x1 + 0.01,0.01)    
-d_lsgan = loss_d_lsgan(x,a,b) 
+d_lsgan_true = loss_d_lsgan(x,a,b,1.0)
+d_lsgan_false = loss_d_lsgan(x,a,b,0.0) 
 #d_gan = loss_d_gan(x)
 fig,ax = plt.subplots(figsize = (5,5))
+y_c = np.ones(len(x))*c
 #im = ax.plot(x,d_gan,label=r'$D_{GAN}$')
-im = ax.plot(x,d_lsgan,label=r'$D_{LSGAN}$')
-ax.set(xlabel=r"$\hat{x}$")
-#ax.set_ylim([-2,1])
-#ax.legend()#loc='upper right')
+im = ax.plot(x,d_lsgan_true,label=r'$V_D(x), x \sim p_{data}$')
+im2 = ax.plot(x,d_lsgan_false,label=r'$V_D(x), x \sim  p_g$')
+
+plt.vlines(x=1, ymin=-4, ymax=30, linestyles='dashed', label=r'b=1',colors='grey')
+plt.vlines(x=0, ymin=-4, ymax=30, linestyles='dashed', label=r'a=0',colors='grey')
+#im2 = ax.plot(x=x,y=y_c,label=r'c=b=1')
+ax.set(xlabel=r"$D(x)$")
+ax.set_ylim([0,np.max(d_lsgan_true)])
+ax.set_xlim([-3,4])
+ax.legend()#loc='upper right')
 #ax.xaxis.set_ticks(np.arange(x0,x1+1,deltax=0.2))
-plt.savefig('loss_d.pdf')
+plt.savefig('loss_d_LS.pdf')
 plt.show()
+
+
+
+x0 = 0
+x1 = 1
+x = np.arange(x0,x1,0.001)    
+y1 = loss_d_gan(x,1.0)
+y2 = loss_d_gan(x,0.0)
+fig,ax = plt.subplots(figsize = (5,5))
+im = ax.plot(x,y1,label=r'$\log(D(x))$')
+im = ax.plot(x,y2,label=r'$\log(1-D(x))$')
+ax.set(xlabel=r"$D(x)$")
+ax.set_ylim([-7,1])
+ax.legend(loc='upper right')
+ax.xaxis.set_ticks(np.arange(x0,x1+1,deltax=0.2))
+plt.savefig('logx.pdf')
+plt.show()
+
+

@@ -226,7 +226,7 @@ find_sample_stats(file_name_read,epochs,"PESQ", snrs)
 """ Stats from samples"""
 epochs = np.arange(5.,41.,5.)
 file_name_read = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_samples_with_z_21_may.csv"
-def find_sample_stats(file_name_read,epochs, type_test,snrs):
+def find_sample_stats(file_name_read,epochs, type_test,snrs, save=False, savename="fig"):
     mat = np.loadtxt(file_name_read, delimiter=' ', skiprows=1, usecols=[0,1,3,4])
     print("Average %s score\n" % (type_test))
     for snr in snrs: print(snr, end='')
@@ -239,10 +239,18 @@ def find_sample_stats(file_name_read,epochs, type_test,snrs):
             epoch_scores[i,j] = np.mean(mat[ind_ep,3])
             print(" %f" % ( epoch_scores[i,j]), end='')
         print(" ")
-    plt.plot(epochs,epoch_scores)
-    plt.legend(snrs)
-    plt.xlabel("Epoch")
-    plt.ylabel(type_test)
+    legend_str = list(map(lambda x: str(x) + " dB", snrs))
+    fig,ax = plt.subplots(figsize = (8,6))
+    im = ax.plot(epochs,epoch_scores)
+    ax.legend(legend_str,title="SNR", loc='upper right')
+    ax.set(xlabel="Epoch")
+    ax.set(ylabel=type_test)
+    ax.xaxis.set_ticks(epochs)
+    if type_test == 'STOI':
+        ax.set_ylim([np.min(epoch_scores), 1])
+
+    if save:
+        plt.savefig(savename)
     plt.show()
 
 
@@ -261,8 +269,11 @@ find_sample_stats(adam_sample_pesq, epochs, "PESQ", snrs)
 find_sample_stats(adam_sample_stoi, epochs, "STOI", snrs)
 find_statistics(adam_pesq, snrs, True)
 find_statistics(adam_stoi, snrs, True)
-findSpecificStats(adam_pesq, snrs)
-findSpecificStats(adam_stoi, snrs)
+noise_stats_adam, averages_adam = findSpecificStats(adam_pesq, snrs)
+noise_stats_adam_stoi, averages_adam_stoi = findSpecificStats(adam_stoi, snrs)
+
+averages_adam
+averages_adam_stoi
 
 
 # old run, same config, but ooptimizer rmsprop
@@ -273,3 +284,25 @@ find_statistics(stoi_folder_with_z, snrs, True)
 find_sample_stats(stoi_folder_with_z,epochs,"STOI",snrs)
 find_sample_stats(pesq_matlab_folder_with_z,epochs,"PESQ",snrs)
 noise_stats,averages_pesq = findSpecificStats(pesq_matlab_folder_with_z,snrs)
+noise_stats_stoi,averages_stoi = findSpecificStats(stoi_folder_with_z,snrs)
+
+
+averages_pesq
+averages_stoi
+
+
+
+"""Final training progress, with z, ~60 ep"""
+epochs = np.arange(5.,61.,5.)
+stoi_folder_with_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_final_with_z_60_ep.csv"
+pesq_matlab_folder_with_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_final_with_z_60_ep.csv"
+find_sample_stats(stoi_folder_with_z,epochs,"STOI",snrs, True, "stoi_results_final_with_z_sample_60_ep.pdf")
+find_sample_stats(pesq_matlab_folder_with_z,epochs,"PESQ",snrs, True, "pesq_results_final_with_z_sample_60_ep.pdf")
+
+
+# vil vite baseline score, i.e. hva som er tilhørende noisy score.
+
+
+#averages_pesq
+#averages_stoi
+
