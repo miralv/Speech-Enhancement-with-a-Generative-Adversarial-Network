@@ -21,8 +21,8 @@ def load_batch(options):
     """
 
 
-    audio_path = options['audio_path']
-    noise_path = options['noise_path']
+    audio_path = options['speech_path'] + 'Train/'
+    noise_path = options['noise_path'] +  'Train/'
     batch_size = options['batch_size']
     n_batches = options['steps_per_epoch']
     # snr_db = options['snr_db']

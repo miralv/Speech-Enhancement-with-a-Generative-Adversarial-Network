@@ -121,7 +121,7 @@ def loss_g_gan(items):
     return np.log(1-items)
 
 
-def loss_d_gan(items, isreal_indicator=1.0):
+def loss_d_gan_2(items, isreal_indicator=1.0):
     return isreal_indicator*np.log(1-items) + (1.0 - isreal_indicator )*np.log(items)
 
 
@@ -140,8 +140,8 @@ d_lsgan_false = loss_d_lsgan(x,a,b,0.0)
 fig,ax = plt.subplots(figsize = (5,5))
 y_c = np.ones(len(x))*c
 #im = ax.plot(x,d_gan,label=r'$D_{GAN}$')
-im = ax.plot(x,d_lsgan_true,label=r'$V_D(x), x \sim p_{data}$')
-im2 = ax.plot(x,d_lsgan_false,label=r'$V_D(x), x \sim  p_g$')
+im = ax.plot(x,d_lsgan_true,label=r'$V_{LSGAN}(D), x \sim p_{data}$')
+im2 = ax.plot(x,d_lsgan_false,label=r'$V_{LSGAN}(D), x \sim  p_g$')
 
 plt.vlines(x=1, ymin=-4, ymax=30, linestyles='dashed', label=r'b=1',colors='grey')
 plt.vlines(x=0, ymin=-4, ymax=30, linestyles='dashed', label=r'a=0',colors='grey')
@@ -154,21 +154,18 @@ ax.legend()#loc='upper right')
 plt.savefig('loss_d_LS.pdf')
 plt.show()
 
-
-
 x0 = 0
 x1 = 1
 x = np.arange(x0,x1,0.001)    
-y1 = loss_d_gan(x,1.0)
-y2 = loss_d_gan(x,0.0)
+y_1 = loss_d_gan_2(x,1.0)
+y_2 = loss_d_gan_2(x,0.0)
 fig,ax = plt.subplots(figsize = (5,5))
-im = ax.plot(x,y1,label=r'$\log(D(x))$')
-im = ax.plot(x,y2,label=r'$\log(1-D(x))$')
+im = ax.plot(x,y_1,label=r'$V_{GAN}(D), x \sim p_{data}$')
+im = ax.plot(x,y_2,label=r'$V_{GAN}(D), x \sim p_{g}$')
+plt.vlines(x=0.5, ymin=-8, ymax=30, linestyles='dashed', label=r'p=0.5',colors='grey')
 ax.set(xlabel=r"$D(x)$")
-ax.set_ylim([-7,1])
+ax.set_ylim([-7,2])
 ax.legend(loc='upper right')
 ax.xaxis.set_ticks(np.arange(x0,x1+1,deltax=0.2))
-plt.savefig('logx.pdf')
+plt.savefig('loss_d_gan.pdf')
 plt.show()
-
-

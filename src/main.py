@@ -26,28 +26,23 @@ from data_loader import load_batch, prepare_test
 from tools import *
 
 
-def test_audio(audio_path,path_save):
-    """ Scale up enhanced audio
-    """
-    f_audio, audio_orig = scipy.io.wavfile.read(audio_path)
-    # Looks like the mixed file usually have a maximum around 0.7 when scaled
-    max_wanted = (2**15 -1)*0.7
-    max_now = np.max(audio_orig)
-    scale_factor =  max_wanted/max_now
-    audio_scaled = audio_orig*scale_factor
+# def test_audio(audio_path,path_save):
+#     """ Scale up enhanced audio
+#     """
+#     f_audio, audio_orig = scipy.io.wavfile.read(audio_path)
+#     # Looks like the mixed file usually have a maximum around 0.7 when scaled
+#     max_wanted = (2**15 -1)*0.7
+#     max_now = np.max(audio_orig)
+#     scale_factor =  max_wanted/max_now
+#     audio_scaled = audio_orig*scale_factor
 
-    saveAudio(audio_scaled, path_save, sr=16000)
+#     saveAudio(audio_scaled, path_save, sr=16000)
 
 
 
 def main():
-    """
-     Specify the specific structure of the discriminator and the generator,
-     based on the architecture used in SEGAN.
-    """
 
-
-    # Need some flags too. (like, train, test, save load)
+    # Flags, specify the wanted actions
     TEST = True
     TRAIN = True
     SAVE = True
@@ -56,7 +51,7 @@ def main():
 
     # Parameters specified for the construction of the generator and discriminator
     options = {}
-    options['Idun'] = True # Set to true when running on Idun, s.t. the audio path and noise path get correct
+    options['Idun'] = False # Set to true when running on Idun, s.t. the audio path and noise path get correct
     # options['save_model'] = False
     # options['load_model'] = True
     options['window_length'] = 16384
@@ -77,27 +72,26 @@ def main():
     options['pre_emph'] = 0.95
     options['z_in_use'] = True # Use latent noise z in generator?
 
-    # Training paths specified for local machine and the super computer Idun
+    # File paths specified for local machine and the super computer Idun
     if options['Idun']:
-        options['audio_path'] = "/home/miralv/Master/Audio/sennheiser_1/part_1/Train"
-        options['noise_path'] = "/home/miralv/Master/Audio/Nonspeech_v2/Train"
-        options['speech_list_sample_test'] = ["/home/miralv/Master/Audio/sennheiser_1/part_1/Test/Selected/p1_g12_m1_3_t-c1151.wav", "/home/miralv/Master/Audio/sennheiser_1/part_1/Test/Selected/p1_g12_f2_4_x-c2161.wav"]
-        options['noise_list_sample_test'] = ["/home/miralv/Master/Audio/Nonspeech_v2/Test/n77.wav", "/home/miralv/Master/Audio/Nonspeech_v2/Test/PCAFETER_16k_ch01.wav", "/home/miralv/Master/Audio/Nonspeech_v2/Test/PSTATION_16k_ch01.wav" , "/home/miralv/Master/Audio/Nonspeech_v2/Test/STRAFFIC_16k_ch01.wav" , "/home/miralv/Master/Audio/Nonspeech_v2/Test/DKITCHEN_16k_ch01.wav"]
-
+        options['speech_path'] = "/home/miralv/Master/Audio/sennheiser_1/part_1/" # Train make it general, add validate, train and test manually
+        options['noise_path'] = "/home/miralv/Master/Audio/Nonspeech_v2/" # Train
+        # options['speech_list_sample_test'] = ["/home/miralv/Master/Audio/sennheiser_1/part_1/Test/Selected/p1_g12_m1_3_t-c1151.wav", "/home/miralv/Master/Audio/sennheiser_1/part_1/Test/Selected/p1_g12_f2_4_x-c2161.wav"]
+        # options['noise_list_sample_test'] = ["/home/miralv/Master/Audio/Nonspeech_v2/Test/n77.wav", "/home/miralv/Master/Audio/Nonspeech_v2/Test/PCAFETER_16k_ch01.wav", "/home/miralv/Master/Audio/Nonspeech_v2/Test/PSTATION_16k_ch01.wav" , "/home/miralv/Master/Audio/Nonspeech_v2/Test/STRAFFIC_16k_ch01.wav" , "/home/miralv/Master/Audio/Nonspeech_v2/Test/DKITCHEN_16k_ch01.wav"]
     else:
-        options['audio_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Train"
-        options['noise_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Train" 
-        options['speech_list_sample_test'] = ["/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/Selected/p1_g12_m1_3_t-c1151.wav", "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/Selected/p1_g12_f2_4_x-c2161.wav"]
-        options['noise_list_sample_test'] = ["/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/n77.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/PCAFETER_16k_ch01.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/PSTATION_16k_ch01.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/STRAFFIC_16k_ch01.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/DKITCHEN_16k_ch01.wav"]
+        options['speech_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/"
+        options['noise_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/" 
+        # options['speech_list_sample_test'] = ["/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/Selected/p1_g12_m1_3_t-c1151.wav", "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/Selected/p1_g12_f2_4_x-c2161.wav"]
+        # options['noise_list_sample_test'] = ["/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/n77.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/PCAFETER_16k_ch01.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/PSTATION_16k_ch01.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/STRAFFIC_16k_ch01.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/DKITCHEN_16k_ch01.wav"]
 
 
-    options['batch_size'] = 200             # 200 # Ser at SEGAN har brukt en effective batch size of 400. Will try that.
-    options['steps_per_epoch'] = 10         # 10 # SEGAN itererte gjennom hele datasettet i hver epoch
-    options['n_epochs'] = 80                # 20 Ser at SEGAN har brukt 86
+    options['batch_size'] = 20#0             # 200 # Ser at SEGAN har brukt en effective batch size of 400. Will try that.
+    options['steps_per_epoch'] = 1#40         # 10 # SEGAN itererte gjennom hele datasettet i hver epoch
+    options['n_epochs'] = 1#10                # 20 Ser at SEGAN har brukt 86
     options['snr_dbs_train'] = [0,10,15]    # It seems that the algorithm is performing best on low snrs
     options['snr_dbs_test'] = [0,5,10,15]
     options['sample_rate'] = 16000
-    options['test_frequency'] = 5           # Every nth epoch, run a sample enhancement
+    options['test_frequency'] = 1           # Every nth epoch, run a sample enhancement
     print("Options are set.\n\n")
 
 
@@ -112,10 +106,8 @@ def main():
     if TRAIN:
         if SAMPLE_TESTING:
             test_frequency = options['test_frequency']
-            speech_list_sample_test = options['speech_list_sample_test'] 
-            noise_list_sample_test = options['noise_list_sample_test']
-
-
+            speech_list_sample_test =  glob.glob(options['speech_path'] + "Validate/Selected/*")
+            noise_list_sample_test = glob.glob(options['noise_path'] + "Validate/*")
 
 
         ## Set up the individual models
@@ -218,11 +210,13 @@ def main():
                 # Keras expect a list of arrays > must reformat clean_audio
                 if options['z_in_use']:
                     [G_loss, G_D_loss, G_l1_loss] = GAN.train_on_batch(x=[clean_audio, noisy_audio, noise_input], y={'model_1': clean_audio, 'model_2': valid_G}) 
+
                 else:
                     [G_loss, G_D_loss, G_l1_loss] = GAN.train_on_batch(x=[clean_audio, noisy_audio], y={'model_1': clean_audio, 'model_2': valid_G}) 
 
 
                 # Print progress
+                # TODO: Tenk gjennom hva og hvordan dette gjøres.
                 elapsed_time = datetime.datetime.now() - start_time
                 print("[Epoch %d/%d] [Batch %d/%d] [D loss: %f] [D real loss: %f] [D fake loss: %f] [G loss: %f] [G_D loss: %f] [G_L1 loss: %f] [Exec. time: %s]" % (epoch, n_epochs, batch_i + 1, steps_per_epoch, D_loss, D_loss_real, D_loss_fake, G_loss, G_D_loss, G_l1_loss, elapsed_time))
 
@@ -242,23 +236,20 @@ def main():
         f.close()
         print("Training finished.\n")
 
-    # Want to plot training progress
+
 
     # Test the model 
-    # Update testing. For now, update only for running locally.
-
     if TEST:
         if options['Idun']:
             options['audio_path_test'] = "/home/miralv/Master/Audio/sennheiser_1/part_1/Test/Selected"
             options['noise_path_test'] = "/home/miralv/Master/Audio/Nonspeech_v2/Test"
         else:
-            # options['audio_path_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/group_12/p1_g12_m1_1_t-a0001.wav"
             options['audio_folder_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/Selected"
-            options['noise_folder_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test" # /Train or /Validate or /Test
+            options['noise_folder_test'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test" 
 
         print("Test the model on unseen noises and voices.\n\n")
         noise_list = glob.glob(options['noise_folder_test'] + "/*.wav")
-        speech_list = glob.glob(options['audio_folder_test'] + "/*-c*.wav") # Want only the unique sentences
+        speech_list = glob.glob(options['audio_folder_test'] + "/*.wav") 
 
         if LOAD:
             print("Loading saved model\n")
@@ -298,20 +289,14 @@ def main():
                     clean_res,_ = postprocess(clean[i,:,:], coeff = options['pre_emph'])
                     mixed_res,_ = postprocess(mixed[i,:,:], coeff = options['pre_emph'])
                     G_enhanced,_ = postprocess(G_out,coeff = options['pre_emph'])
-                    # print("Was clean, mixed or enhanced scaled?")
-                    # print("%f %f %f" % (scale_1, scale_2,g_scale))
 
                     ## Save for listening
-                    cwd = os.getcwd()
-                    #print(cwd)
-
                     if not os.path.exists("./results"):
                         os.makedirs("./results")
 
                     # Want to save clean, enhanced and mixed. 
                     sr = options['sample_rate']
-                    # path_noisy = "./results/noisy_%s.wav" % (noise_path[-7:-4])
-                    # path_enhanced = "./results/enhanced_" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S") + "_%s.wav" % (noise_path[-7:-4])
+
                     if noise_path[-7]=='n':
                         path_enhanced = "./results/enhanced_%s_%s_snr_%d.wav" % (speech_path[-16:-4],noise_path[-7:-4], snr_db)# sentence id, noise id, snr_db
                         path_noisy = "./results/noisy_%s_%s_snr_%d.wav" % (speech_path[-16:-4],noise_path[-7:-4], snr_db)
@@ -336,26 +321,42 @@ def main():
         G.save_weights(modeldir + "/Gmodel.h5")
         print ("Model saved to " + modeldir)
 
+# keras.losses.mean_squared_error(y_true, y_pred)
+# keras.losses.mean_absolute_error(y_true, y_pred)
 
-
-# Holder med to speech files
-# og et par typer noise
 
 def run_sample_test(options, speech_list, noise_list, G, epoch):
+    """ Enhance the validation set and compute validation loss
+    """
+    valid_G = np.array([1]*options['batch_size']) # To compute the mse-loss
+
+# losses.mean_squared_error(clean[i],G_out)
+# a = np.reshape(clean[i], clean[i].shape[0]*clean[i].shape[1])
+# b = G_out[:,:,0]
+# mse_error = np.sqrt(np.mean((np.power(a-b,2,dtype='float64'))))
+# mae_errorv1 = np.sum(np.absolute(a-b))
+# mae_errorv2 = np.mean(np.absolute(a-b))
+
+
     SNR_dBs = options['snr_dbs_test']
     for speech_path in speech_list:
         options['audio_path_test'] = speech_path
         for noise_path in noise_list:
             options['noise_path_test'] = noise_path
             clean, mixed, z = prepare_test(options) #(snr_dbs, nwindows, windowlength)
+
             for i,snr_db in enumerate(SNR_dBs):
                 audios_mixed = np.expand_dims(mixed[i], axis=2)
 
-                # Condition on B and generate a translated version
                 if options['z_in_use']:
                     G_out = G.predict([audios_mixed, z[i]]) 
                 else:
                     G_out = G.predict([audios_mixed]) 
+                
+                # save validation losses
+                [G_loss_val, G_D_loss_val, G_l1_loss_val] = G.evaluate(x=[[audios_mixed, z[i]]], y={'model_1': clean, 'model_2': valid_G}) 
+
+                # [G_loss_val, G_D_loss_val, G_l1_loss_val] = G.evaluate(x=[[audios_mixed, z[i]]], y={'model_1': clean[i], 'model_2': valid_G}) 
 
 
                 # Postprocess = upscale from [-1,1] to int16
