@@ -29,7 +29,7 @@ from tools import *
 def main():
 
     # Flags, specify the wanted actions
-    TEST = False
+    TEST = True
     TRAIN = True
     SAVE = False
     LOAD = False
@@ -37,7 +37,7 @@ def main():
 
     # Parameters specified for the construction of the generator and discriminator
     options = {}
-    options['Idun'] = False # Set to true when running on Idun, s.t. the audio path and noise path get correct
+    options['Idun'] = True # Set to true when running on Idun, s.t. the audio path and noise path get correct
     options['window_length'] = 16384
     options['feat_dim'] = 1
     options['z_dim'] = (8, 1024) # Dimensions for the latent noise variable 
@@ -69,9 +69,9 @@ def main():
         # options['noise_list_sample_test'] = ["/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/n77.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/PCAFETER_16k_ch01.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/PSTATION_16k_ch01.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/STRAFFIC_16k_ch01.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/DKITCHEN_16k_ch01.wav"]
 
 
-    options['batch_size'] = 20#0              # 200 # Ser at SEGAN har brukt en effective batch size of 400. Will try that.
-    options['steps_per_epoch'] = 1#40         # 10 # SEGAN itererte gjennom hele datasettet i hver epoch
-    options['n_epochs'] = 2#10                # 20 Ser at SEGAN har brukt 86
+    options['batch_size'] = 200              # 200 # Ser at SEGAN har brukt en effective batch size of 400. Will try that.
+    options['steps_per_epoch'] = 40         # 10 # SEGAN itererte gjennom hele datasettet i hver epoch
+    options['n_epochs'] = 10                # 20 Ser at SEGAN har brukt 86
     options['snr_dbs_train'] = [0,10,15]      # It seems that the algorithm is performing best on low snrs
     options['snr_dbs_test'] = [0,5,10,15]
     options['sample_rate'] = 16000
@@ -143,8 +143,8 @@ def main():
         log_file_path_D = "./logs/D_" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
         f_G = open(log_file_path_G,"w+")
         f_D = open(log_file_path_D,"w+")
-        f_G.write("Training loss\t\t\t| Validation loss\nG_loss   G_D_loss G_l1_loss\t| G_loss   G_D_loss G_l1_loss\n")
-        f_D.write("Training loss\t\t\t| Validation loss\nD_loss   D_r_loss D_f_loss \t| D_loss   D_r_loss D_f_loss\n")
+        f_G.write("Training loss\t\t\t\t | Validation loss\nG_loss   G_D_loss G_l1_loss\t       | G_loss   G_D_loss G_l1_loss\n")
+        f_D.write("Training loss\t\t\t\t | Validation loss\nD_loss   D_r_loss D_f_loss \t       | D_loss   D_r_loss D_f_loss\n")
         # tensorboard_callback = keras.callbacks.TensorBoard(log_dir=logdir)
 
         # log_path = "./logs"
@@ -156,7 +156,6 @@ def main():
         n_epochs = options['n_epochs']
         steps_per_epoch = options['steps_per_epoch']
         batch_size = options['batch_size']        
-
 
         start_time = datetime.datetime.now()
         # The real class labels for the discriminator inputs
