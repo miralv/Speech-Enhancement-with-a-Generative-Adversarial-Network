@@ -26,34 +26,18 @@ from data_loader import load_batch, prepare_test
 from tools import *
 
 
-# def test_audio(audio_path,path_save):
-#     """ Scale up enhanced audio
-#     """
-#     f_audio, audio_orig = scipy.io.wavfile.read(audio_path)
-#     # Looks like the mixed file usually have a maximum around 0.7 when scaled
-#     max_wanted = (2**15 -1)*0.7
-#     max_now = np.max(audio_orig)
-#     scale_factor =  max_wanted/max_now
-#     audio_scaled = audio_orig*scale_factor
-
-#     saveAudio(audio_scaled, path_save, sr=16000)
-
-
-
 def main():
 
     # Flags, specify the wanted actions
-    TEST = True
+    TEST = False
     TRAIN = True
-    SAVE = True
+    SAVE = False
     LOAD = False
     SAMPLE_TESTING = True # Run a sample enhancement at a specified epoch frequency
 
     # Parameters specified for the construction of the generator and discriminator
     options = {}
     options['Idun'] = False # Set to true when running on Idun, s.t. the audio path and noise path get correct
-    # options['save_model'] = False
-    # options['load_model'] = True
     options['window_length'] = 16384
     options['feat_dim'] = 1
     options['z_dim'] = (8, 1024) # Dimensions for the latent noise variable 
@@ -85,13 +69,13 @@ def main():
         # options['noise_list_sample_test'] = ["/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/n77.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/PCAFETER_16k_ch01.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/PSTATION_16k_ch01.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/STRAFFIC_16k_ch01.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/DKITCHEN_16k_ch01.wav"]
 
 
-    options['batch_size'] = 20#0             # 200 # Ser at SEGAN har brukt en effective batch size of 400. Will try that.
+    options['batch_size'] = 20#0              # 200 # Ser at SEGAN har brukt en effective batch size of 400. Will try that.
     options['steps_per_epoch'] = 1#40         # 10 # SEGAN itererte gjennom hele datasettet i hver epoch
-    options['n_epochs'] = 1#10                # 20 Ser at SEGAN har brukt 86
-    options['snr_dbs_train'] = [0,10,15]    # It seems that the algorithm is performing best on low snrs
+    options['n_epochs'] = 2#10                # 20 Ser at SEGAN har brukt 86
+    options['snr_dbs_train'] = [0,10,15]      # It seems that the algorithm is performing best on low snrs
     options['snr_dbs_test'] = [0,5,10,15]
     options['sample_rate'] = 16000
-    options['test_frequency'] = 1           # Every nth epoch, run a sample enhancement
+    options['test_frequency'] = 1             # Every nth epoch, run a sample enhancement
     print("Options are set.\n\n")
 
 
@@ -155,10 +139,12 @@ def main():
             os.makedirs("./logs")
         
         # Write log manually for now
-        log_file_path="./logs/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-        f = open(log_file_path,"w+")
-        f.write("G_loss  G_D_loss  G_l1_loss\n")
-
+        log_file_path_G = "./logs/G_" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+        log_file_path_D = "./logs/D_" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+        f_G = open(log_file_path_G,"w+")
+        f_D = open(log_file_path_D,"w+")
+        f_G.write("Training loss\t\t\t| Validation loss\nG_loss   G_D_loss G_l1_loss\t| G_loss   G_D_loss G_l1_loss\n")
+        f_D.write("Training loss\t\t\t| Validation loss\nD_loss   D_r_loss D_f_loss \t| D_loss   D_r_loss D_f_loss\n")
         # tensorboard_callback = keras.callbacks.TensorBoard(log_dir=logdir)
 
         # log_path = "./logs"
@@ -217,23 +203,30 @@ def main():
 
                 # Print progress
                 # TODO: Tenk gjennom hva og hvordan dette gjøres.
-                elapsed_time = datetime.datetime.now() - start_time
-                print("[Epoch %d/%d] [Batch %d/%d] [D loss: %f] [D real loss: %f] [D fake loss: %f] [G loss: %f] [G_D loss: %f] [G_L1 loss: %f] [Exec. time: %s]" % (epoch, n_epochs, batch_i + 1, steps_per_epoch, D_loss, D_loss_real, D_loss_fake, G_loss, G_D_loss, G_l1_loss, elapsed_time))
+                # elapsed_time = datetime.datetime.now() - start_time
+                # print("[Epoch %d/%d] [Batch %d/%d] [D loss: %f] [D real loss: %f] [D fake loss: %f] [G loss: %f] [G_D loss: %f] [G_L1 loss: %f] [Exec. time: %s]" % (epoch, n_epochs, batch_i + 1, steps_per_epoch, D_loss, D_loss_real, D_loss_fake, G_loss, G_D_loss, G_l1_loss, elapsed_time))
 
                 # if (batch_i == (steps_per_epoch -1)):
-                f.write("%f %f %f\n" % (G_loss, G_D_loss, G_l1_loss))
+                # f.write("%f %f %f\n" % (G_loss, G_D_loss, G_l1_loss))
                 # logs = [G_loss, G_D_loss, G_l1_loss]
                 # write_log(callback, train_names, logs, epoch)
 
                 if SAMPLE_TESTING and epoch % test_frequency == 0 and batch_i == (steps_per_epoch-1):
                     # do a sample test
                     print("Running sample test epoch %d." % (epoch))
-                    run_sample_test(options, speech_list_sample_test, noise_list_sample_test, G, epoch)
+                    [val_loss_D, val_loss_D_real, val_loss_D_fake, val_loss_G, val_loss_G_D, val_loss_G_l1] = run_sample_test(options, speech_list_sample_test, noise_list_sample_test, G, GAN, D, epoch)
                     print("Sample test finished.")
+                    # Write training error and validation error for G to file
+                    f_G.write("%f %f %f  \t| %f %f %f\n"% (G_loss, G_D_loss, G_l1_loss, val_loss_G, val_loss_G_D, val_loss_G_l1))
+                    f_D.write("%f %f %f  \t| %f %f %f\n"% (D_loss, D_loss_real, D_loss_fake, val_loss_D, val_loss_D_real, val_loss_D_fake))
+                    
+                    elapsed_time = datetime.datetime.now() - start_time
+                    # Print training error
+                    print("[Epoch %d/%d] [D loss: %f] [D real loss: %f] [D fake loss: %f] [G loss: %f] [G_D loss: %f] [G_L1 loss: %f] [Exec. time: %s]" % (epoch, n_epochs, D_loss, D_loss_real, D_loss_fake, G_loss, G_D_loss, G_l1_loss, elapsed_time))
 
-                # Run a sample test every nth epoch 
 
-        f.close()
+        f_D.close()
+        f_G.close()
         print("Training finished.\n")
 
 
@@ -321,24 +314,20 @@ def main():
         G.save_weights(modeldir + "/Gmodel.h5")
         print ("Model saved to " + modeldir)
 
-# keras.losses.mean_squared_error(y_true, y_pred)
-# keras.losses.mean_absolute_error(y_true, y_pred)
 
-
-def run_sample_test(options, speech_list, noise_list, G, epoch):
+def run_sample_test(options, speech_list, noise_list, G, GAN, D, epoch):
     """ Enhance the validation set and compute validation loss
     """
-    valid_G = np.array([1]*options['batch_size']) # To compute the mse-loss
-
-# losses.mean_squared_error(clean[i],G_out)
-# a = np.reshape(clean[i], clean[i].shape[0]*clean[i].shape[1])
-# b = G_out[:,:,0]
-# mse_error = np.sqrt(np.mean((np.power(a-b,2,dtype='float64'))))
-# mae_errorv1 = np.sum(np.absolute(a-b))
-# mae_errorv2 = np.mean(np.absolute(a-b))
-
 
     SNR_dBs = options['snr_dbs_test']
+    tot_elements = len(speech_list)*len(noise_list)*len(SNR_dBs)
+    # use these such that the total validation losses can be computed. i.e. if batch one has 4 elements, then is mae 1 = ()/4 => multiply by 4 before adding to the total., such that the mean of all samples can be taken in the end
+    val_loss_G_D_tot = 0.0
+    val_loss_G_l1_tot = 0.0
+    val_loss_D_real_tot = 0.0
+    val_loss_D_fake_tot = 0.0
+
+
     for speech_path in speech_list:
         options['audio_path_test'] = speech_path
         for noise_path in noise_list:
@@ -347,17 +336,29 @@ def run_sample_test(options, speech_list, noise_list, G, epoch):
 
             for i,snr_db in enumerate(SNR_dBs):
                 audios_mixed = np.expand_dims(mixed[i], axis=2)
+                batch_size_local = audios_mixed.shape[0]
+                audios_clean = np.expand_dims(clean[i], axis=2) # the batch size here is the number of windows needed to get the whole sound file
+                valid_G = np.array([1]*audios_clean.shape[0]) # To compute the mse-loss
+                real_D = np.ones((batch_size_local, 1))  # For input pairs (clean, noisy)
+                fake_D = np.zeros((batch_size_local, 1)) # For input pairs (enhanced, noisy)
 
                 if options['z_in_use']:
                     G_out = G.predict([audios_mixed, z[i]]) 
                 else:
                     G_out = G.predict([audios_mixed]) 
-                
-                # save validation losses
-                [G_loss_val, G_D_loss_val, G_l1_loss_val] = G.evaluate(x=[[audios_mixed, z[i]]], y={'model_1': clean, 'model_2': valid_G}) 
 
-                # [G_loss_val, G_D_loss_val, G_l1_loss_val] = G.evaluate(x=[[audios_mixed, z[i]]], y={'model_1': clean[i], 'model_2': valid_G}) 
+                # Save validation losses.
+                val_loss_D_real = D.evaluate(x=[audios_clean, audios_mixed], y=real_D, verbose=0)
+                val_loss_D_fake = D.evaluate(x=[G_out, audios_mixed], y=fake_D, verbose=0)
+                # val_loss_D = np.add(val_loss_D_real, val_loss_D_fake)/2.0
+                val_loss_D_real_tot += val_loss_D_real*batch_size_local
+                val_loss_D_fake_tot += val_loss_D_fake*batch_size_local
 
+
+                [G_loss_val, G_D_loss_val, G_l1_loss_val] = GAN.evaluate(x=[audios_clean, audios_mixed, z[i]], y={'model_1': audios_clean, 'model_2': valid_G}, batch_size=batch_size_local, verbose=0) 
+
+                val_loss_G_D_tot += G_D_loss_val*batch_size_local
+                val_loss_G_l1_tot += G_l1_loss_val*batch_size_local
 
                 # Postprocess = upscale from [-1,1] to int16
                 clean_res,_ = postprocess(clean[i,:,:], coeff = options['pre_emph'])
@@ -385,6 +386,17 @@ def run_sample_test(options, speech_list, noise_list, G, epoch):
                 saveAudio(clean_res, path_clean, sr) 
                 #saveAudio(mixed_res, path_noisy, sr)
                 saveAudio(G_enhanced, path_enhanced, sr) # er jo egt bare interessant å se om det er en forbedring her
+
+
+    # Compute validation losses:
+    val_loss_D_real_tot = val_loss_D_real_tot/tot_elements
+    val_loss_D_fake_tot = val_loss_D_fake_tot/tot_elements
+    val_loss_D_tot = (val_loss_D_real_tot + val_loss_D_real_tot)/2.0
+    val_loss_G_D_tot = val_loss_G_D_tot/tot_elements
+    val_loss_G_l1_tot = val_loss_G_l1_tot/tot_elements
+    val_loss_G_tot = val_loss_G_D_tot + options['g_l1loss']*val_loss_G_l1_tot
+    return val_loss_D_tot, val_loss_D_real, val_loss_D_fake, val_loss_G_tot, val_loss_G_D_tot, val_loss_G_l1_tot
+
 
 
 
