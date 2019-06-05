@@ -275,7 +275,6 @@ noise_stats_adam_stoi, averages_adam_stoi = findSpecificStats(adam_stoi, snrs)
 averages_adam
 averages_adam_stoi
 
-
 # old run, same config, but ooptimizer rmsprop
 stoi_folder_with_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_with_z_22_may.csv"
 pesq_matlab_folder_with_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_with_z_22_may.csv"
@@ -290,7 +289,7 @@ noise_stats_stoi,averages_stoi = findSpecificStats(stoi_folder_with_z,snrs)
 averages_pesq
 averages_stoi
 
-
+"""********************************************************************************************************"""
 
 """Final training progress, with z, ~60 ep"""
 epochs = np.arange(5.,61.,5.)
@@ -306,3 +305,20 @@ find_sample_stats(pesq_matlab_folder_with_z,epochs,"PESQ",snrs, True, "pesq_resu
 #averages_pesq
 #averages_stoi
 
+"""************************************************************************************************************"""
+# Find reference lines to use in the sample plots.
+
+reference_pesq_samples = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_sample_reference.csv"
+reference_stoi_samples = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_sample_reference.csv"
+
+
+
+find_sample_stats(reference_pesq_samples, [1], "PESQ", snrs, False)
+"""
+Epcoch:1 1.643313 1.896562 2.244618 2.645498 
+"""
+
+find_sample_stats(reference_stoi_samples, [1], "STOI", snrs, False)
+"""
+Epcoch:1 0.929811 0.966697 0.985355 0.994112
+"""

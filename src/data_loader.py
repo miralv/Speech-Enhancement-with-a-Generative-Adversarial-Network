@@ -108,7 +108,7 @@ def prepare_test(options):
 
     f_audio, audio_orig = scipy.io.wavfile.read(audio_path)
     audio = preprocess(audio_orig,f_audio)
-    audio = audio[:(len(audio) - len(audio)%window_length)]
+    # audio = audio[:(len(audio) - len(audio)%window_length)]
 
     f_noise, noise_orig = scipy.io.wavfile.read(noise_path)
     noise = preprocess(noise_orig, f_noise)
