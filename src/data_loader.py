@@ -33,9 +33,7 @@ def load_batch(options):
     # Get all paths in the training set
     audio_paths, noise_paths = getPaths(audio_path,noise_path)
 
-    # TODO: Include sliding windows during training.
-
-
+    # TODO: Finn ut om denne ytre forløkken har noen betydning, eller om jeg like gjerne kunne skrevet while True
     for i in range(n_batches):
         # Extract randomly n=batch_size audio paths and noise paths
         audio_batch = np.random.choice(audio_paths, batch_size)
