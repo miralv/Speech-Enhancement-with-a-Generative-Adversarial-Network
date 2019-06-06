@@ -395,7 +395,7 @@ def run_sample_test(options, speech_list, noise_list, G, GAN, D, epoch):
     val_loss_G_D_tot = val_loss_G_D_tot/tot_elements
     val_loss_G_l1_tot = val_loss_G_l1_tot/tot_elements
     val_loss_G_tot = val_loss_G_D_tot + options['g_l1loss']*val_loss_G_l1_tot
-    return val_loss_D_tot, val_loss_D_real, val_loss_D_fake, val_loss_G_tot, val_loss_G_D_tot, val_loss_G_l1_tot
+    return val_loss_D_tot, val_loss_D_real_tot, val_loss_D_fake_tot, val_loss_G_tot, val_loss_G_D_tot, val_loss_G_l1_tot
 
 
 
