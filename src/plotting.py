@@ -21,8 +21,8 @@ plt.rcParams.update({
 
 plt.rcParams['axes.labelsize'] = 12
 plt.rcParams['legend.fontsize'] = 12
-#plt.rcParams['axes.labelsize'] = 14 #16 var for de minste figurene
-plt.rcParams['font.size'] = 12
+plt.rcParams['axes.labelsize'] = 14 #16 var for de minste figurene
+plt.rcParams['font.size'] = 14#12
 # activation functions
 plt.rcParams['axes.xmargin'] = 0
 plt.rcParams['axes.ymargin'] = 0.03 

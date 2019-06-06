@@ -351,8 +351,11 @@ def run_sample_test(options, speech_list, noise_list, G, GAN, D, epoch):
                 val_loss_D_real_tot += val_loss_D_real*batch_size_local
                 val_loss_D_fake_tot += val_loss_D_fake*batch_size_local
 
-
-                [_, G_D_loss_val, G_l1_loss_val] = GAN.evaluate(x=[audios_clean, audios_mixed, z[i]], y={'model_1': audios_clean, 'model_2': valid_G}, batch_size=batch_size_local, verbose=0) 
+                if options['z_in_use']:
+                    [_, G_D_loss_val, G_l1_loss_val] = GAN.evaluate(x=[audios_clean, audios_mixed, z[i]], y={'model_1': audios_clean, 'model_2': valid_G}, batch_size=batch_size_local, verbose=0) 
+                else:
+                    [_, G_D_loss_val, G_l1_loss_val] = GAN.evaluate(x=[audios_clean, audios_mixed], y={'model_1': audios_clean, 'model_2': valid_G}, batch_size=batch_size_local, verbose=0) 
+                    
 
                 val_loss_G_D_tot += G_D_loss_val*batch_size_local
                 val_loss_G_l1_tot += G_l1_loss_val*batch_size_local

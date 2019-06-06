@@ -226,7 +226,15 @@ find_sample_stats(file_name_read,epochs,"PESQ", snrs)
 """ Stats from samples"""
 epochs = np.arange(5.,41.,5.)
 file_name_read = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_samples_with_z_21_may.csv"
-def find_sample_stats(file_name_read,epochs, type_test,snrs, save=False, savename="fig"):
+def find_sample_stats(file_name_read,epochs, type_test, snrs, colors, save=False, savename="fig"):
+    reference_values = np.zeros(len(snrs))
+    if type_test == 'STOI':
+        reference_values = [0.929811, 0.966697, 0.985355, 0.994112]
+    elif type_test == 'PESQ':
+        reference_values = [1.643313, 1.896562, 2.244618, 2.645498]
+    else:
+        print("No valid test type. Choose PESQ or STOI.")
+        return 
     mat = np.loadtxt(file_name_read, delimiter=' ', skiprows=1, usecols=[0,1,3,4])
     print("Average %s score\n" % (type_test))
     for snr in snrs: print(snr, end='')
@@ -242,16 +250,18 @@ def find_sample_stats(file_name_read,epochs, type_test,snrs, save=False, savenam
     legend_str = list(map(lambda x: str(x) + " dB", snrs))
     fig,ax = plt.subplots(figsize = (8,6))
     im = ax.plot(epochs,epoch_scores)
+    im2 = ax.hlines(reference_values, epochs[0], epochs[-1], linestyle='dashed', color=colors[0:len(reference_values)])
     ax.legend(legend_str,title="SNR", loc='upper right')
     ax.set(xlabel="Epoch")
     ax.set(ylabel=type_test)
     ax.xaxis.set_ticks(epochs)
     if type_test == 'STOI':
         ax.set_ylim([np.min(epoch_scores), 1])
+    fig.tight_layout()
+
 
     if save:
         plt.savefig(savename)
-    plt.show()
 
 
 
@@ -265,8 +275,8 @@ adam_sample_pesq = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_resul
 adam_sample_stoi = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_samples_with_z_adam.csv"
 
 
-find_sample_stats(adam_sample_pesq, epochs, "PESQ", snrs)
-find_sample_stats(adam_sample_stoi, epochs, "STOI", snrs)
+find_sample_stats(adam_sample_pesq, epochs, "PESQ", snrs, colors)
+find_sample_stats(adam_sample_stoi, epochs, "STOI", snrs, colors)
 find_statistics(adam_pesq, snrs, True)
 find_statistics(adam_stoi, snrs, True)
 noise_stats_adam, averages_adam = findSpecificStats(adam_pesq, snrs)
@@ -280,8 +290,8 @@ stoi_folder_with_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_res
 pesq_matlab_folder_with_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_with_z_22_may.csv"
 find_statistics(pesq_matlab_folder_with_z, snrs, True)
 find_statistics(stoi_folder_with_z, snrs, True)
-find_sample_stats(stoi_folder_with_z,epochs,"STOI",snrs)
-find_sample_stats(pesq_matlab_folder_with_z,epochs,"PESQ",snrs)
+find_sample_stats(stoi_folder_with_z,epochs,"STOI",snrs, colors)
+find_sample_stats(pesq_matlab_folder_with_z,epochs,"PESQ",snrs, colors)
 noise_stats,averages_pesq = findSpecificStats(pesq_matlab_folder_with_z,snrs)
 noise_stats_stoi,averages_stoi = findSpecificStats(stoi_folder_with_z,snrs)
 
@@ -295,8 +305,8 @@ averages_stoi
 epochs = np.arange(5.,61.,5.)
 stoi_folder_with_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_final_with_z_60_ep.csv"
 pesq_matlab_folder_with_z = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_final_with_z_60_ep.csv"
-find_sample_stats(stoi_folder_with_z,epochs,"STOI",snrs, True, "stoi_results_final_with_z_sample_60_ep.pdf")
-find_sample_stats(pesq_matlab_folder_with_z,epochs,"PESQ",snrs, True, "pesq_results_final_with_z_sample_60_ep.pdf")
+find_sample_stats(stoi_folder_with_z,epochs,"STOI",snrs, colors, True, "stoi_results_final_with_z_sample_60_ep.pdf")
+find_sample_stats(pesq_matlab_folder_with_z,epochs,"PESQ",snrs, colors, True, "pesq_results_final_with_z_sample_60_ep.pdf")
 
 
 # vil vite baseline score, i.e. hva som er tilhørende noisy score.
@@ -323,5 +333,77 @@ find_sample_stats(reference_stoi_samples, [1], "STOI", snrs, False)
 Epcoch:1 0.929811 0.966697 0.985355 0.994112
 """
 
+
+"""************************************************************************************************************"""
+# First results after NY , with z
+n_hours_per_epoch = 200*40/3600
+n_hours_per_epoch
+prop_cycle = plt.rcParams['axes.prop_cycle']
+colors = prop_cycle.by_key()['color']
+epochs = np.arange(1.0,11.0,1.0)
+
+stoi_folder_after_NY_samples_start = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_after_NY_first_try.csv"
+find_sample_stats(stoi_folder_after_NY_samples_start, epochs, "STOI", snrs, colors, True,"stoi_sample_results_after_NY_with_z_run_1.pdf")
+
+pesq_folder_after_NY_samples_start = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_after_NY_first_try.csv"
+find_sample_stats(pesq_folder_after_NY_samples_start, epochs, "PESQ", snrs, colors, True,"pesq_sample_results_after_NY_with_z_run_1.pdf")
+
+
+
+# Want to plot training progress, i.e. have a look at the training loss and validation loss.
+
+G_file = "/home/shomec/m/miralv/Masteroppgave/Code/After_NY/testRun_new_setup/G_20190605-113746"
+training_mat_G = np.loadtxt(G_file, delimiter=' ', skiprows=2, usecols=[0,1,2])
+val_mat_G = np.loadtxt(G_file, delimiter='|', skiprows=2, usecols=[1],dtype=str)
+validation_mat_G = np.zeros((training_mat.shape))
+for i in range(len(val_mat)):
+    validation_mat_G[i,:]= val_mat_G[i].split(' ')[1:]
+
+training_mat_G
+validation_mat_G
+
+
+D_file = "/home/shomec/m/miralv/Masteroppgave/Code/After_NY/testRun_new_setup/D_20190605-113746"
+training_mat_D = np.loadtxt(D_file, delimiter=' ', skiprows=2, usecols=[0,1,2])
+val_mat_D = np.loadtxt(D_file, delimiter='|', skiprows=2, usecols=[1],dtype=str)
+validation_mat_D = np.zeros((training_mat.shape))
+for i in range(len(val_mat)):
+    validation_mat_D[i,:]= val_mat_D[i].split(' ')[1:]
+
+training_mat_D
+validation_mat_D
+
+
+
+fig,ax = plt.subplots(figsize=(10,5))
+im = ax.plot(x,z)
+ax.set(ylabel=r"$g(x)$",xlabel=r"$x$")
+ax.xaxis.set_ticks(np.arange(x0,x1+1,deltax=5))
+#ax.yaxis.set_ticks(np.arange(0,x1+1,deltay=5))
+plt.savefig('sigmoid.pdf')
+plt.show()
+
+
+fig,ax = plt.subplots(figsize=(8,5))
+im = ax.plot(epochs, training_mat_D[:,0],label="Training loss")
+ax.plot(epochs, validation_mat_D[:,0], label="Validation loss")
+ax.set(ylabel=r"$V_D$",xlabel="Epoch")
+ax.xaxis.set_ticks(np.arange(1,11,1))
+plt.legend()
+fig.tight_layout()
+plt.savefig("V_D_sample_results_after_NY_with_z_run_1.pdf")
+plt.show()
+
+
+
+fig,ax = plt.subplots(figsize=(8,5))
+im = ax.plot(epochs, training_mat_G[:,0],label="Training loss")
+ax.plot(epochs, validation_mat_G[:,0], label="Validation loss")
+ax.set(ylabel=r"$V_G$",xlabel="Epoch")
+ax.xaxis.set_ticks(np.arange(1,11,1))
+plt.legend()
+fig.tight_layout()
+plt.savefig("V_G_sample_results_after_NY_with_z_run_1.pdf")
+plt.show()
 
 """************************************************************************************************************"""
