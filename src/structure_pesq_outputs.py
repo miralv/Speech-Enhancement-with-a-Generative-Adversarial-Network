@@ -362,12 +362,12 @@ for i in range(len(val_mat)):
 training_mat_G
 validation_mat_G
 
-
+# NB! det var en bug i utregningen av real og fake, => ikke noen vits i å plotte de. 
 D_file = "/home/shomec/m/miralv/Masteroppgave/Code/After_NY/testRun_new_setup/D_20190605-113746"
 training_mat_D = np.loadtxt(D_file, delimiter=' ', skiprows=2, usecols=[0,1,2])
 val_mat_D = np.loadtxt(D_file, delimiter='|', skiprows=2, usecols=[1],dtype=str)
-validation_mat_D = np.zeros((training_mat.shape))
-for i in range(len(val_mat)):
+validation_mat_D = np.zeros((training_mat_D.shape))
+for i in range(len(val_mat_D)):
     validation_mat_D[i,:]= val_mat_D[i].split(' ')[1:]
 
 training_mat_D
@@ -405,5 +405,21 @@ plt.legend()
 fig.tight_layout()
 plt.savefig("V_G_sample_results_after_NY_with_z_run_1.pdf")
 plt.show()
+
+
+
+
+fig,ax = plt.subplots(figsize=(8,5))
+im = ax.plot(epochs, training_mat_G[:,1],label="Training loss")
+ax.plot(epochs, validation_mat_G[:,1], label="Validation loss")
+ax.set(ylabel=r"L1-loss",xlabel="Epoch")
+ax.xaxis.set_ticks(np.arange(1,11,1))
+plt.legend()
+fig.tight_layout()
+plt.savefig("V_G_sample_results_after_NY_with_z_run_1.pdf")
+plt.show()
+
+
+
 
 """************************************************************************************************************"""

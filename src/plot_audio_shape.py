@@ -32,3 +32,30 @@ plt.plot(noise_p[0:40000], color='black')
 plt.savefig("figure_noise.pdf", format="pdf")
 
 plt.show()
+
+
+
+#want to compare enhanced with clean
+clean_file = "/home/shomec/m/miralv/Masteroppgave/Code/After_NY/testRun_new_setup/results/clean_f2_4_x-c0987_CAR_16k_ch01_snr_0.wav"
+noisy_file = "/home/shomec/m/miralv/Masteroppgave/Code/After_NY/testRun_new_setup/results/noisy_f2_4_x-c0987_CAR_16k_ch01_snr_0.wav"
+enhanced_file="/home/shomec/m/miralv/Masteroppgave/Code/After_NY/testRun_new_setup/results/enhanced_f2_4_x-c0987_CAR_16k_ch01_snr_0.wav"
+
+_, clean = scipy.io.wavfile.read(clean_file)
+_, noisy = scipy.io.wavfile.read(noisy_file)
+_, enhanced = scipy.io.wavfile.read(enhanced_file)
+
+rms_wanted = findRMS(clean)
+rms_noisy = findRMS(noisy)
+rms_enhanced = findRMS(enhanced)
+factor_noisy = rms_wanted/rms_noisy
+factor_enhanced = rms_wanted/rms_enhanced
+
+
+
+plt.subplot(3,1,1)
+plt.plot(clean)
+plt.subplot(3,1,2)
+plt.plot(noisy*factor_noisy)
+plt.subplot(3,1,3)
+plt.plot(enhanced*factor_enhanced)
+plt.show()
