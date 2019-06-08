@@ -32,69 +32,6 @@ def read_pesq_results(filename_read, filename_save):
 
 
     f.close()
-
-def find_statistics(file_name_read, snrs, plots_wanted):
-    # Summer antall hvor det har skjedd en forbedring
-    mat = np.loadtxt(file_name_read, delimiter=' ', skiprows=1, usecols=[0,2,3,4])
-    # names = np.loadtxt(file_name_read,dtype='str',delimiter=' ',skiprows=1,usecols=1)
-    improved = sum(mat[:,2]-mat[:,3]<0)
-    # Percentage that has an improvement:
-    print(" Fraction that has an improvement after enhancement: %f of %d files." %(improved/mat.shape[0], mat.shape[0]))
-    #numpy.loadtxt(file, dtype=<class 'float'>, delimiter=' ', skiprows=1, usecols=None, unpack=False, ndmin=0, encoding='bytes', max_rows=None)[source]
-    indexes = (mat[:,2]-mat[:,3])<0
-    #sorted = np.sort(names[indexes])
-    improved_matrix = mat[indexes,:]
-
-    # improved_matrix.shape
-    counts = np.zeros(len(snrs))
-    # snrs = [0,5,10,15] given as input
-    tot_each = mat.shape[0]/4
-    for i in range(improved_matrix.shape[0]):
-        this_snr = improved_matrix[i,1]
-        ind = snrs == this_snr
-        counts +=ind
-
-    fractions_each = counts/tot_each
-    # Hva kjennetegner filene med improvement?
-    # sum(improved_matrix[:,0]==1)
-    # Want to analyze the pesq results. How? kunne ha løst dette med klasser.
-    # counts
-    print("SNR fraction of improved files:\n SNR  Fraction")
-    for i in range(4):
-        print("%d %f"% (snrs[i], fractions_each[i] ))
-        # #plot the current file
-        # #print(err)
-        # err = np.asfarray(err)
-        # np.savetxt("P16_t2.csv",err,delimiter=",")
-        # #plt.loglog(h,err, label = r"$P=2, t=1$")
-
-    # plt.xlabel(r"$h$")
-    # plt.ylabel(r"$||e_h||_\infty$")
-    # plt.legend(loc = "center right")
-    # plt.show()
-    if plots_wanted:
-        x_width = 0.125
-        x = np.arange(-0.5,4.5 + x_width, x_width)
-        number_in_each_bar_noisy = np.zeros(len(x)-1)
-        number_in_each_bar_enhanced = np.zeros(len(x)-1)
-
-        for i in range(mat.shape[0]):
-            for j in range(1,len(x)):
-                if  x[j-1] <= mat[i][2] and mat[i][2] < x[j]:
-                    number_in_each_bar_noisy[j-1]+=1
-                if x[j-1] <= mat[i][3] and mat[i][3] < x[j]:
-                    number_in_each_bar_enhanced[j-1]+=1
-
-
-        x_bar = np.arange(-0.5+x_width/2,4.5,x_width)
-        number_in_each_bar_noisy
-        plt.figure(1)
-        p1 = plt.bar(x_bar,number_in_each_bar_noisy, width=x_width,color='red',alpha=0.6)
-        #plt.show()
-        p2 = plt.bar(x_bar,number_in_each_bar_enhanced, width=x_width, alpha=0.6)
-        plt.legend((p1[0], p2[0]), ('Noisy', 'Enhanced'))
-        plt.show()
-
 def findSpecificStats(file_name_read, snrs, num_each = 10,delim = ' '):
     """ Returns a dictionary on format
     noise:
@@ -263,6 +200,7 @@ def find_sample_stats(file_name_read,epochs, type_test, snrs, colors, save=False
     if save:
         plt.savefig(savename)
 
+    plt.show()
 
 
 """ Sammenlikn sample results and ordinary results for a run with and withoug adam"""
@@ -410,16 +348,145 @@ plt.show()
 
 
 fig,ax = plt.subplots(figsize=(8,5))
-im = ax.plot(epochs, training_mat_G[:,1],label="Training loss")
-ax.plot(epochs, validation_mat_G[:,1], label="Validation loss")
-ax.set(ylabel=r"L1-loss",xlabel="Epoch")
+im = ax.plot(epochs, training_mat_G[:,2],label="Training loss")
+ax.plot(epochs, validation_mat_G[:,2], label="Validation loss")
+ax.set(ylabel=r"$\Vert x - \hat{x} \Vert_1$",xlabel="Epoch")
 ax.xaxis.set_ticks(np.arange(1,11,1))
 plt.legend()
 fig.tight_layout()
-plt.savefig("V_G_sample_results_after_NY_with_z_run_1.pdf")
+plt.savefig("L1_sample_results_after_NY_with_z_run_1.pdf")
 plt.show()
 
 
+""" Start analyzing the results (test set)"""
+stoi_folder_after_NY_with_z_run_1 = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_with_z_afterNY.csv"
+pesq_folder_after_NY_with_z_run_1 = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_with_z_afterNY.csv"
+
+
+find_statistics(pesq_folder_after_NY_with_z_run_1, snrs, True, "histogram_after_NY_with_z_run_1.pdf")
+find_statistics(stoi_folder_after_NY_with_z_run_1, snrs, True)
+
+
+"plot histogram for each snr separately"
+find_statistics(pesq_folder_after_NY_with_z_run_1, snrs, True, "histogram_after_NY_with_z_run_1_snr_0.pdf", True, 0)
+find_statistics(pesq_folder_after_NY_with_z_run_1, snrs, True, "histogram_after_NY_with_z_run_1_snr_5.pdf", True, 5)
+find_statistics(pesq_folder_after_NY_with_z_run_1, snrs, True, "histogram_after_NY_with_z_run_1_snr_10.pdf", True, 10)
+find_statistics(pesq_folder_after_NY_with_z_run_1, snrs, True, "histogram_after_NY_with_z_run_1_snr_15.pdf", True, 15)
+
+
+
+noise_stats, averages = findSpecificStats(pesq_folder_after_NY_with_z_run_1, snrs, num_each=10) #num each = number of different sentences
+averages
+
+noise_stats
+
+"""************************************************************************************************************"""
+
+
+
+def find_statistics(file_name_read, snrs, plots_wanted, savename="fig.pdf",only_one_snr=False, snr_chosen = 0):
+    # Summer antall hvor det har skjedd en forbedring
+    mat = np.loadtxt(file_name_read, delimiter=' ', skiprows=1, usecols=[0,2,3,4])
+    # names = np.loadtxt(file_name_read,dtype='str',delimiter=' ',skiprows=1,usecols=1)
+    improved = sum(mat[:,2]-mat[:,3]<0)
+    # Percentage that has an improvement:
+    print(" Fraction that has an improvement after enhancement: %f of %d files." %(improved/mat.shape[0], mat.shape[0]))
+    #numpy.loadtxt(file, dtype=<class 'float'>, delimiter=' ', skiprows=1, usecols=None, unpack=False, ndmin=0, encoding='bytes', max_rows=None)[source]
+    indexes = (mat[:,2]-mat[:,3])<0
+    #sorted = np.sort(names[indexes])
+    improved_matrix = mat[indexes,:]
+
+    # improved_matrix.shape
+    counts = np.zeros(len(snrs))
+    # snrs = [0,5,10,15] given as input
+    tot_each = mat.shape[0]/4
+    for i in range(improved_matrix.shape[0]):
+        this_snr = improved_matrix[i,1]
+        ind = snrs == this_snr
+        counts +=ind
+
+    fractions_each = counts/tot_each
+    # Hva kjennetegner filene med improvement?
+    # sum(improved_matrix[:,0]==1)
+    # Want to analyze the pesq results. How? kunne ha løst dette med klasser.
+    # counts
+    print("SNR fraction of improved files:\n SNR  Fraction")
+    for i in range(4):
+        print("%d %f"% (snrs[i], fractions_each[i] ))
+        # #plot the current file
+        # #print(err)
+        # err = np.asfarray(err)
+        # np.savetxt("P16_t2.csv",err,delimiter=",")
+        # #plt.loglog(h,err, label = r"$P=2, t=1$")
+
+    # plt.xlabel(r"$h$")
+    # plt.ylabel(r"$||e_h||_\infty$")
+    # plt.legend(loc = "center right")
+    # plt.show()
+    if plots_wanted:
+        if only_one_snr:
+            ind_noisy = mat[:,1] == snr_chosen
+            mat = mat[ind_noisy,:]
+            print("Finding histogram for snr %i"%(snr_chosen))
+
+        x_width = 0.1#0.125
+        x = np.arange(-0.5,4.5 + x_width, x_width)
+        number_in_each_bar_noisy = np.zeros(len(x)-1)
+        number_in_each_bar_enhanced = np.zeros(len(x)-1)
+
+        for i in range(mat.shape[0]):
+            for j in range(1,len(x)):
+                if  x[j-1] <= mat[i][2] and mat[i][2] < x[j]:
+                    number_in_each_bar_noisy[j-1]+=1
+                if x[j-1] <= mat[i][3] and mat[i][3] < x[j]:
+                    number_in_each_bar_enhanced[j-1]+=1
+
+
+        x_bar = np.arange(-0.5+x_width/2,4.5,x_width)
+        number_in_each_bar_noisy
+        print(np.sum(number_in_each_bar_enhanced))
+        print(np.sum(number_in_each_bar_noisy))
+
+        fig,ax = plt.subplots(figsize = (7,5))
+        p1 = ax.bar(x_bar,number_in_each_bar_noisy/np.sum(number_in_each_bar_noisy), width=x_width,color='red',alpha=0.6)
+        p2 = ax.bar(x_bar,number_in_each_bar_enhanced/np.sum(number_in_each_bar_enhanced), width=x_width, alpha=0.6)
+        plt.legend((p1[0], p2[0]), ('Noisy', 'Enhanced'))
+        ax.xaxis.set_ticks(np.arange(-0.5,5,0.5))
+        ax.set(xlabel="PESQ")
+        plt.savefig(savename)
+
+        plt.show()
+
+"""************************************************************************************************************"""
+# Without z, run 1
+
+stoi_folder_after_NY_samples_without_first = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_after_NY_first_try_without_z.csv"
+find_sample_stats(stoi_folder_after_NY_samples_without_first, epochs, "STOI", snrs, colors, True,"stoi_sample_results_after_NY_without_z_run_1.pdf")
+
+pesq_folder_after_NY_samples_without_first = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_after_NY_first_try_without_z.csv"
+find_sample_stats(pesq_folder_after_NY_samples_without_first, epochs, "PESQ", snrs, colors, True,"pesq_sample_results_after_NY_without_z_run_1.pdf")
+
+
+stoi_folder_after_NY_without_z_run_1 = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_without_z_afterNY.csv"
+pesq_folder_after_NY_without_z_run_1 = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_without_z_afterNY.csv"
+
+
+find_statistics(pesq_folder_after_NY_without_z_run_1, snrs, True, "histogram_after_NY_without_z_run_1.pdf")
+find_statistics(stoi_folder_after_NY_without_z_run_1, snrs, True)
+
+
+"plot histogram for each snr separately"
+find_statistics(pesq_folder_after_NY_without_z_run_1, snrs, True, "histogram_after_NY_without_z_run_1_snr_0.pdf", True, 0)
+find_statistics(pesq_folder_after_NY_without_z_run_1, snrs, True, "histogram_after_NY_without_z_run_1_snr_5.pdf", True, 5)
+find_statistics(pesq_folder_after_NY_without_z_run_1, snrs, True, "histogram_after_NY_without_z_run_1_snr_10.pdf", True, 10)
+find_statistics(pesq_folder_after_NY_without_z_run_1, snrs, True, "histogram_after_NY_without_z_run_1_snr_15.pdf", True, 15)
+
+
+
+noise_stats_without, averages_without = findSpecificStats(pesq_folder_after_NY_without_z_run_1, snrs, num_each=10) #num each = number of different sentences
+averages_without
+
+noise_stats
 
 
 """************************************************************************************************************"""
