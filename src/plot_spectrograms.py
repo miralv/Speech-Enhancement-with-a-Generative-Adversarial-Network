@@ -54,14 +54,14 @@ noiseAudioFile ="/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/STRA
 # need to plot the spectrogram of the reconstructed speech also
 # want all of the noise files to have equal rms
 #noiseAudioFile ="C:/Users/Mira/Documents/NTNU1819/Prosjektoppgave/Mixed/Simplified/enhancedMain508.12. try 1.wav"
-n_noises = len(glob.glob("/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/*.wav"))
+n_noises = len(glob.glob("/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Validate/*.wav"))
 # S_n_max = 6.3761314855842635
 # S_n_min = -11.159604723845968
 
 rms_wanted = 1000.0
 S_n_max = 5.149918701962689
 S_n_min = -10.37063967526063
-for noiseAudioFile in glob.glob("/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/*.wav"):
+for noiseAudioFile in glob.glob("/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Validate/*.wav"):
     f_noise, noise = scipy.io.wavfile.read(noiseAudioFile)
     noise_name = noiseAudioFile.split('/')[-1][:-4]
     save_name = "spectrogram_rms_1000_" + noise_name + ".pdf"

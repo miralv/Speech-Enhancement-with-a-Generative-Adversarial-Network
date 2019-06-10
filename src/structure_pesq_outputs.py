@@ -185,6 +185,7 @@ def find_sample_stats(file_name_read,epochs, type_test, snrs, colors, save=False
             print(" %f" % ( epoch_scores[i,j]), end='')
         print(" ")
     legend_str = list(map(lambda x: str(x) + " dB", snrs))
+
     fig,ax = plt.subplots(figsize = (8,6))
     im = ax.plot(epochs,epoch_scores)
     im2 = ax.hlines(reference_values, epochs[0], epochs[-1], linestyle='dashed', color=colors[0:len(reference_values)])
@@ -280,10 +281,10 @@ prop_cycle = plt.rcParams['axes.prop_cycle']
 colors = prop_cycle.by_key()['color']
 epochs = np.arange(1.0,11.0,1.0)
 
-stoi_folder_after_NY_samples_start = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_after_NY_first_try.csv"
+stoi_folder_after_NY_samples_start = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_sample_after_NY_with_z_run_01.csv"
 find_sample_stats(stoi_folder_after_NY_samples_start, epochs, "STOI", snrs, colors, True,"stoi_sample_results_after_NY_with_z_run_1.pdf")
 
-pesq_folder_after_NY_samples_start = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_after_NY_first_try.csv"
+pesq_folder_after_NY_samples_start = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_sample_after_NY_with_z_run_01.csv"
 find_sample_stats(pesq_folder_after_NY_samples_start, epochs, "PESQ", snrs, colors, True,"pesq_sample_results_after_NY_with_z_run_1.pdf")
 
 
@@ -359,8 +360,8 @@ plt.show()
 
 
 """ Start analyzing the results (test set)"""
-stoi_folder_after_NY_with_z_run_1 = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_with_z_afterNY.csv"
-pesq_folder_after_NY_with_z_run_1 = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_with_z_afterNY.csv"
+stoi_folder_after_NY_with_z_run_1 = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_after_NY_with_z_run_01.csv"
+pesq_folder_after_NY_with_z_run_1 = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_after_NY_with_z_run_01.csv"
 
 
 find_statistics(pesq_folder_after_NY_with_z_run_1, snrs, True, "histogram_after_NY_with_z_run_1.pdf")
@@ -376,8 +377,9 @@ find_statistics(pesq_folder_after_NY_with_z_run_1, snrs, True, "histogram_after_
 
 
 noise_stats, averages = findSpecificStats(pesq_folder_after_NY_with_z_run_1, snrs, num_each=10) #num each = number of different sentences
-averages
+noise_stats_stoi, averages_stoi = findSpecificStats(stoi_folder_after_NY_with_z_run_1, snrs, num_each=10) #num each = number of different sentences
 
+averages
 noise_stats
 
 """************************************************************************************************************"""
@@ -457,18 +459,135 @@ def find_statistics(file_name_read, snrs, plots_wanted, savename="fig.pdf",only_
 
         plt.show()
 
+
+
+"""************************************************************************************************************"""
+
+# with z run 02
+
+stoi_folder_after_NY_samples_with_second = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_sample_after_NY_with_z_run_02.csv"
+find_sample_stats(stoi_folder_after_NY_samples_with_second, epochs, "STOI", snrs, colors, True,"stoi_sample_results_after_NY_with_z_run_2.pdf")
+
+pesq_folder_after_NY_samples_with_second = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_sample_after_NY_with_z_run_02.csv"
+find_sample_stats(pesq_folder_after_NY_samples_with_second, epochs, "PESQ", snrs, colors, True,"pesq_sample_results_after_NY_with_z_run_2.pdf")
+
+
+stoi_folder_after_NY_with_z_run_2 = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_after_NY_with_z_run_02.csv"
+pesq_folder_after_NY_with_z_run_2 = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_after_NY_with_z_run_02.csv"
+
+
+find_statistics(pesq_folder_after_NY_with_z_run_2, snrs, True, "histogram_after_NY_without_z_run_1.pdf")
+find_statistics(stoi_folder_after_NY_with_z_run_2, snrs, True)
+
+
+find_statistics(pesq_folder_after_NY_with_z_run_2, snrs, True, "histogram_after_NY_with_z_run_2_snr_0.pdf", True, 0)
+find_statistics(pesq_folder_after_NY_with_z_run_2, snrs, True, "histogram_after_NY_with_z_run_2_snr_5.pdf", True, 5)
+find_statistics(pesq_folder_after_NY_with_z_run_2, snrs, True, "histogram_after_NY_with_z_run_2_snr_10.pdf", True, 10)
+find_statistics(pesq_folder_after_NY_with_z_run_2, snrs, True, "histogram_after_NY_with_z_run_2_snr_15.pdf", True, 15)
+
+
+
+noise_stats_with_2, averages_with_2 = findSpecificStats(pesq_folder_after_NY_with_z_run_2, snrs, num_each=10) #num each = number of different sentences
+
+
+
+averages_with_2
+averages
+averages_without
+
+np.savetxt("save_averages.txt", averages_with_2, fmt="%.2f")
+
+
+
+noise_stats_with_2_stoi, averages_with_2_stoi = findSpecificStats(stoi_folder_after_NY_with_z_run_2, snrs, num_each=10) #num each = number of different sentences
+
+averages_with_2_stoi
+averages_stoi
+np.savetxt("save_averages.txt", averages_with_2_stoi, fmt="%.2f")
+
+averages_without_stoi
+
+
+#  Get it on format for pasting it directly into the table generator
+# that is: snr 0 5 10 15 \\ noisy & enhanced & noisy & enhanced osv
+
+save_file_noise_stats_with_z = "noise_stats_with_z_stoi_run_02.txt"
+num_noises = 5
+A = np.zeros((num_noises, len(snrs)*2))
+print(A)
+noisy_inds = np.arange(0, 2*len(snrs),2)
+noisy_inds +1
+for j,stats in enumerate(noise_stats_with_2_stoi):
+    # print (stats)
+    # print (noise_stats_with_2_stoi[stats]['pesq_noisy'])
+    A[j,noisy_inds] = noise_stats_with_2_stoi[stats]['pesq_noisy']
+    A[j,noisy_inds + 1] = noise_stats_with_2_stoi[stats]['pesq_enhanced']
+
+print(A)
+noise_stats_with_2_stoi
+
+np.savetxt(save_file_noise_stats_with_z,A,fmt="%.2f")
+
+
+"""************************************************************************************************************"""
+
+
+# with z run 03
+stoi_folder_after_NY_samples_with_third = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_sample_after_NY_with_z_run_03.csv"
+find_sample_stats(stoi_folder_after_NY_samples_with_third, epochs, "STOI", snrs, colors, True,"stoi_sample_results_after_NY_with_z_run_3.pdf")
+
+pesq_folder_after_NY_samples_with_third = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_sample_after_NY_with_z_run_02.csv"
+find_sample_stats(pesq_folder_after_NY_samples_with_third, epochs, "PESQ", snrs, colors, True,"pesq_sample_results_after_NY_with_z_run_3.pdf")
+
+
+stoi_folder_after_NY_with_z_run_3 = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_after_NY_with_z_run_03.csv"
+pesq_folder_after_NY_with_z_run_3 = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_after_NY_with_z_run_03.csv"
+
+
+find_statistics(pesq_folder_after_NY_with_z_run_3, snrs, True, "histogram_after_NY_without_z_run_1.pdf")
+find_statistics(stoi_folder_after_NY_with_z_run_3, snrs, True)
+
+find_statistics(pesq_folder_after_NY_with_z_run_3, snrs, True, "histogram_after_NY_with_z_run_3_snr_0.pdf", True, 0)
+find_statistics(pesq_folder_after_NY_with_z_run_3, snrs, True, "histogram_after_NY_with_z_run_3_snr_5.pdf", True, 5)
+find_statistics(pesq_folder_after_NY_with_z_run_3, snrs, True, "histogram_after_NY_with_z_run_3_snr_10.pdf", True, 10)
+find_statistics(pesq_folder_after_NY_with_z_run_3, snrs, True, "histogram_after_NY_with_z_run_3_snr_15.pdf", True, 15)
+
+
+
+noise_stats_with_3, averages_with_3 = findSpecificStats(pesq_folder_after_NY_with_z_run_3, snrs, num_each=10) #num each = number of different sentences
+noise_stats_with_3_stoi, averages_with_3_stoi = findSpecificStats(stoi_folder_after_NY_with_z_run_3, snrs, num_each=10) #num each = number of different sentences
+
+
+avg_mean_pesq_with = (averages_with_3[1,:] + averages_with_2[1,:] + averages[1,:])/3.0
+avg_mean_pesq_with
+
+averages_without
+
+
+avg_mean_stoi_with = (averages_stoi[1,:] + averages_with_2_stoi[1,:] + averages_with_3_stoi[1,:])/3.0
+
+avg_mean_stoi_with
+
+
+np.savetxt("save_averages.txt", avg_mean_stoi_with, fmt="%.2f")
+
+
+"""************************************************************************************************************"""
+
+
+
 """************************************************************************************************************"""
 # Without z, run 1
 
-stoi_folder_after_NY_samples_without_first = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_after_NY_first_try_without_z.csv"
+stoi_folder_after_NY_samples_without_first = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_sample_after_NY_without_z_run_01.csv"
 find_sample_stats(stoi_folder_after_NY_samples_without_first, epochs, "STOI", snrs, colors, True,"stoi_sample_results_after_NY_without_z_run_1.pdf")
 
-pesq_folder_after_NY_samples_without_first = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_after_NY_first_try_without_z.csv"
+pesq_folder_after_NY_samples_without_first = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_sample_after_NY_without_z_run_01.csv"
 find_sample_stats(pesq_folder_after_NY_samples_without_first, epochs, "PESQ", snrs, colors, True,"pesq_sample_results_after_NY_without_z_run_1.pdf")
 
 
-stoi_folder_after_NY_without_z_run_1 = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_without_z_afterNY.csv"
-pesq_folder_after_NY_without_z_run_1 = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_without_z_afterNY.csv"
+stoi_folder_after_NY_without_z_run_1 = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_after_NY_without_z_run_01.csv"
+pesq_folder_after_NY_without_z_run_1 = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_after_NY_without_z_run_01.csv"
 
 
 find_statistics(pesq_folder_after_NY_without_z_run_1, snrs, True, "histogram_after_NY_without_z_run_1.pdf")
@@ -484,9 +603,72 @@ find_statistics(pesq_folder_after_NY_without_z_run_1, snrs, True, "histogram_aft
 
 
 noise_stats_without, averages_without = findSpecificStats(pesq_folder_after_NY_without_z_run_1, snrs, num_each=10) #num each = number of different sentences
+noise_stats_without_stoi, averages_without_stoi = findSpecificStats(stoi_folder_after_NY_without_z_run_1, snrs, num_each=10) #num each = number of different sentences
+
 averages_without
 
 noise_stats
 
+"""************************************************************************************************************"""
+
+# Without z, run 1
+
+stoi_folder_after_NY_samples_without_second = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_sample_after_NY_without_z_run_02.csv"
+find_sample_stats(stoi_folder_after_NY_samples_without_second, epochs, "STOI", snrs, colors, True,"stoi_sample_results_after_NY_without_z_run_2.pdf")
+
+pesq_folder_after_NY_samples_without_second = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_sample_after_NY_without_z_run_02.csv"
+find_sample_stats(pesq_folder_after_NY_samples_without_second, epochs, "PESQ", snrs, colors, True,"pesq_sample_results_after_NY_without_z_run_2.pdf")
+
+
+stoi_folder_after_NY_without_z_run_2 = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_after_NY_without_z_run_02.csv"
+pesq_folder_after_NY_without_z_run_2 = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_after_NY_without_z_run_02.csv"
+
+
+find_statistics(pesq_folder_after_NY_without_z_run_2, snrs, True, "histogram_after_NY_without_z_run_1.pdf")
+find_statistics(stoi_folder_after_NY_without_z_run_2, snrs, True)
+
+
+"plot histogram for each snr separately"
+find_statistics(pesq_folder_after_NY_without_z_run_2, snrs, True, "histogram_after_NY_without_z_run_2_snr_0.pdf", True, 0)
+find_statistics(pesq_folder_after_NY_without_z_run_2, snrs, True, "histogram_after_NY_without_z_run_2_snr_5.pdf", True, 5)
+find_statistics(pesq_folder_after_NY_without_z_run_2, snrs, True, "histogram_after_NY_without_z_run_2_snr_10.pdf", True, 10)
+find_statistics(pesq_folder_after_NY_without_z_run_2, snrs, True, "histogram_after_NY_without_z_run_2_snr_15.pdf", True, 15)
+
+
+
+noise_stats_without, averages_without = findSpecificStats(pesq_folder_after_NY_without_z_run_1, snrs, num_each=10) #num each = number of different sentences
+noise_stats_without_stoi, averages_without_stoi = findSpecificStats(stoi_folder_after_NY_without_z_run_1, snrs, num_each=10) #num each = number of different sentences
+
+
+
+
+
+
+
+
+
+
+
 
 """************************************************************************************************************"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""************************************************************************************************************"""
+
