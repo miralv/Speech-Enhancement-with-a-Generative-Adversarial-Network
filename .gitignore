@@ -4,6 +4,9 @@ Gmodel.h5
 Gmodel.json
 Gmodel_success.h5
 Gmodel_success.json
+Gmodel_without_z.h5
+Gmodel_without_z.json
+
 results/*.wav
 results_test_sample/*.wav
 
