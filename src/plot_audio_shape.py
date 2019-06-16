@@ -36,9 +36,9 @@ plt.show()
 
 
 #want to compare enhanced with clean
-clean_file = "/home/shomec/m/miralv/Masteroppgave/Code/After_NY/testRun_new_setup/results/clean_f2_4_x-c0987_CAR_16k_ch01_snr_0.wav"
-noisy_file = "/home/shomec/m/miralv/Masteroppgave/Code/After_NY/testRun_new_setup/results/noisy_f2_4_x-c0987_CAR_16k_ch01_snr_0.wav"
-enhanced_file="/home/shomec/m/miralv/Masteroppgave/Code/After_NY/testRun_new_setup/results/enhanced_f2_4_x-c0987_CAR_16k_ch01_snr_0.wav"
+clean_file = "/home/shomec/m/miralv/Masteroppgave/Code/After_NY/with_z_run_01/results/clean_f2_4_x-c2161_n78_snr_0.wav"
+noisy_file = "/home/shomec/m/miralv/Masteroppgave/Code/After_NY/with_z_run_01/results/noisy_f2_4_x-c2161_n78_snr_0.wav"
+enhanced_file="/home/shomec/m/miralv/Masteroppgave/Code/After_NY/with_z_run_01/results/enhanced_f2_4_x-c2161_n78_snr_0.wav"
 
 _, clean = scipy.io.wavfile.read(clean_file)
 _, noisy = scipy.io.wavfile.read(noisy_file)

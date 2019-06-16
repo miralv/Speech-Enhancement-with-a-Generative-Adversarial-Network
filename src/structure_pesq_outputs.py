@@ -41,6 +41,12 @@ def findSpecificStats(file_name_read, snrs, num_each = 10,delim = ' '):
     """
     mat = np.loadtxt(file_name_read, delimiter=delim, skiprows=1, usecols=[0,2,3,4])
     file_names = np.loadtxt(file_name_read, dtype = str, delimiter=delim, skiprows=1, usecols=[1])
+
+
+    average_overall = np.zeros(2)
+    average_overall[0] = np.mean(mat[:,2]) # noisy
+    average_overall[1] = np.mean(mat[:,3]) # enhanced
+
     noise_stats = {}
     # reduce to only noise type
     noise_names = np.asarray(list(map(lambda x: x.split('_')[3], file_names)))
@@ -94,7 +100,8 @@ def findSpecificStats(file_name_read, snrs, num_each = 10,delim = ' '):
         print(local_dict['fractions_improved'])
         print("\n\n")
 
-    return noise_stats, averages/(num_each*len(noise_names_no_duplicates))
+
+    return noise_stats, averages/(num_each*len(noise_names_no_duplicates)), average_overall
 
 
 
@@ -388,12 +395,12 @@ find_statistics(pesq_folder_after_NY_with_z_run_1, snrs, True, "histogram_after_
 
 
 
-noise_stats, averages = findSpecificStats(pesq_folder_after_NY_with_z_run_1, snrs, num_each=10) #num each = number of different sentences
-noise_stats_stoi, averages_stoi = findSpecificStats(stoi_folder_after_NY_with_z_run_1, snrs, num_each=10) #num each = number of different sentences
+noise_stats, averages, avg_with_1 = findSpecificStats(pesq_folder_after_NY_with_z_run_1, snrs, num_each=10) #num each = number of different sentences
+noise_stats_stoi, averages_stoi, avg_with_1_stoi = findSpecificStats(stoi_folder_after_NY_with_z_run_1, snrs, num_each=10) #num each = number of different sentences
 
 averages
 noise_stats
-
+avg_with_1_stoi
 
 
 
@@ -534,7 +541,7 @@ find_statistics(pesq_folder_after_NY_with_z_run_2, snrs, True, "histogram_after_
 
 
 
-noise_stats_with_2, averages_with_2 = findSpecificStats(pesq_folder_after_NY_with_z_run_2, snrs, num_each=10) #num each = number of different sentences
+noise_stats_with_2, averages_with_2, avg_with_2  = findSpecificStats(pesq_folder_after_NY_with_z_run_2, snrs, num_each=10) #num each = number of different sentences
 
 
 
@@ -546,13 +553,13 @@ np.savetxt("save_averages.txt", averages_with_2, fmt="%.2f")
 
 
 
-noise_stats_with_2_stoi, averages_with_2_stoi = findSpecificStats(stoi_folder_after_NY_with_z_run_2, snrs, num_each=10) #num each = number of different sentences
+noise_stats_with_2_stoi, averages_with_2_stoi, avg_with_2_stoi = findSpecificStats(stoi_folder_after_NY_with_z_run_2, snrs, num_each=10) #num each = number of different sentences
 
 averages_with_2_stoi
 averages_stoi
 np.savetxt("save_averages.txt", averages_with_2_stoi, fmt="%.2f")
 
-averages_without_stoi
+avg_with_2_stoi
 
 
 #  Get it on format for pasting it directly into the table generator
@@ -601,14 +608,16 @@ find_statistics(pesq_folder_after_NY_with_z_run_3, snrs, True, "histogram_after_
 
 
 
-noise_stats_with_3, averages_with_3 = findSpecificStats(pesq_folder_after_NY_with_z_run_3, snrs, num_each=10) #num each = number of different sentences
-noise_stats_with_3_stoi, averages_with_3_stoi = findSpecificStats(stoi_folder_after_NY_with_z_run_3, snrs, num_each=10) #num each = number of different sentences
+noise_stats_with_3, averages_with_3, avg_with_3 = findSpecificStats(pesq_folder_after_NY_with_z_run_3, snrs, num_each=10) #num each = number of different sentences
+noise_stats_with_3_stoi, averages_with_3_stoi, avg_with_3_stoi = findSpecificStats(stoi_folder_after_NY_with_z_run_3, snrs, num_each=10) #num each = number of different sentences
 
 
 avg_mean_pesq_with = (averages_with_3[1,:] + averages_with_2[1,:] + averages[1,:])/3.0
 avg_mean_pesq_with
 
 averages_without
+
+avg_with_3_stoi
 
 
 avg_mean_stoi_with = (averages_stoi[1,:] + averages_with_2_stoi[1,:] + averages_with_3_stoi[1,:])/3.0
@@ -649,8 +658,8 @@ find_statistics(pesq_folder_after_NY_without_z_run_1, snrs, True, "histogram_aft
 
 
 
-noise_stats_without, averages_without = findSpecificStats(pesq_folder_after_NY_without_z_run_1, snrs, num_each=10) #num each = number of different sentences
-noise_stats_without_stoi, averages_without_stoi = findSpecificStats(stoi_folder_after_NY_without_z_run_1, snrs, num_each=10) #num each = number of different sentences
+noise_stats_without, averages_without, avg_without_1 = findSpecificStats(pesq_folder_after_NY_without_z_run_1, snrs, num_each=10) #num each = number of different sentences
+noise_stats_without_stoi, averages_without_stoi, avg_without_1_stoi = findSpecificStats(stoi_folder_after_NY_without_z_run_1, snrs, num_each=10) #num each = number of different sentences
 
 averages_without
 
@@ -710,8 +719,8 @@ find_statistics(pesq_folder_after_NY_without_z_run_2, snrs, True, "histogram_aft
 
 
 
-noise_stats_without_2, averages_without_2 = findSpecificStats(pesq_folder_after_NY_without_z_run_2, snrs, num_each=10) #num each = number of different sentences
-noise_stats_without_stoi_2, averages_without_stoi_2 = findSpecificStats(stoi_folder_after_NY_without_z_run_2, snrs, num_each=10) #num each = number of different sentences
+noise_stats_without_2, averages_without_2, avg_without_2 = findSpecificStats(pesq_folder_after_NY_without_z_run_2, snrs, num_each=10) #num each = number of different sentences
+noise_stats_without_stoi_2, averages_without_stoi_2, avg_without_2_stoi = findSpecificStats(stoi_folder_after_NY_without_z_run_2, snrs, num_each=10) #num each = number of different sentences
 
 averages_without_stoi
 averages_without_stoi_2
@@ -744,9 +753,18 @@ find_statistics(pesq_folder_after_NY_without_z_run_3, snrs, True, "histogram_aft
 find_statistics(pesq_folder_after_NY_without_z_run_3, snrs, True, "histogram_after_NY_without_z_run_3_snr_15.pdf", True, 15)
 
 
-noise_stats_without_3, averages_without_3 = findSpecificStats(pesq_folder_after_NY_without_z_run_3, snrs, num_each=10) #num each = number of different sentences
-noise_stats_without_stoi_3, averages_without_stoi_3 = findSpecificStats(stoi_folder_after_NY_without_z_run_3, snrs, num_each=10) #num each = number of different sentences
+noise_stats_without_3, averages_without_3, avg_without_3 = findSpecificStats(pesq_folder_after_NY_without_z_run_3, snrs, num_each=10) #num each = number of different sentences
+noise_stats_without_stoi_3, averages_without_stoi_3, avg_without_3_stoi = findSpecificStats(stoi_folder_after_NY_without_z_run_3, snrs, num_each=10) #num each = number of different sentences
 
+(avg_without_1[1] + avg_without_2[1] + avg_without_3[1])/3.0
+
+
+(avg_without_2_stoi[1] +avg_without_3_stoi[1] + avg_without_1_stoi[1])/3.0
+
+(avg_with_1[1] + avg_with_2[1] + avg_with_3[1])/3.0
+
+
+(avg_with_2_stoi[1] +avg_with_3_stoi[1] + avg_with_1_stoi[1])/3.0
 
 
 averages_without_stoi
@@ -830,4 +848,39 @@ def find_sample_stats_together(epoch_scores,epochs, type_test, snrs, colors, sav
     plt.show()
 
 
+"""************************************************************************************************************"""
+# New test, local
+stoi_folder_after_NY_samples_with_local = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_sample_after_NY_with_local_z_run_04.csv"
+epoch_scores_with_local_stoi = find_sample_stats(stoi_folder_after_NY_samples_with_local, epochs, "STOI", snrs, colors, True,"stoi_sample_results_after_NY_with_local_z_run_4.pdf")
 
+pesq_folder_after_NY_samples_with_local = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_sample_after_NY_with_local_z_run_04.csv"
+epoch_scores_with_local_pesq = find_sample_stats(pesq_folder_after_NY_samples_with_local, epochs, "PESQ", snrs, colors, True,"pesq_sample_results_after_NY_with_local_z_run_4.pdf")
+
+
+stoi_folder_after_NY_with_local = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_after_NY_with_local_z_run_04.csv"
+pesq_folder_after_NY_with_local = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_after_NY_with_local_z_run_04.csv"
+
+
+find_statistics(pesq_folder_after_NY_with_local, snrs, True)
+find_statistics(stoi_folder_after_NY_with_local, snrs, True)
+
+
+noise_stats_with_local, averages_with_local, avg_with_local  = findSpecificStats(pesq_folder_after_NY_with_local, snrs, num_each=10) #num each = number of different sentences
+noise_stats_with_local_stoi, averages_with_local_stoi, avg_with_local_stoi =  findSpecificStats(stoi_folder_after_NY
+
+averages_with_local
+avg_with_local
+averages_with_local_stoi
+avg_with_local_stoi
+
+res_mat = np.zeros((2,5))
+res_mat[0,0:-1]= averages_with_local[1]
+res_mat[0,-1]= avg_with_local[1]
+res_mat[1,0:-1]= averages_with_local_stoi[1]
+res_mat[1,-1]= avg_with_local_stoi[1]
+
+np.savetxt("save_averages.txt", res_mat, fmt="%.2f")
+
+res_mat
+
+#sjekk om den enhancer sammenlikningsverdig. hvis det, gjør tester (z, lokalt opptak med støy)

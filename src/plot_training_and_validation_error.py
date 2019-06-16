@@ -3,6 +3,20 @@ import numpy as np
 from pathlib import Path
 import glob
 
+plt.rcParams.update({
+    "pgf.texsystem": "pdflatex",
+    "pgf.preamble": [
+         r"\usepackage[utf8x]{inputenc}",
+         r"\usepackage[T1]{fontenc}",
+         r"\usepackage{cmbright}",
+         ]
+})
+
+plt.rcParams['legend.fontsize'] = 18
+plt.rcParams['axes.labelsize'] = 18 #16 var for de minste figurene
+plt.rcParams['font.size'] = 18#12
+
+
 
 
 # plot training and validation error 
@@ -29,13 +43,14 @@ validation_mat_D
 
 g_files_with = glob.glob("/home/shomec/m/miralv/Masteroppgave/Code/After_NY/with_z_run_0*/G*")
 len(g_files_with)
-for g_file in g_files_with:
-    plot_g_file(g_file)
+for i, g_file in enumerate(g_files_with):
+    save_g = g_files_with[i].split('/')[8] + "validation_error_G.pdf"
+    plot_g_file(g_file, save_name = save_g)
 
 d_files_with = glob.glob("/home/shomec/m/miralv/Masteroppgave/Code/After_NY/with_z_run_0*/D*")
-len(g_files_with)
-for d_file in d_files_with:
-    plot_g_file(d_file)
+for i, d_file in enumerate(d_files_with):
+    save_d = d_files_with[i].split('/')[8] + "validation_error_D.pdf"
+    plot_g_file(d_file, G=False, save_name = save_d)
 
 
 g_files_without = glob.glob("/home/shomec/m/miralv/Masteroppgave/Code/After_NY/without_z_run_0*/G*")
@@ -47,7 +62,6 @@ d_files_without = glob.glob("/home/shomec/m/miralv/Masteroppgave/Code/After_NY/w
 for i, d_file in enumerate(d_files_without):
     save_d = d_files_without[i].split('/')[8] + "validation_error_D.pdf"
     plot_g_file(d_file, G=False, save_name = save_d)
-
 
 
 
@@ -74,40 +88,4 @@ def plot_g_file(g_file,epochs=np.arange(1.0,11.0,1.0), G=True, save_name="fig"):
     plt.savefig(save_name)
     
 
-
-
-fig,ax = plt.subplots(figsize=(8,5))
-im = ax.plot(epochs, training_mat_D[:,0],label="Training loss")
-ax.plot(epochs, validation_mat_D[:,0], label="Validation loss")
-ax.set(ylabel=r"$V_D$",xlabel="Epoch")
-ax.xaxis.set_ticks(np.arange(1,11,1))
-plt.legend()
-fig.tight_layout()
-#plt.savefig("V_D_sample_results_after_NY_with_z_run_1.pdf")
-plt.show()
-
-
-
-fig,ax = plt.subplots(figsize=(8,5))
-im = ax.plot(epochs, training_mat_G[:,0],label="Training loss")
-ax.plot(epochs, validation_mat_G[:,0], label="Validation loss")
-ax.set(ylabel=r"$V_G$",xlabel="Epoch")
-ax.xaxis.set_ticks(np.arange(1,11,1))
-plt.legend()
-fig.tight_layout()
-#plt.savefig("V_G_sample_results_after_NY_with_z_run_1.pdf")
-plt.show()
-
-
-
-
-fig,ax = plt.subplots(figsize=(8,5))
-im = ax.plot(epochs, training_mat_G[:,2],label="Training loss")
-ax.plot(epochs, validation_mat_G[:,2], label="Validation loss")
-ax.set(ylabel=r"$\Vert x - \hat{x} \Vert_1$",xlabel="Epoch")
-ax.xaxis.set_ticks(np.arange(1,11,1))
-plt.legend()
-fig.tight_layout()
-plt.savefig("L1_sample_results_after_NY_with_z_run_1.pdf")
-plt.show()
 
