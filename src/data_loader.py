@@ -150,3 +150,33 @@ def prepare_test(options):
 
  
     return speech_ready, mixed_ready, z
+
+
+
+def prepare_test_given_noisy_file(options, noisy_file_path):
+    """ Given a noisy sound recording, get it on the correct format such that G can enhance it."""
+
+    window_length = options['window_length']
+    z_dim = options['z_dim']
+    pre_emph_const = options['pre_emph']
+
+    f_noisy, noisy_orig = scipy.io.wavfile.read(noisy_file_path)
+    print(np.max(noisy_orig))
+    noisy = preprocess(noisy_orig,f_noisy)
+
+   # Prepare to get it on format 1 x nwindows x windowlength
+    n_windows = int(np.ceil(len(noisy)/window_length))
+    mixed_ready = np.zeros(shape=(1, n_windows, window_length))
+
+    # Slice vectors to get it on format nwindows x window length
+    mixed = slice_vector(noisy, options)
+    # Insert into output matrix
+    mixed_ready[0,:,:] = pre_emph(mixed, pre_emph_const)
+
+    # Nå har z også snr-dbs på første aksen. deretter n_windows, z_dim0, z_dim1
+    z = np.random.normal(0,1,(1,n_windows,z_dim[0],z_dim[1]))
+    #(0, 1, (batch_size, z_dim[0], z_dim[1]))
+
+ 
+    return mixed_ready, z
+

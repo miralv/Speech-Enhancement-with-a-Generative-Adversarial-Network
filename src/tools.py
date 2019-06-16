@@ -106,9 +106,12 @@ def preprocess(rawAudio, origSr):
 
     # Target sample rate
     # TODO: listen to downsampled audio. check which filter is applied.
+    if origSr != 16000:
+        targetSr = 16000
+        yd = resampy.resample(rawAudio,origSr,targetSr)
+    else:
+        yd = rawAudio
 
-    targetSr = 16000
-    yd = resampy.resample(rawAudio,origSr,targetSr)
     y = scaleDown(yd)
 
     return y
@@ -128,9 +131,11 @@ def preprocess_dataloader(rawAudio, origSr):
     # TODO: listen to downsampled audio. check which filter is applied.
 
     targetSr = 16000
-    yd = resampy.resample(rawAudio,origSr,targetSr)
-
-    return yd
+    if targetSr != origSr:
+        yd = resampy.resample(rawAudio,origSr,targetSr)
+        return yd
+    else:
+        return rawAudio
 
 
     # # Downsample

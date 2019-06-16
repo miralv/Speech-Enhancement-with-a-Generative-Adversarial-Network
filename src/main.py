@@ -22,9 +22,8 @@ import os
 
 from discriminator import discriminator
 from generator import generator
-from data_loader import load_batch, prepare_test
+from data_loader import load_batch, prepare_test, prepare_test_given_noisy_file
 from tools import *
-
 
 def main():
     """
@@ -398,8 +397,75 @@ def run_sample_test(options, speech_list, noise_list, G, GAN, D, epoch):
     return val_loss_D_tot, val_loss_D_real_tot, val_loss_D_fake_tot, val_loss_G_tot, val_loss_G_D_tot, val_loss_G_l1_tot
 
 
-
-
-
 if __name__ == '__main__':
-    main()
+# #    main()
+#     # Vil teste en egen noisy fil.
+
+#     options = {}
+#     options['Idun'] = False # Set to true when running on Idun, s.t. the audio path and noise path get correct
+#     options['window_length'] = 16384
+#     options['feat_dim'] = 1
+#     options['z_dim'] = (8, 1024) # Dimensions for the latent noise variable 
+#     options['filter_length'] = 31
+#     options['strides'] = 2
+#     options['padding'] = 'same'
+#     options['use_bias'] = True
+#     options['initializer_std_dev'] = 0.02
+#     options['generator_encoder_num_kernels'] = [16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 1024]
+#     options['generator_decoder_num_kernels'] = options['generator_encoder_num_kernels'][:-1][::-1] + [1]
+#     options['discriminator_num_kernels'] = [16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 1024]
+#     options['alpha'] = 0.3 # alpha in LeakyReLU
+#     options['show_summary'] = False
+#     options['learning_rate'] = 0.0002
+#     options['g_l1loss'] = 100. 
+#     options['pre_emph'] = 0.95
+#     options['z_in_use'] = True # Use latent noise z in generator?
+
+#     # File paths specified for local machine and the super computer Idun
+#     if options['Idun']:
+#         options['speech_path'] = "/home/miralv/Master/Audio/sennheiser_1/part_1/" # Train make it general, add validate, train and test manually
+#         options['noise_path'] = "/home/miralv/Master/Audio/Nonspeech_v2/" # Train
+#         # options['speech_list_sample_test'] = ["/home/miralv/Master/Audio/sennheiser_1/part_1/Test/Selected/p1_g12_m1_3_t-c1151.wav", "/home/miralv/Master/Audio/sennheiser_1/part_1/Test/Selected/p1_g12_f2_4_x-c2161.wav"]
+#         # options['noise_list_sample_test'] = ["/home/miralv/Master/Audio/Nonspeech_v2/Test/n77.wav", "/home/miralv/Master/Audio/Nonspeech_v2/Test/PCAFETER_16k_ch01.wav", "/home/miralv/Master/Audio/Nonspeech_v2/Test/PSTATION_16k_ch01.wav" , "/home/miralv/Master/Audio/Nonspeech_v2/Test/STRAFFIC_16k_ch01.wav" , "/home/miralv/Master/Audio/Nonspeech_v2/Test/DKITCHEN_16k_ch01.wav"]
+#     else:
+#         options['speech_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/"
+#         options['noise_path'] = "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/" 
+#         # options['speech_list_sample_test'] = ["/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/Selected/p1_g12_m1_3_t-c1151.wav", "/home/shomec/m/miralv/Masteroppgave/Code/sennheiser_1/part_1/Test/Selected/p1_g12_f2_4_x-c2161.wav"]
+#         # options['noise_list_sample_test'] = ["/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/n77.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/PCAFETER_16k_ch01.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/PSTATION_16k_ch01.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/STRAFFIC_16k_ch01.wav", "/home/shomec/m/miralv/Masteroppgave/Code/Nonspeech_v2/Test/DKITCHEN_16k_ch01.wav"]
+
+
+#     options['batch_size'] = 200              # 200 # Ser at SEGAN har brukt en effective batch size of 400. Will try that.
+#     options['steps_per_epoch'] = 10         # 10 # SEGAN itererte gjennom hele datasettet i hver epoch
+#     options['n_epochs'] = 10                # 20 Ser at SEGAN har brukt 86
+#     options['snr_dbs_train'] = [0,10,15]      # It seems that the algorithm is performing best on low snrs
+#     options['snr_dbs_test'] = [0,5,10,15]
+#     options['sample_rate'] = 16000
+#     options['test_frequency'] = 1             # Every nth epoch, run a sample enhancement
+#     print("Options are set.\n\n")
+#     noisy_file_path = "/home/shomec/m/miralv/Masteroppgave/Code/20190615_140819.wav"
+#     print("Loading saved model\n")
+#     modeldir = os.getcwd()
+#     json_file = open(modeldir + "/Gmodel.json", "r")
+#     loaded_model_json = json_file.read()
+#     json_file.close()
+#     G = model_from_json(loaded_model_json)
+#     optimizer_G = keras.optimizers.RMSprop(lr=options['learning_rate'])
+#     G.compile(loss='mean_squared_error', optimizer=optimizer_G)
+#     G.load_weights(modeldir + "/Gmodel.h5")
+
+
+#     mixed, z = prepare_test_given_noisy_file(options,noisy_file_path)
+#     audios_mixed = np.expand_dims(mixed[0], axis=2)
+
+#     if options['z_in_use']:
+#         G_out = G.predict([audios_mixed, z[0]]) #meand [i,:,:]
+#     else:
+#         G_out = G.predict([audios_mixed]) #meand [i,:,:]
+
+#     G_enhanced,_ = postprocess(G_out,coeff = options['pre_emph'])
+#     save_1 = "./results/noisy_test/recording_Trondheim.wav"
+#     saveAudio(G_enhanced, save_1, sr=16000) #818
+#     save_scaled = "./results/noisy/recording_Trondheim_scaled.wav"
+#     # test_audio(save_1,save_scaled)
+
+

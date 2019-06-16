@@ -884,3 +884,37 @@ np.savetxt("save_averages.txt", res_mat, fmt="%.2f")
 res_mat
 
 #sjekk om den enhancer sammenlikningsverdig. hvis det, gjør tester (z, lokalt opptak med støy)
+#### uten z
+
+stoi_folder_after_NY_samples_without_local = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_sample_after_NY_without_local_z_run_04.csv"
+epoch_scores_without_local_stoi = find_sample_stats(stoi_folder_after_NY_samples_without_local, epochs, "STOI", snrs, colors, True,"stoi_sample_results_after_NY_without_local_z_run_4.pdf")
+
+pesq_folder_after_NY_samples_without_local = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_sample_after_NY_without_local_z_run_04.csv"
+epoch_scores_without_local_pesq = find_sample_stats(pesq_folder_after_NY_samples_without_local, epochs, "PESQ", snrs, colors, True,"pesq_sample_results_after_NY_without_local_z_run_4.pdf")
+
+
+stoi_folder_after_NY_without_local = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/stoi_results_after_NY_without_local_z_run_04.csv"
+pesq_folder_after_NY_without_local = "/home/shomec/m/miralv/Masteroppgave/Matlab_script/pesq_results_after_NY_without_local_z_run_04.csv"
+
+
+find_statistics(pesq_folder_after_NY_without_local, snrs, True)
+find_statistics(stoi_folder_after_NY_without_local, snrs, True)
+
+
+noise_stats_without_local, averages_without_local, avg_without_local  = findSpecificStats(pesq_folder_after_NY_without_local, snrs, num_each=10) #num each = number of different sentences
+noise_stats_without_local_stoi, averages_without_local_stoi, avg_without_local_stoi =  findSpecificStats(stoi_folder_after_NY_without_local, snrs, num_each=10)
+
+averages_without_local
+avg_without_local
+averages_without_local_stoi
+avg_without_local_stoi
+
+res_mat = np.zeros((2,5))
+res_mat[0,0:-1]= averages_without_local[1]
+res_mat[0,-1]= avg_without_local[1]
+res_mat[1,0:-1]= averages_without_local_stoi[1]
+res_mat[1,-1]= avg_without_local_stoi[1]
+
+np.savetxt("save_averages.txt", res_mat, fmt="%.2f")
+
+res_mat
