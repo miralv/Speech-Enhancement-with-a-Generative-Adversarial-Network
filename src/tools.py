@@ -3,9 +3,20 @@ from scipy.signal import decimate
 import scipy.io.wavfile
 import resampy
 import tensorflow as tf
-#import librosa
+import glob
 
-def scaleDown(a, N=16):
+
+def get_paths(speech_path,noise_path):
+    """Returns audio paths and noise paths"""
+
+    speech_paths = glob.glob(speech_path + "/*/p1_g*_" + "*.wav")       
+    # Load noise files    
+    noise_paths = glob.glob(noise_path + "/*.wav")
+
+    return speech_paths,noise_paths
+
+
+def scale_down(a, N=16):
     """ Scale down from intN to float in [-1,1]
     # N = 16 in all file types used
 
@@ -24,7 +35,7 @@ def scaleDown(a, N=16):
     return np.array(d,dtype = np.float64)
 
 
-def scaleUp(a, N=16):
+def scale_up(a, N=16):
     """ Scale up from  [-1,1] to intN,
     only int16 is used.
 
@@ -45,12 +56,12 @@ def scaleUp(a, N=16):
     return 0
 
 
-def findSNRfactor(cleanAudio, noise, SNRdB):
+def find_snr_factor(clean_speech, noise, SNRdB):
     """ Find the SNR factor that noise must be multiplied by to obtain the specified
     SNRdB
 
     # Arguments
-        cleanAudio: vector with the speech file
+        clean_speech: vector with the speech file
         noise: vector with the noise file
         SNRdB: wanted level of SNR given in dB
         
@@ -59,17 +70,17 @@ def findSNRfactor(cleanAudio, noise, SNRdB):
     """
 
 
-    Anoise = findRMS(noise)
+    Anoise = find_rms(noise)
     if Anoise == 0:
         print('Dividing by zero!!')
 
-    Aclean = findRMS(cleanAudio)
+    Aclean = find_rms(clean_speech)
     ANoise_new = Aclean/(10**(SNRdB/20))
     factor = ANoise_new/Anoise
     return factor
 
 
-def findRMS(vector):
+def find_rms(vector):
     """ Fint the RMS of a vector.
 
     # Arguments
@@ -82,7 +93,7 @@ def findRMS(vector):
     #Cast to a large dtype to prevent negative numbers due to overflow
     return np.sqrt(np.mean(np.power(vector,2,dtype='float64')))
 
-def extendVector(vector, length):
+def extend_vector(vector, length):
     """ Extend the noise vector s.t. it achieves wanted length
     """
 
@@ -93,64 +104,51 @@ def extendVector(vector, length):
     return vector
 
 
-def preprocess(rawAudio, origSr):
+def preprocess(raw_audio, orig_sr):
     """ Downsample and scale.
 
     # Arguments
-        rawAudio: audio file
-        origSr: original sample rate
+        raw_audio: audio file
+        orig_sr: original sample rate
 
     # Returns
         Downsampled and scaled audio
     """
 
     # Target sample rate
-    # TODO: listen to downsampled audio. check which filter is applied.
-    if origSr != 16000:
-        targetSr = 16000
-        yd = resampy.resample(rawAudio,origSr,targetSr)
+    if orig_sr != 16000:
+        target_sr = 16000
+        yd = resampy.resample(raw_audio,orig_sr,target_sr)
     else:
-        yd = rawAudio
+        yd = raw_audio
 
-    y = scaleDown(yd)
+    y = scale_down(yd)
 
     return y
 
-def preprocess_dataloader(rawAudio, origSr):
+def preprocess_dataloader(raw_audio, orig_sr):
     """ Downsample and scale.
 
     # Arguments
-        rawAudio: audio file
-        origSr: original sample rate
+        raw_audio: audio file
+        orig_sr: original sample rate
 
     # Returns
         Downsampled audio
     """
 
     # Target sample rate
-    # TODO: listen to downsampled audio. check which filter is applied.
-
-    targetSr = 16000
-    if targetSr != origSr:
-        yd = resampy.resample(rawAudio,origSr,targetSr)
+    target_sr = 16000
+    if target_sr != orig_sr:
+        yd = resampy.resample(raw_audio,orig_sr,target_sr)
         return yd
     else:
-        return rawAudio
-
-
-    # # Downsample
-    # if noise !=1:
-    #     yd = decimate(rawAudio,q,ftype="fir")
-    # else:
-    #     origSr = 20000
-    #     targetSr = 16000
-    #     yd = resampy.resample(rawAudio, origSr, targetSr)
-    # Shift to range [-1,1]
+        return raw_audio
 
 
 
 def slice_vector(vector, options, overlap=0.0):
-    """
+    """ Slice the vector
     """
     window_length = options['window_length']
     n_samples = len(vector)
@@ -196,7 +194,7 @@ def postprocess(audio, coeff=0):
 
     """
 
-    #This is sufficient as long as overlap = 0.
+    #This is sufficient as long as overlap = 0 (which we have used)
     vectorized = np.reshape(audio, (-1))
 
     # De emph
@@ -209,13 +207,13 @@ def postprocess(audio, coeff=0):
         vectorized = np.divide(vectorized,max_value)
 
     # Scale up
-    recovered = scaleUp(vectorized)
+    recovered = scale_up(vectorized)
 
     # Return the max_value such that the mixed and clean audio can be scaled accordingly.
     return recovered, max_value
 
 
-def saveAudio(audio, path,sr):
+def save_audio(audio, path,sr):
     scipy.io.wavfile.write(path, sr, data=audio)
 
 
@@ -239,9 +237,7 @@ def pre_emph(x, coeff=0.95):
     x0 = np.expand_dims(x0, axis = 1)
     diff = x[:,1:] - coeff * x[:,:-1]
     x_pre_emph = np.concatenate((x0,diff),axis=1)
-    #diff = x[1:] - coeff*x[:-1]
-    #concat = tf.concat(0,x0,diff)
-    return x_pre_emph#concat
+    return x_pre_emph
 
 
 

@@ -4,9 +4,7 @@ from glob import glob
 import numpy as np
 import os
 import random
-#import matplotlib.pyplot as plt
 from tools import *
-from getData import getPaths
 
 
 def load_batch(options):
@@ -25,15 +23,13 @@ def load_batch(options):
     noise_path = options['noise_path'] +  'Train/'
     batch_size = options['batch_size']
     n_batches = options['steps_per_epoch']
-    # snr_db = options['snr_db']
     snr_dbs = options['snr_dbs_train']
     window_length = options['window_length']
     pre_emph_const = options['pre_emph']
 
     # Get all paths in the training set
-    audio_paths, noise_paths = getPaths(audio_path,noise_path)
+    audio_paths, noise_paths = get_paths(audio_path,noise_path)
 
-    # TODO: Finn ut om denne ytre forløkken har noen betydning, eller om jeg like gjerne kunne skrevet while True
     for i in range(n_batches):
         # Extract randomly n=batch_size audio paths and noise paths
         audio_batch = np.random.choice(audio_paths, batch_size)
@@ -58,21 +54,20 @@ def load_batch(options):
             noise = preprocess_dataloader(noise_orig, f_noise)
             # Increase the possible extractions from noise
             if len(noise)< window_length:
-                noise = extendVector(noise, 2*window_length)
+                noise = extend_vector(noise, 2*window_length)
 
 
-            # Draw a random part from noise and audio and add them
+            # Draw a random part from noise and speech and add them
             start_index_audio = random.randint(0,len(audio)-window_length)
             start_index_noise = random.randint(0,len(noise)-window_length)
             # Obtain desired snr-level
             snr_db = np.random.choice(snr_dbs)
-            snr_factor = findSNRfactor(audio_orig, noise_orig, snr_db)
+            snr_factor = find_snr_factor(audio_orig, noise_orig, snr_db)
             # Scale and construct input windows
-            clean_i = scaleDown(audio[start_index_audio: start_index_audio + window_length])
-            mixed_i = clean_i + snr_factor*scaleDown(noise[start_index_noise: start_index_noise + window_length])
+            clean_i = scale_down(audio[start_index_audio: start_index_audio + window_length])
+            mixed_i = clean_i + snr_factor*scale_down(noise[start_index_noise: start_index_noise + window_length])
 
             # Make sure that the values are still in [-1,1]
-            #TODO: Er det nødvendig å gjøre dette her? Holder det å gjøre det når lyden skal lyttes til? Altså for test sett reconstruction?
             max_val = np.max(np.abs(mixed_i))
             if max_val > 1:
                 mixed_i = mixed_i/max_val
@@ -106,15 +101,10 @@ def prepare_test(options):
 
     f_audio, audio_orig = scipy.io.wavfile.read(audio_path)
     audio = preprocess(audio_orig,f_audio)
-    # audio = audio[:(len(audio) - len(audio)%window_length)]
 
     f_noise, noise_orig = scipy.io.wavfile.read(noise_path)
     noise = preprocess(noise_orig, f_noise)
-    noise = extendVector(noise, len(audio))
-
-
-    # mixed = np.zeros(shape =(len(snr_dbs),len(audio))) # Each row will contain mixed for corresponding snr
-    # speech = np.zeros(shape =(len(snr_dbs),len(audio))) # Each row will contain mixed for corresponding snr
+    noise = extend_vector(noise, len(audio))
 
    # Prepare to get it on format len(snr_dbs) x nwindows x windowlength
     n_windows = int(np.ceil(len(audio)/window_length))
@@ -122,9 +112,8 @@ def prepare_test(options):
     mixed_ready = np.zeros(shape=(len(snr_dbs), n_windows, window_length))
 
     # Obtain desired snr-level
-    # snr_factors = np.zeros((len(snr_dbs),1))
     for i,snr_db in enumerate(snr_dbs):
-        snr_factor = findSNRfactor(audio_orig, noise_orig, snr_db)
+        snr_factor = find_snr_factor(audio_orig, noise_orig, snr_db)
         mixed = audio + snr_factor*noise
 
         # Make sure that the values are still in [-1,1]
@@ -142,13 +131,7 @@ def prepare_test(options):
         mixed_ready[i,:,:] = pre_emph(mixed, pre_emph_const)
 
 
-
-    #TODO: Gir det mening å ha denne her, eller burde den ha ligget i main?
-    # Nå har z også snr-dbs på første aksen. deretter n_windows, z_dim0, z_dim1
-    z = np.random.normal(0,1,(len(snr_dbs),n_windows,z_dim[0],z_dim[1]))
-    #(0, 1, (batch_size, z_dim[0], z_dim[1]))
-
- 
+    z = np.random.normal(0,1,(len(snr_dbs),n_windows,z_dim[0],z_dim[1])) 
     return speech_ready, mixed_ready, z
 
 
@@ -161,7 +144,6 @@ def prepare_test_given_noisy_file(options, noisy_file_path):
     pre_emph_const = options['pre_emph']
 
     f_noisy, noisy_orig = scipy.io.wavfile.read(noisy_file_path)
-    print(np.max(noisy_orig))
     noisy = preprocess(noisy_orig,f_noisy)
 
    # Prepare to get it on format 1 x nwindows x windowlength
@@ -173,10 +155,6 @@ def prepare_test_given_noisy_file(options, noisy_file_path):
     # Insert into output matrix
     mixed_ready[0,:,:] = pre_emph(mixed, pre_emph_const)
 
-    # Nå har z også snr-dbs på første aksen. deretter n_windows, z_dim0, z_dim1
-    z = np.random.normal(0,1,(1,n_windows,z_dim[0],z_dim[1]))
-    #(0, 1, (batch_size, z_dim[0], z_dim[1]))
-
- 
+    z = np.random.normal(0,1,(1,n_windows,z_dim[0],z_dim[1])) 
     return mixed_ready, z
 

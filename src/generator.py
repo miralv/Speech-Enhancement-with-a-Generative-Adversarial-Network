@@ -75,7 +75,6 @@ def generator(options):
         new_shape = (n_rows, n_cols)
 
         if layer_i == (num_layers-1):
-            # decoder_out = Reshape(new_shape, name='G_out')(decoder_out)
             decoder_out = Reshape(new_shape)(decoder_out)
 
         else:

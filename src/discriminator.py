@@ -27,8 +27,6 @@ def discriminator(options):
     show_summary = options['show_summary']
 
     ## Define the discriminator's input and output
-    # clean_audio_in = Input(shape=audio_shape, name='in_clean')
-    # noisy_audio_in = Input(shape=audio_shape, name='in_noisy')
     clean_audio_in = Input(shape=audio_shape)
     noisy_audio_in = Input(shape=audio_shape)
 
@@ -42,10 +40,8 @@ def discriminator(options):
         discriminator_out = BatchNormalization()(discriminator_out)
         # Apply LeakyReLU
         discriminator_out = LeakyReLU(alpha=alpha)(discriminator_out)
-    # discriminator_out = Conv1D(1, 1, padding=padding, use_bias=use_bias, name='logits_convolution')(discriminator_out)
     discriminator_out = Conv1D(1, 1, padding=padding, use_bias=use_bias, kernel_initializer=tf.truncated_normal_initializer(stddev=std_dev))(discriminator_out)
     discriminator_out = Flatten()(discriminator_out)
-    # discriminator_out = Dense(1, activation='linear', name='D_output')(discriminator_out)
     discriminator_out = Dense(1, activation='linear')(discriminator_out)
     
     ## Construct model graph

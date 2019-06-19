@@ -18,15 +18,15 @@ epoch_errors_validate	../main.py	/^epoch_errors_validate = np.zeros((len(batchSi
 epochs	../main.py	/^                        epochs=Nepochs,$/;"	kind:variable	line:95
 fig2	../main.py	/^fig2 = plt.subplots(1,1)$/;"	kind:variable	line:76
 filePathSave	../main.py	/^filePathSave = Path("C:\/Users\/Mira\/Documents\/NTNU1819\/Prosjektoppgave\/Mixed\/Simplified")$/;"	kind:variable	line:47
-findRMS	../tools.py	/^def findRMS(vector):$/;"	kind:function	line:124
-findSNRfactor	../tools.py	/^def findSNRfactor(cleanAudio,noise,SNRdB):$/;"	kind:function	line:100
+find_rms	../tools.py	/^def find_rms(vector):$/;"	kind:function	line:124
+find_snr_factor	../tools.py	/^def find_snr_factor(clean_speech,noise,SNRdB):$/;"	kind:function	line:100
 generateAudioFromFile	../getData.py	/^def generateAudioFromFile(audioFolder, noiseFolder):$/;"	kind:function	line:7
 generateAudioFromFile	../preprocessingWithGenerator.py	/^def generateAudioFromFile(windowLength,q,N,batchSize,SNRdB, audioFolder, noiseFolder):$/;"	kind:function	line:10
 generateTestData	../generateTestData.py	/^def generateTestData(windowLength,q,N,SNRdB, audioFolder, noiseFile, filePathSave, save): $/;"	kind:function	line:11
 generateTestData.py	../generateTestData.py	1;"	kind:file	line:1
 getData.py	../getData.py	1;"	kind:file	line:1
 history	../main.py	/^    history = model.fit_generator(generateAudioFromFile(windowLength,q,N,batchSize,SNRdB,audioFolderTrain,noiseFolderTrain), $/;"	kind:variable	line:92
-idealRatioMask	../tools.py	/^def idealRatioMask(cleanAudioMatrix,noiseMatrix,beta):$/;"	kind:function	line:138
+idealRatioMask	../tools.py	/^def idealRatioMask(clean_speechMatrix,noiseMatrix,beta):$/;"	kind:function	line:138
 im1	../main.py	/^im1 = ax1.imshow(predictedY.transpose())$/;"	kind:variable	line:140
 im2	../main.py	/^im2 = ax2.imshow(yTest.transpose())$/;"	kind:variable	line:142
 indexes	../main.py	/^indexes = [0, 9,19]$/;"	kind:variable	line:88
@@ -43,7 +43,7 @@ outputDim	../main.py	/^outputDim = int(windowLength\/2+1)$/;"	kind:variable	line
 overlapAdd	../recoverSignal.py	/^def overlapAdd(windowArray):$/;"	kind:function	line:107
 path	../main.py	/^path = Path("C:\/Users\/Mira\/source\/repos\/Prosjektoppgave DNN for Speech Enhancement")$/;"	kind:variable	line:19
 predictedY	../main.py	/^predictedY = model.predict(xTestStacked,batch_size=batchSize,verbose=0)$/;"	kind:variable	line:122
-preprocessing	../preprocessing.py	/^def preprocessing(rawAudio,q,N,windowLength,noise):$/;"	kind:function	line:7
+preprocessing	../preprocessing.py	/^def preprocessing(raw_audio,q,N,windowLength,noise):$/;"	kind:function	line:7
 preprocessing.py	../preprocessing.py	1;"	kind:file	line:1
 preprocessingWithGenerator.py	../preprocessingWithGenerator.py	1;"	kind:file	line:1
 q	../main.py	/^q = 3                           # Downsampling factor for the clean audio files$/;"	kind:variable	line:32
@@ -57,8 +57,8 @@ savePath	../main.py	/^savePath = filePathSave \/ v$/;"	kind:variable	line:110
 savePath	../main.py	/^savePath = filePathSave \/ v$/;"	kind:variable	line:129
 savePath	../main.py	/^savePath = filePathSave \/ v$/;"	kind:variable	line:132
 savePathPlot	../main.py	/^savePathPlot = filePathSave \/ s$/;"	kind:variable	line:138
-scaleDown	../tools.py	/^def scaleDown(a,N):$/;"	kind:function	line:3
-scaleUp	../tools.py	/^def scaleUp(a,N):$/;"	kind:function	line:22
+scale_down	../tools.py	/^def scale_down(a,N):$/;"	kind:function	line:3
+scale_up	../tools.py	/^def scale_up(a,N):$/;"	kind:function	line:22
 stackMatrix	../tools.py	/^def stackMatrix(matrix):$/;"	kind:function	line:43
 stepsPerEpoch	../main.py	/^stepsPerEpoch = 20              # Number of steps (batches of samples yielded from generator) per epoch$/;"	kind:variable	line:35
 steps_per_epoch	../main.py	/^                        steps_per_epoch=stepsPerEpoch, $/;"	kind:variable	line:94
