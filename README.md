@@ -3,9 +3,9 @@
 This project aims to enhance speech with a generative adversarial network. 
 It is based on a two-player game between a generator and a discriminator - the generator learns to map from noisy to cleaner speech through a competition with a discriminator.
 
-We used speech from the Norwegian speech database [NB Tale](https://www.nb.no/sprakbanken/show?serial=sbr-31&lang=nn) and noise files from the noise databases [Demand](https://zenodo.org/record/1227121) and [A corpus of nonspeech sounds](web.cse.ohio-state.edu/pnl/corpus/HuNonspeech/HuCorpus.html) to train and test the net. Training, validation set and test set contained separate parts of the speech and noise files, such that all files tested on were previously unseen by the net. 
+We used speech from the Norwegian speech database [NB Tale](https://www.nb.no/sprakbanken/show?serial=sbr-31&lang=nn) and noise files from the noise databases [Demand](https://zenodo.org/record/1227121) and [A corpus of nonspeech sounds](web.cse.ohio-state.edu/pnl/corpus/HuNonspeech/HuCorpus.html) to train and test the net. Training, validation set and test set contained separate parts of the speech and noise files, such that all test files were previously unseen by the net. 
 
-A few enhancement samples are provided on [Dropbox]().
+A few enhancement samples are provided on [Dropbox](https://www.dropbox.com/sh/gps8xzvya9cftp9/AAAp6f7eGHCmoC3MFqeSrXiYa?dl=0).
 
 
 
